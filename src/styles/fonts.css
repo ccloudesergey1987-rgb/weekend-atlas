@@ -1,0 +1,7 @@
+/*
+ * Fonts are bundled with the app (no Google Fonts, no CDN).
+ * Both families include Cyrillic; the browser downloads only the
+ * subsets the page actually uses.
+ */
+@import '@fontsource-variable/playfair-display/index.css';
+@import '@fontsource-variable/inter/index.css';

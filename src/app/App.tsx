@@ -1,0 +1,36 @@
+import { useEffect } from 'react'
+import { HashRouter, Navigate, Route, Routes, useLocation } from 'react-router'
+import { AppLayout } from './AppLayout'
+import { HomeScreen } from '../screens/HomeScreen/HomeScreen'
+import { RouteScreen } from '../screens/RouteScreen'
+import { PlacesScreen } from '../screens/PlacesScreen'
+import { BudgetScreen } from '../screens/BudgetScreen'
+import { FavoritesScreen } from '../screens/FavoritesScreen'
+
+/** Each screen opens from the top, not at the previous screen's scroll position. */
+function ScrollToTop() {
+  const { pathname } = useLocation()
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [pathname])
+  return null
+}
+
+// HashRouter: GitHub Pages has no server-side routing, so paths live after «#».
+export function App() {
+  return (
+    <HashRouter>
+      <ScrollToTop />
+      <Routes>
+        <Route index element={<HomeScreen />} />
+        <Route element={<AppLayout />}>
+          <Route path="route" element={<RouteScreen />} />
+          <Route path="places" element={<PlacesScreen />} />
+          <Route path="budget" element={<BudgetScreen />} />
+          <Route path="favorites" element={<FavoritesScreen />} />
+        </Route>
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </HashRouter>
+  )
+}

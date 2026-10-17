@@ -1,0 +1,48 @@
+{
+  "cityId": "barcelona",
+  "currency": "EUR",
+  "defaultDays": 3,
+  "defaultTravelers": 1,
+  "categories": [
+    {
+      "id": "food",
+      "title": "Питание",
+      "description": "Завтрак, обед, ужин и перекусы на одного человека.",
+      "unit": "per_day",
+      "price": { "min": 35, "max": 80, "currency": "EUR", "status": "needs_check", "source": "", "checkedAt": null },
+      "includedByDefault": true
+    },
+    {
+      "id": "sights",
+      "title": "Достопримечательности",
+      "description": "Билеты в музеи и на объекты маршрута за всю поездку.",
+      "unit": "per_trip",
+      "price": { "min": 60, "max": 150, "currency": "EUR", "status": "needs_check", "source": "", "checkedAt": null },
+      "includedByDefault": true
+    },
+    {
+      "id": "transport",
+      "title": "Транспорт",
+      "description": "Метро и автобусы по городу за всю поездку.",
+      "unit": "per_trip",
+      "price": { "min": 15, "max": 35, "currency": "EUR", "status": "needs_check", "source": "", "checkedAt": null },
+      "includedByDefault": true
+    },
+    {
+      "id": "transfer",
+      "title": "Трансфер",
+      "description": "Дорога из аэропорта и обратно: от автобуса до такси.",
+      "unit": "per_trip",
+      "price": { "min": 10, "max": 70, "currency": "EUR", "status": "needs_check", "source": "", "checkedAt": null },
+      "includedByDefault": true
+    },
+    {
+      "id": "other",
+      "title": "Прочее",
+      "description": "Сувениры, мелкие покупки, непредвиденные расходы.",
+      "unit": "per_trip",
+      "price": { "min": 20, "max": 60, "currency": "EUR", "status": "needs_check", "source": "", "checkedAt": null },
+      "includedByDefault": true
+    }
+  ]
+}
