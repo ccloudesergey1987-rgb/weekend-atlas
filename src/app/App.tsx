@@ -4,7 +4,7 @@ import { AppLayout } from './AppLayout'
 import { HomeScreen } from '../screens/HomeScreen/HomeScreen'
 import { RouteIndexRedirect, RouteScreen } from '../screens/RouteScreen/RouteScreen'
 import { PlacesScreen } from '../screens/PlacesScreen/PlacesScreen'
-import { BudgetScreen } from '../screens/BudgetScreen'
+import { BudgetScreen } from '../screens/BudgetScreen/BudgetScreen'
 import { FavoritesScreen } from '../screens/FavoritesScreen'
 
 /** Each screen opens from the top, not at the previous screen's scroll position. */

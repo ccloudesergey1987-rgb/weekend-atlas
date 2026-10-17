@@ -24,6 +24,10 @@ const currencySymbols: Record<Currency, string> = {
   USD: '$',
 }
 
+export function currencySymbol(currency: Currency): string {
+  return currencySymbols[currency]
+}
+
 /** Price range as text. Missing price is never shown as 0. */
 export function formatPrice(price: Price | null): string {
   if (!price) return 'Цена уточняется'

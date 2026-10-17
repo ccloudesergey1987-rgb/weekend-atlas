@@ -166,34 +166,45 @@ export interface Places {
 
 // ---------------------------------------------------------------------------
 // budget.json
+//
+// Entry tickets are NOT stored here: the calculator takes them from
+// route.json, so each price lives in exactly one place. Trip length comes
+// from `City.durationDays`.
 
-export type BudgetCategoryId =
-  | 'food'
-  | 'sights'
-  | 'transport'
-  | 'transfer'
-  | 'other'
-  | 'flights'
-  | 'lodging'
-
-/** Whether the range is per day or for the whole trip. */
-export type BudgetUnit = 'per_day' | 'per_trip'
-
-export interface BudgetCategory {
-  id: BudgetCategoryId
+/** A selectable option. `price: null` — «Цена уточняется», never counted as 0. */
+export interface BudgetOption {
+  id: string
   title: string
   description: string
-  unit: BudgetUnit
-  /** Price per person. */
-  price: Price
-  /** Included in the total by default. Flights and lodging are off by default. */
-  includedByDefault: boolean
+  price: Price | null
+}
+
+/** Food level. Price is per person per day. */
+export type FoodLevel = BudgetOption
+
+/** City transport for the whole trip. Price is per person. */
+export type TransportOption = BudgetOption
+
+/** `per_person` — public transport ticket; `per_vehicle` — taxi, shared by the group. */
+export type TransferPricing = 'per_person' | 'per_vehicle'
+
+/** Airport transfer. Price is ONE WAY; the calculator doubles it for the way back. */
+export interface TransferOption extends BudgetOption {
+  pricing: TransferPricing
+  /** Passengers per vehicle, required for `per_vehicle` (4 for a regular taxi). */
+  vehicleCapacity?: number
+}
+
+export interface OptionGroup<T extends BudgetOption> {
+  defaultId: string
+  options: T[]
 }
 
 export interface BudgetSettings {
   cityId: string
   currency: Currency
-  defaultDays: number
   defaultTravelers: number
-  categories: BudgetCategory[]
+  food: OptionGroup<FoodLevel>
+  transport: OptionGroup<TransportOption>
+  transfer: OptionGroup<TransferOption>
 }

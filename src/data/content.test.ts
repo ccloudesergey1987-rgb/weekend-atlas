@@ -75,7 +75,9 @@ describe.each(listCityIds())('данные города %s', (cityId) => {
     const prices = [
       ...points.map((p) => p.price),
       ...content.places.places.map((p) => p.price),
-      ...content.budget.categories.map((c) => c.price),
+      ...[content.budget.food, content.budget.transport, content.budget.transfer].flatMap((g) =>
+        g.options.map((o) => o.price),
+      ),
     ].filter((p) => p !== null)
     for (const price of prices) {
       expect(price.min).toBeGreaterThanOrEqual(0)
@@ -129,6 +131,29 @@ describe.each(listCityIds())('данные города %s', (cityId) => {
         expect(placeAreas, `${point.id}: «${point.area}»`).toContain(point.area)
       }
     })
+  })
+
+  it('в бюджете вариант по умолчанию существует, а id не повторяются', () => {
+    for (const group of [content.budget.food, content.budget.transport, content.budget.transfer]) {
+      const ids = group.options.map((o) => o.id)
+      expect(ids).toContain(group.defaultId)
+      expect(new Set(ids).size).toBe(ids.length)
+    }
+  })
+
+  it('у трансфера «на машину» указана вместимость', () => {
+    for (const option of content.budget.transfer.options) {
+      expect(['per_person', 'per_vehicle'], option.id).toContain(option.pricing)
+      if (option.pricing === 'per_vehicle') expect(option.vehicleCapacity, option.id).toBeGreaterThanOrEqual(1)
+    }
+  })
+
+  it('цены бюджета в валюте города', () => {
+    for (const group of [content.budget.food, content.budget.transport, content.budget.transfer]) {
+      for (const option of group.options) {
+        if (option.price) expect(option.price.currency, option.id).toBe(content.budget.currency)
+      }
+    }
   })
 
   it('примеры заведений явно помечены в названии', () => {

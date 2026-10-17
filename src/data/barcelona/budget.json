@@ -1,48 +1,78 @@
 {
   "cityId": "barcelona",
   "currency": "EUR",
-  "defaultDays": 3,
-  "defaultTravelers": 1,
-  "categories": [
-    {
-      "id": "food",
-      "title": "Питание",
-      "description": "Завтрак, обед, ужин и перекусы на одного человека.",
-      "unit": "per_day",
-      "price": { "min": 35, "max": 80, "currency": "EUR", "status": "needs_check", "source": "", "checkedAt": null },
-      "includedByDefault": true
-    },
-    {
-      "id": "sights",
-      "title": "Достопримечательности",
-      "description": "Билеты в музеи и на объекты маршрута за всю поездку.",
-      "unit": "per_trip",
-      "price": { "min": 60, "max": 150, "currency": "EUR", "status": "needs_check", "source": "", "checkedAt": null },
-      "includedByDefault": true
-    },
-    {
-      "id": "transport",
-      "title": "Транспорт",
-      "description": "Метро и автобусы по городу за всю поездку.",
-      "unit": "per_trip",
-      "price": { "min": 15, "max": 35, "currency": "EUR", "status": "needs_check", "source": "", "checkedAt": null },
-      "includedByDefault": true
-    },
-    {
-      "id": "transfer",
-      "title": "Трансфер",
-      "description": "Дорога из аэропорта и обратно: от автобуса до такси.",
-      "unit": "per_trip",
-      "price": { "min": 10, "max": 70, "currency": "EUR", "status": "needs_check", "source": "", "checkedAt": null },
-      "includedByDefault": true
-    },
-    {
-      "id": "other",
-      "title": "Прочее",
-      "description": "Сувениры, мелкие покупки, непредвиденные расходы.",
-      "unit": "per_trip",
-      "price": { "min": 20, "max": 60, "currency": "EUR", "status": "needs_check", "source": "", "checkedAt": null },
-      "includedByDefault": true
-    }
-  ]
+  "defaultTravelers": 2,
+  "food": {
+    "defaultId": "medium",
+    "options": [
+      {
+        "id": "economy",
+        "title": "Экономно",
+        "description": "Завтрак в кафе, обед из меню дня, ужин тапасами или с рынка.",
+        "price": { "min": 30, "max": 45, "currency": "EUR", "status": "needs_check", "source": "Ориентир редакции, не сверен с источником", "checkedAt": null }
+      },
+      {
+        "id": "medium",
+        "title": "Средне",
+        "description": "Обед из меню дня, ужин в ресторане среднего уровня, кофе и перекусы.",
+        "price": { "min": 45, "max": 80, "currency": "EUR", "status": "needs_check", "source": "Ориентир редакции, не сверен с источником", "checkedAt": null }
+      },
+      {
+        "id": "comfort",
+        "title": "Комфортно",
+        "description": "Рестораны с винной картой, ужины без оглядки на счёт.",
+        "price": { "min": 80, "max": 140, "currency": "EUR", "status": "needs_check", "source": "Ориентир редакции, не сверен с источником", "checkedAt": null }
+      }
+    ]
+  },
+  "transport": {
+    "defaultId": "t-casual",
+    "options": [
+      {
+        "id": "t-casual",
+        "title": "Разовые поездки",
+        "description": "Карта T-casual на 10 поездок по зоне 1 — метро и автобусы. Обычно хватает одной на три дня.",
+        "price": { "min": 13, "max": 13, "currency": "EUR", "status": "needs_check", "source": "Тариф 2026 по данным сторонних сайтов (mapametrobarcelona.com); сверить на tmb.cat", "checkedAt": null }
+      },
+      {
+        "id": "hola-72h",
+        "title": "Проездной Hola Barcelona на 72 часа",
+        "description": "Безлимит на метро и автобусы, включая поездки в аэропорт на метро.",
+        "price": null
+      },
+      {
+        "id": "walk",
+        "title": "Только пешком",
+        "description": "Маршрут можно пройти пешком почти целиком, если не жалеть ног.",
+        "price": { "min": 0, "max": 0, "currency": "EUR", "status": "verified", "source": "Без расходов на транспорт", "checkedAt": "2026-10-18" }
+      }
+    ]
+  },
+  "transfer": {
+    "defaultId": "aerobus",
+    "options": [
+      {
+        "id": "aerobus",
+        "title": "Аэробус",
+        "description": "Автобус от терминалов до площади Каталонии. Цена на человека в одну сторону.",
+        "pricing": "per_person",
+        "price": { "min": 7.25, "max": 7.45, "currency": "EUR", "status": "needs_check", "source": "Тариф по данным сторонних сайтов, источники расходятся; сверить на aerobusbcn.com", "checkedAt": null }
+      },
+      {
+        "id": "taxi",
+        "title": "Такси",
+        "description": "Цена за машину в одну сторону, делится на всех. В обычное такси садятся до 4 человек.",
+        "pricing": "per_vehicle",
+        "vehicleCapacity": 4,
+        "price": { "min": 30, "max": 45, "currency": "EUR", "status": "needs_check", "source": "Оценка по тарифам такси AMB 2026 (надбавка за аэропорт 4,60 €); сверить на taxi.amb.cat", "checkedAt": null }
+      },
+      {
+        "id": "none",
+        "title": "Не нужен",
+        "description": "Вас встречают или трансфер уже оплачен.",
+        "pricing": "per_person",
+        "price": { "min": 0, "max": 0, "currency": "EUR", "status": "verified", "source": "Без расходов на трансфер", "checkedAt": "2026-10-18" }
+      }
+    ]
+  }
 }
