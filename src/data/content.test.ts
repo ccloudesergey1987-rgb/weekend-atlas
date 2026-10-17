@@ -3,6 +3,8 @@ import { getCityContent, listCityIds } from './index'
 
 const STATUSES = ['verified', 'needs_check']
 const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/
+/** «barcelona/sagrada-familia»: city prefix, then a name without the day number. */
+const STABLE_ID = /^[a-z0-9-]+\/[a-z0-9-]+$/
 
 /** Every object with a `status` field anywhere inside `value`, with its path. */
 function findProvenance(value: unknown, path = ''): { path: string; item: Record<string, unknown> }[] {
@@ -54,9 +56,12 @@ describe.each(listCityIds())('данные города %s', (cityId) => {
     }
   })
 
-  it('идентификаторы точек и заведений не повторяются', () => {
+  it('идентификаторы точек и заведений постоянные: «город/имя»', () => {
     const ids = [...points.map((p) => p.id), ...content.places.places.map((p) => p.id)]
-    expect(new Set(ids).size).toBe(ids.length)
+    for (const id of ids) {
+      expect(id).toMatch(STABLE_ID)
+      expect(id.split('/')[0], id).toBe(cityId)
+    }
   })
 
   it('у каждого факта и цены корректный статус; проверенное — с источником и датой', () => {
@@ -161,4 +166,15 @@ describe.each(listCityIds())('данные города %s', (cityId) => {
       expect(place.name, place.id).toMatch(/^Пример:/)
     }
   })
+})
+
+// Favorites keep bare IDs of all cities in one list, so an ID must be unique
+// across the whole guide, not only within its city.
+it('идентификаторы точек и заведений уникальны во всех городах', () => {
+  const ids = listCityIds().flatMap((cityId) => {
+    const { route, places } = getCityContent(cityId)
+    return [...route.days.flatMap((d) => d.points.map((p) => p.id)), ...places.places.map((p) => p.id)]
+  })
+  const repeated = ids.filter((id, i) => ids.indexOf(id) !== i)
+  expect(repeated).toEqual([])
 })

@@ -8,7 +8,7 @@
       "summary": "Пешком от собора через узкие улочки Готического квартала и Борна к парку и морю.",
       "points": [
         {
-          "id": "d1-cathedral",
+          "id": "barcelona/cathedral",
           "kind": "sight",
           "title": "Барселонский собор",
           "localName": "Catedral de Barcelona",
@@ -26,7 +26,7 @@
           "partnerUrl": null
         },
         {
-          "id": "d1-gothic-walk",
+          "id": "barcelona/gothic-quarter-walk",
           "kind": "free",
           "title": "Прогулка по Готическому кварталу",
           "localName": "Barri Gòtic",
@@ -44,7 +44,7 @@
           "transferFromPrevious": { "mode": "walk", "minutes": 5, "status": "needs_check", "source": "", "checkedAt": null }
         },
         {
-          "id": "d1-santa-maria-del-mar",
+          "id": "barcelona/santa-maria-del-mar",
           "kind": "sight",
           "title": "Санта-Мария-дель-Мар",
           "localName": "Basílica de Santa Maria del Mar",
@@ -63,7 +63,7 @@
           "transferFromPrevious": { "mode": "walk", "minutes": 10, "status": "needs_check", "source": "", "checkedAt": null }
         },
         {
-          "id": "d1-lunch-born",
+          "id": "barcelona/lunch-born",
           "kind": "meal",
           "area": "Борн",
           "title": "Обед в Борне",
@@ -81,7 +81,7 @@
           "transferFromPrevious": { "mode": "walk", "minutes": 5, "status": "needs_check", "source": "", "checkedAt": null }
         },
         {
-          "id": "d1-ciutadella",
+          "id": "barcelona/ciutadella-park",
           "kind": "free",
           "title": "Парк Сьютаделья",
           "localName": "Parc de la Ciutadella",
@@ -99,7 +99,7 @@
           "transferFromPrevious": { "mode": "walk", "minutes": 10, "status": "needs_check", "source": "", "checkedAt": null }
         },
         {
-          "id": "d1-barceloneta",
+          "id": "barcelona/barceloneta",
           "kind": "free",
           "title": "Барселонета и закат у моря",
           "localName": "La Barceloneta",
@@ -125,7 +125,7 @@
       "summary": "Главные здания модерна: Саграда Фамилия утром, дома на Пасео-де-Грасиа после обеда.",
       "points": [
         {
-          "id": "d2-sagrada-familia",
+          "id": "barcelona/sagrada-familia",
           "kind": "sight",
           "title": "Саграда Фамилия",
           "localName": "Basílica de la Sagrada Família",
@@ -143,7 +143,7 @@
           "partnerUrl": null
         },
         {
-          "id": "d2-eixample-walk",
+          "id": "barcelona/eixample-walk",
           "kind": "free",
           "title": "Прогулка по Эшампле",
           "localName": "L'Eixample",
@@ -161,7 +161,7 @@
           "transferFromPrevious": { "mode": "walk", "minutes": 5, "status": "needs_check", "source": "", "checkedAt": null }
         },
         {
-          "id": "d2-lunch-eixample",
+          "id": "barcelona/lunch-eixample",
           "kind": "meal",
           "area": "Эшампле",
           "title": "Обед в Эшампле",
@@ -179,7 +179,7 @@
           "transferFromPrevious": { "mode": "walk", "minutes": 10, "status": "needs_check", "source": "", "checkedAt": null }
         },
         {
-          "id": "d2-casa-batllo",
+          "id": "barcelona/casa-batllo",
           "kind": "sight",
           "title": "Каса Батльо",
           "localName": "Casa Batlló",
@@ -198,7 +198,7 @@
           "transferFromPrevious": { "mode": "walk", "minutes": 15, "status": "needs_check", "source": "", "checkedAt": null }
         },
         {
-          "id": "d2-casa-mila",
+          "id": "barcelona/casa-mila",
           "kind": "sight",
           "title": "Каса Мила (Ла Педрера)",
           "localName": "Casa Milà — La Pedrera",
@@ -217,7 +217,7 @@
           "transferFromPrevious": { "mode": "walk", "minutes": 10, "status": "needs_check", "source": "", "checkedAt": null }
         },
         {
-          "id": "d2-free-evening",
+          "id": "barcelona/free-evening-eixample",
           "kind": "free",
           "title": "Свободный вечер",
           "description": "Отдых в отеле или прогулка по Пасео-де-Грасиа. Ужин — по настроению.",
@@ -242,7 +242,7 @@
       "summary": "Утро в парке Гауди и на площадях Грасии, вечер на холме Монжуик с видом на город.",
       "points": [
         {
-          "id": "d3-park-guell",
+          "id": "barcelona/park-guell",
           "kind": "sight",
           "title": "Парк Гуэль",
           "localName": "Park Güell",
@@ -260,7 +260,7 @@
           "partnerUrl": null
         },
         {
-          "id": "d3-gracia-walk",
+          "id": "barcelona/gracia-walk",
           "kind": "free",
           "title": "Площади Грасии",
           "localName": "Gràcia",
@@ -278,7 +278,7 @@
           "transferFromPrevious": { "mode": "walk", "minutes": 20, "status": "needs_check", "source": "", "checkedAt": null }
         },
         {
-          "id": "d3-lunch-gracia",
+          "id": "barcelona/lunch-gracia",
           "kind": "meal",
           "area": "Грасия",
           "title": "Обед в Грасии",
@@ -296,7 +296,7 @@
           "transferFromPrevious": { "mode": "walk", "minutes": 5, "status": "needs_check", "source": "", "checkedAt": null }
         },
         {
-          "id": "d3-mnac",
+          "id": "barcelona/mnac",
           "kind": "sight",
           "title": "Национальный музей искусства Каталонии",
           "localName": "Museu Nacional d'Art de Catalunya",
@@ -315,7 +315,7 @@
           "transferFromPrevious": { "mode": "metro", "minutes": 35, "status": "needs_check", "source": "", "checkedAt": null }
         },
         {
-          "id": "d3-montjuic-castle",
+          "id": "barcelona/montjuic-castle",
           "kind": "sight",
           "title": "Замок Монжуик",
           "localName": "Castell de Montjuïc",
@@ -334,7 +334,7 @@
           "transferFromPrevious": { "mode": "bus", "minutes": 20, "status": "needs_check", "source": "", "checkedAt": null }
         },
         {
-          "id": "d3-farewell-dinner",
+          "id": "barcelona/farewell-dinner",
           "kind": "meal",
           "area": "Побле-сек",
           "title": "Прощальный ужин в Побле-сек",

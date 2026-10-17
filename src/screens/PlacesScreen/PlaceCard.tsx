@@ -1,5 +1,7 @@
 import type { Place, VerificationStatus } from '../../types/content'
 import { ExternalLink } from '../../components/ExternalLink/ExternalLink'
+import { FavoriteButton } from '../../components/FavoriteButton/FavoriteButton'
+import { cardElementId } from '../../lib/focusCard'
 import { ImagePlaceholder } from '../../components/ImagePlaceholder/ImagePlaceholder'
 import { VerificationBadge } from '../../components/VerificationBadge/VerificationBadge'
 import { formatPrice } from '../../utils/format'
@@ -13,29 +15,34 @@ function addressInfo(place: Place): { text: string; status: VerificationStatus |
   return { text: place.address.value, status: place.address.status }
 }
 
-export function PlaceCard({ place }: { place: Place }) {
+export function PlaceCard({ place, highlighted = false }: { place: Place; highlighted?: boolean }) {
   const level = priceLevel(place.price)
   const address = addressInfo(place)
 
   return (
-    <article className={styles.card}>
+    <article id={cardElementId(place.id)} className={highlighted ? `${styles.card} ${styles.highlighted}` : styles.card}>
       {/* Only real photos: a placeholder per card would be noise in a list. */}
       {place.photo?.src && <ImagePlaceholder photo={place.photo} ratio="16 / 9" />}
 
       <div className={styles.body}>
-        <p className={styles.meta}>
-          <span className={styles.metaPart}>{placeTypeLabel(place.type)}</span>
-          <span className={styles.metaPart}> · {place.area}</span>
-          {level && (
-            <span className={styles.metaPart}>
-              {' · '}
-              <span className={styles.level} aria-label={`уровень цены: ${priceLevelName(level)}`}>
-                {priceLevelSymbol(level)}
-              </span>
-            </span>
-          )}
-        </p>
-        <h3 className={styles.title}>{place.name}</h3>
+        <div className={styles.head}>
+          <div className={styles.headText}>
+            <p className={styles.meta}>
+              <span className={styles.metaPart}>{placeTypeLabel(place.type)}</span>
+              <span className={styles.metaPart}> · {place.area}</span>
+              {level && (
+                <span className={styles.metaPart}>
+                  {' · '}
+                  <span className={styles.level} aria-label={`уровень цены: ${priceLevelName(level)}`}>
+                    {priceLevelSymbol(level)}
+                  </span>
+                </span>
+              )}
+            </p>
+            <h3 className={styles.title}>{place.name}</h3>
+          </div>
+          <FavoriteButton id={place.id} title={place.name} />
+        </div>
         <p className={styles.description}>{place.description}</p>
 
         <dl className={styles.facts}>

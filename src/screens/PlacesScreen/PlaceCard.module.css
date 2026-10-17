@@ -1,4 +1,5 @@
 .card {
+  scroll-margin-top: var(--space-4);
   overflow: hidden;
   border: 1px solid var(--color-line);
   border-radius: var(--radius-md);
@@ -7,6 +8,37 @@
 
 .body {
   padding: var(--space-5);
+}
+
+.head {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+}
+
+.headText {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Card opened from favorites: a short accent outline, then back to normal. */
+.highlighted {
+  animation: highlight 2.4s ease-out;
+}
+
+@keyframes highlight {
+  0%,
+  40% {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 2px var(--color-accent);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .highlighted {
+    animation: none;
+    border-color: var(--color-accent);
+  }
 }
 
 .meta {

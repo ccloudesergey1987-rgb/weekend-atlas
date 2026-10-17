@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react'
 import { NavLink } from 'react-router'
+import { HeartIcon } from '../FavoriteButton/HeartIcon'
 import styles from './BottomNav.module.css'
 
 interface NavItem {
@@ -55,11 +56,7 @@ const items: NavItem[] = [
   {
     to: '/favorites',
     label: 'Избранное',
-    icon: (
-      <svg {...iconProps}>
-        <path d="M6 3h12v18l-6-4.5L6 21z" />
-      </svg>
-    ),
+    icon: <HeartIcon />,
   },
 ]
 

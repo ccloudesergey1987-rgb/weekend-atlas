@@ -2,7 +2,7 @@
   "cityId": "barcelona",
   "places": [
     {
-      "id": "example-tapas-born",
+      "id": "barcelona/example-tapas-born",
       "type": "tapas",
       "name": "Пример: тапас-бар в Борне",
       "isExample": true,
@@ -28,7 +28,7 @@
       "partnerUrl": null
     },
     {
-      "id": "example-bar-born",
+      "id": "barcelona/example-bar-born",
       "type": "bar",
       "name": "Пример: бар с вермутом",
       "isExample": true,
@@ -49,7 +49,7 @@
       "partnerUrl": null
     },
     {
-      "id": "example-market-gothic",
+      "id": "barcelona/example-market-gothic",
       "type": "market",
       "name": "Пример: городской рынок",
       "isExample": true,
@@ -70,7 +70,7 @@
       "partnerUrl": null
     },
     {
-      "id": "example-cafe-gothic",
+      "id": "barcelona/example-cafe-gothic",
       "type": "cafe",
       "name": "Пример: кофейня у собора",
       "isExample": true,
@@ -91,7 +91,7 @@
       "partnerUrl": null
     },
     {
-      "id": "example-restaurant-barceloneta",
+      "id": "barcelona/example-restaurant-barceloneta",
       "type": "restaurant",
       "name": "Пример: ресторан с морепродуктами",
       "isExample": true,
@@ -117,7 +117,7 @@
       "partnerUrl": null
     },
     {
-      "id": "example-restaurant-eixample",
+      "id": "barcelona/example-restaurant-eixample",
       "type": "restaurant",
       "name": "Пример: ресторан каталонской кухни",
       "isExample": true,
@@ -143,7 +143,7 @@
       "partnerUrl": null
     },
     {
-      "id": "example-tapas-eixample",
+      "id": "barcelona/example-tapas-eixample",
       "type": "tapas",
       "name": "Пример: тапас-бар в Эшампле",
       "isExample": true,
@@ -164,7 +164,7 @@
       "partnerUrl": null
     },
     {
-      "id": "example-bakery-eixample",
+      "id": "barcelona/example-bakery-eixample",
       "type": "bakery",
       "name": "Пример: пекарня",
       "isExample": true,
@@ -178,7 +178,7 @@
       "partnerUrl": null
     },
     {
-      "id": "example-cafe-gracia",
+      "id": "barcelona/example-cafe-gracia",
       "type": "cafe",
       "name": "Пример: кофейня на площади",
       "isExample": true,
@@ -199,7 +199,7 @@
       "partnerUrl": null
     },
     {
-      "id": "example-restaurant-gracia",
+      "id": "barcelona/example-restaurant-gracia",
       "type": "restaurant",
       "name": "Пример: семейный ресторан",
       "isExample": true,
@@ -220,7 +220,7 @@
       "partnerUrl": null
     },
     {
-      "id": "example-tapas-poblesec",
+      "id": "barcelona/example-tapas-poblesec",
       "type": "tapas",
       "name": "Пример: тапас-бар в Побле-сек",
       "isExample": true,
@@ -246,7 +246,7 @@
       "partnerUrl": null
     },
     {
-      "id": "example-bar-poblesec",
+      "id": "barcelona/example-bar-poblesec",
       "type": "bar",
       "name": "Пример: винный бар",
       "isExample": true,

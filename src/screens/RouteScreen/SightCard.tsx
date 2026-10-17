@@ -1,6 +1,8 @@
 import { useId, useState } from 'react'
 import type { RoutePoint, VerificationStatus } from '../../types/content'
 import { ExternalLink } from '../../components/ExternalLink/ExternalLink'
+import { FavoriteButton } from '../../components/FavoriteButton/FavoriteButton'
+import { cardElementId } from '../../lib/focusCard'
 import { ImagePlaceholder } from '../../components/ImagePlaceholder/ImagePlaceholder'
 import { VerificationBadge } from '../../components/VerificationBadge/VerificationBadge'
 import { formatPrice } from '../../utils/format'
@@ -32,7 +34,7 @@ function admissionInfo(point: RoutePoint): { text: string; status: VerificationS
   }
 }
 
-export function SightCard({ point }: { point: RoutePoint }) {
+export function SightCard({ point, highlighted = false }: { point: RoutePoint; highlighted?: boolean }) {
   const [expanded, setExpanded] = useState(false)
   const moreId = useId()
 
@@ -42,12 +44,17 @@ export function SightCard({ point }: { point: RoutePoint }) {
   const photo = point.photo ?? { src: null, alt: point.localName ?? point.title, credit: null }
 
   return (
-    <article className={styles.sight}>
+    <article id={cardElementId(point.id)} className={highlighted ? `${styles.sight} ${styles.highlighted}` : styles.sight}>
       <ImagePlaceholder photo={photo} ratio="16 / 9" />
 
       <div className={styles.sightBody}>
-        <PointMeta point={point} />
-        <h3 className={styles.sightTitle}>{point.title}</h3>
+        <div className={styles.sightHead}>
+          <div className={styles.sightHeadText}>
+            <PointMeta point={point} />
+            <h3 className={styles.sightTitle}>{point.title}</h3>
+          </div>
+          <FavoriteButton id={point.id} title={point.title} />
+        </div>
         {point.localName && <p className={styles.localName}>{point.localName}</p>}
         <p className={styles.description}>{point.description}</p>
 

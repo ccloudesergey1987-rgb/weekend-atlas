@@ -1,5 +1,6 @@
 import { useSearchParams } from 'react-router'
 import { getCityContent } from '../../data'
+import { FOCUS_PARAM, useScrollToCard } from '../../lib/focusCard'
 import type { PlaceFilters } from './placeFilters'
 import {
   NO_FILTERS,
@@ -36,6 +37,9 @@ export function PlacesScreen() {
   const knownAreas = route.days.flatMap((d) => d.areas)
   const filters = parseFilters(searchParams, knownAreas)
   const results = filterPlaces(places.places, filters)
+  // Opened from favorites: no filters in the address, so the place is in the list.
+  const focusId = searchParams.get(FOCUS_PARAM)
+  useScrollToCard(focusId)
   // Only types that this city actually has, so there is never a chip leading nowhere.
   const types = PLACE_TYPES.filter((t) => places.places.some((p) => p.type === t.id))
   const onlyExamples = places.places.length > 0 && places.places.every((p) => p.isExample)
@@ -118,7 +122,7 @@ export function PlacesScreen() {
         <ul className={styles.list}>
           {results.map((place) => (
             <li key={place.id}>
-              <PlaceCard place={place} />
+              <PlaceCard place={place} highlighted={place.id === focusId} />
             </li>
           ))}
         </ul>

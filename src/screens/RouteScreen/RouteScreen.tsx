@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
-import { Navigate, NavLink, useParams } from 'react-router'
+import { Navigate, NavLink, useParams, useSearchParams } from 'react-router'
 import { getCityContent } from '../../data'
+import { FOCUS_PARAM, useScrollToCard } from '../../lib/focusCard'
 import type { RouteDay } from '../../types/content'
 import { VerificationBadge } from '../../components/VerificationBadge/VerificationBadge'
 import { formatTransfer, pluralize } from '../../utils/format'
@@ -61,6 +62,8 @@ export function RouteScreen() {
   const params = useParams()
   const dayNumber = Number(params.day)
   const day = route.days.find((d) => d.day === dayNumber)
+  const focusId = useSearchParams()[0].get(FOCUS_PARAM)
+  useScrollToCard(focusId)
 
   useEffect(() => {
     if (day) rememberDay(day.day)
@@ -101,7 +104,11 @@ export function RouteScreen() {
                 className={point.kind === 'sight' ? styles.marker : `${styles.marker} ${styles.markerLight}`}
                 aria-hidden="true"
               />
-              {point.kind === 'sight' ? <SightCard point={point} /> : <BreakCard point={point} />}
+              {point.kind === 'sight' ? (
+                <SightCard point={point} highlighted={point.id === focusId} />
+              ) : (
+                <BreakCard point={point} />
+              )}
             </div>
           </li>
         ))}

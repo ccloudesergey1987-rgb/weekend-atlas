@@ -82,6 +82,10 @@ export interface Transfer extends Provenance {
 }
 
 export interface RoutePoint extends Links {
+  /**
+   * Permanent ID «<cityId>/<name>», e.g. «barcelona/sagrada-familia». Favorites
+   * store it, so never change it and never put the day number in it.
+   */
   id: string
   kind: RoutePointKind
   title: string
@@ -142,6 +146,7 @@ export type PlaceType = 'tapas' | 'restaurant' | 'cafe' | 'market' | 'bar' | 'ba
 export type PriceLevel = 1 | 2 | 3
 
 export interface Place extends Links {
+  /** Permanent ID «<cityId>/<name>», like `RoutePoint.id`. */
   id: string
   type: PlaceType
   name: string
