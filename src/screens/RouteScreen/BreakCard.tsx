@@ -1,6 +1,8 @@
+import { Link } from 'react-router'
 import type { RoutePoint } from '../../types/content'
 import { ExternalLink } from '../../components/ExternalLink/ExternalLink'
 import { VerificationBadge } from '../../components/VerificationBadge/VerificationBadge'
+import { placesNearPath } from '../PlacesScreen/placeFilters'
 import { PointMeta } from './PointMeta'
 import styles from './RouteCards.module.css'
 
@@ -24,6 +26,11 @@ export function BreakCard({ point }: { point: RoutePoint }) {
         </ExternalLink>{' '}
         <VerificationBadge status={point.address.status} />
       </p>
+      {point.kind === 'meal' && point.area && (
+        <Link to={placesNearPath(point.area)} className={styles.nearbyButton}>
+          Где поесть рядом
+        </Link>
+      )}
     </article>
   )
 }

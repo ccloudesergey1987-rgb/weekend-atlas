@@ -83,6 +83,54 @@ describe.each(listCityIds())('данные города %s', (cityId) => {
     }
   })
 
+  it('у каждого заведения есть ссылка на Google Maps без API-ключа', () => {
+    for (const place of content.places.places) {
+      expect(place.mapUrl, place.id).toMatch(/^https:\/\/www\.google\.com\/maps\//)
+      expect(place.mapUrl, place.id).not.toMatch(/[?&]key=/)
+      if (place.website) expect(place.website.value, place.id).toMatch(/^https:\/\//)
+    }
+  })
+
+  it('уровень цены не хранится в данных — он вычисляется из среднего чека', () => {
+    for (const place of content.places.places) {
+      expect(place, place.id).not.toHaveProperty('priceLevel')
+    }
+  })
+
+  describe('районы маршрута и заведений называются одинаково', () => {
+    const routeAreas = new Set(content.route.days.flatMap((d) => d.areas))
+    const placeAreas = new Set(content.places.places.map((p) => p.area))
+
+    it('район каждого заведения есть среди районов маршрута', () => {
+      for (const place of content.places.places) {
+        expect(routeAreas, `${place.id}: «${place.area}»`).toContain(place.area)
+      }
+    })
+
+    it('у каждого обеда в маршруте указан район из списка районов его дня', () => {
+      for (const day of content.route.days) {
+        for (const point of day.points.filter((p) => p.kind === 'meal')) {
+          expect(point.area, point.id).toBeTruthy()
+          expect(day.areas, `${point.id}: «${point.area}»`).toContain(point.area)
+        }
+      }
+    })
+
+    it('у точки маршрута с районом он есть в списке районов её дня', () => {
+      for (const day of content.route.days) {
+        for (const point of day.points.filter((p) => p.area !== undefined)) {
+          expect(day.areas, `${point.id}: «${point.area}»`).toContain(point.area)
+        }
+      }
+    })
+
+    it('для каждого обеда в маршруте есть хотя бы одно заведение в том же районе', () => {
+      for (const point of points.filter((p) => p.kind === 'meal')) {
+        expect(placeAreas, `${point.id}: «${point.area}»`).toContain(point.area)
+      }
+    })
+  })
+
   it('примеры заведений явно помечены в названии', () => {
     for (const place of content.places.places.filter((p) => p.isExample)) {
       expect(place.name, place.id).toMatch(/^Пример:/)

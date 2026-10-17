@@ -94,6 +94,11 @@ export interface RoutePoint extends Links {
   time?: string
   /** Suggested duration in minutes. */
   durationMin?: number
+  /**
+   * Neighbourhood from `RouteDay.areas`. Required for meals: «Где поесть рядом»
+   * opens the places screen filtered by it, so it must match `Place.area`.
+   */
+  area?: string
   /** For meals and free time — the area or square, not a specific venue. */
   address: Fact<string>
   /** Every route point must open on the map. */
@@ -130,7 +135,10 @@ export interface Route {
 
 export type PlaceType = 'tapas' | 'restaurant' | 'cafe' | 'market' | 'bar' | 'bakery'
 
-/** 1 — недорого, 2 — средне, 3 — дорого. */
+/**
+ * 1 — недорого (€), 2 — средне (€€), 3 — дорого (€€€).
+ * Never stored in JSON: computed from `Place.price` in src/utils/priceLevel.ts.
+ */
 export type PriceLevel = 1 | 2 | 3
 
 export interface Place extends Links {
@@ -140,11 +148,13 @@ export interface Place extends Links {
   /** True for illustrative entries that are not real venues. */
   isExample: boolean
   description: string
+  /** Must match a name from `RouteDay.areas` exactly, e.g. «Борн». */
   area: string
-  priceLevel: PriceLevel
-  /** Average bill per person. */
+  /** Approximate average bill per person; null — «Цена уточняется». */
   price: Price | null
   address: Fact<string> | null
+  /** Every place must open on the map. */
+  mapUrl: string
   openingHours: Fact<string> | null
   photo?: Photo
 }

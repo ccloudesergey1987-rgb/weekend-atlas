@@ -176,3 +176,23 @@
   margin-top: var(--space-3);
   font-size: var(--text-sm);
 }
+
+.nearbyButton {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  margin-top: var(--space-3);
+  padding: 0 var(--space-4);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-pill);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--color-text);
+  background: var(--color-surface);
+  transition: border-color var(--duration-fast);
+}
+
+.nearbyButton:hover {
+  border-color: var(--color-text-muted);
+}
