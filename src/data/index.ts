@@ -26,6 +26,10 @@ const cities: Record<string, CityContent> = {
 /** The MVP has a single city; city selection is out of scope. */
 export const DEFAULT_CITY_ID = 'barcelona'
 
+export function listCityIds(): string[] {
+  return Object.keys(cities)
+}
+
 export function getCityContent(cityId: string = DEFAULT_CITY_ID): CityContent {
   const content = cities[cityId]
   if (!content) throw new Error(`Unknown city: ${cityId}`)

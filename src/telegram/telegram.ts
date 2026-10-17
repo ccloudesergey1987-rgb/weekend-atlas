@@ -26,6 +26,7 @@ interface TelegramWebApp {
   colorScheme: 'light' | 'dark'
   ready(): void
   expand(): void
+  openLink(url: string): void
   isVersionAtLeast(version: string): boolean
   setHeaderColor(color: string): void
   setBackgroundColor(color: string): void
@@ -139,6 +140,18 @@ export function initTelegram(): void {
 /** True once the app is confirmed to be running inside Telegram. */
 export function isInTelegram(): boolean {
   return webApp !== null
+}
+
+/**
+ * Open an external URL: via Telegram's in-app browser inside Telegram,
+ * in a new tab otherwise.
+ */
+export function openExternalLink(url: string): void {
+  if (webApp) {
+    webApp.openLink(url)
+    return
+  }
+  window.open(url, '_blank', 'noopener,noreferrer')
 }
 
 /**

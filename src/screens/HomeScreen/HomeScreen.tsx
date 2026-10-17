@@ -1,15 +1,8 @@
 import { Link } from 'react-router'
 import { ImagePlaceholder } from '../../components/ImagePlaceholder/ImagePlaceholder'
 import { getCityContent } from '../../data'
+import { pluralize } from '../../utils/format'
 import styles from './HomeScreen.module.css'
-
-function pluralize(n: number, forms: [string, string, string]): string {
-  const mod10 = n % 10
-  const mod100 = n % 100
-  if (mod10 === 1 && mod100 !== 11) return forms[0]
-  if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) return forms[1]
-  return forms[2]
-}
 
 export function HomeScreen() {
   const { city, route } = getCityContent()

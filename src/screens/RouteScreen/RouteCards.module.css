@@ -1,0 +1,178 @@
+/* Shared text */
+
+.meta {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text-muted);
+}
+
+.metaPart {
+  white-space: nowrap;
+}
+
+.description {
+  margin-top: var(--space-2);
+  color: var(--color-text-muted);
+}
+
+.sightTitle,
+.breakTitle {
+  margin-top: var(--space-2);
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+.inlineLink {
+  color: var(--color-text);
+  text-decoration: underline;
+  text-decoration-color: var(--color-line);
+  text-underline-offset: 3px;
+  overflow-wrap: anywhere;
+}
+
+.inlineLink:hover {
+  text-decoration-color: currentColor;
+}
+
+/* Sight card */
+
+.sight {
+  overflow: hidden;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+}
+
+.sightBody {
+  padding: var(--space-5) var(--space-5) var(--space-5);
+}
+
+.sightTitle {
+  font-size: var(--text-xl);
+  line-height: var(--leading-snug);
+}
+
+.localName {
+  margin-top: 2px;
+  font-size: var(--text-sm);
+  font-style: italic;
+  color: var(--color-text-muted);
+  overflow-wrap: break-word;
+}
+
+.facts {
+  display: grid;
+  gap: var(--space-2);
+  margin: var(--space-4) 0 0;
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-line);
+  font-size: var(--text-sm);
+}
+
+.fact {
+  display: grid;
+  grid-template-columns: 6.5rem 1fr;
+  gap: var(--space-3);
+}
+
+.fact dt {
+  color: var(--color-text-muted);
+}
+
+.fact dd {
+  margin: 0;
+  overflow-wrap: break-word;
+}
+
+.more {
+  margin-top: var(--space-4);
+}
+
+.more > p {
+  line-height: var(--leading-normal);
+}
+
+.moreToggle {
+  margin-top: var(--space-3);
+  padding: var(--space-1) 0;
+  border: 0;
+  font: inherit;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-accent);
+  background: none;
+  cursor: pointer;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+}
+
+.buttonPrimary,
+.buttonSecondary {
+  display: inline-flex;
+  flex: 1 1 10rem;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 var(--space-4);
+  border-radius: var(--radius-pill);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  transition: opacity var(--duration-fast), border-color var(--duration-fast);
+}
+
+.buttonPrimary {
+  color: var(--color-accent-contrast);
+  background: var(--color-text);
+}
+
+.buttonPrimary:hover {
+  opacity: 0.88;
+}
+
+.buttonSecondary {
+  border: 1px solid var(--color-line);
+  color: var(--color-text);
+}
+
+.buttonSecondary:hover {
+  border-color: var(--color-text-muted);
+}
+
+.note {
+  margin-top: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+/* Break card: meals and free time */
+
+.break {
+  padding: var(--space-4) var(--space-5);
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--color-placeholder-a) 45%, transparent);
+}
+
+.breakKind {
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-caps);
+}
+
+.breakTitle {
+  font-size: var(--text-lg);
+  line-height: var(--leading-snug);
+}
+
+.breakFooter {
+  margin-top: var(--space-3);
+  font-size: var(--text-sm);
+}

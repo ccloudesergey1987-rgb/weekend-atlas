@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { HashRouter, Navigate, Route, Routes, useLocation } from 'react-router'
 import { AppLayout } from './AppLayout'
 import { HomeScreen } from '../screens/HomeScreen/HomeScreen'
-import { RouteScreen } from '../screens/RouteScreen'
+import { RouteIndexRedirect, RouteScreen } from '../screens/RouteScreen/RouteScreen'
 import { PlacesScreen } from '../screens/PlacesScreen'
 import { BudgetScreen } from '../screens/BudgetScreen'
 import { FavoritesScreen } from '../screens/FavoritesScreen'
@@ -24,7 +24,8 @@ export function App() {
       <Routes>
         <Route index element={<HomeScreen />} />
         <Route element={<AppLayout />}>
-          <Route path="route" element={<RouteScreen />} />
+          <Route path="route" element={<RouteIndexRedirect />} />
+          <Route path="route/:day" element={<RouteScreen />} />
           <Route path="places" element={<PlacesScreen />} />
           <Route path="budget" element={<BudgetScreen />} />
           <Route path="favorites" element={<FavoritesScreen />} />

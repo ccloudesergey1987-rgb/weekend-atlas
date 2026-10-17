@@ -70,6 +70,17 @@ export interface City {
 /** `sight` — attraction, `meal` — food break, `free` — free time / walk. */
 export type RoutePointKind = 'sight' | 'meal' | 'free'
 
+/** `unknown` — not yet known whether entry is paid. */
+export type Admission = 'paid' | 'free' | 'unknown'
+
+export type TransferMode = 'walk' | 'metro' | 'bus' | 'taxi'
+
+/** How to get to a point from the previous one. Time is an estimate. */
+export interface Transfer extends Provenance {
+  mode: TransferMode
+  minutes: number
+}
+
 export interface RoutePoint extends Links {
   id: string
   kind: RoutePointKind
@@ -77,13 +88,26 @@ export interface RoutePoint extends Links {
   /** Name in the local language, if different. */
   localName?: string
   description: string
+  /** Longer text shown under «Подробнее». */
+  details?: string
   /** Suggested time of day, e.g. «10:00». Not a fact, a planning hint. */
   time?: string
   /** Suggested duration in minutes. */
   durationMin?: number
-  address: Fact<string> | null
+  /** For meals and free time — the area or square, not a specific venue. */
+  address: Fact<string>
+  /** Every route point must open on the map. */
+  mapUrl: string
   openingHours: Fact<string> | null
+  admission: Fact<Admission>
+  /** Entry price per adult; null — «Цена уточняется». */
   price: Price | null
+  /** Official ticket page. Required for paid entry unless `ticketsNote` explains why not. */
+  tickets: Fact<string> | null
+  /** Why there is no ticket link, e.g. «Билеты продаются на входе». */
+  ticketsNote?: string
+  /** Absent for the first point of the day. */
+  transferFromPrevious?: Transfer
   photo?: Photo
 }
 
