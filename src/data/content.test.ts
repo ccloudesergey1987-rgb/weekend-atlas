@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { getCityContent, listCityIds } from './index'
 
-const STATUSES = ['verified', 'needs_check']
+const STATUSES = ['verified', 'needs_check', 'estimate']
 const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/
 /** «barcelona/sagrada-familia»: city prefix, then a name without the day number. */
 const STABLE_ID = /^[a-z0-9-]+\/[a-z0-9-]+$/
@@ -95,6 +95,63 @@ describe.each(listCityIds())('данные города %s', (cityId) => {
       if (item.status === 'needs_check' && item.checkedAt !== null) {
         expect(String(item.note ?? '').trim(), `${path}: нет причины`).not.toBe('')
       }
+    }
+  })
+
+  it('«оценка редакции» — только для переходов между точками и такси по тарифу, и с пояснением', () => {
+    const allowed = new Set<unknown>([
+      ...points.map((p) => p.transferFromPrevious),
+      ...content.budget.transfer.options.filter((o) => o.pricing === 'per_vehicle').map((o) => o.price),
+    ])
+    for (const { path, item } of findProvenance(content)) {
+      if (item.status !== 'estimate') continue
+      expect(allowed.has(item), `${path}: цены, часы и адреса не могут быть оценкой`).toBe(true)
+      expect(String(item.note ?? '').trim(), `${path}: нет пояснения к оценке`).not.toBe('')
+    }
+  })
+
+  describe('дни закрытия', () => {
+    const WEEKDAYS = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']
+    const withClosures = points.filter((p) => p.closures?.length)
+
+    it('у каждой точки с днями закрытия есть альтернатива или подсказка, как перестроить день', () => {
+      for (const p of withClosures) {
+        for (const c of p.closures!) {
+          expect(Boolean(c.alternative) || Boolean(c.advice?.trim()), `${p.id}: ${c.days}`).toBe(true)
+        }
+      }
+    })
+
+    it('дни недели корректны, а закрытие взято из проверенных часов', () => {
+      for (const p of withClosures) {
+        for (const c of p.closures!) {
+          expect(c.days.length, p.id).toBeGreaterThan(0)
+          for (const d of c.days) expect(WEEKDAYS, p.id).toContain(d)
+          expect(['closed', 'partial'], p.id).toContain(c.kind)
+          expect(c.text.trim(), p.id).not.toBe('')
+          expect(c.source, p.id).toMatch(/^https:\/\//)
+        }
+        const days = p.closures!.flatMap((c) => c.days)
+        expect(new Set(days).size, `${p.id}: день повторяется`).toBe(days.length)
+      }
+    })
+
+    it('альтернатива — реальное место с адресом, часами и ссылкой на карту', () => {
+      for (const p of withClosures) {
+        for (const alt of p.closures!.flatMap((c) => (c.alternative ? [c.alternative] : []))) {
+          expect(alt.title.trim(), p.id).not.toBe('')
+          expect(alt.address.value.trim(), p.id).not.toBe('')
+          expect(alt.openingHours.value.trim(), p.id).not.toBe('')
+          expect(alt.mapUrl, p.id).toMatch(/^https:\/\/www\.google\.com\/maps\//)
+          if (alt.website) expect(alt.website.value, p.id).toMatch(/^https:\/\//)
+        }
+      }
+    })
+  })
+
+  it('ссылка в подсказке на карточке ведёт на https', () => {
+    for (const p of points.filter((p) => p.tip?.link)) {
+      expect(p.tip!.link!.url, p.id).toMatch(/^https:\/\//)
     }
   })
 

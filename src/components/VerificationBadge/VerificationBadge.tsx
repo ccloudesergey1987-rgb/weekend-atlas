@@ -5,7 +5,7 @@ interface Props {
   status: VerificationStatus
 }
 
-/** Small «Требует проверки» label. Renders nothing for verified data. */
+/** Small «Требует проверки» label. Renders nothing for verified data and editorial estimates. */
 export function VerificationBadge({ status }: Props) {
   if (status !== 'needs_check') return null
   return (

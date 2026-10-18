@@ -12,7 +12,7 @@ import {
   sanitizeSelection,
 } from '../../lib/budget'
 import { readJson, writeJson } from '../../lib/storage'
-import type { BudgetSettings, TransferOption } from '../../types/content'
+import type { BudgetSettings, Price, TransferOption } from '../../types/content'
 import { currencySymbol, pluralize } from '../../utils/format'
 import { VerificationBadge } from '../../components/VerificationBadge/VerificationBadge'
 import { AmountField, Choice, Section, Stepper } from './BudgetControls'
@@ -47,6 +47,13 @@ function lineValue(line: BudgetLine, settings: BudgetSettings): string {
   if (line.id === 'flights' || line.id === 'lodging') return 'добавьте сами'
   if (line.id === 'extra') return 'не указано'
   return 'не учтено'
+}
+
+/** «Требует проверки» for unverified prices, a quiet «оценка редакции» for estimates. */
+function PriceStatus({ price }: { price: Price | null }) {
+  if (!price) return null
+  if (price.status === 'estimate') return <span className={styles.priceUnit}>оценка редакции</span>
+  return <VerificationBadge status={price.status} />
 }
 
 /** «на человека, туда и обратно», «за машину, в одну сторону». */
@@ -132,7 +139,7 @@ export function BudgetScreen() {
             description={o.description}
             price={formatUnitPrice(o.price)}
             muted={!o.price}
-            priceExtra={o.price && <VerificationBadge status={o.price.status} />}
+            priceExtra=<PriceStatus price={o.price} />
           />
         ))}
       </Section>
@@ -148,7 +155,7 @@ export function BudgetScreen() {
             description={`День ${s.day}`}
             price={formatUnitPrice(s.price)}
             muted={!s.price}
-            priceExtra={s.price && <VerificationBadge status={s.price.status} />}
+            priceExtra={<PriceStatus price={s.price} />}
           />
         ))}
         {result.unpricedSights > 0 && <p className={styles.notice}>{unpricedText(result.unpricedSights)}</p>}
@@ -166,7 +173,7 @@ export function BudgetScreen() {
             description={o.description}
             price={formatUnitPrice(o.price)}
             muted={!o.price}
-            priceExtra={o.price && <VerificationBadge status={o.price.status} />}
+            priceExtra=<PriceStatus price={o.price} />
           />
         ))}
         {result.lines.find((l) => l.id === 'transport')?.cents === null && (
@@ -191,7 +198,7 @@ export function BudgetScreen() {
                 {o.price && o.price.max > 0 && (
                   <span className={styles.priceUnit}>{transferUnitText(o)}</span>
                 )}
-                {o.price && <VerificationBadge status={o.price.status} />}
+                <PriceStatus price={o.price} />
               </>
             }
           />

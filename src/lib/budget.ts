@@ -391,7 +391,7 @@ export function formatRange(euros: Range, currency: Currency): string {
   return `${formatNumber(euros.min)}–${formatNumber(euros.max)} ${symbol}`
 }
 
-/** Unit price of an option, kept exact: «7,25–7,45 €», «13 €», «Цена уточняется». */
+/** Unit price of an option, kept exact: «7,25–7,45 €», «13 €», «≈ 25–38 €» for an estimate, «Цена уточняется». */
 export function formatUnitPrice(price: Price | null): string {
   if (!price) return 'Цена уточняется'
   const money = (amount: number) => {
@@ -401,6 +401,7 @@ export function formatUnitPrice(price: Price | null): string {
     return rest === 0 ? whole : `${whole},${String(rest).padStart(2, '0')}`
   }
   const symbol = currencySymbol(price.currency)
-  if (price.min === price.max) return `${money(price.min)} ${symbol}`
-  return `${money(price.min)}–${money(price.max)} ${symbol}`
+  const approx = price.status === 'estimate' ? '≈ ' : ''
+  if (price.min === price.max) return `${approx}${money(price.min)} ${symbol}`
+  return `${approx}${money(price.min)}–${money(price.max)} ${symbol}`
 }

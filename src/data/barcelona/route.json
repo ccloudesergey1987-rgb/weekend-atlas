@@ -61,6 +61,30 @@
             "checkedAt": "2026-10-18",
             "note": "Официальный сайт не указывает, нужна ли бронь."
           },
+          "closures": [
+            {
+              "days": [
+                "sun"
+              ],
+              "kind": "partial",
+              "text": "В воскресенье и религиозные праздники туристов пускают только с 14:00 до 17:00 (вход до 16:30)",
+              "advice": "Как перестроить день в воскресенье: начните с прогулки по Готическому кварталу и парка Сьютаделья, пообедайте в Борне, около 14:30 зайдите в Санта-Мария-дель-Мар, к 15:15 — в собор (последний вход в 16:30), а к морю идите около 16:30.",
+              "status": "verified",
+              "source": "https://catedralbcn.org/visita-turistica/horaris-visita-turistica/",
+              "checkedAt": "2026-10-18"
+            },
+            {
+              "days": [
+                "sat"
+              ],
+              "kind": "partial",
+              "text": "В субботу и накануне религиозных праздников — до 17:15 (вход до 16:30)",
+              "advice": "Утреннее время по маршруту подходит, менять ничего не нужно.",
+              "status": "verified",
+              "source": "https://catedralbcn.org/visita-turistica/horaris-visita-turistica/",
+              "checkedAt": "2026-10-18"
+            }
+          ],
           "website": {
             "value": "https://catedralbcn.org",
             "status": "verified",
@@ -100,9 +124,10 @@
           "transferFromPrevious": {
             "mode": "walk",
             "minutes": 5,
-            "status": "needs_check",
+            "status": "estimate",
             "source": "",
-            "checkedAt": null
+            "checkedAt": null,
+            "note": "Время и способ перехода — оценка редакции: официального источника для этого нет."
           }
         },
         {
@@ -153,6 +178,19 @@
             "source": "https://www.santamariadelmar.barcelona/ca/horaris-i-tarifes/",
             "checkedAt": "2026-10-18"
           },
+          "closures": [
+            {
+              "days": [
+                "sun"
+              ],
+              "kind": "partial",
+              "text": "В воскресенье культурный визит — только с 13:00 до 18:00 (вход до 17:30)",
+              "advice": "Как перестроить день в воскресенье: начните с прогулки по Готическому кварталу и парка Сьютаделья, пообедайте в Борне, около 14:30 зайдите в Санта-Мария-дель-Мар, к 15:15 — в собор (последний вход в 16:30), а к морю идите около 16:30.",
+              "status": "verified",
+              "source": "https://www.santamariadelmar.barcelona/ca/horaris-i-tarifes/",
+              "checkedAt": "2026-10-18"
+            }
+          ],
           "website": {
             "value": "https://www.santamariadelmar.barcelona",
             "status": "verified",
@@ -163,9 +201,10 @@
           "transferFromPrevious": {
             "mode": "walk",
             "minutes": 10,
-            "status": "needs_check",
+            "status": "estimate",
             "source": "",
-            "checkedAt": null
+            "checkedAt": null,
+            "note": "Время и способ перехода — оценка редакции: официального источника для этого нет."
           }
         },
         {
@@ -199,9 +238,10 @@
           "transferFromPrevious": {
             "mode": "walk",
             "minutes": 5,
-            "status": "needs_check",
+            "status": "estimate",
             "source": "",
-            "checkedAt": null
+            "checkedAt": null,
+            "note": "Время и способ перехода — оценка редакции: официального источника для этого нет."
           }
         },
         {
@@ -239,9 +279,10 @@
           "transferFromPrevious": {
             "mode": "walk",
             "minutes": 10,
-            "status": "needs_check",
+            "status": "estimate",
             "source": "",
-            "checkedAt": null
+            "checkedAt": null,
+            "note": "Время и способ перехода — оценка редакции: официального источника для этого нет."
           }
         },
         {
@@ -275,9 +316,10 @@
           "transferFromPrevious": {
             "mode": "walk",
             "minutes": 20,
-            "status": "needs_check",
+            "status": "estimate",
             "source": "",
-            "checkedAt": null
+            "checkedAt": null,
+            "note": "Время и способ перехода — оценка редакции: официального источника для этого нет."
           }
         }
       ]
@@ -339,6 +381,26 @@
             "source": "https://sagradafamilia.org/horaris-com-arribar",
             "checkedAt": "2026-10-18"
           },
+          "closures": [
+            {
+              "days": [
+                "sun"
+              ],
+              "kind": "partial",
+              "text": "В воскресенье открывается только в 10:30",
+              "advice": "Возьмите билет на 10:30, а прогулку по Эшампле сократите до получаса — обед в 13:00 останется на месте.",
+              "status": "verified",
+              "source": "https://sagradafamilia.org/horaris-com-arribar",
+              "checkedAt": "2026-10-18"
+            }
+          ],
+          "tip": {
+            "text": "Иногда закрывается на церемонии — проверьте на официальном сайте перед визитом.",
+            "link": {
+              "url": "https://sagradafamilia.org/horaris-com-arribar",
+              "label": "Часы работы на sagradafamilia.org"
+            }
+          },
           "website": {
             "value": "https://sagradafamilia.org",
             "status": "verified",
@@ -378,9 +440,10 @@
           "transferFromPrevious": {
             "mode": "walk",
             "minutes": 5,
-            "status": "needs_check",
+            "status": "estimate",
             "source": "",
-            "checkedAt": null
+            "checkedAt": null,
+            "note": "Время и способ перехода — оценка редакции: официального источника для этого нет."
           }
         },
         {
@@ -414,9 +477,10 @@
           "transferFromPrevious": {
             "mode": "walk",
             "minutes": 10,
-            "status": "needs_check",
+            "status": "estimate",
             "source": "",
-            "checkedAt": null
+            "checkedAt": null,
+            "note": "Время и способ перехода — оценка редакции: официального источника для этого нет."
           }
         },
         {
@@ -480,9 +544,10 @@
           "transferFromPrevious": {
             "mode": "walk",
             "minutes": 15,
-            "status": "needs_check",
+            "status": "estimate",
             "source": "",
-            "checkedAt": null
+            "checkedAt": null,
+            "note": "Время и способ перехода — оценка редакции: официального источника для этого нет."
           }
         },
         {
@@ -547,9 +612,10 @@
           "transferFromPrevious": {
             "mode": "walk",
             "minutes": 10,
-            "status": "needs_check",
+            "status": "estimate",
             "source": "",
-            "checkedAt": null
+            "checkedAt": null,
+            "note": "Время и способ перехода — оценка редакции: официального источника для этого нет."
           }
         },
         {
@@ -582,9 +648,10 @@
           "transferFromPrevious": {
             "mode": "walk",
             "minutes": 5,
-            "status": "needs_check",
+            "status": "estimate",
             "source": "",
-            "checkedAt": null
+            "checkedAt": null,
+            "note": "Время и способ перехода — оценка редакции: официального источника для этого нет."
           }
         }
       ]
@@ -689,9 +756,10 @@
           "transferFromPrevious": {
             "mode": "walk",
             "minutes": 20,
-            "status": "needs_check",
+            "status": "estimate",
             "source": "",
-            "checkedAt": null
+            "checkedAt": null,
+            "note": "Время и способ перехода — оценка редакции: официального источника для этого нет."
           }
         },
         {
@@ -725,9 +793,10 @@
           "transferFromPrevious": {
             "mode": "walk",
             "minutes": 5,
-            "status": "needs_check",
+            "status": "estimate",
             "source": "",
-            "checkedAt": null
+            "checkedAt": null,
+            "note": "Время и способ перехода — оценка редакции: официального источника для этого нет."
           }
         },
         {
@@ -779,6 +848,91 @@
             "source": "https://www.museunacional.cat/ca/horaris-i-preus",
             "checkedAt": "2026-10-18"
           },
+          "closures": [
+            {
+              "days": [
+                "mon"
+              ],
+              "kind": "closed",
+              "text": "В понедельник закрыто (кроме праздников)",
+              "alternative": {
+                "title": "CaixaForum Barcelona",
+                "description": "Выставочный центр в бывшей текстильной фабрике Казарамона архитектора Пуч-и-Кадафалка, у подножия Монжуика — в нескольких минутах от МНАК.",
+                "address": {
+                  "value": "Av. de Francesc Ferrer i Guàrdia, 6-8, 08038 Barcelona",
+                  "status": "verified",
+                  "source": "https://caixaforum.org/ca/barcelona/info-centre",
+                  "checkedAt": "2026-10-18"
+                },
+                "mapUrl": "https://www.google.com/maps/search/?api=1&query=CaixaForum+Barcelona",
+                "openingHours": {
+                  "value": "Пн–вс и праздники 10:00–20:00. Закрыто 25 декабря, 1 и 6 января. Проверьте перед визитом.",
+                  "status": "verified",
+                  "source": "https://caixaforum.org/ca/barcelona/info-centre",
+                  "checkedAt": "2026-10-18"
+                },
+                "price": {
+                  "min": 6,
+                  "max": 6,
+                  "currency": "EUR",
+                  "status": "verified",
+                  "source": "https://caixaforum.org/ca/barcelona/info-centre",
+                  "checkedAt": "2026-10-18"
+                },
+                "website": {
+                  "value": "https://caixaforum.org/ca/barcelona",
+                  "status": "verified",
+                  "source": "https://caixaforum.org/ca/barcelona/info-centre",
+                  "checkedAt": "2026-10-18"
+                }
+              },
+              "status": "verified",
+              "source": "https://www.museunacional.cat/ca/horaris-i-preus",
+              "checkedAt": "2026-10-18"
+            },
+            {
+              "days": [
+                "sun"
+              ],
+              "kind": "partial",
+              "text": "В воскресенье — только до 15:00",
+              "alternative": {
+                "title": "CaixaForum Barcelona",
+                "description": "Выставочный центр в бывшей текстильной фабрике Казарамона архитектора Пуч-и-Кадафалка, у подножия Монжуика — в нескольких минутах от МНАК.",
+                "address": {
+                  "value": "Av. de Francesc Ferrer i Guàrdia, 6-8, 08038 Barcelona",
+                  "status": "verified",
+                  "source": "https://caixaforum.org/ca/barcelona/info-centre",
+                  "checkedAt": "2026-10-18"
+                },
+                "mapUrl": "https://www.google.com/maps/search/?api=1&query=CaixaForum+Barcelona",
+                "openingHours": {
+                  "value": "Пн–вс и праздники 10:00–20:00. Закрыто 25 декабря, 1 и 6 января. Проверьте перед визитом.",
+                  "status": "verified",
+                  "source": "https://caixaforum.org/ca/barcelona/info-centre",
+                  "checkedAt": "2026-10-18"
+                },
+                "price": {
+                  "min": 6,
+                  "max": 6,
+                  "currency": "EUR",
+                  "status": "verified",
+                  "source": "https://caixaforum.org/ca/barcelona/info-centre",
+                  "checkedAt": "2026-10-18"
+                },
+                "website": {
+                  "value": "https://caixaforum.org/ca/barcelona",
+                  "status": "verified",
+                  "source": "https://caixaforum.org/ca/barcelona/info-centre",
+                  "checkedAt": "2026-10-18"
+                }
+              },
+              "advice": "Или поменяйте местами утро и вечер: Монжуик с музеем с утра, парк Гуэль — после обеда по билету на время.",
+              "status": "verified",
+              "source": "https://www.museunacional.cat/ca/horaris-i-preus",
+              "checkedAt": "2026-10-18"
+            }
+          ],
           "website": {
             "value": "https://www.museunacional.cat",
             "status": "verified",
@@ -789,9 +943,10 @@
           "transferFromPrevious": {
             "mode": "metro",
             "minutes": 35,
-            "status": "needs_check",
+            "status": "estimate",
             "source": "",
-            "checkedAt": null
+            "checkedAt": null,
+            "note": "Время и способ перехода — оценка редакции: официального источника для этого нет."
           }
         },
         {
@@ -855,9 +1010,10 @@
           "transferFromPrevious": {
             "mode": "bus",
             "minutes": 20,
-            "status": "needs_check",
+            "status": "estimate",
             "source": "",
-            "checkedAt": null
+            "checkedAt": null,
+            "note": "Время и способ перехода — оценка редакции: официального источника для этого нет."
           }
         },
         {
@@ -891,9 +1047,10 @@
           "transferFromPrevious": {
             "mode": "walk",
             "minutes": 25,
-            "status": "needs_check",
+            "status": "estimate",
             "source": "",
-            "checkedAt": null
+            "checkedAt": null,
+            "note": "Время и способ перехода — оценка редакции: официального источника для этого нет."
           }
         }
       ]

@@ -7,6 +7,7 @@ import { ImagePlaceholder } from '../../components/ImagePlaceholder/ImagePlaceho
 import { VerificationBadge } from '../../components/VerificationBadge/VerificationBadge'
 import { formatPrice } from '../../utils/format'
 import { PointMeta } from './PointMeta'
+import { ClosureHints } from './ClosureHints'
 import styles from './RouteCards.module.css'
 
 function worstStatus(...statuses: (VerificationStatus | undefined)[]): VerificationStatus {
@@ -72,6 +73,22 @@ export function SightCard({ point, highlighted = false }: { point: RoutePoint; h
             </dd>
           </div>
         </dl>
+
+        {point.closures && point.closures.length > 0 && <ClosureHints closures={point.closures} />}
+
+        {point.tip && (
+          <p className={styles.tip}>
+            {point.tip.text}
+            {point.tip.link && (
+              <>
+                {' '}
+                <ExternalLink href={point.tip.link.url} className={styles.inlineLink}>
+                  {point.tip.link.label}
+                </ExternalLink>
+              </>
+            )}
+          </p>
+        )}
 
         {hasMore && expanded && (
           <div id={moreId} className={styles.more}>

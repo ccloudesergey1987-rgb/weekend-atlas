@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { Navigate, NavLink, useParams, useSearchParams } from 'react-router'
 import { getCityContent } from '../../data'
 import { FOCUS_PARAM, useScrollToCard } from '../../lib/focusCard'
-import type { RouteDay } from '../../types/content'
+import type { RouteDay, Transfer } from '../../types/content'
 import { VerificationBadge } from '../../components/VerificationBadge/VerificationBadge'
 import { formatTransfer, pluralize } from '../../utils/format'
 import { SightCard } from './SightCard'
@@ -32,6 +32,23 @@ export function RouteIndexRedirect() {
   const { route } = getCityContent()
   const day = route.days.some((d) => d.day === lastDay()) ? lastDay() : route.days[0].day
   return <Navigate to={`/route/${day}`} replace />
+}
+
+/** «≈ 15 мин пешком»; an editorial estimate explains itself on tap instead of a warning label. */
+function TransferLine({ transfer }: { transfer: Transfer }) {
+  if (transfer.status === 'estimate') {
+    return (
+      <details className={styles.transfer}>
+        <summary className={styles.transferSummary}>{formatTransfer(transfer)}</summary>
+        <span className={styles.estimateNote}>Оценка редакции</span>
+      </details>
+    )
+  }
+  return (
+    <p className={styles.transfer}>
+      <span>{formatTransfer(transfer)}</span> <VerificationBadge status={transfer.status} />
+    </p>
+  )
 }
 
 function DaySummary({ day }: { day: RouteDay }) {
@@ -94,12 +111,7 @@ export function RouteScreen() {
       <ol className={styles.timeline}>
         {day.points.map((point) => (
           <li key={point.id} className={styles.step}>
-            {point.transferFromPrevious && (
-              <p className={styles.transfer}>
-                <span>{formatTransfer(point.transferFromPrevious)}</span>{' '}
-                <VerificationBadge status={point.transferFromPrevious.status} />
-              </p>
-            )}
+            {point.transferFromPrevious && <TransferLine transfer={point.transferFromPrevious} />}
             <div className={styles.stop}>
               <span
                 className={point.kind === 'sight' ? styles.marker : `${styles.marker} ${styles.markerLight}`}

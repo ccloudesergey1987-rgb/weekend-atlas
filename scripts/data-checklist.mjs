@@ -23,6 +23,7 @@ const FIELD_TITLES = {
   booking: 'Бронь',
   website: 'Сайт',
   transferFromPrevious: 'Переход от предыдущей точки',
+  closure: 'Закрытие',
 }
 const ADMISSION = { paid: 'платный', free: 'бесплатно', unknown: 'неизвестно' }
 const MODES = { walk: 'пешком', metro: 'на метро', bus: 'на автобусе', taxi: 'на такси' }
@@ -58,14 +59,30 @@ function add(group, object, field, fact) {
     status: fact.status,
     source: fact.source,
     checkedAt: fact.checkedAt ?? '—',
-    reason: fact.status === 'needs_check' ? (fact.note ?? defaultReason(field, fact)) : '',
+    reason: fact.status === 'verified' ? '' : (fact.note ?? defaultReason(field, fact)),
   })
 }
 
+const DAYS = { mon: 'пн', tue: 'вт', wed: 'ср', thu: 'чт', fri: 'пт', sat: 'сб', sun: 'вс' }
 for (const day of route.days) {
   for (const p of day.points) {
     const object = `День ${day.day}. ${p.title}`
     for (const field of Object.keys(FIELD_TITLES)) add('Маршрут', object, field, p[field])
+  }
+}
+for (const day of route.days) {
+  for (const p of day.points) {
+    for (const c of p.closures ?? []) {
+      const when = c.days.map((d) => DAYS[d]).join(', ')
+      const object = `${p.title} (${when})`
+      add('Дни закрытия и альтернативы', object, 'closure', { ...c, value: c.text })
+      const alt = c.alternative
+      if (alt) {
+        const name = `${object} → ${alt.title}`
+        for (const field of ['address', 'openingHours', 'price', 'website']) add('Дни закрытия и альтернативы', name, field, alt[field])
+      }
+      if (c.advice) rows.push({ group: 'Дни закрытия и альтернативы', object, field: 'Как перестроить день', value: c.advice, status: 'advice', source: '', checkedAt: '—', reason: '' })
+    }
   }
 }
 for (const p of places.places) {
@@ -85,15 +102,17 @@ for (const [group, options] of budgetGroups) {
 }
 
 const verified = rows.filter((r) => r.status === 'verified').length
-const STATUS = { verified: '✅ verified', needs_check: '⚠️ needs_check' }
+const STATUS = { verified: '✅ verified', needs_check: '⚠️ needs_check', estimate: '≈ estimate', advice: '— совет редакции' }
+const estimates = rows.filter((r) => r.status === 'estimate').length
+const facts = rows.filter((r) => r.status !== 'advice')
 
 let md = `# Чек-лист данных: ${city.name}
 
 Файл собирается автоматически из \`src/data/${cityId}/*.json\` командой \`npm run checklist\`. Не правьте его руками — правьте JSON и пересоберите.
 
-Правило: **verified** — значение прямо найдено на официальной странице, источник — точный адрес этой страницы. Всё остальное — **needs_check** с причиной. Часы работы и цены меняются — перед поездкой их стоит перепроверить.
+Правило: **verified** — значение прямо найдено на официальной странице, источник — точный адрес этой страницы. **estimate** — оценка редакции там, где официального источника быть не может (время переходов, такси по официальному тарифу); цены, часы и адреса так не помечаются. Всё остальное — **needs_check** с причиной. Часы работы и цены меняются — перед поездкой их стоит перепроверить.
 
-**Итого:** ${rows.length} значений, проверено ${verified}, требует проверки ${rows.length - verified}.
+**Итого:** ${facts.length} значений: проверено ${verified}, оценка редакции ${estimates}, требует проверки ${facts.length - verified - estimates}.
 `
 for (const group of [...new Set(rows.map((r) => r.group))]) {
   const list = rows.filter((r) => r.group === group)
@@ -106,4 +125,4 @@ for (const group of [...new Set(rows.map((r) => r.group))]) {
 const out = join(root, 'docs/data-checklist.md')
 mkdirSync(dirname(out), { recursive: true })
 writeFileSync(out, md)
-console.log(`docs/data-checklist.md: ${rows.length} values, ${verified} verified`)
+console.log(`docs/data-checklist.md: ${facts.length} values, ${verified} verified, ${estimates} estimate`)

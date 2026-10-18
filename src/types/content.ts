@@ -6,7 +6,13 @@
  * values here: use `null` when something is unknown.
  */
 
-export type VerificationStatus = 'verified' | 'needs_check'
+/**
+ * `verified` — found on an official page; `needs_check` — not confirmed yet;
+ * `estimate` — editorial estimate for values that can have no official source
+ * (walking time between points, a taxi range computed from the official
+ * tariff). Prices, opening hours and addresses are never `estimate`.
+ */
+export type VerificationStatus = 'verified' | 'needs_check' | 'estimate'
 
 /** Where a fact came from and when it was last checked. */
 export interface Provenance {
@@ -15,7 +21,7 @@ export interface Provenance {
   source: string
   /** ISO date (YYYY-MM-DD) of the last check, or null if never checked. */
   checkedAt: string | null
-  /** Why the value is still «needs_check»: site unavailable, sources disagree, etc. */
+  /** Why the value is still «needs_check», or how an «estimate» was made. */
   note?: string
 }
 
@@ -119,9 +125,48 @@ export interface RoutePoint extends Links {
   ticketsNote?: string
   /** Whether tickets must be booked in advance, in plain words. */
   booking?: Fact<string> | null
+  /** Days when the point is closed or open only part of the day, from verified hours. */
+  closures?: Closure[]
+  /** Short practical tip shown on the card, optionally with a link. */
+  tip?: Tip
   /** Absent for the first point of the day. */
   transferFromPrevious?: Transfer
   photo?: Photo
+}
+
+export type Weekday = 'mon' | 'tue' | 'wed' | 'thu' | 'fri' | 'sat' | 'sun'
+
+/** A real place nearby that is open when a route point is not. */
+export interface Alternative {
+  title: string
+  localName?: string
+  description: string
+  address: Fact<string>
+  mapUrl: string
+  openingHours: Fact<string>
+  /** Entry price per adult; null — «Цена уточняется». */
+  price: Price | null
+  website: Fact<string> | null
+}
+
+/**
+ * Closed or partly open days. The provenance points to the verified opening
+ * hours it was taken from. Needs an `alternative`, an `advice`, or both.
+ */
+export interface Closure extends Provenance {
+  days: Weekday[]
+  /** `closed` — whole day; `partial` — shorter hours. */
+  kind: 'closed' | 'partial'
+  /** «В понедельник закрыто», «В воскресенье — только 14:00–17:00». */
+  text: string
+  alternative?: Alternative
+  /** How to rebuild the day: without an alternative, or in addition to it. */
+  advice?: string
+}
+
+export interface Tip {
+  text: string
+  link?: { url: string; label: string }
 }
 
 export interface RouteDay {

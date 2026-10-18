@@ -364,6 +364,19 @@ describe('итог', () => {
     expect(formatUnitPrice(null)).toBe('Цена уточняется')
   })
 
+  it('оценка редакции показывается со знаком «≈» и не считается непроверенной ценой', () => {
+    const estimate = eur(25, 38, 'estimate' as VerificationStatus)
+    expect(formatUnitPrice(estimate)).toBe('≈ 25–38 €')
+    expect(formatUnitPrice(eur(30, 30, 'estimate' as VerificationStatus))).toBe('≈ 30 €')
+    const withEstimate: BudgetSettings = {
+      ...settings,
+      transfer: { ...settings.transfer, options: settings.transfer.options.map((o) => (o.id === 'taxi' ? { ...o, price: estimate } : o)) },
+    }
+    const r = calculateBudget({ settings: withEstimate, days: 3, sights, selection: { ...empty, transferId: 'taxi' } })
+    expect(r.lines.find((l) => l.id === 'transfer')!.cents).toEqual({ min: 5000, max: 7600 })
+    expect(r.needsCheck).toBe(false)
+  })
+
   it('пометка «ориентировочно», только если в итог вошли непроверенные цены', () => {
     expect(calc({}).needsCheck).toBe(false)
     expect(calc({ foodId: 'fixed' }).needsCheck).toBe(false)

@@ -119,6 +119,23 @@
   color: var(--color-text-muted);
 }
 
+.transferSummary {
+  cursor: pointer;
+  list-style: none;
+}
+
+.transferSummary::-webkit-details-marker {
+  display: none;
+}
+
+.transfer[open] .transferSummary::after {
+  content: ' ·';
+}
+
+.estimateNote {
+  font-size: var(--text-xs);
+}
+
 .stop {
   position: relative;
   padding-left: var(--rail);
