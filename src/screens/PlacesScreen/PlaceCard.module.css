@@ -123,3 +123,46 @@
 .button:hover {
   border-color: var(--color-text-muted);
 }
+
+.reservation {
+  margin-top: var(--space-3);
+  font-size: var(--text-sm);
+  font-weight: 600;
+}
+
+.muted {
+  color: var(--color-text-muted);
+}
+
+.estimate {
+  margin-top: var(--space-1);
+  color: var(--color-text-muted);
+}
+
+.estimate summary {
+  cursor: pointer;
+  font-size: var(--text-xs);
+}
+
+.estimate p {
+  margin-top: var(--space-1);
+  line-height: var(--leading-normal);
+}
+
+.recommended {
+  margin-top: var(--space-3);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.inlineLink {
+  color: var(--color-text);
+  text-decoration: underline;
+  text-decoration-color: var(--color-line);
+  text-underline-offset: 3px;
+  overflow-wrap: anywhere;
+}
+
+.inlineLink:hover {
+  text-decoration-color: currentColor;
+}

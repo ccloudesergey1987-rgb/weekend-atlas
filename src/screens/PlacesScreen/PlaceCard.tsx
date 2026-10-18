@@ -1,4 +1,4 @@
-import type { Place, VerificationStatus } from '../../types/content'
+import type { Fact, Place, Reservation, VerificationStatus } from '../../types/content'
 import { ExternalLink } from '../../components/ExternalLink/ExternalLink'
 import { FavoriteButton } from '../../components/FavoriteButton/FavoriteButton'
 import { cardElementId } from '../../lib/focusCard'
@@ -9,15 +9,31 @@ import { priceLevel, priceLevelName, priceLevelSymbol } from '../../utils/priceL
 import { placeTypeLabel } from './placeFilters'
 import styles from './PlaceCard.module.css'
 
-/** A missing address is plainly «Уточняется»; a known one carries its verification badge. */
-function addressInfo(place: Place): { text: string; status: VerificationStatus | null } {
-  if (!place.address) return { text: 'Уточняется', status: null }
-  return { text: place.address.value, status: place.address.status }
+/** A missing fact is plainly «Уточняется»; a known one carries its verification badge. */
+function factInfo(fact: Fact<string> | null): { text: string; status: VerificationStatus | null } {
+  if (!fact) return { text: 'Уточняется', status: null }
+  return { text: fact.value, status: fact.status }
+}
+
+const reservationText: Record<Reservation, string> = {
+  recommended: 'Лучше забронировать',
+  not_accepted: 'Столики не бронируют — приходите заранее',
+}
+
+function FactRow({ label, fact }: { label: string; fact: Fact<string> | null }) {
+  const info = factInfo(fact)
+  return (
+    <div className={styles.fact}>
+      <dt>{label}</dt>
+      <dd>
+        {info.text} {info.status && <VerificationBadge status={info.status} />}
+      </dd>
+    </div>
+  )
 }
 
 export function PlaceCard({ place, highlighted = false }: { place: Place; highlighted?: boolean }) {
   const level = priceLevel(place.price)
-  const address = addressInfo(place)
 
   return (
     <article id={cardElementId(place.id)} className={highlighted ? `${styles.card} ${styles.highlighted}` : styles.card}>
@@ -45,26 +61,54 @@ export function PlaceCard({ place, highlighted = false }: { place: Place; highli
         </div>
         <p className={styles.description}>{place.description}</p>
 
+        {place.reservation && <p className={styles.reservation}>{reservationText[place.reservation.value]}</p>}
+
         <dl className={styles.facts}>
-          <div className={styles.fact}>
-            <dt>Адрес</dt>
-            <dd>
-              {address.text} {address.status && <VerificationBadge status={address.status} />}
-            </dd>
-          </div>
+          <FactRow label="Адрес" fact={place.address} />
+          <FactRow label="Часы" fact={place.openingHours} />
           <div className={styles.fact}>
             <dt>Средний чек</dt>
             <dd>
               {place.price ? (
                 <>
                   ≈ {formatPrice(place.price)} на человека <VerificationBadge status={place.price.status} />
+                  {place.price.note && (
+                    <details className={styles.estimate}>
+                      <summary>Оценка редакции — как посчитано</summary>
+                      <p>
+                        {place.price.note}{' '}
+                        {/^https:\/\//.test(place.price.source) && (
+                          <ExternalLink href={place.price.source} className={styles.inlineLink}>
+                            Меню
+                          </ExternalLink>
+                        )}
+                      </p>
+                    </details>
+                  )}
                 </>
               ) : (
-                'Уточняется'
+                <>
+                  Уточняется
+                  {place.priceNote && <span className={styles.muted}> — {place.priceNote}</span>}
+                </>
               )}
             </dd>
           </div>
         </dl>
+
+        {place.recommendedBy.length > 0 && (
+          <p className={styles.recommended}>
+            Рекомендуют:{' '}
+            {place.recommendedBy.map((r, i) => (
+              <span key={r.url}>
+                {i > 0 && ', '}
+                <ExternalLink href={r.url} className={styles.inlineLink}>
+                  {r.name}
+                </ExternalLink>
+              </span>
+            ))}
+          </p>
+        )}
 
         <div className={styles.actions}>
           <ExternalLink href={place.mapUrl} className={styles.button}>

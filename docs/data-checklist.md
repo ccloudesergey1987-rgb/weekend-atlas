@@ -4,7 +4,7 @@
 
 Правило: **verified** — значение прямо найдено на официальной странице, источник — точный адрес этой страницы. **estimate** — оценка редакции там, где официального источника быть не может (время переходов, такси по официальному тарифу); цены, часы и адреса так не помечаются. Всё остальное — **needs_check** с причиной. Часы работы и цены меняются — перед поездкой их стоит перепроверить.
 
-**Итого:** 133 значений: проверено 66, оценка редакции 16, требует проверки 51.
+**Итого:** 171 значений: проверено 93, оценка редакции 22, требует проверки 56.
 
 ## Маршрут
 
@@ -131,29 +131,81 @@
 
 | Объект | Поле | Значение | Статус | Источник | Дата | Причина |
 |---|---|---|---|---|---|---|
-| Пример: тапас-бар в Борне | Цена | 20–30 € | ⚠️ needs_check | Условная цена для примера, не данные реального заведения | — | Ещё не проверялось |
-| Пример: тапас-бар в Борне | Сайт | https://example.com | ⚠️ needs_check | Заглушка для примера | — | Ещё не проверялось |
-| Пример: бар с вермутом | Цена | 10–18 € | ⚠️ needs_check | Условная цена для примера, не данные реального заведения | — | Ещё не проверялось |
-| Пример: городской рынок | Цена | 8–15 € | ⚠️ needs_check | Условная цена для примера, не данные реального заведения | — | Ещё не проверялось |
-| Пример: кофейня у собора | Цена | 5–10 € | ⚠️ needs_check | Условная цена для примера, не данные реального заведения | — | Ещё не проверялось |
-| Пример: ресторан с морепродуктами | Цена | 35–55 € | ⚠️ needs_check | Условная цена для примера, не данные реального заведения | — | Ещё не проверялось |
-| Пример: ресторан с морепродуктами | Сайт | https://example.com | ⚠️ needs_check | Заглушка для примера | — | Ещё не проверялось |
-| Пример: ресторан каталонской кухни | Цена | 40–60 € | ⚠️ needs_check | Условная цена для примера, не данные реального заведения | — | Ещё не проверялось |
-| Пример: ресторан каталонской кухни | Сайт | https://example.com | ⚠️ needs_check | Заглушка для примера | — | Ещё не проверялось |
-| Пример: тапас-бар в Эшампле | Цена | 20–35 € | ⚠️ needs_check | Условная цена для примера, не данные реального заведения | — | Ещё не проверялось |
-| Пример: кофейня на площади | Цена | 6–12 € | ⚠️ needs_check | Условная цена для примера, не данные реального заведения | — | Ещё не проверялось |
-| Пример: семейный ресторан | Цена | 25–40 € | ⚠️ needs_check | Условная цена для примера, не данные реального заведения | — | Ещё не проверялось |
-| Пример: тапас-бар в Побле-сек | Цена | 25–40 € | ⚠️ needs_check | Условная цена для примера, не данные реального заведения | — | Ещё не проверялось |
-| Пример: тапас-бар в Побле-сек | Сайт | https://example.com | ⚠️ needs_check | Заглушка для примера | — | Ещё не проверялось |
-| Пример: винный бар | Цена | 15–25 € | ⚠️ needs_check | Условная цена для примера, не данные реального заведения | — | Ещё не проверялось |
+| El Xampanyet (Борн) | Рекомендуют | Time Out Barcelona, Lonely Planet, Turisme de Barcelona | — источники | <https://www.timeout.com/barcelona/bars-and-pubs/el-xampanyet> <https://www.lonelyplanet.com/spain/barcelona/la-ribera/nightlife/el-xampanyet/a/poi-dri/1204468/1320668> <https://www.barcelonaturisme.com/wv3/en/enjoy/50/on-the-vermouth-trail-discover-some-of-the-best-places-to-have-an-aperitif.html> | — |  |
+| El Xampanyet (Борн) | Адрес | Carrer de Montcada, 22, 08003 Barcelona | ⚠️ needs_check |  | 2026-10-18 | Сайт elxampanyet.com содержит рекламу ставок и не называет владельца — как официальный источник не принят. |
+| El Xampanyet (Борн) | Часы работы | Уточняются | ⚠️ needs_check |  | 2026-10-18 | Сайт elxampanyet.com содержит рекламу ставок и не называет владельца — как официальный источник не принят. |
+| El Xampanyet (Борн) | Средний чек | нет | ⚠️ needs_check |  | — | На официальном сайте нет меню с ценами — средний чек посчитать не по чему. |
+| Bar del Pla (Борн) | Рекомендуют | Time Out Barcelona, Lonely Planet | — источники | <https://www.timeout.es/barcelona/es/restaurantes/bar-del-pla> <https://www.lonelyplanet.com/articles/the-best-places-to-eat-tapas-in-barcelona> | — |  |
+| Bar del Pla (Борн) | Адрес | Carrer de Montcada, 2, 08003 Barcelona | ✅ verified | <https://www.bardelpla.cat/> | 2026-10-18 |  |
+| Bar del Pla (Борн) | Часы работы | Пн–чт 12:00–23:00 (накануне праздников до 24:00), пт–сб 12:00–24:00. Воскресенье на сайте не указано. | ✅ verified | <https://www.bardelpla.cat/ca/contact/> | 2026-10-18 |  |
+| Bar del Pla (Борн) | Средний чек | 20–26 € | ≈ estimate | <https://www.bardelpla.cat/wp-content/uploads/CARTAS/BarCatala.pdf> | 2026-10-18 | По карте bardelpla.cat: 2 крокеты по 3,00 €, половина порции брав (5,50 € за порцию) и одно блюдо дня за 11–17 € — около 20–26 € на человека без напитков. |
+| Bar del Pla (Борн) | Бронь | бронь не принимают | ✅ verified | <https://www.bardelpla.cat/ca/contact/> | 2026-10-18 |  |
+| Bar del Pla (Борн) | Сайт | https://www.bardelpla.cat | ✅ verified | <https://www.bardelpla.cat/> | 2026-10-18 |  |
+| Pastisseria Hofmann (Борн) | Рекомендуют | Time Out Barcelona, Turisme de Barcelona | — источники | <https://www.timeout.es/barcelona/es/tiendas/pastisseria-hofmann> <https://thisisbarcelona.com/gastronomy/patisseries> | — |  |
+| Pastisseria Hofmann (Борн) | Адрес | Carrer dels Flassaders, 44, 08003 Barcelona | ⚠️ needs_check | <https://hofmannpasteleria.com> | 2026-10-18 | Сайт пекарни hofmannpasteleria.com 18.10.2026 не открылся. |
+| Pastisseria Hofmann (Борн) | Часы работы | Уточняются | ⚠️ needs_check | <https://hofmannpasteleria.com> | 2026-10-18 | Сайт пекарни hofmannpasteleria.com 18.10.2026 не открылся. |
+| Pastisseria Hofmann (Борн) | Сайт | https://hofmannpasteleria.com | ⚠️ needs_check | <https://www.hofmann-bcn.com/> | 2026-10-18 | Сайт пекарни hofmannpasteleria.com 18.10.2026 не открылся. |
+| Pastisseria Hofmann (Борн) | Средний чек | нет | ⚠️ needs_check |  | — | На официальном сайте нет меню с ценами — средний чек посчитать не по чему. |
+| Mercat de Santa Caterina (Борн) | Рекомендуют | Time Out Barcelona, Turisme de Barcelona | — источники | <https://www.timeout.com/barcelona/shopping/barcelona-markets-the-top-ten> <https://barcelonaturisme.com/wv3/en/page/508/santa-caterina-market.html> | — |  |
+| Mercat de Santa Caterina (Борн) | Адрес | Avinguda de Francesc Cambó, 16, 08003 Barcelona | ✅ verified | <https://mercatsantacaterina.com/contacto/> | 2026-10-18 |  |
+| Mercat de Santa Caterina (Борн) | Часы работы | Пн, ср, сб 7:30–14:30 или до 15:30; вт, чт, пт 7:30–20:30; вс закрыто. Летом короче. Проверьте перед визитом. | ⚠️ needs_check | <https://www.barcelona.cat/en/coneixbcn/pics/mercat-de-santa-caterina-92086009448> | 2026-10-18 | Сайт мэрии даёт закрытие в пн, ср и сб в 14:30, сайт рынка — в 15:30. |
+| Mercat de Santa Caterina (Борн) | Сайт | https://mercatsantacaterina.com | ✅ verified | <https://mercatsantacaterina.com/contacto/> | 2026-10-18 |  |
+| Mercat de Santa Caterina (Борн) | Средний чек | нет | ⚠️ needs_check |  | — | Рынок: чек зависит от того, что купить; официального меню нет. |
+| Paco Meralgo (Эшампле) | Рекомендуют | Гид Michelin, Time Out Barcelona, Lonely Planet | — источники | <https://guide.michelin.com/us/en/catalunya/barcelona/restaurant/paco-meralgo> <https://www.timeout.com/barcelona/restaurants/paco-meralgo> <https://www.lonelyplanet.com/articles/the-best-places-to-eat-tapas-in-barcelona> | — |  |
+| Paco Meralgo (Эшампле) | Адрес | Carrer de Muntaner, 171, 08036 Barcelona | ✅ verified | <https://www.restaurantpacomeralgo.com/> | 2026-10-18 |  |
+| Paco Meralgo (Эшампле) | Часы работы | Ежедневно, кухня 13:00–00:00. Закрыто 25 декабря. | ✅ verified | <https://restaurantpacomeralgo.com/informacion/> | 2026-10-18 |  |
+| Paco Meralgo (Эшампле) | Средний чек | 25–35 € | ≈ estimate | <https://restaurantpacomeralgo.com/paco-meralgo-carta-esp/> | 2026-10-18 | По карте restaurantpacomeralgo.com: крокеты и буньюэлос 3,30–3,40 € за штуку, большинство тапас и закусок 5–20 €. Набор на человека — 2 крокеты и 2–3 тапас пополам — около 25–35 € без напитков. |
+| Paco Meralgo (Эшампле) | Бронь | лучше забронировать | ✅ verified | <https://restaurantpacomeralgo.com/informacion/> | 2026-10-18 |  |
+| Paco Meralgo (Эшампле) | Сайт | https://restaurantpacomeralgo.com | ✅ verified | <https://www.restaurantpacomeralgo.com/> | 2026-10-18 |  |
+| Xavier Pellicer (Эшампле) | Рекомендуют | Гид Michelin, Time Out Barcelona | — источники | <https://guide.michelin.com/us/en/catalunya/barcelona/restaurant/xavier-pellicer> <https://www.timeout.es/barcelona/es/restaurantes/xavier-pellicer-restaurant> | — |  |
+| Xavier Pellicer (Эшампле) | Адрес | Carrer de Provença, 310, 08037 Barcelona | ✅ verified | <https://www.xavierpellicer.com/contacto> | 2026-10-18 |  |
+| Xavier Pellicer (Эшампле) | Часы работы | Ср–сб: обед 13:00–14:45, ужин 20:00–21:45. Вс вечером, пн и вт закрыто. | ⚠️ needs_check | <https://www.xavierpellicer.com/contacto> | 2026-10-18 | Неясно с обедом в воскресенье: на странице карты обед — со среды по воскресенье, в часах работы — только ср–сб. |
+| Xavier Pellicer (Эшампле) | Средний чек | 95–115 € | ≈ estimate | <https://www.xavierpellicer.com/carta> | 2026-10-18 | По карте xavierpellicer.com: дегустационный сет из 5 блюд — 95 €, из 8 блюд — 115 €; без напитков. Цены обеденной карты на сайте не указаны. |
+| Xavier Pellicer (Эшампле) | Сайт | https://www.xavierpellicer.com | ✅ verified | <https://www.xavierpellicer.com/contacto> | 2026-10-18 |  |
+| Escribà (Эшампле) | Рекомендуют | Time Out Barcelona, Turisme de Barcelona | — источники | <https://www.timeout.es/barcelona/es/restaurantes/pastisseria-escriba> <https://thisisbarcelona.com/gastronomy/patisseries> | — |  |
+| Escribà (Эшампле) | Адрес | Gran Via de les Corts Catalanes, 546, 08011 Barcelona | ✅ verified | <https://escriba.es/es/tiendas> | 2026-10-18 |  |
+| Escribà (Эшампле) | Часы работы | Пн закрыто; вт–пт 8:30–15:00 и 17:00–21:00; сб–вс 8:30–21:00. | ✅ verified | <https://escriba.es/es/tiendas> | 2026-10-18 |  |
+| Escribà (Эшампле) | Сайт | https://escriba.es | ✅ verified | <https://escriba.es/es/tiendas> | 2026-10-18 |  |
+| Escribà (Эшампле) | Средний чек | нет | ⚠️ needs_check |  | — | На официальном сайте нет меню с ценами — средний чек посчитать не по чему. |
+| Mercat de la Concepció (Эшампле) | Рекомендуют | Time Out Barcelona, Turisme de Barcelona | — источники | <https://www.timeout.com/barcelona/shopping/barcelona-markets-the-top-ten> <https://thisisbarcelona.com/ca/gastronomia/mercats-de-barcelona/mercat-de-la-concepcio> | — |  |
+| Mercat de la Concepció (Эшампле) | Адрес | Carrer d'Aragó, 311, 08009 Barcelona | ✅ verified | <https://www.barcelona.cat/ca/coneixbcn/pics/el-mercat-de-la-concepcio-92086009449> | 2026-10-18 |  |
+| Mercat de la Concepció (Эшампле) | Часы работы | Пн и сб 8:00–15:00, вт–пт 8:00–20:00. Воскресенье на сайте не указано. | ✅ verified | <https://www.barcelona.cat/ca/coneixbcn/pics/el-mercat-de-la-concepcio-92086009449> | 2026-10-18 |  |
+| Mercat de la Concepció (Эшампле) | Средний чек | нет | ⚠️ needs_check |  | — | Рынок: чек зависит от того, что купить; официального меню нет. |
+| Berbena (Грасия) | Рекомендуют | Гид Michelin, Time Out Barcelona | — источники | <https://guide.michelin.com/us/en/catalunya/barcelona/restaurant/berbena> <https://www.timeout.es/barcelona/es/restaurantes/berbena> | — |  |
+| Berbena (Грасия) | Адрес | Carrer de Minerva, 6, 08006 Barcelona | ✅ verified | <https://berbenabcn.com/> | 2026-10-18 |  |
+| Berbena (Грасия) | Часы работы | Ужин пн–пт в две смены (с 19:00 и с 21:30, в пт — с 19:15 и с 21:45), обед только в пятницу в 14:15. Выходные на сайте не указаны. | ✅ verified | <https://berbenabcn.com/> | 2026-10-18 |  |
+| Berbena (Грасия) | Сайт | https://berbenabcn.com | ✅ verified | <https://berbenabcn.com/> | 2026-10-18 |  |
+| Berbena (Грасия) | Средний чек | нет | ⚠️ needs_check |  | — | На официальном сайте нет меню с ценами — средний чек посчитать не по чему. |
+| La Pubilla (Грасия) | Рекомендуют | Time Out Barcelona, Ara, ElNacional.cat | — источники | <https://www.timeout.cat/barcelona/ca/restaurants/la-pubilla> <https://diumenge.ara.cat/diumenge/pubilla-totes-hores_1_4330169.html> <https://www.elnacional.cat/ca/gourmeteria/opinio-critiques/esmorzars-gloriosos-menu-migdia-mes-atractiu-barcelona-oda-cuina-barri_1135713_102.html> | — |  |
+| La Pubilla (Грасия) | Адрес | Plaça de la Llibertat, 23, 08012 Barcelona | ⚠️ needs_check |  | 2026-10-18 | Домен restaurantelapubilla.com 18.10.2026 перенаправлял на посторонний сайт; официального сайта не найдено. |
+| La Pubilla (Грасия) | Часы работы | Уточняются | ⚠️ needs_check |  | 2026-10-18 | Домен restaurantelapubilla.com 18.10.2026 перенаправлял на посторонний сайт; официального сайта не найдено. |
+| La Pubilla (Грасия) | Средний чек | нет | ⚠️ needs_check |  | — | На официальном сайте нет меню с ценами — средний чек посчитать не по чему. |
+| Syra Coffee (Грасия) | Рекомендуют | Time Out Barcelona, Lonely Planet | — источники | <https://www.timeout.es/barcelona/es/bares-y-pubs/syra> <https://www.lonelyplanet.com/spain/barcelona/barceloneta-port-olimpic-and-the-waterfront/nightlife/syra-coffee/a/poi-dri/1634006/1320666> | — |  |
+| Syra Coffee (Грасия) | Адрес | Carrer de Bonavista, 23, 08012 Barcelona | ✅ verified | <https://syra.coffee/pages/location> | 2026-10-18 |  |
+| Syra Coffee (Грасия) | Часы работы | Ежедневно 8:00–20:00. | ✅ verified | <https://syra.coffee/pages/location> | 2026-10-18 |  |
+| Syra Coffee (Грасия) | Сайт | https://syra.coffee | ✅ verified | <https://syra.coffee/pages/location> | 2026-10-18 |  |
+| Syra Coffee (Грасия) | Средний чек | нет | ⚠️ needs_check |  | — | На официальном сайте нет меню с ценами — средний чек посчитать не по чему. |
+| Mercat de la Llibertat (Грасия) | Рекомендуют | Time Out Barcelona, Turisme de Barcelona | — источники | <https://www.timeout.com/barcelona/shopping/barcelona-markets-the-top-ten> <https://thisisbarcelona.com/gastronomy/barcelona-markets/mercat-de-la-llibertat> | — |  |
+| Mercat de la Llibertat (Грасия) | Адрес | Plaça de la Llibertat, 27, 08012 Barcelona | ✅ verified | <https://www.barcelona.cat/en/what-to-do-in-bcn/summer/municipal-markets/mercat-llibertat-92086009773> | 2026-10-18 |  |
+| Mercat de la Llibertat (Грасия) | Часы работы | Обычно пн–пт 8:00–20:30, сб 8:00–15:00, вс закрыто. Проверьте перед визитом. | ⚠️ needs_check | <https://www.barcelona.cat/en/what-to-do-in-bcn/summer/municipal-markets/mercat-llibertat-92086009773> | 2026-10-18 | Страница рынка на сайте мэрии 18.10.2026 была недоступна из нашего региона, а на barcelona.cat указаны только летние часы с ошибкой в датах. |
+| Mercat de la Llibertat (Грасия) | Средний чек | нет | ⚠️ needs_check |  | — | Рынок: чек зависит от того, что купить; официального меню нет. |
+| Quimet & Quimet (Побле-сек) | Рекомендуют | Time Out Barcelona, Lonely Planet, Turisme de Barcelona | — источники | <https://www.timeout.es/barcelona/es/restaurantes/quimet-i-quimet> <https://www.lonelyplanet.com/articles/the-best-places-to-eat-tapas-in-barcelona> <https://www.barcelonaturisme.com/wv3/sv/enjoy/10/poble-sec-from-bodega-to-bodega.html> | — |  |
+| Quimet & Quimet (Побле-сек) | Адрес | Carrer del Poeta Cabanyes, 25, 08004 Barcelona | ⚠️ needs_check | <https://www.quimetquimet.com> | 2026-10-18 | На quimetquimet.com нет сведений о владельце и есть посторонние рекламные ссылки — как официальный источник не принят. |
+| Quimet & Quimet (Побле-сек) | Часы работы | Уточняются | ⚠️ needs_check | <https://www.quimetquimet.com> | 2026-10-18 | На quimetquimet.com нет сведений о владельце и есть посторонние рекламные ссылки — как официальный источник не принят. |
+| Quimet & Quimet (Побле-сек) | Средний чек | нет | ⚠️ needs_check |  | — | На официальном сайте нет меню с ценами — средний чек посчитать не по чему. |
+| Taberna Noroeste (Побле-сек) | Рекомендуют | Гид Michelin, Time Out Barcelona | — источники | <https://guide.michelin.com/us/en/catalunya/barcelona/restaurant/taberna-noroeste> <https://www.timeout.es/barcelona/es/restaurantes/taberna-noroeste> | — |  |
+| Taberna Noroeste (Побле-сек) | Адрес | Carrer de Radas, 67, 08004 Barcelona | ✅ verified | <https://www.tabernanoroeste.com/> | 2026-10-18 |  |
+| Taberna Noroeste (Побле-сек) | Часы работы | Пн и сб 14:00–16:00 и 20:00–22:00; чт–пт 20:00–24:00; вс 14:00–16:00; вт и ср закрыто. | ✅ verified | <https://tabernanoroeste.com/index.php/reservas/> | 2026-10-18 |  |
+| Taberna Noroeste (Побле-сек) | Сайт | https://www.tabernanoroeste.com | ✅ verified | <https://www.tabernanoroeste.com/> | 2026-10-18 |  |
+| Taberna Noroeste (Побле-сек) | Средний чек | нет | ⚠️ needs_check |  | — | На сайте есть только дегустационное меню из 10 блюд, но без цены. |
 
 ## Бюджет: питание (на человека в день)
 
 | Объект | Поле | Значение | Статус | Источник | Дата | Причина |
 |---|---|---|---|---|---|---|
-| Экономно | Цена | 30–45 € | ⚠️ needs_check | Ориентир редакции, не сверен с источником | — | Пересчитаем по реальным ресторанам в следующей сессии. |
-| Средне | Цена | 45–80 € | ⚠️ needs_check | Ориентир редакции, не сверен с источником | — | Пересчитаем по реальным ресторанам в следующей сессии. |
-| Комфортно | Цена | 80–140 € | ⚠️ needs_check | Ориентир редакции, не сверен с источником | — | Пересчитаем по реальным ресторанам в следующей сессии. |
+| Экономно | Цена | 40–52 € | ≈ estimate | <https://www.bardelpla.cat/wp-content/uploads/CARTAS/BarCatala.pdf> | 2026-10-18 | Два приёма пищи по среднему чеку Bar del Pla (20–26 € по меню bardelpla.cat): 2 × 20–26 € = 40–52 €. Завтрак, кофе и напитки не включены: на официальных сайтах выбранных мест их цен нет. |
+| Средне | Цена | 45–61 € | ≈ estimate | <https://restaurantpacomeralgo.com/paco-meralgo-carta-esp/> | 2026-10-18 | Обед в Bar del Pla (20–26 €) и ужин в Paco Meralgo (25–35 €) по средним чекам из официальных меню: 45–61 €. Завтрак, кофе и напитки не включены: на официальных сайтах выбранных мест их цен нет. |
+| Комфортно | Цена | 115–141 € | ≈ estimate | <https://www.xavierpellicer.com/carta> | 2026-10-18 | Обед в Bar del Pla (20–26 €) и дегустационный сет в Xavier Pellicer (95–115 € по карте xavierpellicer.com): 115–141 €. Завтрак, кофе и напитки не включены: на официальных сайтах выбранных мест их цен нет. |
 
 ## Бюджет: транспорт по городу (на человека)
 

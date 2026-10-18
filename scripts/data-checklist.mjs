@@ -25,6 +25,8 @@ const FIELD_TITLES = {
   transferFromPrevious: 'Переход от предыдущей точки',
   closure: 'Закрытие',
 }
+const PLACE_FIELDS = { address: 'Адрес', openingHours: 'Часы работы', price: 'Средний чек', reservation: 'Бронь', website: 'Сайт' }
+const RESERVATION = { recommended: 'лучше забронировать', not_accepted: 'бронь не принимают' }
 const ADMISSION = { paid: 'платный', free: 'бесплатно', unknown: 'неизвестно' }
 const MODES = { walk: 'пешком', metro: 'на метро', bus: 'на автобусе', taxi: 'на такси' }
 
@@ -35,13 +37,18 @@ function valueText(field, fact) {
     return `${range} €`
   }
   if (field === 'admission') return ADMISSION[fact.value] ?? fact.value
+  if (field === 'reservation') return RESERVATION[fact.value] ?? fact.value
   if (field === 'transferFromPrevious') return `≈ ${fact.minutes} мин ${MODES[fact.mode]}`
   return String(fact.value)
 }
 
 /** Markdown table cell: no line breaks, escaped pipes. */
 const cell = (text) => String(text ?? '').replace(/\|/g, '\\|').replace(/\s+/g, ' ').trim()
-const link = (source) => (/^https?:\/\//.test(source) ? `<${source}>` : source)
+const link = (source) =>
+  source
+    .split(' ')
+    .map((s) => (/^https?:\/\//.test(s) ? `<${s}>` : s))
+    .join(' ')
 
 function defaultReason(field, fact) {
   if (field === 'transferFromPrevious') return 'Время в пути — оценка редакции, официального источника нет'
@@ -49,12 +56,12 @@ function defaultReason(field, fact) {
 }
 
 const rows = []
-function add(group, object, field, fact) {
+function add(group, object, field, fact, title = FIELD_TITLES[field] ?? field) {
   if (!fact) return
   rows.push({
     group,
     object,
-    field: FIELD_TITLES[field] ?? field,
+    field: title,
     value: valueText(field, fact),
     status: fact.status,
     source: fact.source,
@@ -86,7 +93,21 @@ for (const day of route.days) {
   }
 }
 for (const p of places.places) {
-  for (const field of ['address', 'openingHours', 'price', 'website']) add('Еда и места', p.name, field, p[field])
+  const object = `${p.name} (${p.area})`
+  rows.push({
+    group: 'Еда и места',
+    object,
+    field: 'Рекомендуют',
+    value: p.recommendedBy.map((r) => r.name).join(', '),
+    status: 'sources',
+    source: p.recommendedBy.map((r) => r.url).join(' '),
+    checkedAt: '—',
+    reason: '',
+  })
+  for (const [field, title] of Object.entries(PLACE_FIELDS)) add('Еда и места', object, field, p[field], title)
+  if (!p.price) {
+    rows.push({ group: 'Еда и места', object, field: 'Средний чек', value: 'нет', status: 'needs_check', source: '', checkedAt: '—', reason: p.priceNote ?? 'Цена не указана' })
+  }
 }
 const budgetGroups = [
   ['Бюджет: питание (на человека в день)', budget.food],
@@ -102,9 +123,9 @@ for (const [group, options] of budgetGroups) {
 }
 
 const verified = rows.filter((r) => r.status === 'verified').length
-const STATUS = { verified: '✅ verified', needs_check: '⚠️ needs_check', estimate: '≈ estimate', advice: '— совет редакции' }
+const STATUS = { verified: '✅ verified', needs_check: '⚠️ needs_check', estimate: '≈ estimate', advice: '— совет редакции', sources: '— источники' }
 const estimates = rows.filter((r) => r.status === 'estimate').length
-const facts = rows.filter((r) => r.status !== 'advice')
+const facts = rows.filter((r) => r.status !== 'advice' && r.status !== 'sources')
 
 let md = `# Чек-лист данных: ${city.name}
 

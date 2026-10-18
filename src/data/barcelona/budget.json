@@ -8,43 +8,43 @@
       {
         "id": "economy",
         "title": "Экономно",
-        "description": "Завтрак в кафе, обед из меню дня, ужин тапасами или с рынка.",
+        "description": "Обед и ужин тапас в недорогом баре вроде Bar del Pla. Без завтрака, кофе и напитков.",
         "price": {
-          "min": 30,
-          "max": 45,
+          "min": 40,
+          "max": 52,
           "currency": "EUR",
-          "status": "needs_check",
-          "source": "Ориентир редакции, не сверен с источником",
-          "checkedAt": null,
-          "note": "Пересчитаем по реальным ресторанам в следующей сессии."
+          "status": "estimate",
+          "source": "https://www.bardelpla.cat/wp-content/uploads/CARTAS/BarCatala.pdf",
+          "checkedAt": "2026-10-18",
+          "note": "Два приёма пищи по среднему чеку Bar del Pla (20–26 € по меню bardelpla.cat): 2 × 20–26 € = 40–52 €. Завтрак, кофе и напитки не включены: на официальных сайтах выбранных мест их цен нет."
         }
       },
       {
         "id": "medium",
         "title": "Средне",
-        "description": "Обед из меню дня, ужин в ресторане среднего уровня, кофе и перекусы.",
+        "description": "Тапас на обед и ужин в известной таверне вроде Paco Meralgo. Без завтрака, кофе и напитков.",
         "price": {
           "min": 45,
-          "max": 80,
+          "max": 61,
           "currency": "EUR",
-          "status": "needs_check",
-          "source": "Ориентир редакции, не сверен с источником",
-          "checkedAt": null,
-          "note": "Пересчитаем по реальным ресторанам в следующей сессии."
+          "status": "estimate",
+          "source": "https://restaurantpacomeralgo.com/paco-meralgo-carta-esp/",
+          "checkedAt": "2026-10-18",
+          "note": "Обед в Bar del Pla (20–26 €) и ужин в Paco Meralgo (25–35 €) по средним чекам из официальных меню: 45–61 €. Завтрак, кофе и напитки не включены: на официальных сайтах выбранных мест их цен нет."
         }
       },
       {
         "id": "comfort",
         "title": "Комфортно",
-        "description": "Рестораны с винной картой, ужины без оглядки на счёт.",
+        "description": "Тапас на обед и дегустационный ужин в ресторане из гида Michelin вроде Xavier Pellicer. Без завтрака, кофе и напитков.",
         "price": {
-          "min": 80,
-          "max": 140,
+          "min": 115,
+          "max": 141,
           "currency": "EUR",
-          "status": "needs_check",
-          "source": "Ориентир редакции, не сверен с источником",
-          "checkedAt": null,
-          "note": "Пересчитаем по реальным ресторанам в следующей сессии."
+          "status": "estimate",
+          "source": "https://www.xavierpellicer.com/carta",
+          "checkedAt": "2026-10-18",
+          "note": "Обед в Bar del Pla (20–26 €) и дегустационный сет в Xavier Pellicer (95–115 € по карте xavierpellicer.com): 115–141 €. Завтрак, кофе и напитки не включены: на официальных сайтах выбранных мест их цен нет."
         }
       }
     ]
