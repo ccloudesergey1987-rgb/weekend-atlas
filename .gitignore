@@ -32,3 +32,6 @@ dist-ssr
 
 # Local Claude Code settings
 .claude/settings.local.json
+
+# Downloaded originals for npm run photos
+.cache

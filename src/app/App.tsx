@@ -6,6 +6,7 @@ import { RouteIndexRedirect, RouteScreen } from '../screens/RouteScreen/RouteScr
 import { PlacesScreen } from '../screens/PlacesScreen/PlacesScreen'
 import { BudgetScreen } from '../screens/BudgetScreen/BudgetScreen'
 import { FavoritesScreen } from '../screens/FavoritesScreen/FavoritesScreen'
+import { PhotoCreditsScreen } from '../screens/PhotoCreditsScreen/PhotoCreditsScreen'
 
 /** Each screen opens from the top, not at the previous screen's scroll position. */
 function ScrollToTop() {
@@ -29,6 +30,7 @@ export function App() {
           <Route path="places" element={<PlacesScreen />} />
           <Route path="budget" element={<BudgetScreen />} />
           <Route path="favorites" element={<FavoritesScreen />} />
+          <Route path="photos" element={<PhotoCreditsScreen />} />
         </Route>
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>

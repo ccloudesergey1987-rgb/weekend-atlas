@@ -1,6 +1,7 @@
 import type { Alternative, Closure } from '../../types/content'
 import { ExternalLink } from '../../components/ExternalLink/ExternalLink'
 import { VerificationBadge } from '../../components/VerificationBadge/VerificationBadge'
+import { ImagePlaceholder } from '../../components/ImagePlaceholder/ImagePlaceholder'
 import { formatPrice } from '../../utils/format'
 import styles from './RouteCards.module.css'
 
@@ -24,6 +25,7 @@ function groupByAlternative(closures: Closure[]): Group[] {
 function AlternativeInfo({ alternative: a }: { alternative: Alternative }) {
   return (
     <div className={styles.alternative}>
+      {a.photo && <ImagePlaceholder photo={a.photo} ratio="16 / 9" className={styles.alternativePhoto} sizes="(min-width: 720px) 560px, 90vw" />}
       <p>{a.description}</p>
       <p>
         {a.address.value} <VerificationBadge status={a.address.status} />

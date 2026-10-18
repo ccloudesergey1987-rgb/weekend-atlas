@@ -1,0 +1,70 @@
+{
+  "$comment": "Photos from Wikimedia Commons. `npm run photos` downloads, crops and compresses them into public/images/<city>/ and writes author and license into the city JSON. Only Public domain, CC0, CC BY and CC BY-SA.",
+  "cityId": "barcelona",
+  "photos": [
+    {
+      "id": "cover",
+      "target": "city.cover",
+      "commons": "File:Barcelona Sunset (49868199867).jpg",
+      "alt": "Барселона на закате: крыши города под розовым небом",
+      "crops": [
+        { "name": "", "ratio": [16, 10], "widths": [800, 1600] },
+        { "name": "portrait", "ratio": [4, 5], "widths": [600, 800] }
+      ]
+    },
+    {
+      "id": "cathedral",
+      "target": "route:barcelona/cathedral",
+      "commons": "File:Catedral de la Santa Cruz y Santa Eulalia -- 2019 -- Barcelona, España.jpg",
+      "alt": "Готический фасад Барселонского собора на площади Pla de la Seu"
+    },
+    {
+      "id": "santa-maria-del-mar",
+      "target": "route:barcelona/santa-maria-del-mar",
+      "commons": "File:Santa Maria del Mar, Barcelona 09.jpg",
+      "alt": "Высокий светлый неф базилики Санта-Мария-дель-Мар"
+    },
+    {
+      "id": "sagrada-familia",
+      "target": "route:barcelona/sagrada-familia",
+      "commons": "File:Sagrada Familia March 2015-3a.jpg",
+      "alt": "Колонны-деревья и своды внутри Саграды Фамилии"
+    },
+    {
+      "id": "casa-batllo",
+      "target": "route:barcelona/casa-batllo",
+      "commons": "File:Casa Batlló 01.jpg",
+      "alt": "Волнистый фасад Каса Батльо и крыша, похожая на спину дракона"
+    },
+    {
+      "id": "casa-mila",
+      "target": "route:barcelona/casa-mila",
+      "commons": "File:Barcelona 1800.jpg",
+      "alt": "Вентиляционные трубы-скульптуры на крыше Каса Мила"
+    },
+    {
+      "id": "park-guell",
+      "target": "route:barcelona/park-guell",
+      "commons": "File:Park Güell 02.jpg",
+      "alt": "Пряничные домики у входа в парк Гуэль и город за ними"
+    },
+    {
+      "id": "mnac",
+      "target": "route:barcelona/mnac",
+      "commons": "File:Εθνικό Μουσείο Τέχνης της Καταλονίας 3077.jpg",
+      "alt": "Национальный дворец на Монжуике — здание МНАК"
+    },
+    {
+      "id": "montjuic-castle",
+      "target": "route:barcelona/montjuic-castle",
+      "commons": "File:Castell de Montjuic - Fossat entrada - Barcelona (Catalonia).jpg",
+      "alt": "Башня и арки замка Монжуик над садом во рву"
+    },
+    {
+      "id": "caixaforum",
+      "target": "alternative:CaixaForum Barcelona",
+      "commons": "File:016 Fàbrica Casaramona, CaixaFòrum.jpg",
+      "alt": "Кирпичный фасад бывшей фабрики Казарамона — CaixaForum"
+    }
+  ]
+}

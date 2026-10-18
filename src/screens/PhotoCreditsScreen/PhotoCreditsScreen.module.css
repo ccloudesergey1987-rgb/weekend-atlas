@@ -1,0 +1,52 @@
+.screen {
+  padding-top: var(--space-5);
+}
+
+.title {
+  font-size: var(--text-2xl);
+}
+
+.lead {
+  margin-top: var(--space-2);
+  color: var(--color-text-muted);
+}
+
+.list {
+  margin: var(--space-6) 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--color-line);
+}
+
+.item {
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid var(--color-line);
+  font-size: var(--text-sm);
+}
+
+.what {
+  font-family: var(--font-serif);
+  font-size: var(--text-lg);
+  line-height: var(--leading-snug);
+}
+
+.who {
+  margin-top: var(--space-1);
+}
+
+.changes {
+  margin-top: var(--space-1);
+  color: var(--color-text-muted);
+}
+
+.link {
+  color: var(--color-text);
+  text-decoration: underline;
+  text-decoration-color: var(--color-line);
+  text-underline-offset: 3px;
+  overflow-wrap: anywhere;
+}
+
+.link:hover {
+  text-decoration-color: currentColor;
+}

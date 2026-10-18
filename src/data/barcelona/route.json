@@ -91,7 +91,30 @@
             "source": "https://catedralbcn.org/",
             "checkedAt": "2026-10-18"
           },
-          "partnerUrl": null
+          "partnerUrl": null,
+          "photo": {
+            "src": "images/barcelona/cathedral-800.webp",
+            "srcSet": [
+              {
+                "src": "images/barcelona/cathedral-800.webp",
+                "width": 800
+              },
+              {
+                "src": "images/barcelona/cathedral-1600.webp",
+                "width": 1600
+              }
+            ],
+            "width": 1600,
+            "height": 900,
+            "alt": "Готический фасад Барселонского собора на площади Pla de la Seu",
+            "credit": {
+              "author": "Jose María Ligero Loarte",
+              "license": "CC BY-SA 4.0",
+              "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+              "sourceUrl": "https://commons.wikimedia.org/wiki/File:Catedral_de_la_Santa_Cruz_y_Santa_Eulalia_--_2019_--_Barcelona,_Espa%C3%B1a.jpg",
+              "changes": "Кадрировано до 16:9, уменьшено и сжато в WebP"
+            }
+          }
         },
         {
           "id": "barcelona/gothic-quarter-walk",
@@ -205,6 +228,29 @@
             "source": "",
             "checkedAt": null,
             "note": "Время и способ перехода — оценка редакции: официального источника для этого нет."
+          },
+          "photo": {
+            "src": "images/barcelona/santa-maria-del-mar-800.webp",
+            "srcSet": [
+              {
+                "src": "images/barcelona/santa-maria-del-mar-800.webp",
+                "width": 800
+              },
+              {
+                "src": "images/barcelona/santa-maria-del-mar-1600.webp",
+                "width": 1600
+              }
+            ],
+            "width": 1600,
+            "height": 900,
+            "alt": "Высокий светлый неф базилики Санта-Мария-дель-Мар",
+            "credit": {
+              "author": "Kent Wang",
+              "license": "CC BY-SA 4.0",
+              "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+              "sourceUrl": "https://commons.wikimedia.org/wiki/File:Santa_Maria_del_Mar,_Barcelona_09.jpg",
+              "changes": "Кадрировано до 16:9, уменьшено и сжато в WebP"
+            }
           }
         },
         {
@@ -407,7 +453,30 @@
             "source": "https://sagradafamilia.org/",
             "checkedAt": "2026-10-18"
           },
-          "partnerUrl": null
+          "partnerUrl": null,
+          "photo": {
+            "src": "images/barcelona/sagrada-familia-800.webp",
+            "srcSet": [
+              {
+                "src": "images/barcelona/sagrada-familia-800.webp",
+                "width": 800
+              },
+              {
+                "src": "images/barcelona/sagrada-familia-1600.webp",
+                "width": 1600
+              }
+            ],
+            "width": 1600,
+            "height": 900,
+            "alt": "Колонны-деревья и своды внутри Саграды Фамилии",
+            "credit": {
+              "author": "Alvesgaspar",
+              "license": "CC BY-SA 4.0",
+              "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+              "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sagrada_Familia_March_2015-3a.jpg",
+              "changes": "Кадрировано до 16:9, уменьшено и сжато в WebP"
+            }
+          }
         },
         {
           "id": "barcelona/eixample-walk",
@@ -548,6 +617,29 @@
             "source": "",
             "checkedAt": null,
             "note": "Время и способ перехода — оценка редакции: официального источника для этого нет."
+          },
+          "photo": {
+            "src": "images/barcelona/casa-batllo-800.webp",
+            "srcSet": [
+              {
+                "src": "images/barcelona/casa-batllo-800.webp",
+                "width": 800
+              },
+              {
+                "src": "images/barcelona/casa-batllo-1600.webp",
+                "width": 1600
+              }
+            ],
+            "width": 1600,
+            "height": 900,
+            "alt": "Волнистый фасад Каса Батльо и крыша, похожая на спину дракона",
+            "credit": {
+              "author": "Bernard Gagnon",
+              "license": "CC BY-SA 3.0",
+              "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+              "sourceUrl": "https://commons.wikimedia.org/wiki/File:Casa_Batll%C3%B3_01.jpg",
+              "changes": "Кадрировано до 16:9, уменьшено и сжато в WebP"
+            }
           }
         },
         {
@@ -616,6 +708,29 @@
             "source": "",
             "checkedAt": null,
             "note": "Время и способ перехода — оценка редакции: официального источника для этого нет."
+          },
+          "photo": {
+            "src": "images/barcelona/casa-mila-800.webp",
+            "srcSet": [
+              {
+                "src": "images/barcelona/casa-mila-800.webp",
+                "width": 800
+              },
+              {
+                "src": "images/barcelona/casa-mila-1600.webp",
+                "width": 1600
+              }
+            ],
+            "width": 1600,
+            "height": 900,
+            "alt": "Вентиляционные трубы-скульптуры на крыше Каса Мила",
+            "credit": {
+              "author": "T meltzer",
+              "license": "CC BY-SA 4.0",
+              "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+              "sourceUrl": "https://commons.wikimedia.org/wiki/File:Barcelona_1800.jpg",
+              "changes": "Кадрировано до 16:9, уменьшено и сжато в WebP"
+            }
           }
         },
         {
@@ -723,7 +838,30 @@
             "source": "https://parkguell.barcelona/",
             "checkedAt": "2026-10-18"
           },
-          "partnerUrl": null
+          "partnerUrl": null,
+          "photo": {
+            "src": "images/barcelona/park-guell-800.webp",
+            "srcSet": [
+              {
+                "src": "images/barcelona/park-guell-800.webp",
+                "width": 800
+              },
+              {
+                "src": "images/barcelona/park-guell-1600.webp",
+                "width": 1600
+              }
+            ],
+            "width": 1600,
+            "height": 900,
+            "alt": "Пряничные домики у входа в парк Гуэль и город за ними",
+            "credit": {
+              "author": "Bernard Gagnon",
+              "license": "CC BY-SA 3.0",
+              "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+              "sourceUrl": "https://commons.wikimedia.org/wiki/File:Park_G%C3%BCell_02.jpg",
+              "changes": "Кадрировано до 16:9, уменьшено и сжато в WebP"
+            }
+          }
         },
         {
           "id": "barcelona/gracia-walk",
@@ -884,6 +1022,29 @@
                   "status": "verified",
                   "source": "https://caixaforum.org/ca/barcelona/info-centre",
                   "checkedAt": "2026-10-18"
+                },
+                "photo": {
+                  "src": "images/barcelona/caixaforum-800.webp",
+                  "srcSet": [
+                    {
+                      "src": "images/barcelona/caixaforum-800.webp",
+                      "width": 800
+                    },
+                    {
+                      "src": "images/barcelona/caixaforum-1600.webp",
+                      "width": 1600
+                    }
+                  ],
+                  "width": 1600,
+                  "height": 900,
+                  "alt": "Кирпичный фасад бывшей фабрики Казарамона — CaixaForum",
+                  "credit": {
+                    "author": "Enfo",
+                    "license": "CC BY-SA 3.0",
+                    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+                    "sourceUrl": "https://commons.wikimedia.org/wiki/File:016_F%C3%A0brica_Casaramona,_CaixaF%C3%B2rum.jpg",
+                    "changes": "Кадрировано до 16:9, уменьшено и сжато в WebP"
+                  }
                 }
               },
               "status": "verified",
@@ -925,6 +1086,29 @@
                   "status": "verified",
                   "source": "https://caixaforum.org/ca/barcelona/info-centre",
                   "checkedAt": "2026-10-18"
+                },
+                "photo": {
+                  "src": "images/barcelona/caixaforum-800.webp",
+                  "srcSet": [
+                    {
+                      "src": "images/barcelona/caixaforum-800.webp",
+                      "width": 800
+                    },
+                    {
+                      "src": "images/barcelona/caixaforum-1600.webp",
+                      "width": 1600
+                    }
+                  ],
+                  "width": 1600,
+                  "height": 900,
+                  "alt": "Кирпичный фасад бывшей фабрики Казарамона — CaixaForum",
+                  "credit": {
+                    "author": "Enfo",
+                    "license": "CC BY-SA 3.0",
+                    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+                    "sourceUrl": "https://commons.wikimedia.org/wiki/File:016_F%C3%A0brica_Casaramona,_CaixaF%C3%B2rum.jpg",
+                    "changes": "Кадрировано до 16:9, уменьшено и сжато в WebP"
+                  }
                 }
               },
               "advice": "Или поменяйте местами утро и вечер: Монжуик с музеем с утра, парк Гуэль — после обеда по билету на время.",
@@ -947,6 +1131,29 @@
             "source": "",
             "checkedAt": null,
             "note": "Время и способ перехода — оценка редакции: официального источника для этого нет."
+          },
+          "photo": {
+            "src": "images/barcelona/mnac-800.webp",
+            "srcSet": [
+              {
+                "src": "images/barcelona/mnac-800.webp",
+                "width": 800
+              },
+              {
+                "src": "images/barcelona/mnac-1600.webp",
+                "width": 1600
+              }
+            ],
+            "width": 1600,
+            "height": 900,
+            "alt": "Национальный дворец на Монжуике — здание МНАК",
+            "credit": {
+              "author": "C messier",
+              "license": "CC BY-SA 4.0",
+              "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+              "sourceUrl": "https://commons.wikimedia.org/wiki/File:%CE%95%CE%B8%CE%BD%CE%B9%CE%BA%CF%8C_%CE%9C%CE%BF%CF%85%CF%83%CE%B5%CE%AF%CE%BF_%CE%A4%CE%AD%CF%87%CE%BD%CE%B7%CF%82_%CF%84%CE%B7%CF%82_%CE%9A%CE%B1%CF%84%CE%B1%CE%BB%CE%BF%CE%BD%CE%AF%CE%B1%CF%82_3077.jpg",
+              "changes": "Кадрировано до 16:9, уменьшено и сжато в WebP"
+            }
           }
         },
         {
@@ -1014,6 +1221,29 @@
             "source": "",
             "checkedAt": null,
             "note": "Время и способ перехода — оценка редакции: официального источника для этого нет."
+          },
+          "photo": {
+            "src": "images/barcelona/montjuic-castle-800.webp",
+            "srcSet": [
+              {
+                "src": "images/barcelona/montjuic-castle-800.webp",
+                "width": 800
+              },
+              {
+                "src": "images/barcelona/montjuic-castle-1600.webp",
+                "width": 1600
+              }
+            ],
+            "width": 1600,
+            "height": 900,
+            "alt": "Башня и арки замка Монжуик над садом во рву",
+            "credit": {
+              "author": "Puigalder",
+              "license": "Public domain",
+              "licenseUrl": null,
+              "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castell_de_Montjuic_-_Fossat_entrada_-_Barcelona_(Catalonia).jpg",
+              "changes": "Кадрировано до 16:9, уменьшено и сжато в WebP"
+            }
           }
         },
         {

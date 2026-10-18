@@ -41,12 +41,48 @@ export interface Price extends Provenance {
   currency: Currency
 }
 
-/** A licensed or own photo. `src: null` renders a placeholder. */
+/** Free licenses allowed for photos; anything else is not used. */
+export type PhotoLicense = 'Public domain' | 'CC0' | `CC BY ${string}` | `CC BY-SA ${string}`
+
+/** Who made a photo and on what terms; shown as «Фото: Автор, CC BY-SA 4.0». */
+export interface PhotoCredit {
+  author: string
+  license: PhotoLicense
+  /** Text of the license; null for public domain. */
+  licenseUrl: string | null
+  /** The file page on Wikimedia Commons (or another source page). */
+  sourceUrl: string
+  /** What we changed, e.g. «Кадрировано до 16:9, уменьшено и сжато в WebP». */
+  changes: string
+}
+
+/** One file of a photo: path from the site root, without a leading slash. */
+export interface PhotoFile {
+  src: string
+  width: number
+}
+
+/** Files of one crop, smallest first; width/height of the largest, for the page layout. */
+export interface PhotoVariant {
+  srcSet: PhotoFile[]
+  width: number
+  height: number
+}
+
+/**
+ * A licensed or own photo. `src: null` renders a placeholder. Files are made
+ * by `npm run photos` from scripts/photo-sources.json.
+ */
 export interface Photo {
+  /** Fallback file (the smallest); null — placeholder. */
   src: string | null
+  srcSet?: PhotoFile[]
+  width?: number
+  height?: number
+  /** A taller crop for narrow screens (the home cover). */
+  portrait?: PhotoVariant
   alt: string
-  /** Author and license, e.g. «Фото: Имя Фамилия, CC BY-SA 4.0, Wikimedia Commons». */
-  credit: string | null
+  credit: PhotoCredit | null
 }
 
 /** Links shared by route points and places. */
@@ -149,6 +185,7 @@ export interface Alternative {
   /** Entry price per adult; null — «Цена уточняется». */
   price: Price | null
   website: Fact<string> | null
+  photo?: Photo
 }
 
 /**

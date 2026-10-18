@@ -34,7 +34,7 @@ export function HomeScreen() {
         <span className={styles.brand}>Weekend Atlas</span>
       </header>
 
-      <ImagePlaceholder photo={city.cover} className={styles.cover} />
+      <ImagePlaceholder photo={city.cover} className={styles.cover} priority sizes="(min-width: 720px) 640px, 100vw" />
 
       <section className={styles.intro}>
         <p className={styles.eyebrow}>
@@ -65,6 +65,12 @@ export function HomeScreen() {
           ))}
         </ol>
       </nav>
+
+      <footer className={styles.footer}>
+        <Link to="/photos" className={styles.footerLink}>
+          Авторы фотографий
+        </Link>
+      </footer>
     </div>
   )
 }

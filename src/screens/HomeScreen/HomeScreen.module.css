@@ -136,3 +136,14 @@
   color: var(--color-accent);
   transform: translateX(3px);
 }
+
+.footer {
+  padding: var(--space-7) var(--gutter) calc(var(--safe-bottom, 0px) + var(--space-6));
+  text-align: center;
+}
+
+.footerLink {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  text-underline-offset: 3px;
+}

@@ -6,8 +6,40 @@
   "description": "Три дня без спешки: средневековые улочки Готического квартала, модерн Гауди в Эшампле, площади Грасии и закат над городом с Монжуика. Маршрут по районам, места для еды и честный бюджет поездки.",
   "durationDays": 3,
   "cover": {
-    "src": null,
-    "alt": "Вид на Барселону",
-    "credit": null
+    "src": "images/barcelona/cover-800.webp",
+    "srcSet": [
+      {
+        "src": "images/barcelona/cover-800.webp",
+        "width": 800
+      },
+      {
+        "src": "images/barcelona/cover-1600.webp",
+        "width": 1470
+      }
+    ],
+    "width": 1470,
+    "height": 919,
+    "portrait": {
+      "srcSet": [
+        {
+          "src": "images/barcelona/cover-portrait-600.webp",
+          "width": 600
+        },
+        {
+          "src": "images/barcelona/cover-portrait-800.webp",
+          "width": 735
+        }
+      ],
+      "width": 735,
+      "height": 919
+    },
+    "alt": "Барселона на закате: крыши города под розовым небом",
+    "credit": {
+      "author": "G. Lamar",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Barcelona_Sunset_(49868199867).jpg",
+      "changes": "Кадрировано до 16:10 и 4:5, уменьшено и сжато в WebP"
+    }
   }
 }

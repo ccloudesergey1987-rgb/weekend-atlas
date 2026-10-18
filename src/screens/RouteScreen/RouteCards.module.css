@@ -211,6 +211,11 @@
   color: var(--color-text-muted);
 }
 
+.alternativePhoto {
+  margin-bottom: var(--space-2);
+  border-radius: var(--radius-sm);
+}
+
 .alternativeLinks {
   display: flex;
   gap: var(--space-4);
