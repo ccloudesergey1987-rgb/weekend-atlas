@@ -9,19 +9,43 @@
         "id": "economy",
         "title": "Экономно",
         "description": "Завтрак в кафе, обед из меню дня, ужин тапасами или с рынка.",
-        "price": { "min": 30, "max": 45, "currency": "EUR", "status": "needs_check", "source": "Ориентир редакции, не сверен с источником", "checkedAt": null }
+        "price": {
+          "min": 30,
+          "max": 45,
+          "currency": "EUR",
+          "status": "needs_check",
+          "source": "Ориентир редакции, не сверен с источником",
+          "checkedAt": null,
+          "note": "Пересчитаем по реальным ресторанам в следующей сессии."
+        }
       },
       {
         "id": "medium",
         "title": "Средне",
         "description": "Обед из меню дня, ужин в ресторане среднего уровня, кофе и перекусы.",
-        "price": { "min": 45, "max": 80, "currency": "EUR", "status": "needs_check", "source": "Ориентир редакции, не сверен с источником", "checkedAt": null }
+        "price": {
+          "min": 45,
+          "max": 80,
+          "currency": "EUR",
+          "status": "needs_check",
+          "source": "Ориентир редакции, не сверен с источником",
+          "checkedAt": null,
+          "note": "Пересчитаем по реальным ресторанам в следующей сессии."
+        }
       },
       {
         "id": "comfort",
         "title": "Комфортно",
         "description": "Рестораны с винной картой, ужины без оглядки на счёт.",
-        "price": { "min": 80, "max": 140, "currency": "EUR", "status": "needs_check", "source": "Ориентир редакции, не сверен с источником", "checkedAt": null }
+        "price": {
+          "min": 80,
+          "max": 140,
+          "currency": "EUR",
+          "status": "needs_check",
+          "source": "Ориентир редакции, не сверен с источником",
+          "checkedAt": null,
+          "note": "Пересчитаем по реальным ресторанам в следующей сессии."
+        }
       }
     ]
   },
@@ -31,47 +55,142 @@
       {
         "id": "t-casual",
         "title": "Разовые поездки",
-        "description": "Карта T-casual на 10 поездок по зоне 1 — метро и автобусы. Обычно хватает одной на три дня.",
-        "price": { "min": 13, "max": 13, "currency": "EUR", "status": "needs_check", "source": "Тариф 2026 по данным сторонних сайтов (mapametrobarcelona.com); сверить на tmb.cat", "checkedAt": null }
+        "description": "Карта T-casual на 10 поездок по зоне 1 — метро и автобусы. Обычно хватает одной на три дня. На станциях метро Aeroport T1 и T2 не действует.",
+        "price": {
+          "min": 13,
+          "max": 13,
+          "currency": "EUR",
+          "status": "verified",
+          "source": "https://www.tmb.cat/en/barcelona-fares-metro-bus/transport-ticket-fares",
+          "checkedAt": "2026-10-18"
+        }
       },
       {
         "id": "hola-72h",
         "title": "Проездной Hola Barcelona на 72 часа",
-        "description": "Безлимит на метро и автобусы, включая поездки в аэропорт на метро.",
-        "price": null
+        "description": "Безлимит на метро, автобусы, трамвай и пригородные поезда в зоне 1. Включает одну поездку на метро из аэропорта и одну обратно. Онлайн на 10 % дешевле, чем в кассе.",
+        "price": {
+          "min": 24.57,
+          "max": 27.3,
+          "currency": "EUR",
+          "status": "verified",
+          "source": "https://www.holabarcelona.com/tickets/hola-bcn-barcelona-travel-card",
+          "checkedAt": "2026-10-18"
+        }
       },
       {
         "id": "walk",
         "title": "Только пешком",
         "description": "Маршрут можно пройти пешком почти целиком, если не жалеть ног.",
-        "price": { "min": 0, "max": 0, "currency": "EUR", "status": "verified", "source": "Без расходов на транспорт", "checkedAt": "2026-10-18" }
+        "price": {
+          "min": 0,
+          "max": 0,
+          "currency": "EUR",
+          "status": "verified",
+          "source": "Без расходов на транспорт",
+          "checkedAt": "2026-10-18"
+        }
       }
     ]
   },
   "transfer": {
-    "defaultId": "aerobus",
+    "defaultId": "aerobus-return",
     "options": [
       {
-        "id": "aerobus",
-        "title": "Аэробус",
-        "description": "Автобус от терминалов до площади Каталонии. Цена на человека в одну сторону.",
+        "id": "aerobus-return",
+        "title": "Аэробус туда-обратно",
+        "description": "Автобус от терминалов до площади Каталонии. Один билет на обе поездки: обратная действует 90 дней после первой.",
         "pricing": "per_person",
-        "price": { "min": 7.25, "max": 7.45, "currency": "EUR", "status": "needs_check", "source": "Тариф по данным сторонних сайтов, источники расходятся; сверить на aerobusbcn.com", "checkedAt": null }
+        "trip": "round_trip",
+        "price": {
+          "min": 13.3,
+          "max": 13.3,
+          "currency": "EUR",
+          "status": "verified",
+          "source": "https://aerobusbarcelona.es/tarifas/",
+          "checkedAt": "2026-10-18"
+        }
+      },
+      {
+        "id": "aerobus",
+        "title": "Аэробус, два билета в одну сторону",
+        "description": "Тот же автобус, но билет на каждую поездку отдельно.",
+        "pricing": "per_person",
+        "trip": "one_way",
+        "price": {
+          "min": 7.75,
+          "max": 7.75,
+          "currency": "EUR",
+          "status": "verified",
+          "source": "https://aerobusbarcelona.es/tarifas/",
+          "checkedAt": "2026-10-18"
+        }
+      },
+      {
+        "id": "metro-l9",
+        "title": "Метро L9 Sud",
+        "description": "Специальный билет «Аэропорт» для станций Aeroport T1 и T2. Если выбран проездной Hola Barcelona, эти поездки уже в него входят.",
+        "pricing": "per_person",
+        "trip": "one_way",
+        "includedInTransport": [
+          "hola-72h"
+        ],
+        "price": {
+          "min": 5.9,
+          "max": 5.9,
+          "currency": "EUR",
+          "status": "verified",
+          "source": "https://www.tmb.cat/en/barcelona-fares-metro-bus/transport-ticket-fares",
+          "checkedAt": "2026-10-18"
+        }
+      },
+      {
+        "id": "train-r2",
+        "title": "Поезд R2 Nord",
+        "description": "Пригородный поезд Rodalies от терминала T2 через центр города.",
+        "pricing": "per_person",
+        "trip": "one_way",
+        "price": {
+          "min": 2.55,
+          "max": 2.9,
+          "currency": "EUR",
+          "status": "needs_check",
+          "source": "https://rodalies.gencat.cat/en/tarifes/servei_rodalia_barcelona/nomes_rodalies/index.html",
+          "checkedAt": "2026-10-18",
+          "note": "Официальные страницы не говорят, в какой зоне станция Aeroport и входит ли поездка в T-casual и Hola Barcelona. Разовый билет на 1 зону: 2,55 € у Rodalies (дата тарифа не указана) и 2,90 € у ATM (atm.cat)."
+        }
       },
       {
         "id": "taxi",
         "title": "Такси",
         "description": "Цена за машину в одну сторону, делится на всех. В обычное такси садятся до 4 человек.",
         "pricing": "per_vehicle",
+        "trip": "one_way",
         "vehicleCapacity": 4,
-        "price": { "min": 30, "max": 45, "currency": "EUR", "status": "needs_check", "source": "Оценка по тарифам такси AMB 2026 (надбавка за аэропорт 4,60 €); сверить на taxi.amb.cat", "checkedAt": null }
+        "price": {
+          "min": 25,
+          "max": 38,
+          "currency": "EUR",
+          "status": "needs_check",
+          "source": "https://taxi.amb.cat/ca/usuari/tarifes",
+          "checkedAt": "2026-10-18",
+          "note": "Тариф AMB 2026 проверен: посадка 2,80 €, 1,35 €/км днём в будни и 1,66 €/км ночью и в выходные, надбавка за аэропорт 4,60 €, минимум из аэропорта 21 €. Фиксированной цены аэропорт — центр нет; диапазон посчитан для 13–18 км без пробок: 2,80 + 4,60 + 13 × 1,35 ≈ 25 € и 2,80 + 4,60 + 18 × 1,66 ≈ 38 €, расстояние не сверено с официальным источником."
+        }
       },
       {
         "id": "none",
         "title": "Не нужен",
         "description": "Вас встречают или трансфер уже оплачен.",
         "pricing": "per_person",
-        "price": { "min": 0, "max": 0, "currency": "EUR", "status": "verified", "source": "Без расходов на трансфер", "checkedAt": "2026-10-18" }
+        "trip": "round_trip",
+        "price": {
+          "min": 0,
+          "max": 0,
+          "currency": "EUR",
+          "status": "verified",
+          "source": "Без расходов на трансфер",
+          "checkedAt": "2026-10-18"
+        }
       }
     ]
   }

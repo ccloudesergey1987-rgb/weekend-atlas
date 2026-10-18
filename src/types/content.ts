@@ -15,6 +15,8 @@ export interface Provenance {
   source: string
   /** ISO date (YYYY-MM-DD) of the last check, or null if never checked. */
   checkedAt: string | null
+  /** Why the value is still «needs_check»: site unavailable, sources disagree, etc. */
+  note?: string
 }
 
 /** A single fact such as an address, opening hours or an official URL. */
@@ -115,6 +117,8 @@ export interface RoutePoint extends Links {
   tickets: Fact<string> | null
   /** Why there is no ticket link, e.g. «Билеты продаются на входе». */
   ticketsNote?: string
+  /** Whether tickets must be booked in advance, in plain words. */
+  booking?: Fact<string> | null
   /** Absent for the first point of the day. */
   transferFromPrevious?: Transfer
   photo?: Photo
@@ -126,6 +130,8 @@ export interface RouteDay {
   /** Neighbourhoods covered this day. */
   areas: string[]
   summary: string
+  /** Warning about days of the week, e.g. a museum closed on Mondays. */
+  notice?: string
   points: RoutePoint[]
 }
 
@@ -193,11 +199,17 @@ export type TransportOption = BudgetOption
 /** `per_person` — public transport ticket; `per_vehicle` — taxi, shared by the group. */
 export type TransferPricing = 'per_person' | 'per_vehicle'
 
-/** Airport transfer. Price is ONE WAY; the calculator doubles it for the way back. */
+/** `one_way` — the calculator doubles the price for the way back; `round_trip` — the price covers both ways. */
+export type TransferTrip = 'one_way' | 'round_trip'
+
+/** Airport transfer, there and back. */
 export interface TransferOption extends BudgetOption {
   pricing: TransferPricing
+  trip: TransferTrip
   /** Passengers per vehicle, required for `per_vehicle` (4 for a regular taxi). */
   vehicleCapacity?: number
+  /** City transport options that already include this transfer, e.g. a pass with airport metro rides. */
+  includedInTransport?: string[]
 }
 
 export interface OptionGroup<T extends BudgetOption> {

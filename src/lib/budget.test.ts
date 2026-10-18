@@ -4,6 +4,7 @@ import { getCityContent } from '../data'
 import type { BudgetSelection, SightItem } from './budget'
 import {
   MAX_TRAVELERS,
+  allocateEuros,
   calculateBudget,
   centsToEuros,
   clampTravelers,
@@ -47,15 +48,18 @@ const settings: BudgetSettings = {
     options: [
       { id: 'casual', title: 'Разовые', description: '', price: eur(13, 13) },
       { id: 'pass', title: 'Проездной', description: '', price: null },
+      { id: 'pass-airport', title: 'Проездной с метро в аэропорт', description: '', price: eur(25, 27.5, 'verified') },
       { id: 'walk', title: 'Пешком', description: '', price: eur(0, 0, 'verified') },
     ],
   },
   transfer: {
     defaultId: 'bus',
     options: [
-      { id: 'bus', title: 'Автобус', description: '', pricing: 'per_person', price: eur(7.25, 7.45) },
-      { id: 'taxi', title: 'Такси', description: '', pricing: 'per_vehicle', vehicleCapacity: 4, price: eur(30, 45) },
-      { id: 'none', title: 'Не нужен', description: '', pricing: 'per_person', price: eur(0, 0, 'verified') },
+      { id: 'bus', title: 'Автобус', description: '', pricing: 'per_person', trip: 'one_way', price: eur(7.25, 7.45) },
+      { id: 'bus-return', title: 'Автобус туда-обратно', description: '', pricing: 'per_person', trip: 'round_trip', price: eur(13.3, 13.3, 'verified') },
+      { id: 'metro', title: 'Метро', description: '', pricing: 'per_person', trip: 'one_way', includedInTransport: ['pass-airport'], price: eur(5.9, 5.9, 'verified') },
+      { id: 'taxi', title: 'Такси', description: '', pricing: 'per_vehicle', trip: 'one_way', vehicleCapacity: 4, price: eur(30, 45) },
+      { id: 'none', title: 'Не нужен', description: '', pricing: 'per_person', trip: 'round_trip', price: eur(0, 0, 'verified') },
     ],
   },
 }
@@ -212,6 +216,31 @@ describe('трансфер из аэропорта', () => {
   it('для общественного транспорта машины не показываются', () => {
     expect(calc({ transferId: 'bus' }).vehicles).toBeNull()
   })
+
+  it('билет туда-обратно считается один раз на человека', () => {
+    // 13,30 € × 1 билет × 3 человека
+    expect(line({ transferId: 'bus-return', travelers: 3 }, 'transfer').cents).toEqual({ min: 3990, max: 3990 })
+    // Для сравнения: два билета в одну сторону на 3 человек — 7,25–7,45 € × 2 × 3
+    expect(line({ transferId: 'bus', travelers: 3 }, 'transfer').cents).toEqual({ min: 4350, max: 4470 })
+  })
+
+  it('«не нужен» туда-обратно остаётся нулём', () => {
+    expect(line({ transferId: 'none', travelers: 4 }, 'transfer').cents).toEqual({ min: 0, max: 0 })
+  })
+
+  it('трансфер, который уже входит в выбранный проездной, ничего не добавляет', () => {
+    const r = calc({ transferId: 'metro', transportId: 'pass-airport', travelers: 2 })
+    expect(r.lines.find((l) => l.id === 'transfer')!.cents).toEqual({ min: 0, max: 0 })
+    expect(r.transferIncluded).toBe(true)
+    // Проездной считается как обычно: 25–27,50 € × 2
+    expect(r.total).toEqual({ min: 5000, max: 5500 })
+  })
+
+  it('без такого проездного метро в аэропорт оплачивается: туда и обратно', () => {
+    const r = calc({ transferId: 'metro', transportId: 'casual', travelers: 2 })
+    expect(r.lines.find((l) => l.id === 'transfer')!.cents).toEqual({ min: 2360, max: 2360 })
+    expect(r.transferIncluded).toBe(false)
+  })
 })
 
 describe('ручные суммы', () => {
@@ -260,6 +289,49 @@ describe('ручные суммы', () => {
     expect(calc({ flights: '200' })).toMatchObject({ missingFlights: false, missingLodging: true })
     expect(calc({ flights: '200', lodging: '300' })).toMatchObject({ missingFlights: false, missingLodging: false })
     expect(calc({ flights: 'abc' })).toMatchObject({ missingFlights: true })
+  })
+})
+
+describe('округление строк и итога', () => {
+  it('распределяет евро так, что сумма частей равна округлённому итогу', () => {
+    // 3 × 0,50 € = 1,50 € → 2 €; по отдельности каждая строка округлилась бы до 1 €, и сумма была бы 3 €
+    expect(allocateEuros([50, 50, 50])).toEqual([1, 1, 0])
+    // 10,40 + 10,40 + 10,40 = 31,20 → 31; по отдельности 10 + 10 + 10 = 30
+    expect(allocateEuros([1040, 1040, 1040])).toEqual([11, 10, 10])
+    expect(allocateEuros([1060, 1060])).toEqual([11, 10])
+    expect(allocateEuros([1200, 3000])).toEqual([12, 30])
+    expect(allocateEuros([])).toEqual([])
+    expect(allocateEuros([0, 49])).toEqual([0, 0])
+  })
+
+  it('каждая часть отличается от точного значения меньше чем на 1 €', () => {
+    const parts = [1999, 1, 2550, 49, 51, 12345]
+    allocateEuros(parts).forEach((e, i) => expect(Math.abs(e * 100 - parts[i]), String(i)).toBeLessThan(100))
+  })
+
+  it('строки расчёта всегда складываются в показанный итог', () => {
+    const foods = ['zero', 'economy', 'medium', 'fixed', 'unknown']
+    const transports = ['casual', 'pass', 'pass-airport', 'walk']
+    const transfers = ['bus', 'bus-return', 'metro', 'taxi', 'none']
+    const extras = ['', '0,50', '10,49', '33,33']
+    let checked = 0
+    for (const foodId of foods)
+      for (const transportId of transports)
+        for (const transferId of transfers)
+          for (const extra of extras)
+            for (const travelers of [1, 3, 5]) {
+              const r = calc({ foodId, transportId, transferId, extra, travelers, excludedSightIds: ['c'], lodging: '100,50' })
+              const shown = r.lines.filter((l) => l.euros !== null)
+              const sum = shown.reduce((s, l) => ({ min: s.min + l.euros!.min, max: s.max + l.euros!.max }), { min: 0, max: 0 })
+              expect(sum, JSON.stringify({ foodId, transportId, transferId, extra, travelers })).toEqual(r.totalEuros)
+              checked += 1
+            }
+    expect(checked).toBe(5 * 4 * 5 * 4 * 3)
+  })
+
+  it('строка без цены не получает евро', () => {
+    const r = calc({ foodId: 'unknown' })
+    expect(r.lines.find((l) => l.id === 'food')!.euros).toBeNull()
   })
 })
 

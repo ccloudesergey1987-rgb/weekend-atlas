@@ -74,6 +74,15 @@
   color: var(--color-text-muted);
 }
 
+.dayNotice {
+  margin-top: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  color: var(--color-warning-text);
+  background: var(--color-warning-bg);
+}
+
 /* Timeline */
 
 .timeline {

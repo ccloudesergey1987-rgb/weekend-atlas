@@ -40,7 +40,7 @@ export function SightCard({ point, highlighted = false }: { point: RoutePoint; h
 
   const entry = admissionInfo(point)
   const showTickets = point.admission.value === 'paid' && point.tickets !== null
-  const hasMore = Boolean(point.details || point.openingHours || point.website)
+  const hasMore = Boolean(point.details || point.openingHours || point.booking || point.website)
   const photo = point.photo ?? { src: null, alt: point.localName ?? point.title, credit: null }
 
   return (
@@ -89,6 +89,14 @@ export function SightCard({ point, highlighted = false }: { point: RoutePoint; h
                   )}
                 </dd>
               </div>
+              {point.booking && (
+                <div className={styles.fact}>
+                  <dt>Бронь</dt>
+                  <dd>
+                    {point.booking.value} <VerificationBadge status={point.booking.status} />
+                  </dd>
+                </div>
+              )}
               {point.website && (
                 <div className={styles.fact}>
                   <dt>Сайт</dt>

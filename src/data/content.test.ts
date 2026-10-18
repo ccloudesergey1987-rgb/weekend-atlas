@@ -76,6 +76,36 @@ describe.each(listCityIds())('данные города %s', (cityId) => {
     }
   })
 
+  it('проверенный факт маршрута и цена бюджета ссылаются на страницу источника', () => {
+    const budgetPrices = [content.budget.food, content.budget.transport, content.budget.transfer].flatMap((g) =>
+      g.options.map((o) => ({ path: `budget.${o.id}`, item: o.price as Record<string, unknown> | null })),
+    )
+    const items = [
+      ...findProvenance(content.route, 'route'),
+      // «0 €» за «пешком» или «трансфер не нужен» источника не требует.
+      ...budgetPrices.filter((p) => p.item !== null && p.item.max !== 0),
+    ]
+    for (const { path, item } of items) {
+      if (item!.status === 'verified') expect(String(item!.source), path).toMatch(/^https:\/\//)
+    }
+  })
+
+  it('если значение сверяли, но оставили «needs_check», указана причина', () => {
+    for (const { path, item } of findProvenance(content)) {
+      if (item.status === 'needs_check' && item.checkedAt !== null) {
+        expect(String(item.note ?? '').trim(), `${path}: нет причины`).not.toBe('')
+      }
+    }
+  })
+
+  it('у трансфера указано «в одну сторону» или «туда-обратно», а проездные в нём существуют', () => {
+    const transportIds = content.budget.transport.options.map((o) => o.id)
+    for (const option of content.budget.transfer.options) {
+      expect(['one_way', 'round_trip'], option.id).toContain(option.trip)
+      for (const id of option.includedInTransport ?? []) expect(transportIds, option.id).toContain(id)
+    }
+  })
+
   it('у цен минимум не больше максимума', () => {
     const prices = [
       ...points.map((p) => p.price),

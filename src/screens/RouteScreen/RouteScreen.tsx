@@ -53,6 +53,7 @@ function DaySummary({ day }: { day: RouteDay }) {
       <p className={styles.areas}>{day.areas.join(' · ')}</p>
       <p className={styles.stats}>{stats.join(' · ')}</p>
       <p className={styles.dayText}>{day.summary}</p>
+      {day.notice && <p className={styles.dayNotice}>{day.notice}</p>}
     </header>
   )
 }

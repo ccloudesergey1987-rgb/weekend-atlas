@@ -132,9 +132,19 @@ export function vehiclesNeeded(travelers: number, capacity: number | undefined):
   return Math.ceil(travelers / capacity)
 }
 
-/** How many units of the one-way price the group pays: people or vehicles. */
+/** How many units of the price the group pays: people or vehicles. */
 export function transferUnits(option: TransferOption, travelers: number): number {
   return option.pricing === 'per_vehicle' ? vehiclesNeeded(travelers, option.vehicleCapacity) : travelers
+}
+
+/** How many times one unit pays the price for there and back: 2 one-way tickets or 1 return ticket. */
+export function transferTrips(option: TransferOption): number {
+  return option.trip === 'round_trip' ? 1 : 2
+}
+
+/** The chosen city transport already includes this transfer, e.g. a pass with airport metro rides. */
+export function transferIncluded(option: TransferOption, transportId: string): boolean {
+  return option.includedInTransport?.includes(transportId) ?? false
 }
 
 // ---------------------------------------------------------------------------
@@ -215,6 +225,11 @@ export interface BudgetLine {
   id: BudgetLineId
   /** For the whole group, in cents. null — not counted (no price or nothing entered). */
   cents: Range | null
+  /**
+   * Whole euros for display. Rounded together with the other lines, so the
+   * shown lines always add up to the shown total. null when `cents` is null.
+   */
+  euros: Range | null
   /** Uses at least one price marked «needs_check». */
   needsCheck: boolean
 }
@@ -232,6 +247,8 @@ export interface BudgetResult {
   unpricedSights: number
   /** Taxis needed for the transfer, if a per-vehicle option is chosen. */
   vehicles: number | null
+  /** The chosen transfer is already part of the chosen city transport and costs nothing extra. */
+  transferIncluded: boolean
   /** At least one counted amount is unverified — the total is approximate. */
   needsCheck: boolean
   missingFlights: boolean
@@ -251,14 +268,49 @@ function findOption<T extends BudgetOption>(group: OptionGroup<T>, id: string): 
   return option
 }
 
-function optionLine(id: BudgetLineId, price: Price | null, factor: number): BudgetLine {
+type RawLine = Omit<BudgetLine, 'euros'>
+
+function optionLine(id: BudgetLineId, price: Price | null, factor: number): RawLine {
   if (!price) return { id, cents: null, needsCheck: false }
   return { id, cents: scale(priceToCents(price), factor), needsCheck: price.status === 'needs_check' }
 }
 
-function manualLine(id: BudgetLineId, raw: string, factor: number): BudgetLine {
+function manualLine(id: BudgetLineId, raw: string, factor: number): RawLine {
   const cents = manualCents(raw)
   return { id, cents: cents === null ? null : { min: cents * factor, max: cents * factor }, needsCheck: false }
+}
+
+/**
+ * Splits a rounded total between parts (largest remainder method): every
+ * part gets its whole euros rounded down, then the euros still missing to
+ * reach the rounded total go one by one to the parts with the largest
+ * leftover cents (earlier part wins a tie). The result always sums to
+ * `centsToEuros(sum of parts)` and each part differs from its exact value
+ * by less than 1 €.
+ */
+export function allocateEuros(parts: number[]): number[] {
+  const total = centsToEuros(parts.reduce((sum, c) => sum + c, 0))
+  const euros = parts.map((c) => Math.floor(c / 100))
+  let missing = total - euros.reduce((sum, e) => sum + e, 0)
+  const order = parts.map((_, i) => i).sort((a, b) => (parts[b] % 100) - (parts[a] % 100) || a - b)
+  for (const i of order) {
+    if (missing <= 0) break
+    if (parts[i] % 100 === 0) continue
+    euros[i] += 1
+    missing -= 1
+  }
+  return euros
+}
+
+/** Adds display euros to the counted lines, separately for min and max. */
+function withEuros(lines: RawLine[]): BudgetLine[] {
+  const counted = lines.filter((l) => l.cents !== null)
+  const mins = allocateEuros(counted.map((l) => l.cents!.min))
+  const maxes = allocateEuros(counted.map((l) => l.cents!.max))
+  return lines.map((line) => {
+    const i = counted.indexOf(line)
+    return { ...line, euros: i === -1 ? null : { min: mins[i], max: maxes[i] } }
+  })
 }
 
 export function calculateBudget({ settings, days, sights, selection }: BudgetInput): BudgetResult {
@@ -272,7 +324,7 @@ export function calculateBudget({ settings, days, sights, selection }: BudgetInp
   const excluded = new Set(selection.excludedSightIds)
   const chosenSights = sights.filter((s) => !excluded.has(s.id))
   const pricedSights = chosenSights.filter((s) => s.price !== null)
-  const sightsLine: BudgetLine = {
+  const sightsLine: RawLine = {
     id: 'sights',
     cents:
       pricedSights.length === 0
@@ -285,16 +337,21 @@ export function calculateBudget({ settings, days, sights, selection }: BudgetInp
   }
 
   const units = transferUnits(transfer, travelers)
-  const lines: BudgetLine[] = [
+  const included = transferIncluded(transfer, transport.id)
+  const transferLine: RawLine = included
+    ? // Already paid for in the transport line: counted, but adds nothing.
+      { id: 'transfer', cents: { ...ZERO }, needsCheck: false }
+    : // There and back: 2 one-way tickets or 1 return ticket per unit.
+      optionLine('transfer', transfer.price, transferTrips(transfer) * units)
+  const lines = withEuros([
     optionLine('food', food.price, tripDays * travelers),
     sightsLine,
     optionLine('transport', transport.price, travelers),
-    // There and back: × 2.
-    optionLine('transfer', transfer.price, 2 * units),
+    transferLine,
     manualLine('extra', selection.extra, 1),
     manualLine('flights', selection.flights, travelers),
     manualLine('lodging', selection.lodging, 1),
-  ]
+  ])
 
   const total = lines.reduce((sum, line) => (line.cents ? add(sum, line.cents) : sum), ZERO)
   const flightsLine = lines.find((l) => l.id === 'flights')
@@ -311,7 +368,8 @@ export function calculateBudget({ settings, days, sights, selection }: BudgetInp
       max: divideRounded(total.max, 100 * travelers),
     },
     unpricedSights: chosenSights.length - pricedSights.length,
-    vehicles: transfer.pricing === 'per_vehicle' ? units : null,
+    vehicles: transfer.pricing === 'per_vehicle' && !included ? units : null,
+    transferIncluded: included,
     needsCheck: lines.some((l) => l.cents !== null && l.needsCheck),
     missingFlights: flightsLine?.cents == null,
     missingLodging: lodgingLine?.cents == null,
@@ -345,9 +403,4 @@ export function formatUnitPrice(price: Price | null): string {
   const symbol = currencySymbol(price.currency)
   if (price.min === price.max) return `${money(price.min)} ${symbol}`
   return `${money(price.min)}–${money(price.max)} ${symbol}`
-}
-
-/** Cents range → rounded whole euros. */
-export function rangeToEuros(cents: Range): Range {
-  return { min: centsToEuros(cents.min), max: centsToEuros(cents.max) }
 }

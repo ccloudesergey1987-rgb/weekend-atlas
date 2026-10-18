@@ -9,11 +9,10 @@ import {
   formatRange,
   formatUnitPrice,
   paidSights,
-  rangeToEuros,
   sanitizeSelection,
 } from '../../lib/budget'
 import { readJson, writeJson } from '../../lib/storage'
-import type { BudgetSettings } from '../../types/content'
+import type { BudgetSettings, TransferOption } from '../../types/content'
 import { currencySymbol, pluralize } from '../../utils/format'
 import { VerificationBadge } from '../../components/VerificationBadge/VerificationBadge'
 import { AmountField, Choice, Section, Stepper } from './BudgetControls'
@@ -44,10 +43,16 @@ function unpricedText(n: number): string {
 }
 
 function lineValue(line: BudgetLine, settings: BudgetSettings): string {
-  if (line.cents) return formatRange(rangeToEuros(line.cents), settings.currency)
+  if (line.euros) return formatRange(line.euros, settings.currency)
   if (line.id === 'flights' || line.id === 'lodging') return 'добавьте сами'
   if (line.id === 'extra') return 'не указано'
   return 'не учтено'
+}
+
+/** «на человека, туда и обратно», «за машину, в одну сторону». */
+function transferUnitText(option: TransferOption): string {
+  const who = option.pricing === 'per_vehicle' ? 'за машину' : 'на человека'
+  return `${who}, ${option.trip === 'round_trip' ? 'туда и обратно' : 'в одну сторону'}`
 }
 
 /** Remembers the user's choice between visits. Storage failures are harmless. */
@@ -169,7 +174,7 @@ export function BudgetScreen() {
         )}
       </Section>
 
-      <Section title="Трансфер из аэропорта" hint="Цена в одну сторону; в итоге — туда и обратно.">
+      <Section title="Трансфер из аэропорта" hint="В итоге — дорога туда и обратно: билет в одну сторону считается дважды.">
         {settings.transfer.options.map((o) => (
           <Choice
             key={o.id}
@@ -184,13 +189,16 @@ export function BudgetScreen() {
             priceExtra={
               <>
                 {o.price && o.price.max > 0 && (
-                  <span className={styles.priceUnit}>{o.pricing === 'per_vehicle' ? 'за машину' : 'на человека'}</span>
+                  <span className={styles.priceUnit}>{transferUnitText(o)}</span>
                 )}
                 {o.price && <VerificationBadge status={o.price.status} />}
               </>
             }
           />
         ))}
+        {result.transferIncluded && (
+          <p className={styles.notice}>Поездки на метро в аэропорт уже входят в выбранный проездной — отдельно не считаются.</p>
+        )}
         {result.vehicles !== null && result.vehicles > 1 && (
           <p className={styles.notice}>
             Вас {result.travelers} — понадобится {result.vehicles}{' '}
