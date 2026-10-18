@@ -1,81 +1,48 @@
-# Ручная проверка — примерно на час
-
-Здесь только то, что нельзя надёжно проверить автоматически. Нужен телефон или компьютер с Google Maps; для раздела 3 — VPN.
+# Ручная проверка
 
 **Как отмечать.** Откройте файл на GitHub → карандаш («Edit») → замените `[ ]` на `[x]`. Цифры впишите вместо `____`.
-Если что-то не так — допишите пару слов в той же строке. Потом нажмите «Commit changes» и напишите мне.
 
-**Что смотреть в Google Maps.** Откройте ссылку — откроется карточка места.
-- **Закрыто?** Под названием не должно быть красной надписи «Закрыто навсегда» или «Временно закрыто».
-- **Свежие отзывы.** «Отзывы» → «Сортировать» → «Сначала новые». Самый новый — не старше 3 месяцев.
-- **Цена на человека.** Рядом с рейтингом: «10–20 €», «€€» или похожее. Впишите как есть.
+## Выполнено 18.10.2026
+
+### 1–2. Заведения в Google Maps
+
+- [x] Ни одно заведение не закрыто: нет пометок «Закрыто навсегда/временно».
+- [x] Цена на человека по Google Maps (данные посетителей) записана в средний чек как «оценка редакции»; прежние оценки по меню — в пояснении к цене.
+
+| Заведение | Цена в Google | Комментарий |
+|---|---|---|
+| El Xampanyet | 20–40 € | |
+| Bar del Pla | 20–30 € | по меню было 20–26 € |
+| Cuines de Santa Caterina | 20–30 € | по меню было 20–29 € |
+| Paco Meralgo | 30–70 € | по меню было 25–35 € |
+| Bar Mut | 30–90 € | |
+| Xavier Pellicer | от 100 € | дегустационные сеты 95–115 € |
+| Escribà | 10–20 € | |
+| Syra Coffee | 1–10 € | |
+| La Pepita | 20–30 € | |
+| La Pubilla | 20–30 € | на TheFork было 50 € |
+| Oníric | 30–80 € | меню 26–48 € |
+| Berbena | 50–100 € | по Michelin было 35–60 € |
+| Quimet & Quimet | 20–30 € | |
+| Xemei | 30–50 € | |
+| Tiberi Bar | 30–40 € | |
+| Taberna Noroeste | от 100 € | на TheFork было 80 € |
+| Elche | 20–50 € | по меню было 23–30 € |
+| Pastisseria Hofmann | цены нет в Google | по официальному сайту: круассаны 3,10–4,90 € |
+| Рынки Santa Caterina, Concepció, Llibertat | цены нет | на карточке «Цена зависит от выбора» |
+
+- [x] «Лучше забронировать» добавлено для Bar Mut, Xemei и La Pubilla (по карточкам Google Maps).
+
+### 3. Ла Педрера и Каса Батльо
+
+- [x] **Ла Педрера.** Сверено в официальной продаже билетов tickets.lapedrera.com: билет Essential — вход по времени с 9:00, последний вход 17:15, цена зависит от времени (на 23.10.2026 — 29–39 €); Open Date — 45 €. Адрес — по сайту мэрии.
+- [x] **Каса Батльо.** Общий визит от 29 €, ежедневно, первый вход 9:00, последний — 19:15 (на сайте встречается и 19:45 — взято более раннее). Дети до 12 лет — бесплатно.
 
 ---
 
-## 1. Заведения без цены (12) — ~2 минуты на каждое
+## Осталось — ~5 минут
 
-Для них цену не нашли ни на официальном сайте, ни на TheFork, ни в гиде Michelin. Цены Syra Coffee, Hofmann и Escribà нужны ещё и для завтрака и кофе в уровнях питания бюджета.
-
-- **El Xampanyet** (тапас, Борн) — [Google Maps](https://www.google.com/maps/search/?api=1&query=El+Xampanyet%2C+Carrer+de+Montcada+22%2C+Barcelona)
-  - [ ] Не закрыто · [ ] Есть отзывы за 3 месяца · Цена на человека: ____
-- **Pastisseria Hofmann** (кондитерская, Борн) — [Google Maps](https://www.google.com/maps/search/?api=1&query=Pastisseria+Hofmann%2C+Carrer+dels+Flassaders+44%2C+Barcelona)
-  - [ ] Не закрыто · [ ] Есть отзывы за 3 месяца · Цена на человека: ____
-- **Mercat de Santa Caterina** (рынок, Борн) — [Google Maps](https://www.google.com/maps/search/?api=1&query=Mercat+de+Santa+Caterina%2C+Barcelona)
-  - [ ] Не закрыто · [ ] Есть отзывы за 3 месяца · Цена на человека: ____
-- **Escribà** (кондитерская, Эшампле) — [Google Maps](https://www.google.com/maps/search/?api=1&query=Escrib%C3%A0%2C+Gran+Via+de+les+Corts+Catalanes+546%2C+Barcelona)
-  - [ ] Не закрыто · [ ] Есть отзывы за 3 месяца · Цена на человека: ____
-- **Mercat de la Concepció** (рынок, Эшампле) — [Google Maps](https://www.google.com/maps/search/?api=1&query=Mercat+de+la+Concepci%C3%B3%2C+Barcelona)
-  - [ ] Не закрыто · [ ] Есть отзывы за 3 месяца · Цена на человека: ____
-- **Bar Mut** (тапас, Эшампле) — [Google Maps](https://www.google.com/maps/search/?api=1&query=Bar+Mut%2C+Carrer+de+Pau+Claris+192%2C+Barcelona)
-  - [ ] Не закрыто · [ ] Есть отзывы за 3 месяца · Цена на человека: ____
-- **Syra Coffee** (кофейня, Грасия) — [Google Maps](https://www.google.com/maps/search/?api=1&query=Syra+Coffee%2C+Carrer+de+Bonavista+23%2C+Barcelona)
-  - [ ] Не закрыто · [ ] Есть отзывы за 3 месяца · Цена на человека: ____
-- **Mercat de la Llibertat** (рынок, Грасия) — [Google Maps](https://www.google.com/maps/search/?api=1&query=Mercat+de+la+Llibertat%2C+Barcelona)
-  - [ ] Не закрыто · [ ] Есть отзывы за 3 месяца · Цена на человека: ____
-- **La Pepita** (тапас, Грасия) — [Google Maps](https://www.google.com/maps/search/?api=1&query=La+Pepita%2C+Carrer+de+C%C3%B2rsega+343%2C+Barcelona)
-  - [ ] Не закрыто · [ ] Есть отзывы за 3 месяца · Цена на человека: ____
-- **Quimet & Quimet** (тапас, Побле-сек) — [Google Maps](https://www.google.com/maps/search/?api=1&query=Quimet+%26+Quimet%2C+Carrer+del+Poeta+Cabanyes+25%2C+Barcelona)
-  - [ ] Не закрыто · [ ] Есть отзывы за 3 месяца · Цена на человека: ____
-- **Xemei** (ресторан, Побле-сек) — [Google Maps](https://www.google.com/maps/search/?api=1&query=Xemei%2C+Passeig+de+l'Exposici%C3%B3+85%2C+Barcelona)
-  - [ ] Не закрыто · [ ] Есть отзывы за 3 месяца · Цена на человека: ____
-- **Tiberi Bar** (бар, Побле-сек) — [Google Maps](https://www.google.com/maps/search/?api=1&query=Tiberi+Bar%2C+Carrer+de+Vila+i+Vil%C3%A0+67%2C+Barcelona)
-  - [ ] Не закрыто · [ ] Есть отзывы за 3 месяца · Цена на человека: ____
-
-## 2. Заведения с ценой (9) — ~1 минута на каждое
-
-Цена у нас уже есть — только проверьте, что место работает.
-
-- **Bar del Pla** (тапас, Борн, у нас ≈ 20–26 €) — [Google Maps](https://www.google.com/maps/search/?api=1&query=Bar+del+Pla%2C+Carrer+de+Montcada+2%2C+Barcelona)
-  - [ ] Не закрыто · [ ] Есть отзывы за 3 месяца
-- **Cuines de Santa Caterina** (ресторан, Борн, у нас ≈ 20–29 €) — [Google Maps](https://www.google.com/maps/search/?api=1&query=Cuines+de+Santa+Caterina%2C+Avinguda+de+Francesc+Camb%C3%B3+16%2C+Barcelona)
-  - [ ] Не закрыто · [ ] Есть отзывы за 3 месяца
-- **Paco Meralgo** (тапас, Эшампле, у нас ≈ 25–35 €) — [Google Maps](https://www.google.com/maps/search/?api=1&query=Paco+Meralgo%2C+Carrer+de+Muntaner+171%2C+Barcelona)
-  - [ ] Не закрыто · [ ] Есть отзывы за 3 месяца
-- **Xavier Pellicer** (ресторан, Эшампле, у нас ≈ 95–115 €) — [Google Maps](https://www.google.com/maps/search/?api=1&query=Xavier+Pellicer%2C+Carrer+de+Proven%C3%A7a+310%2C+Barcelona)
-  - [ ] Не закрыто · [ ] Есть отзывы за 3 месяца
-- **Berbena** (ресторан, Грасия, у нас ≈ 35–60 €) — [Google Maps](https://www.google.com/maps/search/?api=1&query=Berbena%2C+Carrer+de+Minerva+6%2C+Barcelona)
-  - [ ] Не закрыто · [ ] Есть отзывы за 3 месяца
-- **La Pubilla** (ресторан, Грасия, у нас ≈ 50 €) — [Google Maps](https://www.google.com/maps/search/?api=1&query=La+Pubilla%2C+Pla%C3%A7a+de+la+Llibertat+23%2C+Barcelona)
-  - [ ] Не закрыто · [ ] Есть отзывы за 3 месяца
-- **Oníric** (ресторан, Грасия, у нас ≈ 26–48 €) — [Google Maps](https://www.google.com/maps/search/?api=1&query=On%C3%ADric%2C+Carrer+de+la+Rabassa+37%2C+Barcelona)
-  - [ ] Не закрыто · [ ] Есть отзывы за 3 месяца
-- **Taberna Noroeste** (ресторан, Побле-сек, у нас ≈ 80 €) — [Google Maps](https://www.google.com/maps/search/?api=1&query=Taberna+Noroeste%2C+Carrer+de+Radas+67%2C+Barcelona)
-  - [ ] Не закрыто · [ ] Есть отзывы за 3 месяца
-- **Elche** (ресторан, Побле-сек, у нас ≈ 23–30 €) — [Google Maps](https://www.google.com/maps/search/?api=1&query=Restaurant+Elche%2C+Carrer+de+Vila+i+Vil%C3%A0+71%2C+Barcelona)
-  - [ ] Не закрыто · [ ] Есть отзывы за 3 месяца
-
-## 3. Ла Педрера и Каса Батльо — ~10 минут
-
-Их официальные сайты из России не открылись или противоречат сами себе. Цену и часы с официального сайта я внесу как проверенные.
-
-- **Каса Мила (Ла Педрера)** — <https://www.lapedrera.com> (через VPN). Сейчас у нас: 29 €, часы: «Уточняются. Проверьте перед визитом.».
-  - Базовый взрослый билет («La Pedrera Essential») в обычный день: ____ €, в субботу: ____ €
-  - Часы работы и дни, когда закрыто: ____
-- **Каса Батльо** — <https://www.casabatllo.es> (через VPN). Сейчас у нас: 29 €, часы: «Ежедневно; общий визит — вход с 9:00 до 19:45. Проверьте перед визитом.».
-  - Базовый взрослый билет («General Visit») в обычный день: ____ €, в субботу: ____ €
-  - Часы работы и дни, когда закрыто: ____
-
-## 4. Два перехода между точками — ~5 минут
+### 4. Два перехода между точками
 
 Время переходов — наша оценка. Откройте ссылку: Google сам построит маршрут. Разница до 10 минут — нормально.
 
@@ -83,7 +50,3 @@
   - [ ] Google показывает ____ мин, разница не больше 10 минут
 - День 3: Замок Монжуик → Прощальный ужин в Побле-сек, у нас ≈ 25 мин — [маршрут](https://www.google.com/maps/dir/?api=1&origin=Carretera+de+Montju%C3%AFc%2C+66%2C+Barcelona&destination=Poble-sec%2C+Barcelona&travelmode=walking)
   - [ ] Google показывает ____ мин, разница не больше 10 минут
-
----
-
-Google Maps — не официальный источник: ваша проверка ловит закрытые места и явные ошибки, а цену из Google я внесу как «оценку редакции» с пометкой «по Google Maps, проверено вручную».
