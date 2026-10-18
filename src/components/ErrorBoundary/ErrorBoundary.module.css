@@ -1,0 +1,52 @@
+.screen {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: calc(var(--safe-top) + var(--space-6)) var(--gutter) var(--space-7);
+}
+
+.brand {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: var(--tracking-caps);
+  text-transform: uppercase;
+}
+
+.title {
+  margin-top: var(--space-6);
+  font-size: var(--text-2xl);
+}
+
+.text {
+  margin-top: var(--space-3);
+  color: var(--color-text-muted);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-5);
+}
+
+.primary,
+.secondary {
+  min-height: 44px;
+  padding: 0 var(--space-5);
+  border-radius: var(--radius-pill);
+  font: inherit;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.primary {
+  border: 0;
+  color: var(--color-accent-contrast);
+  background: var(--color-text);
+}
+
+.secondary {
+  border: 1px solid var(--color-line);
+  color: var(--color-text);
+  background: none;
+}

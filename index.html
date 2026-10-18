@@ -5,10 +5,59 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="description" content="Барселона за 72 часа — интерактивный путеводитель Weekend Atlas" />
+    <meta name="color-scheme" content="light dark" />
     <title>Weekend Atlas</title>
+    <!--
+      The cover is the first big image: start loading it together with the
+      app code, not after it. Same files and breakpoint as the home screen.
+    -->
+    <link
+      rel="preload"
+      as="image"
+      type="image/webp"
+      media="(max-width: 639px)"
+      imagesrcset="%BASE_URL%images/barcelona/cover-portrait-600.webp 600w, %BASE_URL%images/barcelona/cover-portrait-800.webp 735w"
+      imagesizes="100vw"
+    />
+    <link
+      rel="preload"
+      as="image"
+      type="image/webp"
+      media="(min-width: 640px)"
+      imagesrcset="%BASE_URL%images/barcelona/cover-800.webp 800w, %BASE_URL%images/barcelona/cover-1600.webp 1470w"
+      imagesizes="(min-width: 720px) 640px, 100vw"
+    />
+    <!--
+      Shown until the app code arrives (a few seconds on a slow mobile
+      connection): the page background and the guide title instead of a
+      white screen. Colors repeat src/styles/tokens.css.
+    -->
+    <style>
+      html { background: #f7f3ec; color: #1b1916; }
+      .boot { max-width: 40rem; margin: 0 auto; padding: 16px 20px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif; }
+      .boot-brand { font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; }
+      .boot-cover { margin: 16px -20px 0; aspect-ratio: 4 / 5; max-height: 62dvh; background: #e6dccb; }
+      .boot-title { margin: 24px 0 8px; font-family: Georgia, 'Times New Roman', serif; font-size: 40px; font-weight: 500; line-height: 1.1; }
+      .boot-text { margin: 0; color: #6e665b; }
+      @media (min-width: 640px) { .boot-cover { margin: 16px 0 0; aspect-ratio: 16 / 10; border-radius: 12px; } }
+      @media (prefers-color-scheme: dark) {
+        html { background: #141210; color: #f2ece2; }
+        .boot-cover { background: #2a2621; }
+        .boot-text { color: #a69d90; }
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <div class="boot" aria-busy="true">
+        <div class="boot-brand">Weekend Atlas</div>
+        <div class="boot-cover"></div>
+        <h1 class="boot-title">Барселона за 72 часа</h1>
+        <p class="boot-text">Загружаем путеводитель…</p>
+      </div>
+    </div>
+    <noscript>
+      <p style="padding: 20px">Для работы путеводителя нужен JavaScript. Включите его в настройках браузера.</p>
+    </noscript>
     <script type="module" src="/src/main.tsx"></script>
   </body>
-</html>

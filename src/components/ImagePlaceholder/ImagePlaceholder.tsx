@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import type { Photo, PhotoFile } from '../../types/content'
 import { ExternalLink } from '../ExternalLink/ExternalLink'
 import { photoCreditText, photoUrl } from '../../lib/photos'
@@ -25,8 +26,10 @@ const NARROW = '(max-width: 639px)'
  */
 export function ImagePlaceholder({ photo, ratio, className, priority = false, sizes = '(min-width: 720px) 640px, 100vw' }: Props) {
   const classes = [styles.frame, className].filter(Boolean).join(' ')
+  // A file that fails to load (bad connection, removed file) shows the placeholder instead of a broken image.
+  const [failed, setFailed] = useState(false)
 
-  if (photo.src) {
+  if (photo.src && !failed) {
     return (
       <figure className={classes} style={ratio ? { aspectRatio: ratio } : undefined}>
         <picture>
@@ -42,6 +45,7 @@ export function ImagePlaceholder({ photo, ratio, className, priority = false, si
             loading={priority ? 'eager' : 'lazy'}
             decoding={priority ? 'sync' : 'async'}
             fetchPriority={priority ? 'high' : 'auto'}
+            onError={() => setFailed(true)}
           />
         </picture>
         {photo.credit && (
