@@ -469,3 +469,80 @@ describe('данные Барселоны', () => {
     expect(r.unpricedSights).toBe(list.filter((s) => s.price === null).length)
   })
 })
+
+// Пять сценариев на настоящих данных Барселоны, посчитанных вручную.
+// Если в budget.json или route.json поменяются цены, эти тесты упадут —
+// это сигнал перепроверить расчёт, а не просто поменять ожидание.
+describe('данные Барселоны: пять сценариев, посчитанных вручную', () => {
+  const content = getCityContent()
+  const sightsAll = paidSights(content.route)
+  const run = (selection: Partial<BudgetSelection>) =>
+    calculateBudget({
+      settings: content.budget,
+      days: content.city.durationDays,
+      sights: sightsAll,
+      selection: { ...defaultSelection(content.budget), ...selection },
+    })
+  const lineEuros = (r: ReturnType<typeof run>, id: string) => r.lines.find((l) => l.id === id)!.euros
+
+  it('исходные данные: 3 дня, 8 платных мест на 150–160 € на человека', () => {
+    expect(content.city.durationDays).toBe(3)
+    const sum = sightsAll.reduce((s, x) => ({ min: s.min + x.price!.min, max: s.max + x.price!.max }), { min: 0, max: 0 })
+    expect(sightsAll).toHaveLength(8)
+    expect(sum).toEqual({ min: 150, max: 160 })
+  })
+
+  it('1. По умолчанию: 2 человека, «Средне», все места, T-casual, Аэробус туда-обратно', () => {
+    // питание 60–100 × 3 × 2 = 360–600; места 150–160 × 2 = 300–320;
+    // транспорт 13 × 2 = 26; трансфер 13,30 × 2 = 26,60 → 712,60–972,60 € → 713–973 €
+    const r = run({})
+    expect(r.total).toEqual({ min: 71260, max: 97260 })
+    expect(r.totalEuros).toEqual({ min: 713, max: 973 })
+    expect(r.perPersonEuros).toEqual({ min: 356, max: 486 })
+    // Строки складываются в итог: 360 + 300 + 26 + 27 = 713
+    expect(lineEuros(r, 'transfer')).toEqual({ min: 27, max: 27 })
+  })
+
+  it('2. Один человек, «Экономно», пешком, метро L9, без Саграды и Каса Батльо, прочее 50 €', () => {
+    // питание 41–70 × 3 = 123–210; места 150−26−29 = 95 … 160−26−29 = 105;
+    // транспорт 0; метро 5,90 × 2 = 11,80; прочее 50 → 279,80–376,80 € → 280–377 €
+    const r = run({
+      travelers: 1,
+      foodId: 'economy',
+      transportId: 'walk',
+      transferId: 'metro-l9',
+      excludedSightIds: ['barcelona/sagrada-familia', 'barcelona/casa-batllo'],
+      extra: '50',
+    })
+    expect(r.total).toEqual({ min: 27980, max: 37680 })
+    expect(r.totalEuros).toEqual({ min: 280, max: 377 })
+  })
+
+  it('3. Четверо, «Комфортно», Hola Barcelona, метро уже в проездном, авиабилеты 250 €, жильё 900 €', () => {
+    // питание 90–190 × 3 × 4 = 1080–2280; места 150–160 × 4 = 600–640;
+    // Hola 24,57–27,30 × 4 = 98,28–109,20; трансфер 0 (входит в Hola);
+    // авиабилеты 250 × 4 = 1000; жильё 900 → 3678,28–4929,20 € → 3678–4929 €
+    const r = run({ travelers: 4, foodId: 'comfort', transportId: 'hola-72h', transferId: 'metro-l9', flights: '250', lodging: '900' })
+    expect(r.transferIncluded).toBe(true)
+    expect(r.total).toEqual({ min: 367828, max: 492920 })
+    expect(r.totalEuros).toEqual({ min: 3678, max: 4929 })
+    expect(r.perPersonEuros).toEqual({ min: 920, max: 1232 })
+    expect(r).toMatchObject({ missingFlights: false, missingLodging: false })
+  })
+
+  it('4. Пятеро на такси (две машины), «Средне», T-casual, без платных мест', () => {
+    // такси 25–38 × 2 поездки × 2 машины = 100–152; питание 60–100 × 3 × 5 = 900–1500;
+    // транспорт 13 × 5 = 65 → 1065–1717 €, на человека 213–343,40 → 213–343 €
+    const r = run({ travelers: 5, transferId: 'taxi', excludedSightIds: sightsAll.map((s) => s.id) })
+    expect(r.vehicles).toBe(2)
+    expect(r.totalEuros).toEqual({ min: 1065, max: 1717 })
+    expect(r.perPersonEuros).toEqual({ min: 213, max: 343 })
+  })
+
+  it('5. Двое, «Экономно», пешком, Аэробус двумя билетами; ошибочная сумма «-5» не учитывается', () => {
+    // питание 41–70 × 3 × 2 = 246–420; места 300–320; Аэробус 7,75 × 2 × 2 = 31 → 577–771 €
+    const r = run({ foodId: 'economy', transportId: 'walk', transferId: 'aerobus', extra: '-5' })
+    expect(r.totalEuros).toEqual({ min: 577, max: 771 })
+    expect(r.lines.find((l) => l.id === 'extra')!.cents).toBeNull()
+  })
+})
