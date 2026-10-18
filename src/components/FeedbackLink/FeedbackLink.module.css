@@ -1,0 +1,28 @@
+.link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  text-decoration: underline;
+  text-decoration-color: var(--color-line);
+  text-underline-offset: 3px;
+  background: none;
+  cursor: pointer;
+}
+
+.link:hover {
+  color: var(--color-text);
+  text-decoration-color: currentColor;
+}
+
+.note {
+  /* On its own line even inside a row of links. */
+  flex-basis: 100%;
+  margin-top: var(--space-1);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}

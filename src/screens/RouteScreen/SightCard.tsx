@@ -7,6 +7,7 @@ import { ImagePlaceholder } from '../../components/ImagePlaceholder/ImagePlaceho
 import { VerificationBadge } from '../../components/VerificationBadge/VerificationBadge'
 import { formatPrice } from '../../utils/format'
 import { PointMeta } from './PointMeta'
+import { FeedbackLink } from '../../components/FeedbackLink/FeedbackLink'
 import { ClosureHints } from './ClosureHints'
 import styles from './RouteCards.module.css'
 
@@ -126,6 +127,7 @@ export function SightCard({ point, highlighted = false }: { point: RoutePoint; h
                 </div>
               )}
             </dl>
+            <FeedbackLink about={point.title} />
           </div>
         )}
 

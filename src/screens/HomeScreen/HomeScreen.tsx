@@ -2,6 +2,8 @@ import { Link } from 'react-router'
 import { ImagePlaceholder } from '../../components/ImagePlaceholder/ImagePlaceholder'
 import { getCityContent } from '../../data'
 import { pluralize } from '../../utils/format'
+import { DATA_CHECKED_LABEL } from '../../config/site'
+import { FeedbackLink } from '../../components/FeedbackLink/FeedbackLink'
 import styles from './HomeScreen.module.css'
 
 export function HomeScreen() {
@@ -67,9 +69,13 @@ export function HomeScreen() {
       </nav>
 
       <footer className={styles.footer}>
-        <Link to="/photos" className={styles.footerLink}>
-          Авторы фотографий
-        </Link>
+        <p className={styles.footerNote}>Данные проверены: {DATA_CHECKED_LABEL}</p>
+        <div className={styles.footerLinks}>
+          <FeedbackLink about="главная страница" />
+          <Link to="/photos" className={styles.footerLink}>
+            Авторы фотографий
+          </Link>
+        </div>
       </footer>
     </div>
   )

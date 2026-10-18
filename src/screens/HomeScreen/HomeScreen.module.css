@@ -150,3 +150,16 @@
   color: var(--color-text-muted);
   text-underline-offset: 3px;
 }
+
+.footerNote {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.footerLinks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: var(--space-5);
+  margin-top: var(--space-1);
+}
