@@ -23,9 +23,9 @@ function place(id: string, type: PlaceType, area: string, price: Price | null): 
   return {
     id,
     type,
-    name: `Пример: ${id}`,
-    isExample: true,
+    name: `Заведение ${id}`,
     description: '',
+    recommendedBy: [],
     area,
     price,
     address: null,

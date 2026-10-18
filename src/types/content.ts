@@ -10,7 +10,9 @@
  * `verified` — found on an official page; `needs_check` — not confirmed yet;
  * `estimate` — editorial estimate for values that can have no official source
  * (walking time between points, a taxi range computed from the official
- * tariff). Prices, opening hours and addresses are never `estimate`.
+ * tariff, an average bill computed from the official menu and the food
+ * levels built from those bills). Entry prices, opening hours and
+ * addresses are never `estimate`.
  */
 export type VerificationStatus = 'verified' | 'needs_check' | 'estimate'
 
@@ -196,18 +198,36 @@ export type PlaceType = 'tapas' | 'restaurant' | 'cafe' | 'market' | 'bar' | 'ba
  */
 export type PriceLevel = 1 | 2 | 3
 
+/** An independent guide or publication that recommends a place. */
+export interface Recommendation {
+  /** «Guía Michelin», «Time Out Barcelona». */
+  name: string
+  /** The page about this place (or a list that names it). */
+  url: string
+}
+
+/** What the official site says about booking a table. */
+export type Reservation = 'recommended' | 'not_accepted'
+
 export interface Place extends Links {
   /** Permanent ID «<cityId>/<name>», like `RoutePoint.id`. */
   id: string
   type: PlaceType
   name: string
-  /** True for illustrative entries that are not real venues. */
-  isExample: boolean
   description: string
   /** Must match a name from `RouteDay.areas` exactly, e.g. «Борн». */
   area: string
-  /** Approximate average bill per person; null — «Цена уточняется». */
+  /** At least two independent sources; the place is not listed without them. */
+  recommendedBy: Recommendation[]
+  /** From the official site only; absent when the site says nothing. */
+  reservation?: Fact<Reservation>
+  /**
+   * Approximate average bill per person; null — «Цена уточняется».
+   * An `estimate` is computed from the official menu, explained in `note`.
+   */
   price: Price | null
+  /** Why there is no price, e.g. «На официальном сайте нет меню с ценами». */
+  priceNote?: string
   address: Fact<string> | null
   /** Every place must open on the map. */
   mapUrl: string

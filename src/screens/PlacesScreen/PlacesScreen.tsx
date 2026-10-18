@@ -42,7 +42,6 @@ export function PlacesScreen() {
   useScrollToCard(focusId)
   // Only types that this city actually has, so there is never a chip leading nowhere.
   const types = PLACE_TYPES.filter((t) => places.places.some((p) => p.type === t.id))
-  const onlyExamples = places.places.length > 0 && places.places.every((p) => p.isExample)
 
   // `replace`: chips change the current address instead of adding history steps,
   // so «Назад» returns to where the user came from (e.g. the route), not chip by chip.
@@ -54,11 +53,6 @@ export function PlacesScreen() {
     <section className={styles.screen}>
       <h1 className={styles.title}>Еда и места</h1>
       <p className={styles.lead}>Где пообедать, выпить кофе или вермут рядом с маршрутом.</p>
-      {onlyExamples && (
-        <p className={styles.notice}>
-          Пока здесь только примеры, чтобы показать, как работает раздел. Настоящие заведения появятся после проверки.
-        </p>
-      )}
 
       <div className={styles.filters}>
         {filters.area && (

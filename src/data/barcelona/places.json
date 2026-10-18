@@ -2,268 +2,585 @@
   "cityId": "barcelona",
   "places": [
     {
-      "id": "barcelona/example-tapas-born",
+      "id": "barcelona/el-xampanyet",
       "type": "tapas",
-      "name": "Пример: тапас-бар в Борне",
-      "isExample": true,
-      "description": "Тестовая запись. Здесь будет описание реального тапас-бара после проверки.",
+      "name": "El Xampanyet",
       "area": "Борн",
+      "description": "Семейный бар с 1930-х: изразцы, бочки, домашняя кава и вермут. Славится анчоусами и консервами. Очередь — обычное дело.",
+      "recommendedBy": [
+        {
+          "name": "Time Out Barcelona",
+          "url": "https://www.timeout.com/barcelona/bars-and-pubs/el-xampanyet"
+        },
+        {
+          "name": "Lonely Planet",
+          "url": "https://www.lonelyplanet.com/spain/barcelona/la-ribera/nightlife/el-xampanyet/a/poi-dri/1204468/1320668"
+        },
+        {
+          "name": "Turisme de Barcelona",
+          "url": "https://www.barcelonaturisme.com/wv3/en/enjoy/50/on-the-vermouth-trail-discover-some-of-the-best-places-to-have-an-aperitif.html"
+        }
+      ],
+      "price": null,
+      "address": {
+        "value": "Carrer de Montcada, 22, 08003 Barcelona",
+        "status": "needs_check",
+        "source": "",
+        "checkedAt": "2026-10-18",
+        "note": "Сайт elxampanyet.com содержит рекламу ставок и не называет владельца — как официальный источник не принят."
+      },
+      "openingHours": {
+        "value": "Уточняются",
+        "status": "needs_check",
+        "source": "",
+        "checkedAt": "2026-10-18",
+        "note": "Сайт elxampanyet.com содержит рекламу ставок и не называет владельца — как официальный источник не принят."
+      },
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=El+Xampanyet%2C+Carrer+de+Montcada+22%2C+Barcelona",
+      "website": null,
+      "priceNote": "На официальном сайте нет меню с ценами — средний чек посчитать не по чему.",
+      "partnerUrl": null
+    },
+    {
+      "id": "barcelona/bar-del-pla",
+      "type": "tapas",
+      "name": "Bar del Pla",
+      "area": "Борн",
+      "description": "Между бистро и тапас-баром: каталонская классика вроде каннелони и рубца, доска блюд дня и натуральные вина. Кухня работает весь день.",
+      "recommendedBy": [
+        {
+          "name": "Time Out Barcelona",
+          "url": "https://www.timeout.es/barcelona/es/restaurantes/bar-del-pla"
+        },
+        {
+          "name": "Lonely Planet",
+          "url": "https://www.lonelyplanet.com/articles/the-best-places-to-eat-tapas-in-barcelona"
+        }
+      ],
+      "reservation": {
+        "value": "not_accepted",
+        "status": "verified",
+        "source": "https://www.bardelpla.cat/ca/contact/",
+        "checkedAt": "2026-10-18"
+      },
       "price": {
         "min": 20,
-        "max": 30,
+        "max": 26,
         "currency": "EUR",
-        "status": "needs_check",
-        "source": "Условная цена для примера, не данные реального заведения",
-        "checkedAt": null
+        "status": "estimate",
+        "source": "https://www.bardelpla.cat/wp-content/uploads/CARTAS/BarCatala.pdf",
+        "checkedAt": "2026-10-18",
+        "note": "По карте bardelpla.cat: 2 крокеты по 3,00 €, половина порции брав (5,50 € за порцию) и одно блюдо дня за 11–17 € — около 20–26 € на человека без напитков."
       },
-      "address": null,
-      "openingHours": null,
-      "mapUrl": "https://www.google.com/maps/search/?api=1&query=El+Born+Barcelona",
+      "address": {
+        "value": "Carrer de Montcada, 2, 08003 Barcelona",
+        "status": "verified",
+        "source": "https://www.bardelpla.cat/",
+        "checkedAt": "2026-10-18"
+      },
+      "openingHours": {
+        "value": "Пн–чт 12:00–23:00 (накануне праздников до 24:00), пт–сб 12:00–24:00. Воскресенье на сайте не указано.",
+        "status": "verified",
+        "source": "https://www.bardelpla.cat/ca/contact/",
+        "checkedAt": "2026-10-18"
+      },
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Bar+del+Pla%2C+Carrer+de+Montcada+2%2C+Barcelona",
       "website": {
-        "value": "https://example.com",
-        "status": "needs_check",
-        "source": "Заглушка для примера",
-        "checkedAt": null
+        "value": "https://www.bardelpla.cat",
+        "status": "verified",
+        "source": "https://www.bardelpla.cat/",
+        "checkedAt": "2026-10-18"
       },
       "partnerUrl": null
     },
     {
-      "id": "barcelona/example-bar-born",
-      "type": "bar",
-      "name": "Пример: бар с вермутом",
-      "isExample": true,
-      "description": "Тестовая запись. Здесь будет описание реального бара после проверки.",
+      "id": "barcelona/hofmann-pastisseria",
+      "type": "bakery",
+      "name": "Pastisseria Hofmann",
       "area": "Борн",
-      "price": {
-        "min": 10,
-        "max": 18,
-        "currency": "EUR",
+      "description": "Кондитерская кулинарной школы Hofmann. Здесь пекут одни из самых известных круассанов в городе — классические и с начинками вроде маскарпоне.",
+      "recommendedBy": [
+        {
+          "name": "Time Out Barcelona",
+          "url": "https://www.timeout.es/barcelona/es/tiendas/pastisseria-hofmann"
+        },
+        {
+          "name": "Turisme de Barcelona",
+          "url": "https://thisisbarcelona.com/gastronomy/patisseries"
+        }
+      ],
+      "price": null,
+      "address": {
+        "value": "Carrer dels Flassaders, 44, 08003 Barcelona",
         "status": "needs_check",
-        "source": "Условная цена для примера, не данные реального заведения",
-        "checkedAt": null
+        "source": "https://hofmannpasteleria.com",
+        "checkedAt": "2026-10-18",
+        "note": "Сайт пекарни hofmannpasteleria.com 18.10.2026 не открылся."
       },
-      "address": null,
-      "openingHours": null,
-      "mapUrl": "https://www.google.com/maps/search/?api=1&query=El+Born+Barcelona",
-      "website": null,
+      "openingHours": {
+        "value": "Уточняются",
+        "status": "needs_check",
+        "source": "https://hofmannpasteleria.com",
+        "checkedAt": "2026-10-18",
+        "note": "Сайт пекарни hofmannpasteleria.com 18.10.2026 не открылся."
+      },
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Pastisseria+Hofmann%2C+Carrer+dels+Flassaders+44%2C+Barcelona",
+      "website": {
+        "value": "https://hofmannpasteleria.com",
+        "status": "needs_check",
+        "source": "https://www.hofmann-bcn.com/",
+        "checkedAt": "2026-10-18",
+        "note": "Сайт пекарни hofmannpasteleria.com 18.10.2026 не открылся."
+      },
+      "priceNote": "На официальном сайте нет меню с ценами — средний чек посчитать не по чему.",
       "partnerUrl": null
     },
     {
-      "id": "barcelona/example-market-gothic",
+      "id": "barcelona/mercat-santa-caterina",
       "type": "market",
-      "name": "Пример: городской рынок",
-      "isExample": true,
-      "description": "Тестовая запись. Здесь будет описание реального рынка после проверки.",
-      "area": "Готический квартал",
-      "price": {
-        "min": 8,
-        "max": 15,
-        "currency": "EUR",
-        "status": "needs_check",
-        "source": "Условная цена для примера, не данные реального заведения",
-        "checkedAt": null
+      "name": "Mercat de Santa Caterina",
+      "area": "Борн",
+      "description": "Первый крытый рынок Барселоны под волнистой мозаичной крышей Энрика Миральеса и Бенедетты Тальябуэ. Овощи, рыба, хамон — и бары внутри.",
+      "recommendedBy": [
+        {
+          "name": "Time Out Barcelona",
+          "url": "https://www.timeout.com/barcelona/shopping/barcelona-markets-the-top-ten"
+        },
+        {
+          "name": "Turisme de Barcelona",
+          "url": "https://barcelonaturisme.com/wv3/en/page/508/santa-caterina-market.html"
+        }
+      ],
+      "price": null,
+      "address": {
+        "value": "Avinguda de Francesc Cambó, 16, 08003 Barcelona",
+        "status": "verified",
+        "source": "https://mercatsantacaterina.com/contacto/",
+        "checkedAt": "2026-10-18"
       },
-      "address": null,
-      "openingHours": null,
-      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Barri+G%C3%B2tic+Barcelona",
-      "website": null,
-      "partnerUrl": null
-    },
-    {
-      "id": "barcelona/example-cafe-gothic",
-      "type": "cafe",
-      "name": "Пример: кофейня у собора",
-      "isExample": true,
-      "description": "Тестовая запись. Здесь будет описание реальной кофейни после проверки.",
-      "area": "Готический квартал",
-      "price": {
-        "min": 5,
-        "max": 10,
-        "currency": "EUR",
+      "openingHours": {
+        "value": "Пн, ср, сб 7:30–14:30 или до 15:30; вт, чт, пт 7:30–20:30; вс закрыто. Летом короче. Проверьте перед визитом.",
         "status": "needs_check",
-        "source": "Условная цена для примера, не данные реального заведения",
-        "checkedAt": null
+        "source": "https://www.barcelona.cat/en/coneixbcn/pics/mercat-de-santa-caterina-92086009448",
+        "checkedAt": "2026-10-18",
+        "note": "Сайт мэрии даёт закрытие в пн, ср и сб в 14:30, сайт рынка — в 15:30."
       },
-      "address": null,
-      "openingHours": null,
-      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Barri+G%C3%B2tic+Barcelona",
-      "website": null,
-      "partnerUrl": null
-    },
-    {
-      "id": "barcelona/example-restaurant-barceloneta",
-      "type": "restaurant",
-      "name": "Пример: ресторан с морепродуктами",
-      "isExample": true,
-      "description": "Тестовая запись. Здесь будет описание реального ресторана после проверки.",
-      "area": "Барселонета",
-      "price": {
-        "min": 35,
-        "max": 55,
-        "currency": "EUR",
-        "status": "needs_check",
-        "source": "Условная цена для примера, не данные реального заведения",
-        "checkedAt": null
-      },
-      "address": null,
-      "openingHours": null,
-      "mapUrl": "https://www.google.com/maps/search/?api=1&query=La+Barceloneta+Barcelona",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Mercat+de+Santa+Caterina%2C+Barcelona",
       "website": {
-        "value": "https://example.com",
-        "status": "needs_check",
-        "source": "Заглушка для примера",
-        "checkedAt": null
+        "value": "https://mercatsantacaterina.com",
+        "status": "verified",
+        "source": "https://mercatsantacaterina.com/contacto/",
+        "checkedAt": "2026-10-18"
       },
+      "priceNote": "Рынок: чек зависит от того, что купить; официального меню нет.",
       "partnerUrl": null
     },
     {
-      "id": "barcelona/example-restaurant-eixample",
-      "type": "restaurant",
-      "name": "Пример: ресторан каталонской кухни",
-      "isExample": true,
-      "description": "Тестовая запись. Здесь будет описание реального ресторана после проверки.",
-      "area": "Эшампле",
-      "price": {
-        "min": 40,
-        "max": 60,
-        "currency": "EUR",
-        "status": "needs_check",
-        "source": "Условная цена для примера, не данные реального заведения",
-        "checkedAt": null
-      },
-      "address": null,
-      "openingHours": null,
-      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Eixample+Barcelona",
-      "website": {
-        "value": "https://example.com",
-        "status": "needs_check",
-        "source": "Заглушка для примера",
-        "checkedAt": null
-      },
-      "partnerUrl": null
-    },
-    {
-      "id": "barcelona/example-tapas-eixample",
+      "id": "barcelona/paco-meralgo",
       "type": "tapas",
-      "name": "Пример: тапас-бар в Эшампле",
-      "isExample": true,
-      "description": "Тестовая запись. Здесь будет описание реального тапас-бара после проверки.",
+      "name": "Paco Meralgo",
       "area": "Эшампле",
+      "description": "«Высокая таверна»: классические тапас из отборных продуктов — крокеты, острые бравас, монтадитос и рыба с рынка. Кухня работает без перерыва.",
+      "recommendedBy": [
+        {
+          "name": "Гид Michelin",
+          "url": "https://guide.michelin.com/us/en/catalunya/barcelona/restaurant/paco-meralgo"
+        },
+        {
+          "name": "Time Out Barcelona",
+          "url": "https://www.timeout.com/barcelona/restaurants/paco-meralgo"
+        },
+        {
+          "name": "Lonely Planet",
+          "url": "https://www.lonelyplanet.com/articles/the-best-places-to-eat-tapas-in-barcelona"
+        }
+      ],
+      "reservation": {
+        "value": "recommended",
+        "status": "verified",
+        "source": "https://restaurantpacomeralgo.com/informacion/",
+        "checkedAt": "2026-10-18"
+      },
       "price": {
-        "min": 20,
+        "min": 25,
         "max": 35,
         "currency": "EUR",
-        "status": "needs_check",
-        "source": "Условная цена для примера, не данные реального заведения",
-        "checkedAt": null
+        "status": "estimate",
+        "source": "https://restaurantpacomeralgo.com/paco-meralgo-carta-esp/",
+        "checkedAt": "2026-10-18",
+        "note": "По карте restaurantpacomeralgo.com: крокеты и буньюэлос 3,30–3,40 € за штуку, большинство тапас и закусок 5–20 €. Набор на человека — 2 крокеты и 2–3 тапас пополам — около 25–35 € без напитков."
       },
-      "address": null,
-      "openingHours": null,
-      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Eixample+Barcelona",
-      "website": null,
-      "partnerUrl": null
-    },
-    {
-      "id": "barcelona/example-bakery-eixample",
-      "type": "bakery",
-      "name": "Пример: пекарня",
-      "isExample": true,
-      "description": "Тестовая запись. Здесь будет описание реальной пекарни после проверки.",
-      "area": "Эшампле",
-      "price": null,
-      "address": null,
-      "openingHours": null,
-      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Eixample+Barcelona",
-      "website": null,
-      "partnerUrl": null
-    },
-    {
-      "id": "barcelona/example-cafe-gracia",
-      "type": "cafe",
-      "name": "Пример: кофейня на площади",
-      "isExample": true,
-      "description": "Тестовая запись. Здесь будет описание реальной кофейни после проверки.",
-      "area": "Грасия",
-      "price": {
-        "min": 6,
-        "max": 12,
-        "currency": "EUR",
-        "status": "needs_check",
-        "source": "Условная цена для примера, не данные реального заведения",
-        "checkedAt": null
+      "address": {
+        "value": "Carrer de Muntaner, 171, 08036 Barcelona",
+        "status": "verified",
+        "source": "https://www.restaurantpacomeralgo.com/",
+        "checkedAt": "2026-10-18"
       },
-      "address": null,
-      "openingHours": null,
-      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Gr%C3%A0cia+Barcelona",
-      "website": null,
-      "partnerUrl": null
-    },
-    {
-      "id": "barcelona/example-restaurant-gracia",
-      "type": "restaurant",
-      "name": "Пример: семейный ресторан",
-      "isExample": true,
-      "description": "Тестовая запись. Здесь будет описание реального ресторана после проверки.",
-      "area": "Грасия",
-      "price": {
-        "min": 25,
-        "max": 40,
-        "currency": "EUR",
-        "status": "needs_check",
-        "source": "Условная цена для примера, не данные реального заведения",
-        "checkedAt": null
+      "openingHours": {
+        "value": "Ежедневно, кухня 13:00–00:00. Закрыто 25 декабря.",
+        "status": "verified",
+        "source": "https://restaurantpacomeralgo.com/informacion/",
+        "checkedAt": "2026-10-18"
       },
-      "address": null,
-      "openingHours": null,
-      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Gr%C3%A0cia+Barcelona",
-      "website": null,
-      "partnerUrl": null
-    },
-    {
-      "id": "barcelona/example-tapas-poblesec",
-      "type": "tapas",
-      "name": "Пример: тапас-бар в Побле-сек",
-      "isExample": true,
-      "description": "Тестовая запись. Здесь будет описание реального тапас-бара после проверки.",
-      "area": "Побле-сек",
-      "price": {
-        "min": 25,
-        "max": 40,
-        "currency": "EUR",
-        "status": "needs_check",
-        "source": "Условная цена для примера, не данные реального заведения",
-        "checkedAt": null
-      },
-      "address": null,
-      "openingHours": null,
-      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Poble-sec+Barcelona",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Paco+Meralgo%2C+Carrer+de+Muntaner+171%2C+Barcelona",
       "website": {
-        "value": "https://example.com",
-        "status": "needs_check",
-        "source": "Заглушка для примера",
-        "checkedAt": null
+        "value": "https://restaurantpacomeralgo.com",
+        "status": "verified",
+        "source": "https://www.restaurantpacomeralgo.com/",
+        "checkedAt": "2026-10-18"
       },
       "partnerUrl": null
     },
     {
-      "id": "barcelona/example-bar-poblesec",
-      "type": "bar",
-      "name": "Пример: винный бар",
-      "isExample": true,
-      "description": "Тестовая запись. Здесь будет описание реального бара после проверки.",
-      "area": "Побле-сек",
+      "id": "barcelona/xavier-pellicer",
+      "type": "restaurant",
+      "name": "Xavier Pellicer",
+      "area": "Эшампле",
+      "description": "Ресторан шефа, сделавшего овощи главными на тарелке: дегустационные сеты в веганской, вегетарианской и «всеядной» версиях. Рядом с Каса Мила.",
+      "recommendedBy": [
+        {
+          "name": "Гид Michelin",
+          "url": "https://guide.michelin.com/us/en/catalunya/barcelona/restaurant/xavier-pellicer"
+        },
+        {
+          "name": "Time Out Barcelona",
+          "url": "https://www.timeout.es/barcelona/es/restaurantes/xavier-pellicer-restaurant"
+        }
+      ],
       "price": {
-        "min": 15,
-        "max": 25,
+        "min": 95,
+        "max": 115,
         "currency": "EUR",
-        "status": "needs_check",
-        "source": "Условная цена для примера, не данные реального заведения",
-        "checkedAt": null
+        "status": "estimate",
+        "source": "https://www.xavierpellicer.com/carta",
+        "checkedAt": "2026-10-18",
+        "note": "По карте xavierpellicer.com: дегустационный сет из 5 блюд — 95 €, из 8 блюд — 115 €; без напитков. Цены обеденной карты на сайте не указаны."
       },
-      "address": null,
-      "openingHours": null,
-      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Poble-sec+Barcelona",
+      "address": {
+        "value": "Carrer de Provença, 310, 08037 Barcelona",
+        "status": "verified",
+        "source": "https://www.xavierpellicer.com/contacto",
+        "checkedAt": "2026-10-18"
+      },
+      "openingHours": {
+        "value": "Ср–сб: обед 13:00–14:45, ужин 20:00–21:45. Вс вечером, пн и вт закрыто.",
+        "status": "needs_check",
+        "source": "https://www.xavierpellicer.com/contacto",
+        "checkedAt": "2026-10-18",
+        "note": "Неясно с обедом в воскресенье: на странице карты обед — со среды по воскресенье, в часах работы — только ср–сб."
+      },
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Xavier+Pellicer%2C+Carrer+de+Proven%C3%A7a+310%2C+Barcelona",
+      "website": {
+        "value": "https://www.xavierpellicer.com",
+        "status": "verified",
+        "source": "https://www.xavierpellicer.com/contacto",
+        "checkedAt": "2026-10-18"
+      },
+      "partnerUrl": null
+    },
+    {
+      "id": "barcelona/escriba-gran-via",
+      "type": "bakery",
+      "name": "Escribà",
+      "area": "Эшампле",
+      "description": "Семейная кондитерская с 1906 года, сейчас её ведёт четвёртое поколение. Одной из первых в городе начала печь круассаны на сливочном масле.",
+      "recommendedBy": [
+        {
+          "name": "Time Out Barcelona",
+          "url": "https://www.timeout.es/barcelona/es/restaurantes/pastisseria-escriba"
+        },
+        {
+          "name": "Turisme de Barcelona",
+          "url": "https://thisisbarcelona.com/gastronomy/patisseries"
+        }
+      ],
+      "price": null,
+      "address": {
+        "value": "Gran Via de les Corts Catalanes, 546, 08011 Barcelona",
+        "status": "verified",
+        "source": "https://escriba.es/es/tiendas",
+        "checkedAt": "2026-10-18"
+      },
+      "openingHours": {
+        "value": "Пн закрыто; вт–пт 8:30–15:00 и 17:00–21:00; сб–вс 8:30–21:00.",
+        "status": "verified",
+        "source": "https://escriba.es/es/tiendas",
+        "checkedAt": "2026-10-18"
+      },
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Escrib%C3%A0%2C+Gran+Via+de+les+Corts+Catalanes+546%2C+Barcelona",
+      "website": {
+        "value": "https://escriba.es",
+        "status": "verified",
+        "source": "https://escriba.es/es/tiendas",
+        "checkedAt": "2026-10-18"
+      },
+      "priceNote": "На официальном сайте нет меню с ценами — средний чек посчитать не по чему.",
+      "partnerUrl": null
+    },
+    {
+      "id": "barcelona/mercat-concepcio",
+      "type": "market",
+      "name": "Mercat de la Concepció",
+      "area": "Эшампле",
+      "description": "Рынок 1888 года под железными сводами, особенно известный цветочными рядами — цветочный магазин снаружи работает круглосуточно.",
+      "recommendedBy": [
+        {
+          "name": "Time Out Barcelona",
+          "url": "https://www.timeout.com/barcelona/shopping/barcelona-markets-the-top-ten"
+        },
+        {
+          "name": "Turisme de Barcelona",
+          "url": "https://thisisbarcelona.com/ca/gastronomia/mercats-de-barcelona/mercat-de-la-concepcio"
+        }
+      ],
+      "price": null,
+      "address": {
+        "value": "Carrer d'Aragó, 311, 08009 Barcelona",
+        "status": "verified",
+        "source": "https://www.barcelona.cat/ca/coneixbcn/pics/el-mercat-de-la-concepcio-92086009449",
+        "checkedAt": "2026-10-18"
+      },
+      "openingHours": {
+        "value": "Пн и сб 8:00–15:00, вт–пт 8:00–20:00. Воскресенье на сайте не указано.",
+        "status": "verified",
+        "source": "https://www.barcelona.cat/ca/coneixbcn/pics/el-mercat-de-la-concepcio-92086009449",
+        "checkedAt": "2026-10-18"
+      },
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Mercat+de+la+Concepci%C3%B3%2C+Barcelona",
       "website": null,
+      "priceNote": "Рынок: чек зависит от того, что купить; официального меню нет.",
+      "partnerUrl": null
+    },
+    {
+      "id": "barcelona/berbena",
+      "type": "restaurant",
+      "name": "Berbena",
+      "area": "Грасия",
+      "description": "Маленький ресторан шефа Карлеса Переса де Росаса с открытой кухней: сезонные блюда небольшими порциями и сильные десерты.",
+      "recommendedBy": [
+        {
+          "name": "Гид Michelin",
+          "url": "https://guide.michelin.com/us/en/catalunya/barcelona/restaurant/berbena"
+        },
+        {
+          "name": "Time Out Barcelona",
+          "url": "https://www.timeout.es/barcelona/es/restaurantes/berbena"
+        }
+      ],
+      "price": null,
+      "address": {
+        "value": "Carrer de Minerva, 6, 08006 Barcelona",
+        "status": "verified",
+        "source": "https://berbenabcn.com/",
+        "checkedAt": "2026-10-18"
+      },
+      "openingHours": {
+        "value": "Ужин пн–пт в две смены (с 19:00 и с 21:30, в пт — с 19:15 и с 21:45), обед только в пятницу в 14:15. Выходные на сайте не указаны.",
+        "status": "verified",
+        "source": "https://berbenabcn.com/",
+        "checkedAt": "2026-10-18"
+      },
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Berbena%2C+Carrer+de+Minerva+6%2C+Barcelona",
+      "website": {
+        "value": "https://berbenabcn.com",
+        "status": "verified",
+        "source": "https://berbenabcn.com/",
+        "checkedAt": "2026-10-18"
+      },
+      "priceNote": "На официальном сайте нет меню с ценами — средний чек посчитать не по чему.",
+      "partnerUrl": null
+    },
+    {
+      "id": "barcelona/la-pubilla",
+      "type": "restaurant",
+      "name": "La Pubilla",
+      "area": "Грасия",
+      "description": "Бар-ресторан у рынка Льибертат, известный «завтраками с вилкой» — треской, яичницей с колбасками, тортильей — и обедом из меню дня.",
+      "recommendedBy": [
+        {
+          "name": "Time Out Barcelona",
+          "url": "https://www.timeout.cat/barcelona/ca/restaurants/la-pubilla"
+        },
+        {
+          "name": "Ara",
+          "url": "https://diumenge.ara.cat/diumenge/pubilla-totes-hores_1_4330169.html"
+        },
+        {
+          "name": "ElNacional.cat",
+          "url": "https://www.elnacional.cat/ca/gourmeteria/opinio-critiques/esmorzars-gloriosos-menu-migdia-mes-atractiu-barcelona-oda-cuina-barri_1135713_102.html"
+        }
+      ],
+      "price": null,
+      "address": {
+        "value": "Plaça de la Llibertat, 23, 08012 Barcelona",
+        "status": "needs_check",
+        "source": "",
+        "checkedAt": "2026-10-18",
+        "note": "Домен restaurantelapubilla.com 18.10.2026 перенаправлял на посторонний сайт; официального сайта не найдено."
+      },
+      "openingHours": {
+        "value": "Уточняются",
+        "status": "needs_check",
+        "source": "",
+        "checkedAt": "2026-10-18",
+        "note": "Домен restaurantelapubilla.com 18.10.2026 перенаправлял на посторонний сайт; официального сайта не найдено."
+      },
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=La+Pubilla%2C+Pla%C3%A7a+de+la+Llibertat+23%2C+Barcelona",
+      "website": null,
+      "priceNote": "На официальном сайте нет меню с ценами — средний чек посчитать не по чему.",
+      "partnerUrl": null
+    },
+    {
+      "id": "barcelona/syra-bonavista",
+      "type": "cafe",
+      "name": "Syra Coffee",
+      "area": "Грасия",
+      "description": "Барселонская обжарка, открывшаяся в Грасии в 2015 году: моносортовой кофе, эспрессо и фильтр. Работает каждый день.",
+      "recommendedBy": [
+        {
+          "name": "Time Out Barcelona",
+          "url": "https://www.timeout.es/barcelona/es/bares-y-pubs/syra"
+        },
+        {
+          "name": "Lonely Planet",
+          "url": "https://www.lonelyplanet.com/spain/barcelona/barceloneta-port-olimpic-and-the-waterfront/nightlife/syra-coffee/a/poi-dri/1634006/1320666"
+        }
+      ],
+      "price": null,
+      "address": {
+        "value": "Carrer de Bonavista, 23, 08012 Barcelona",
+        "status": "verified",
+        "source": "https://syra.coffee/pages/location",
+        "checkedAt": "2026-10-18"
+      },
+      "openingHours": {
+        "value": "Ежедневно 8:00–20:00.",
+        "status": "verified",
+        "source": "https://syra.coffee/pages/location",
+        "checkedAt": "2026-10-18"
+      },
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Syra+Coffee%2C+Carrer+de+Bonavista+23%2C+Barcelona",
+      "website": {
+        "value": "https://syra.coffee",
+        "status": "verified",
+        "source": "https://syra.coffee/pages/location",
+        "checkedAt": "2026-10-18"
+      },
+      "priceNote": "На официальном сайте нет меню с ценами — средний чек посчитать не по чему.",
+      "partnerUrl": null
+    },
+    {
+      "id": "barcelona/mercat-llibertat",
+      "type": "market",
+      "name": "Mercat de la Llibertat",
+      "area": "Грасия",
+      "description": "Модернистский рынок 1888 года с коваными конструкциями — более камерный и «деревенский», чем рынки в центре.",
+      "recommendedBy": [
+        {
+          "name": "Time Out Barcelona",
+          "url": "https://www.timeout.com/barcelona/shopping/barcelona-markets-the-top-ten"
+        },
+        {
+          "name": "Turisme de Barcelona",
+          "url": "https://thisisbarcelona.com/gastronomy/barcelona-markets/mercat-de-la-llibertat"
+        }
+      ],
+      "price": null,
+      "address": {
+        "value": "Plaça de la Llibertat, 27, 08012 Barcelona",
+        "status": "verified",
+        "source": "https://www.barcelona.cat/en/what-to-do-in-bcn/summer/municipal-markets/mercat-llibertat-92086009773",
+        "checkedAt": "2026-10-18"
+      },
+      "openingHours": {
+        "value": "Обычно пн–пт 8:00–20:30, сб 8:00–15:00, вс закрыто. Проверьте перед визитом.",
+        "status": "needs_check",
+        "source": "https://www.barcelona.cat/en/what-to-do-in-bcn/summer/municipal-markets/mercat-llibertat-92086009773",
+        "checkedAt": "2026-10-18",
+        "note": "Страница рынка на сайте мэрии 18.10.2026 была недоступна из нашего региона, а на barcelona.cat указаны только летние часы с ошибкой в датах."
+      },
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Mercat+de+la+Llibertat%2C+Barcelona",
+      "website": null,
+      "priceNote": "Рынок: чек зависит от того, что купить; официального меню нет.",
+      "partnerUrl": null
+    },
+    {
+      "id": "barcelona/quimet-quimet",
+      "type": "tapas",
+      "name": "Quimet & Quimet",
+      "area": "Побле-сек",
+      "description": "Крошечная бодега, которую одна семья держит с 1914 года. Кухни нет: холодные монтадитос и консервы, разливной вермут, сотни вин. Только стоя.",
+      "recommendedBy": [
+        {
+          "name": "Time Out Barcelona",
+          "url": "https://www.timeout.es/barcelona/es/restaurantes/quimet-i-quimet"
+        },
+        {
+          "name": "Lonely Planet",
+          "url": "https://www.lonelyplanet.com/articles/the-best-places-to-eat-tapas-in-barcelona"
+        },
+        {
+          "name": "Turisme de Barcelona",
+          "url": "https://www.barcelonaturisme.com/wv3/sv/enjoy/10/poble-sec-from-bodega-to-bodega.html"
+        }
+      ],
+      "price": null,
+      "address": {
+        "value": "Carrer del Poeta Cabanyes, 25, 08004 Barcelona",
+        "status": "needs_check",
+        "source": "https://www.quimetquimet.com",
+        "checkedAt": "2026-10-18",
+        "note": "На quimetquimet.com нет сведений о владельце и есть посторонние рекламные ссылки — как официальный источник не принят."
+      },
+      "openingHours": {
+        "value": "Уточняются",
+        "status": "needs_check",
+        "source": "https://www.quimetquimet.com",
+        "checkedAt": "2026-10-18",
+        "note": "На quimetquimet.com нет сведений о владельце и есть посторонние рекламные ссылки — как официальный источник не принят."
+      },
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Quimet+%26+Quimet%2C+Carrer+del+Poeta+Cabanyes+25%2C+Barcelona",
+      "website": null,
+      "priceNote": "На официальном сайте нет меню с ценами — средний чек посчитать не по чему.",
+      "partnerUrl": null
+    },
+    {
+      "id": "barcelona/taberna-noroeste",
+      "type": "restaurant",
+      "name": "Taberna Noroeste",
+      "area": "Побле-сек",
+      "description": "Таверна двух шефов с корнями на северо-западе Испании: дегустационное меню из 10 блюд на сезонных продуктах, особенно морских.",
+      "recommendedBy": [
+        {
+          "name": "Гид Michelin",
+          "url": "https://guide.michelin.com/us/en/catalunya/barcelona/restaurant/taberna-noroeste"
+        },
+        {
+          "name": "Time Out Barcelona",
+          "url": "https://www.timeout.es/barcelona/es/restaurantes/taberna-noroeste"
+        }
+      ],
+      "price": null,
+      "priceNote": "На сайте есть только дегустационное меню из 10 блюд, но без цены.",
+      "address": {
+        "value": "Carrer de Radas, 67, 08004 Barcelona",
+        "status": "verified",
+        "source": "https://www.tabernanoroeste.com/",
+        "checkedAt": "2026-10-18"
+      },
+      "openingHours": {
+        "value": "Пн и сб 14:00–16:00 и 20:00–22:00; чт–пт 20:00–24:00; вс 14:00–16:00; вт и ср закрыто.",
+        "status": "verified",
+        "source": "https://tabernanoroeste.com/index.php/reservas/",
+        "checkedAt": "2026-10-18"
+      },
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Taberna+Noroeste%2C+Carrer+de+Radas+67%2C+Barcelona",
+      "website": {
+        "value": "https://www.tabernanoroeste.com",
+        "status": "verified",
+        "source": "https://www.tabernanoroeste.com/",
+        "checkedAt": "2026-10-18"
+      },
       "partnerUrl": null
     }
   ]

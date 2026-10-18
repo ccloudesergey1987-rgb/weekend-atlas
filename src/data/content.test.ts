@@ -98,10 +98,12 @@ describe.each(listCityIds())('данные города %s', (cityId) => {
     }
   })
 
-  it('«оценка редакции» — только для переходов между точками и такси по тарифу, и с пояснением', () => {
+  it('«оценка редакции» — только для переходов, такси по тарифу, чека по меню и уровней питания, и с пояснением', () => {
     const allowed = new Set<unknown>([
       ...points.map((p) => p.transferFromPrevious),
       ...content.budget.transfer.options.filter((o) => o.pricing === 'per_vehicle').map((o) => o.price),
+      ...content.places.places.map((p) => p.price),
+      ...content.budget.food.options.map((o) => o.price),
     ])
     for (const { path, item } of findProvenance(content)) {
       if (item.status !== 'estimate') continue
@@ -248,9 +250,60 @@ describe.each(listCityIds())('данные города %s', (cityId) => {
     }
   })
 
-  it('примеры заведений явно помечены в названии', () => {
-    for (const place of content.places.places.filter((p) => p.isExample)) {
-      expect(place.name, place.id).toMatch(/^Пример:/)
+  describe('заведения', () => {
+    const places = content.places.places
+
+    it('в каждом районе обеда и ужина маршрута — минимум 2 заведения («Где поесть рядом»)', () => {
+      for (const point of points.filter((p) => p.kind === 'meal')) {
+        const near = places.filter((p) => p.area === point.area)
+        expect(near.length, `${point.id}: «${point.area}»`).toBeGreaterThanOrEqual(2)
+      }
+    })
+
+    it('каждое заведение рекомендуют минимум два независимых источника со ссылками', () => {
+      for (const place of places) {
+        const hosts = place.recommendedBy.map((r) => {
+          expect(r.name.trim(), place.id).not.toBe('')
+          expect(r.url, place.id).toMatch(/^https:\/\//)
+          return new URL(r.url).hostname.replace(/^(www|diumenge)\./, '')
+        })
+        const names = new Set(place.recommendedBy.map((r) => r.name))
+        expect(names.size, `${place.id}: источники должны быть разными`).toBeGreaterThanOrEqual(2)
+        expect(new Set(hosts).size, `${place.id}: источники с одного сайта`).toBeGreaterThanOrEqual(2)
+      }
+    })
+
+    it('средний чек — оценка по официальному меню со ссылкой и расчётом, либо нет цены с причиной', () => {
+      for (const place of places) {
+        if (place.price) {
+          expect(place.price.status, place.id).toBe('estimate')
+          expect(place.price.source, place.id).toMatch(/^https:\/\//)
+          expect(String(place.price.note ?? ''), place.id).toMatch(/\d/)
+        } else {
+          expect(place.priceNote?.trim(), `${place.id}: нет причины, почему нет цены`).toBeTruthy()
+        }
+      }
+    })
+
+    it('пометка о брони взята с официального сайта', () => {
+      for (const place of places.filter((p) => p.reservation)) {
+        expect(['recommended', 'not_accepted'], place.id).toContain(place.reservation!.value)
+        expect(place.reservation!.status, place.id).toBe('verified')
+      }
+    })
+
+    it('есть все типы заведений и уровни цены', () => {
+      expect(new Set(places.map((p) => p.type))).toEqual(new Set(['tapas', 'restaurant', 'cafe', 'market', 'bakery']))
+      expect(places.length).toBeGreaterThanOrEqual(12)
+      expect(places.length).toBeLessThanOrEqual(15)
+    })
+  })
+
+  it('примеров и заглушек среди заведений нет', () => {
+    for (const place of content.places.places) {
+      expect(place, place.id).not.toHaveProperty('isExample')
+      expect(place.name, place.id).not.toMatch(/пример/i)
+      if (place.website) expect(place.website.value, place.id).not.toMatch(/example.com/)
     }
   })
 })
