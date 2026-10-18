@@ -143,6 +143,9 @@
 }
 
 .footerLink {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   font-size: var(--text-xs);
   color: var(--color-text-muted);
   text-underline-offset: 3px;

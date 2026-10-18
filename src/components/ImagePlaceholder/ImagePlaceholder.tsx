@@ -47,7 +47,7 @@ export function ImagePlaceholder({ photo, ratio, className, priority = false, si
         {photo.credit && (
           <figcaption className={styles.credit}>
             <ExternalLink href={photo.credit.sourceUrl} className={styles.creditLink}>
-              {photoCreditText(photo.credit)}
+              <span className={styles.creditText}>{photoCreditText(photo.credit)}</span>
             </ExternalLink>
           </figcaption>
         )}

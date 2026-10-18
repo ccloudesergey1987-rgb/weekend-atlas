@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react'
+import { Fragment, type ReactNode } from 'react'
 import type { RoutePoint } from '../../types/content'
 import { formatDuration } from '../../utils/format'
 import styles from './RouteCards.module.css'
@@ -14,10 +14,11 @@ export function PointMeta({ point, label }: { point: RoutePoint; label?: ReactNo
   return (
     <p className={styles.meta}>
       {parts.map((part, i) => (
-        <span key={i} className={styles.metaPart}>
+        <Fragment key={i}>
+          {/* The separator sits outside the no-wrap part, so the line can break here. */}
           {i > 0 && ' · '}
-          {part}
-        </span>
+          <span className={styles.metaPart}>{part}</span>
+        </Fragment>
       ))}
     </p>
   )

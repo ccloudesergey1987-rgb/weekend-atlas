@@ -25,7 +25,7 @@
   justify-self: start;
   gap: var(--space-1);
   max-width: 100%;
-  min-height: 40px;
+  min-height: 44px;
   padding: 0 var(--space-1) 0 var(--space-4);
   border-radius: var(--radius-pill);
   font-size: var(--text-sm);
@@ -63,7 +63,8 @@
 }
 
 .chip {
-  min-height: 40px;
+  min-width: 44px;
+  min-height: 44px;
   padding: 0 var(--space-4);
   border: 1px solid var(--color-line);
   border-radius: var(--radius-pill);
@@ -122,6 +123,8 @@
 
 .list {
   display: grid;
+  /* minmax(0, 1fr): a card never grows wider than the screen because of its content. */
+  grid-template-columns: minmax(0, 1fr);
   gap: var(--space-4);
   margin: var(--space-4) 0 0;
   padding: 0;

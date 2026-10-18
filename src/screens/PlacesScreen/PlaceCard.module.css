@@ -82,7 +82,7 @@
 
 .fact {
   display: grid;
-  grid-template-columns: 6.5rem 1fr;
+  grid-template-columns: 6.5rem minmax(0, 1fr);
   gap: var(--space-3);
 }
 
@@ -140,6 +140,9 @@
 }
 
 .estimate summary {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
   cursor: pointer;
   font-size: var(--text-xs);
 }

@@ -17,29 +17,37 @@
   display: block;
 }
 
+/* The caption link is a 44 px tall tap area; only the small dark label is visible. */
 .credit {
   position: absolute;
-  right: var(--space-2);
-  bottom: var(--space-2);
-  max-width: calc(100% - 2 * var(--space-2));
-  padding: 2px var(--space-2);
-  border-radius: var(--radius-sm);
+  right: 0;
+  bottom: 0;
+  max-width: 100%;
   font-size: 0.6875rem;
   line-height: 1.4;
   color: #fff;
-  background: rgba(0, 0, 0, 0.45);
 }
 
 .creditLink {
-  display: block;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  min-height: 44px;
+  padding: 0 var(--space-2) var(--space-2);
   color: inherit;
   text-decoration: none;
 }
 
-.creditLink:hover {
+.creditText {
+  overflow: hidden;
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.creditLink:hover .creditText {
   text-decoration: underline;
 }
 

@@ -58,15 +58,17 @@ export function PlaceCard({ place, highlighted = false }: { place: Place; highli
         <div className={styles.head}>
           <div className={styles.headText}>
             <p className={styles.meta}>
+              {/* Separators sit outside the no-wrap parts, so the line can break between them. */}
               <span className={styles.metaPart}>{placeTypeLabel(place.type)}</span>
-              <span className={styles.metaPart}> · {place.area}</span>
+              {' · '}
+              <span className={styles.metaPart}>{place.area}</span>
               {level && (
-                <span className={styles.metaPart}>
+                <>
                   {' · '}
-                  <span className={styles.level} aria-label={`уровень цены: ${priceLevelName(level)}`}>
+                  <span className={`${styles.metaPart} ${styles.level}`} aria-label={`уровень цены: ${priceLevelName(level)}`}>
                     {priceLevelSymbol(level)}
                   </span>
-                </span>
+                </>
               )}
             </p>
             <h3 className={styles.title}>{place.name}</h3>
