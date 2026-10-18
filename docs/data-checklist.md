@@ -130,7 +130,7 @@
 
 | Объект | Поле | Значение | Статус | Источник | Дата | Причина |
 |---|---|---|---|---|---|---|
-| El Xampanyet (Борн) | Рекомендуют | Time Out Barcelona, Lonely Planet, Turisme de Barcelona | — источники | <https://www.timeout.com/barcelona/bars-and-pubs/el-xampanyet> <https://www.lonelyplanet.com/spain/barcelona/la-ribera/nightlife/el-xampanyet/a/poi-dri/1204468/1320668> <https://www.barcelonaturisme.com/wv3/en/enjoy/50/on-the-vermouth-trail-discover-some-of-the-best-places-to-have-an-aperitif.html> | — |  |
+| El Xampanyet (Борн) | Рекомендуют | Time Out Barcelona, Lonely Planet | — источники | <https://www.timeout.com/barcelona/bars-and-pubs/el-xampanyet> <https://www.lonelyplanet.com/spain/barcelona/la-ribera/nightlife/el-xampanyet/a/poi-dri/1204468/1320668> | — |  |
 | El Xampanyet (Борн) | Адрес | Carrer de Montcada, 22, 08003 Barcelona | ✅ verified | Карточка Google | 2026-10-18 |  |
 | El Xampanyet (Борн) | Часы работы | Пн 19:00–23:00; вт–пт 12:00–15:30 и 19:00–23:00; сб 12:00–15:30; вс закрыто. | ✅ verified | Карточка Google | 2026-10-18 |  |
 | El Xampanyet (Борн) | Закрыто (по дням) | закрыто: вс | ✅ verified | Карточка Google | 2026-10-18 |  |
@@ -149,7 +149,7 @@
 | Pastisseria Hofmann (Борн) | Закрыто (по дням) | без выходных | ✅ verified | <https://hofmannpasteleria.com/contacto/> | 2026-10-18 |  |
 | Pastisseria Hofmann (Борн) | Средний чек | 3–10 € | ≈ estimate | <https://hofmannpasteleria.com/producto/croissant-normal/> | 2026-10-18 | По ценам на официальном сайте: круассан классический 3,10 €, шоколадный 4,50 €, с маскарпоне 4,90 €. Завтрак — один-два круассана, около 3–10 € на человека, без кофе. Цены интернет-магазина, в кондитерской могут отличаться. |
 | Pastisseria Hofmann (Борн) | Сайт | https://hofmannpasteleria.com | ✅ verified | <https://hofmannpasteleria.com/contacto/> | 2026-10-18 |  |
-| Mercat de Santa Caterina (Борн) | Рекомендуют | Time Out Barcelona, Turisme de Barcelona | — источники | <https://www.timeout.com/barcelona/shopping/barcelona-markets-the-top-ten> <https://barcelonaturisme.com/wv3/en/page/508/santa-caterina-market.html> | — |  |
+| Mercat de Santa Caterina (Борн) | Рекомендуют | Time Out Barcelona, Turisme de Barcelona | — источники | <https://www.timeout.com/barcelona/shopping/barcelona-markets-the-top-ten> <https://thisisbarcelona.com/gastronomy/barcelona-markets/mercat-de-santa-caterina> | — |  |
 | Mercat de Santa Caterina (Борн) | Адрес | Avinguda de Francesc Cambó, 16, 08003 Barcelona | ✅ verified | <https://mercatsantacaterina.com/contacto/> | 2026-10-18 |  |
 | Mercat de Santa Caterina (Борн) | Часы работы | Сентябрь–июнь: пн, ср, сб 7:30–14:30; вт, чт, пт 7:30–20:30. Июль–август: пт 7:30–20:30, остальные дни 7:30–14:30. Вс закрыто. Проверьте перед визитом. | ✅ verified | <https://www.barcelona.cat/en/coneixbcn/pics/mercat-de-santa-caterina-92086009448> | 2026-10-18 |  |
 | Mercat de Santa Caterina (Борн) | Закрыто (по дням) | закрыто: вс | ✅ verified | <https://www.barcelona.cat/en/coneixbcn/pics/mercat-de-santa-caterina-92086009448> | 2026-10-18 |  |
