@@ -34,7 +34,7 @@ const MODES = { walk: 'пешком', metro: 'на метро', bus: 'на ав�
 const money = (n) => String(n).replace('.', ',')
 function valueText(field, fact) {
   if ('min' in fact) {
-    const range = fact.min === fact.max ? money(fact.min) : `${money(fact.min)}–${money(fact.max)}`
+    const range = fact.from ? `от ${money(fact.min)}` : fact.min === fact.max ? money(fact.min) : `${money(fact.min)}–${money(fact.max)}`
     return `${range} €`
   }
   if (field === 'admission') return ADMISSION[fact.value] ?? fact.value
@@ -118,9 +118,11 @@ for (const p of places.places) {
     rows.push({ group: 'Еда и места', object, field: 'Закрыто (по дням)', value: 'нет', status: 'needs_check', source: '', checkedAt: '—', reason: p.openingHours?.note ?? 'Часов по дням на официальном сайте нет' })
   }
   if (p.websiteWarning) {
-    rows.push({ group: 'Еда и места', object, field: 'Сайт', value: 'не показываем', status: 'needs_check', source: '', checkedAt: '2026-10-18', reason: p.websiteWarning })
+    rows.push({ group: 'Еда и места', object, field: 'Сайт', value: 'не показываем', status: 'na', source: '', checkedAt: '2026-10-18', reason: p.websiteWarning })
   }
-  if (!p.price) {
+  if (!p.price && p.type === 'market') {
+    rows.push({ group: 'Еда и места', object, field: 'Средний чек', value: 'цена зависит от выбора', status: 'na', source: '', checkedAt: '—', reason: '' })
+  } else if (!p.price) {
     rows.push({ group: 'Еда и места', object, field: 'Средний чек', value: 'нет', status: 'needs_check', source: '', checkedAt: '—', reason: p.priceNote ?? 'Цена не указана' })
   }
 }
@@ -138,9 +140,9 @@ for (const [group, options] of budgetGroups) {
 }
 
 const verified = rows.filter((r) => r.status === 'verified').length
-const STATUS = { verified: '✅ verified', needs_check: '⚠️ needs_check', estimate: '≈ estimate', advice: '— совет редакции', sources: '— источники' }
+const STATUS = { verified: '✅ verified', needs_check: '⚠️ needs_check', estimate: '≈ estimate', advice: '— совет редакции', sources: '— источники', na: '— не применимо' }
 const estimates = rows.filter((r) => r.status === 'estimate').length
-const facts = rows.filter((r) => r.status !== 'advice' && r.status !== 'sources')
+const facts = rows.filter((r) => !['advice', 'sources', 'na'].includes(r.status))
 
 let md = `# Чек-лист данных: ${city.name}
 

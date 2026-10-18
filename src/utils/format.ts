@@ -32,6 +32,7 @@ export function currencySymbol(currency: Currency): string {
 export function formatPrice(price: Price | null): string {
   if (!price) return 'Цена уточняется'
   const symbol = currencySymbols[price.currency]
+  if (price.from) return `от ${price.min} ${symbol}`
   if (price.min === price.max) return `${price.min} ${symbol}`
   return `${price.min}–${price.max} ${symbol}`
 }

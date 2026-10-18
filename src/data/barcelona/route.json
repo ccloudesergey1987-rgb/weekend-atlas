@@ -55,11 +55,10 @@
             "checkedAt": "2026-10-18"
           },
           "booking": {
-            "value": "Билеты продаются онлайн; обязательна ли предварительная покупка, на сайте не сказано.",
-            "status": "needs_check",
+            "value": "Билеты продаются онлайн на tickets.catedralbcn.org; в соборе есть касса.",
+            "status": "verified",
             "source": "https://catedralbcn.org/visita-turistica/horaris-visita-turistica/",
-            "checkedAt": "2026-10-18",
-            "note": "Официальный сайт не указывает, нужна ли бронь."
+            "checkedAt": "2026-10-18"
           },
           "closures": [
             {
@@ -376,7 +375,7 @@
       "areas": [
         "Эшампле"
       ],
-      "summary": "Главные здания модерна: Саграда Фамилия утром, дома на Пасео-де-Грасиа после обеда.",
+      "summary": "Главные здания модерна: Саграда Фамилия утром, Каса Мила и Каса Батльо на Пасео-де-Грасиа после обеда.",
       "notice": "Если этот день выпал на воскресенье, приходите в Саграду Фамилию к 10:30 — по воскресеньям она открывается позже.",
       "points": [
         {
@@ -553,118 +552,27 @@
           }
         },
         {
-          "id": "barcelona/casa-batllo",
-          "kind": "sight",
-          "title": "Каса Батльо",
-          "localName": "Casa Batlló",
-          "description": "Дом Гауди с волнообразным фасадом и крышей, похожей на спину дракона.",
-          "details": "Гауди перестроил обычный жилой дом в 1904–1906 годах. Внутри почти нет прямых углов, а световой колодец облицован плиткой, которая светлеет от верхних этажей к нижним.",
-          "time": "15:00",
-          "durationMin": 90,
-          "address": {
-            "value": "Passeig de Gràcia, 43, 08007 Barcelona",
-            "status": "verified",
-            "source": "https://www.casabatllo.es/en/",
-            "checkedAt": "2026-10-18"
-          },
-          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Casa+Batll%C3%B3+Barcelona",
-          "openingHours": {
-            "value": "Ежедневно; общий визит — вход с 9:00 до 19:45. Проверьте перед визитом.",
-            "status": "needs_check",
-            "source": "https://www.casabatllo.es/en/online-tickets/",
-            "checkedAt": "2026-10-18",
-            "note": "Страницы сайта расходятся: на главной — 9:00–22:30, в практической информации — 8:30–22:30 (последний вход 21:30), на странице билетов общий визит — 9:00–19:45."
-          },
-          "admission": {
-            "value": "paid",
-            "status": "verified",
-            "source": "https://www.casabatllo.es/en/online-tickets/",
-            "checkedAt": "2026-10-18"
-          },
-          "price": {
-            "min": 29,
-            "max": 29,
-            "currency": "EUR",
-            "status": "needs_check",
-            "source": "https://www.casabatllo.es/en/online-tickets/",
-            "checkedAt": "2026-10-18",
-            "note": "На сайте указано только «от 29 €» за общий визит: цена зависит от даты и времени."
-          },
-          "tickets": {
-            "value": "https://www.casabatllo.es/en/online-tickets/",
-            "status": "verified",
-            "source": "https://www.casabatllo.es/en/",
-            "checkedAt": "2026-10-18"
-          },
-          "booking": {
-            "value": "Билеты продаются онлайн на дату и время; за покупку заранее сайт обещает скидку.",
-            "status": "needs_check",
-            "source": "https://www.casabatllo.es/en/online-tickets/",
-            "checkedAt": "2026-10-18",
-            "note": "Прямо не сказано, обязательна ли бронь и можно ли купить билет в кассе без доплаты."
-          },
-          "website": {
-            "value": "https://www.casabatllo.es",
-            "status": "verified",
-            "source": "https://www.casabatllo.es/en/",
-            "checkedAt": "2026-10-18"
-          },
-          "partnerUrl": null,
-          "transferFromPrevious": {
-            "mode": "walk",
-            "minutes": 15,
-            "status": "estimate",
-            "source": "",
-            "checkedAt": null,
-            "note": "Время и способ перехода — оценка редакции: официального источника для этого нет."
-          },
-          "photo": {
-            "src": "images/barcelona/casa-batllo-800.webp",
-            "srcSet": [
-              {
-                "src": "images/barcelona/casa-batllo-800.webp",
-                "width": 800
-              },
-              {
-                "src": "images/barcelona/casa-batllo-1600.webp",
-                "width": 1600
-              }
-            ],
-            "width": 1600,
-            "height": 900,
-            "alt": "Волнистый фасад Каса Батльо и крыша, похожая на спину дракона",
-            "credit": {
-              "author": "Bernard Gagnon",
-              "license": "CC BY-SA 3.0",
-              "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-              "sourceUrl": "https://commons.wikimedia.org/wiki/File:Casa_Batll%C3%B3_01.jpg",
-              "changes": "Кадрировано до 16:9, уменьшено и сжато в WebP"
-            }
-          }
-        },
-        {
           "id": "barcelona/casa-mila",
           "kind": "sight",
           "title": "Каса Мила (Ла Педрера)",
           "localName": "Casa Milà — La Pedrera",
           "description": "Последний жилой дом Гауди: каменный фасад без прямых линий и крыша с причудливыми трубами.",
           "details": "Дом построен в 1906–1912 годах. Горожане прозвали его «Ла Педрера» — «каменоломня» — за массивный каменный фасад. Самое известное место — крыша с вентиляционными трубами-скульптурами.",
-          "time": "17:00",
+          "time": "15:00",
           "durationMin": 90,
           "address": {
-            "value": "Passeig de Gràcia, 92, Barcelona",
-            "status": "needs_check",
-            "source": "https://www.lapedrera.com",
-            "checkedAt": "2026-10-18",
-            "note": "Основной сайт lapedrera.com 18.10.2026 не открылся (сбой соединения)."
+            "value": "Passeig de Gràcia, 92, 08008 Barcelona",
+            "status": "verified",
+            "source": "https://www.barcelona.cat/museusbarcelona/en/museum/la-pedrera-92086024002",
+            "checkedAt": "2026-10-18"
           },
           "mapUrl": "https://www.google.com/maps/search/?api=1&query=Casa+Mil%C3%A0+La+Pedrera+Barcelona",
           "openingHours": {
-            "value": "Уточняются. Проверьте перед визитом.",
-            "status": "needs_check",
-            "source": "https://www.lapedrera.com",
+            "value": "Билет La Pedrera Essential — вход по времени с 9:00, последний вход в 17:15. Билет Open Date (45 €) — без привязки ко времени. Проверьте перед визитом.",
+            "status": "verified",
+            "source": "https://tickets.lapedrera.com/en/29-individual/37-la-pedrera-essential",
             "checkedAt": "2026-10-18",
-            "note": "Основной сайт lapedrera.com 18.10.2026 не открылся, на сайте билетов часов работы нет."
+            "note": "Время входа по Essential сверено в официальной продаже билетов на 23.10.2026; часы Open Date (9:00–20:30) — только по выдаче Google, страница lapedrera.com из нашего региона не открывается."
           },
           "admission": {
             "value": "paid",
@@ -674,12 +582,12 @@
           },
           "price": {
             "min": 29,
-            "max": 29,
+            "max": 39,
             "currency": "EUR",
-            "status": "needs_check",
-            "source": "https://tickets.lapedrera.com/",
+            "status": "verified",
+            "source": "https://tickets.lapedrera.com/en/29-individual/37-la-pedrera-essential",
             "checkedAt": "2026-10-18",
-            "note": "На сайте указано только «от 29,00 €» за билет La Pedrera Essential: цена зависит от даты и времени."
+            "note": "La Pedrera Essential, взрослый: цена зависит от дня и времени входа — на 23.10.2026 от 29 до 39 €. Билет Open Date без времени — 45 €. Проверьте перед визитом."
           },
           "tickets": {
             "value": "https://tickets.lapedrera.com",
@@ -694,16 +602,16 @@
             "checkedAt": "2026-10-18"
           },
           "website": {
-            "value": "https://www.lapedrera.com",
-            "status": "needs_check",
-            "source": "https://www.lapedrera.com",
+            "value": "https://tickets.lapedrera.com",
+            "status": "verified",
+            "source": "https://tickets.lapedrera.com/",
             "checkedAt": "2026-10-18",
-            "note": "Сайт 18.10.2026 не открылся."
+            "note": "Основной сайт lapedrera.com из нашего региона не открывается — даём ссылку на официальную продажу билетов."
           },
           "partnerUrl": null,
           "transferFromPrevious": {
             "mode": "walk",
-            "minutes": 10,
+            "minutes": 15,
             "status": "estimate",
             "source": "",
             "checkedAt": null,
@@ -729,6 +637,96 @@
               "license": "CC BY-SA 4.0",
               "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
               "sourceUrl": "https://commons.wikimedia.org/wiki/File:Barcelona_1800.jpg",
+              "changes": "Кадрировано до 16:9, уменьшено и сжато в WebP"
+            }
+          }
+        },
+        {
+          "id": "barcelona/casa-batllo",
+          "kind": "sight",
+          "title": "Каса Батльо",
+          "localName": "Casa Batlló",
+          "description": "Дом Гауди с волнообразным фасадом и крышей, похожей на спину дракона.",
+          "details": "Гауди перестроил обычный жилой дом в 1904–1906 годах. Внутри почти нет прямых углов, а световой колодец облицован плиткой, которая светлеет от верхних этажей к нижним.",
+          "time": "17:00",
+          "durationMin": 90,
+          "address": {
+            "value": "Passeig de Gràcia, 43, 08007 Barcelona",
+            "status": "verified",
+            "source": "https://www.casabatllo.es/en/",
+            "checkedAt": "2026-10-18"
+          },
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Casa+Batll%C3%B3+Barcelona",
+          "openingHours": {
+            "value": "Ежедневно. Общий визит: первый вход 9:00, последний — 19:15. Дети до 12 лет — бесплатно. Проверьте перед визитом.",
+            "status": "verified",
+            "source": "https://www.casabatllo.es/en/online-tickets/",
+            "checkedAt": "2026-10-18",
+            "note": "Последний вход на страницах сайта указан по-разному (19:15 и 19:45) — взято более раннее время."
+          },
+          "admission": {
+            "value": "paid",
+            "status": "verified",
+            "source": "https://www.casabatllo.es/en/online-tickets/",
+            "checkedAt": "2026-10-18"
+          },
+          "price": {
+            "min": 29,
+            "max": 29,
+            "from": true,
+            "currency": "EUR",
+            "status": "verified",
+            "source": "https://www.casabatllo.es/en/online-tickets/",
+            "checkedAt": "2026-10-18",
+            "note": "Общий визит — «от 29 €», цена зависит от даты и времени. Дети до 12 лет — бесплатно."
+          },
+          "tickets": {
+            "value": "https://www.casabatllo.es/en/online-tickets/",
+            "status": "verified",
+            "source": "https://www.casabatllo.es/en/",
+            "checkedAt": "2026-10-18"
+          },
+          "booking": {
+            "value": "Билеты продаются онлайн на дату и время; при покупке заранее онлайн дешевле.",
+            "status": "verified",
+            "source": "https://www.casabatllo.es/en/online-tickets/",
+            "checkedAt": "2026-10-18"
+          },
+          "website": {
+            "value": "https://www.casabatllo.es",
+            "status": "verified",
+            "source": "https://www.casabatllo.es/en/",
+            "checkedAt": "2026-10-18"
+          },
+          "partnerUrl": null,
+          "transferFromPrevious": {
+            "mode": "walk",
+            "minutes": 10,
+            "status": "estimate",
+            "source": "",
+            "checkedAt": null,
+            "note": "Время и способ перехода — оценка редакции: официального источника для этого нет."
+          },
+          "photo": {
+            "src": "images/barcelona/casa-batllo-800.webp",
+            "srcSet": [
+              {
+                "src": "images/barcelona/casa-batllo-800.webp",
+                "width": 800
+              },
+              {
+                "src": "images/barcelona/casa-batllo-1600.webp",
+                "width": 1600
+              }
+            ],
+            "width": 1600,
+            "height": 900,
+            "alt": "Волнистый фасад Каса Батльо и крыша, похожая на спину дракона",
+            "credit": {
+              "author": "Bernard Gagnon",
+              "license": "CC BY-SA 3.0",
+              "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+              "sourceUrl": "https://commons.wikimedia.org/wiki/File:Casa_Batll%C3%B3_01.jpg",
               "changes": "Кадрировано до 16:9, уменьшено и сжато в WebP"
             }
           }
@@ -793,11 +791,10 @@
           "time": "09:30",
           "durationMin": 120,
           "address": {
-            "value": "Carrer d'Olot, Barcelona",
-            "status": "needs_check",
-            "source": "https://parkguell.barcelona/ca/planifica-la-teva-visita/com-arribar-hi",
-            "checkedAt": "2026-10-18",
-            "note": "На официальном сайте нет почтового адреса входа, только улицы для подхода."
+            "value": "Carrer d'Olot, 2-4, Barcelona",
+            "status": "verified",
+            "source": "https://www.barcelona.cat/ca/que-pots-fer-a-bcn/parcs-i-jardins/park-guell-92086011949",
+            "checkedAt": "2026-10-18"
           },
           "mapUrl": "https://www.google.com/maps/search/?api=1&query=Park+G%C3%BCell+Barcelona",
           "openingHours": {
@@ -954,11 +951,11 @@
           },
           "mapUrl": "https://www.google.com/maps/search/?api=1&query=MNAC+Barcelona",
           "openingHours": {
-            "value": "Вт–сб с 10:00 (закрытие в 18:00 или 20:00 — уточните), вс и праздники 10:00–15:00. Пн закрыто, кроме праздников; закрыто 1 января, 1 мая и 25 декабря. Проверьте перед визитом.",
-            "status": "needs_check",
+            "value": "Октябрь–апрель: вт–сб 10:00–18:00; май–сентябрь: вт–сб 10:00–20:00; вс и праздники 10:00–15:00. Пн закрыто, кроме праздников; закрыто 1 января, 1 мая и 25 декабря. Проверьте перед визитом.",
+            "status": "verified",
             "source": "https://www.museunacional.cat/ca/horaris-i-preus",
             "checkedAt": "2026-10-18",
-            "note": "Страницы сайта расходятся: на главной зимой вт–сб до 20:00, на странице «Horaris i preus» — до 18:00 (летом, май–сентябрь, до 20:00). Выходные дни и часы воскресенья совпадают."
+            "note": "Главная страница сайта даёт зимой закрытие в 20:00, страница «Horaris i preus» — в 18:00; взято более раннее время."
           },
           "admission": {
             "value": "paid",

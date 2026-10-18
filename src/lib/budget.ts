@@ -402,6 +402,7 @@ export function formatUnitPrice(price: Price | null): string {
   }
   const symbol = currencySymbol(price.currency)
   const approx = price.status === 'estimate' ? '≈ ' : ''
+  if (price.from) return `${approx}от ${money(price.min)} ${symbol}`
   if (price.min === price.max) return `${approx}${money(price.min)} ${symbol}`
   return `${approx}${money(price.min)}–${money(price.max)} ${symbol}`
 }

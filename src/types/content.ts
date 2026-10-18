@@ -39,6 +39,8 @@ export interface Price extends Provenance {
   min: number
   max: number
   currency: Currency
+  /** Only the lower bound is known: shown as «от 29 €»; `max` repeats `min`. */
+  from?: boolean
 }
 
 /** Free licenses allowed for photos; anything else is not used. */

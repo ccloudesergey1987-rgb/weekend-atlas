@@ -21,8 +21,15 @@
           "url": "https://www.barcelonaturisme.com/wv3/en/enjoy/50/on-the-vermouth-trail-discover-some-of-the-best-places-to-have-an-aperitif.html"
         }
       ],
-      "price": null,
-      "priceNote": "Цены не нашли: меню с ценами нет на официальном сайте (или сайт не годится как источник), страницы на TheFork нет, в гиде Michelin заведения нет. Цену на человека берём из Google Maps при ручной проверке.",
+      "price": {
+        "min": 20,
+        "max": 40,
+        "currency": "EUR",
+        "status": "estimate",
+        "source": "Google Maps, данные посетителей",
+        "checkedAt": "2026-10-18",
+        "note": "Цена на человека по Google Maps: 20–40 € (по отзывам посетителей, обычно с напитками), проверено вручную 18.10.2026."
+      },
       "address": {
         "value": "Carrer de Montcada, 22, 08003 Barcelona",
         "status": "needs_check",
@@ -67,12 +74,12 @@
       },
       "price": {
         "min": 20,
-        "max": 26,
+        "max": 30,
         "currency": "EUR",
         "status": "estimate",
-        "source": "https://www.bardelpla.cat/wp-content/uploads/CARTAS/BarCatala.pdf",
+        "source": "Google Maps, данные посетителей",
         "checkedAt": "2026-10-18",
-        "note": "По карте bardelpla.cat: 2 крокеты по 3,00 €, половина порции брав (5,50 € за порцию) и одно блюдо дня за 11–17 € — около 20–26 € на человека без напитков."
+        "note": "Цена на человека по Google Maps: 20–30 € (по отзывам посетителей, обычно с напитками), проверено вручную 18.10.2026. Раньше: 20–26 € — По карте bardelpla.cat: 2 крокеты по 3,00 €, половина порции брав (5,50 € за порцию) и одно блюдо дня за 11–17 € — около 20–26 € на человека без напитков."
       },
       "address": {
         "value": "Carrer de Montcada, 2, 08003 Barcelona",
@@ -155,30 +162,82 @@
           "url": "https://thisisbarcelona.com/gastronomy/patisseries"
         }
       ],
-      "price": null,
-      "priceNote": "Цены не нашли: меню с ценами нет на официальном сайте (или сайт не годится как источник), страницы на TheFork нет, в гиде Michelin заведения нет. Цену на человека берём из Google Maps при ручной проверке.",
+      "price": {
+        "min": 3,
+        "max": 10,
+        "currency": "EUR",
+        "status": "estimate",
+        "source": "https://hofmannpasteleria.com/producto/croissant-normal/",
+        "checkedAt": "2026-10-18",
+        "note": "По ценам на официальном сайте: круассан классический 3,10 €, шоколадный 4,50 €, с маскарпоне 4,90 €. Завтрак — один-два круассана, около 3–10 € на человека, без кофе. Цены интернет-магазина, в кондитерской могут отличаться."
+      },
       "address": {
         "value": "Carrer dels Flassaders, 44, 08003 Barcelona",
-        "status": "needs_check",
-        "source": "https://hofmannpasteleria.com",
-        "checkedAt": "2026-10-18",
-        "note": "Сайт пекарни hofmannpasteleria.com 18.10.2026 не открылся."
+        "status": "verified",
+        "source": "https://hofmannpasteleria.com/contacto/",
+        "checkedAt": "2026-10-18"
       },
       "openingHours": {
-        "value": "Уточняются",
-        "status": "needs_check",
-        "source": "https://hofmannpasteleria.com",
-        "checkedAt": "2026-10-18",
-        "note": "Сайт пекарни hofmannpasteleria.com 18.10.2026 не открылся."
+        "value": "Пн–сб 9:00–20:00, вс 9:00–19:00.",
+        "status": "verified",
+        "source": "https://hofmannpasteleria.com/contacto/",
+        "checkedAt": "2026-10-18"
       },
-      "schedule": null,
+      "schedule": {
+        "value": {
+          "mon": [
+            [
+              "09:00",
+              "20:00"
+            ]
+          ],
+          "tue": [
+            [
+              "09:00",
+              "20:00"
+            ]
+          ],
+          "wed": [
+            [
+              "09:00",
+              "20:00"
+            ]
+          ],
+          "thu": [
+            [
+              "09:00",
+              "20:00"
+            ]
+          ],
+          "fri": [
+            [
+              "09:00",
+              "20:00"
+            ]
+          ],
+          "sat": [
+            [
+              "09:00",
+              "20:00"
+            ]
+          ],
+          "sun": [
+            [
+              "09:00",
+              "19:00"
+            ]
+          ]
+        },
+        "status": "verified",
+        "source": "https://hofmannpasteleria.com/contacto/",
+        "checkedAt": "2026-10-18"
+      },
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=Pastisseria+Hofmann%2C+Carrer+dels+Flassaders+44%2C+Barcelona",
       "website": {
         "value": "https://hofmannpasteleria.com",
-        "status": "needs_check",
-        "source": "https://www.hofmann-bcn.com/",
-        "checkedAt": "2026-10-18",
-        "note": "Сайт пекарни hofmannpasteleria.com 18.10.2026 не открылся."
+        "status": "verified",
+        "source": "https://hofmannpasteleria.com/contacto/",
+        "checkedAt": "2026-10-18"
       },
       "partnerUrl": null
     },
@@ -199,7 +258,6 @@
         }
       ],
       "price": null,
-      "priceNote": "Рынок: чек зависит от покупок; меню нет ни на официальном сайте, ни на TheFork, в гиде Michelin рынка нет. Цену на человека берём из Google Maps при ручной проверке.",
       "address": {
         "value": "Avinguda de Francesc Cambó, 16, 08003 Barcelona",
         "status": "verified",
@@ -207,13 +265,57 @@
         "checkedAt": "2026-10-18"
       },
       "openingHours": {
-        "value": "Пн, ср, сб 7:30–14:30 или до 15:30; вт, чт, пт 7:30–20:30; вс закрыто. Летом короче. Проверьте перед визитом.",
-        "status": "needs_check",
+        "value": "Сентябрь–июнь: пн, ср, сб 7:30–14:30; вт, чт, пт 7:30–20:30. Июль–август: пт 7:30–20:30, остальные дни 7:30–14:30. Вс закрыто. Проверьте перед визитом.",
+        "status": "verified",
         "source": "https://www.barcelona.cat/en/coneixbcn/pics/mercat-de-santa-caterina-92086009448",
         "checkedAt": "2026-10-18",
-        "note": "Сайт мэрии даёт закрытие в пн, ср и сб в 14:30, сайт рынка — в 15:30."
+        "note": "Сайт рынка даёт закрытие в пн, ср и сб в 15:30, сайт мэрии — в 14:30; взято более раннее время."
       },
-      "schedule": null,
+      "schedule": {
+        "value": {
+          "mon": [
+            [
+              "07:30",
+              "14:30"
+            ]
+          ],
+          "tue": [
+            [
+              "07:30",
+              "20:30"
+            ]
+          ],
+          "wed": [
+            [
+              "07:30",
+              "14:30"
+            ]
+          ],
+          "thu": [
+            [
+              "07:30",
+              "20:30"
+            ]
+          ],
+          "fri": [
+            [
+              "07:30",
+              "20:30"
+            ]
+          ],
+          "sat": [
+            [
+              "07:30",
+              "14:30"
+            ]
+          ],
+          "sun": []
+        },
+        "status": "verified",
+        "source": "https://www.barcelona.cat/en/coneixbcn/pics/mercat-de-santa-caterina-92086009448",
+        "checkedAt": "2026-10-18",
+        "note": "Часы с сентября по июнь."
+      },
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=Mercat+de+Santa+Caterina%2C+Barcelona",
       "website": {
         "value": "https://mercatsantacaterina.com",
@@ -249,12 +351,12 @@
       ],
       "price": {
         "min": 20,
-        "max": 29,
+        "max": 30,
         "currency": "EUR",
         "status": "estimate",
-        "source": "https://grupotragaluz.com/wp-content/uploads/cartas/cuines-santa-caterina-es-web.pdf",
+        "source": "Google Maps, данные посетителей",
         "checkedAt": "2026-10-18",
-        "note": "По карте grupotragaluz.com: половина порции брав (8,80 € за порцию), одно основное блюдо за 14–22,80 € и хлеб 1,80 € — около 20–29 € на человека без напитков."
+        "note": "Цена на человека по Google Maps: 20–30 € (по отзывам посетителей, обычно с напитками), проверено вручную 18.10.2026. Раньше: 20–29 € — По карте grupotragaluz.com: половина порции брав (8,80 € за порцию), одно основное блюдо за 14–22,80 € и хлеб 1,80 € — около 20–29 € на человека без напитков."
       },
       "address": {
         "value": "Avinguda de Francesc Cambó, 16, 08003 Barcelona",
@@ -353,13 +455,13 @@
         "checkedAt": "2026-10-18"
       },
       "price": {
-        "min": 25,
-        "max": 35,
+        "min": 30,
+        "max": 70,
         "currency": "EUR",
         "status": "estimate",
-        "source": "https://restaurantpacomeralgo.com/paco-meralgo-carta-esp/",
+        "source": "Google Maps, данные посетителей",
         "checkedAt": "2026-10-18",
-        "note": "По карте restaurantpacomeralgo.com: крокеты и буньюэлос 3,30–3,40 € за штуку, большинство тапас и закусок 5–20 €. Набор на человека — 2 крокеты и 2–3 тапас пополам — около 25–35 € без напитков."
+        "note": "Цена на человека по Google Maps: 30–70 € (по отзывам посетителей, обычно с напитками), проверено вручную 18.10.2026. Раньше: 25–35 € — По карте restaurantpacomeralgo.com: крокеты и буньюэлос 3,30–3,40 € за штуку, большинство тапас и закусок 5–20 €. Набор на человека — 2 крокеты и 2–3 тапас пополам — около 25–35 € без напитков."
       },
       "address": {
         "value": "Carrer de Muntaner, 171, 08036 Barcelona",
@@ -448,13 +550,14 @@
         }
       ],
       "price": {
-        "min": 95,
-        "max": 115,
+        "min": 100,
+        "max": 100,
         "currency": "EUR",
+        "from": true,
         "status": "estimate",
-        "source": "https://www.xavierpellicer.com/carta",
+        "source": "Google Maps, данные посетителей",
         "checkedAt": "2026-10-18",
-        "note": "По карте xavierpellicer.com: дегустационный сет из 5 блюд — 95 €, из 8 блюд — 115 €; без напитков. Цены обеденной карты на сайте не указаны."
+        "note": "Цена на человека по Google Maps: от 100 € (по отзывам посетителей, обычно с напитками), проверено вручную 18.10.2026. Раньше: 95–115 € — По карте xavierpellicer.com: дегустационный сет из 5 блюд — 95 €, из 8 блюд — 115 €; без напитков. Цены обеденной карты на сайте не указаны."
       },
       "address": {
         "value": "Carrer de Provença, 310, 08037 Barcelona",
@@ -548,8 +651,15 @@
           "url": "https://thisisbarcelona.com/gastronomy/patisseries"
         }
       ],
-      "price": null,
-      "priceNote": "Цены не нашли: меню с ценами нет на официальном сайте (или сайт не годится как источник), страницы на TheFork нет, в гиде Michelin заведения нет. Цену на человека берём из Google Maps при ручной проверке.",
+      "price": {
+        "min": 10,
+        "max": 20,
+        "currency": "EUR",
+        "status": "estimate",
+        "source": "Google Maps, данные посетителей",
+        "checkedAt": "2026-10-18",
+        "note": "Цена на человека по Google Maps: 10–20 € (по отзывам посетителей, обычно с напитками), проверено вручную 18.10.2026."
+      },
       "address": {
         "value": "Gran Via de les Corts Catalanes, 546, 08011 Barcelona",
         "status": "needs_check",
@@ -587,7 +697,6 @@
         }
       ],
       "price": null,
-      "priceNote": "Рынок: чек зависит от покупок; меню нет ни на официальном сайте, ни на TheFork, в гиде Michelin рынка нет. Цену на человека берём из Google Maps при ручной проверке.",
       "address": {
         "value": "Carrer d'Aragó, 311, 08009 Barcelona",
         "status": "verified",
@@ -668,8 +777,15 @@
           "url": "https://en.ara.cat/food/was-close-to-opening-vermouth-bar-in-new-york-with-actor-robert-niro-as-partner_128_5511905.html"
         }
       ],
-      "price": null,
-      "priceNote": "Цены не нашли: меню с ценами на официальном сайте нет, страницы на TheFork больше нет, в гиде Michelin заведения нет. Цену на человека берём из Google Maps при ручной проверке.",
+      "price": {
+        "min": 30,
+        "max": 90,
+        "currency": "EUR",
+        "status": "estimate",
+        "source": "Google Maps, данные посетителей",
+        "checkedAt": "2026-10-18",
+        "note": "Цена на человека по Google Maps: 30–90 € (по отзывам посетителей, обычно с напитками), проверено вручную 18.10.2026."
+      },
       "address": {
         "value": "Carrer de Pau Claris, 192, 08037 Barcelona",
         "status": "verified",
@@ -738,7 +854,13 @@
         "source": "https://barmut.com/",
         "checkedAt": "2026-10-18"
       },
-      "partnerUrl": null
+      "partnerUrl": null,
+      "reservation": {
+        "value": "recommended",
+        "status": "verified",
+        "source": "Google Maps — карточка заведения, проверено вручную 18.10.2026",
+        "checkedAt": "2026-10-18"
+      }
     },
     {
       "id": "barcelona/berbena",
@@ -757,13 +879,13 @@
         }
       ],
       "price": {
-        "min": 35,
-        "max": 60,
+        "min": 50,
+        "max": 100,
         "currency": "EUR",
         "status": "estimate",
-        "source": "https://guide.michelin.com/us/en/catalunya/barcelona/restaurant/berbena",
+        "source": "Google Maps, данные посетителей",
         "checkedAt": "2026-10-18",
-        "note": "Ценовая категория в гиде Michelin — «€€», то есть 35–60 € за обед или ужин по таблице Michelin для еврозоны (guide.michelin.com/en/restaurants-price-ranges-index)."
+        "note": "Цена на человека по Google Maps: 50–100 € (по отзывам посетителей, обычно с напитками), проверено вручную 18.10.2026. Раньше: 35–60 € — Ценовая категория в гиде Michelin — «€€», то есть 35–60 € за обед или ужин по таблице Michelin для еврозоны (guide.michelin.com/en/restaurants-price-ranges-index)."
       },
       "address": {
         "value": "Carrer de Minerva, 6, 08006 Barcelona",
@@ -850,13 +972,13 @@
         }
       ],
       "price": {
-        "min": 50,
-        "max": 50,
+        "min": 20,
+        "max": 30,
         "currency": "EUR",
         "status": "estimate",
-        "source": "https://www.thefork.es/restaurante/la-pubilla-de-gracia-r750086",
+        "source": "Google Maps, данные посетителей",
         "checkedAt": "2026-10-18",
-        "note": "Средняя цена на TheFork: 50 € (закуска и основное блюдо или основное и десерт, без напитков). Завтраки и меню дня, скорее всего, дешевле, но их цены нигде не подтверждены."
+        "note": "Цена на человека по Google Maps: 20–30 € (по отзывам посетителей, обычно с напитками), проверено вручную 18.10.2026. Раньше: 50 € — Средняя цена на TheFork: 50 € (закуска и основное блюдо или основное и десерт, без напитков). Завтраки и меню дня, скорее всего, дешевле, но их цены нигде не подтверждены."
       },
       "address": {
         "value": "Plaça de la Llibertat, 23, 08012 Barcelona",
@@ -876,7 +998,13 @@
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=La+Pubilla%2C+Pla%C3%A7a+de+la+Llibertat+23%2C+Barcelona",
       "website": null,
       "websiteWarning": "Домен restaurantelapubilla.com перенаправляет на посторонний сайт — ссылку не показываем.",
-      "partnerUrl": null
+      "partnerUrl": null,
+      "reservation": {
+        "value": "recommended",
+        "status": "verified",
+        "source": "Google Maps — карточка заведения, проверено вручную 18.10.2026",
+        "checkedAt": "2026-10-18"
+      }
     },
     {
       "id": "barcelona/syra-bonavista",
@@ -894,8 +1022,15 @@
           "url": "https://www.lonelyplanet.com/spain/barcelona/barceloneta-port-olimpic-and-the-waterfront/nightlife/syra-coffee/a/poi-dri/1634006/1320666"
         }
       ],
-      "price": null,
-      "priceNote": "Цены не нашли: меню с ценами нет на официальном сайте (или сайт не годится как источник), страницы на TheFork нет, в гиде Michelin заведения нет. Цену на человека берём из Google Maps при ручной проверке.",
+      "price": {
+        "min": 1,
+        "max": 10,
+        "currency": "EUR",
+        "status": "estimate",
+        "source": "Google Maps, данные посетителей",
+        "checkedAt": "2026-10-18",
+        "note": "Цена на человека по Google Maps: 1–10 € (по отзывам посетителей, обычно с напитками), проверено вручную 18.10.2026."
+      },
       "address": {
         "value": "Carrer de Bonavista, 23, 08012 Barcelona",
         "status": "verified",
@@ -983,7 +1118,6 @@
         }
       ],
       "price": null,
-      "priceNote": "Рынок: чек зависит от покупок; меню нет ни на официальном сайте, ни на TheFork, в гиде Michelin рынка нет. Цену на человека берём из Google Maps при ручной проверке.",
       "address": {
         "value": "Plaça de la Llibertat, 27, 08012 Barcelona",
         "status": "verified",
@@ -1022,8 +1156,15 @@
           "url": "https://www.lonelyplanet.com/spain/barcelona/gracia-and-park-guell/restaurants/la-pepita/a/poi-eat/1634358/1320687"
         }
       ],
-      "price": null,
-      "priceNote": "Цены не нашли: меню с ценами нет на официальном сайте (или сайт не годится как источник), страницы на TheFork нет, в гиде Michelin заведения нет. Цену на человека берём из Google Maps при ручной проверке.",
+      "price": {
+        "min": 20,
+        "max": 30,
+        "currency": "EUR",
+        "status": "estimate",
+        "source": "Google Maps, данные посетителей",
+        "checkedAt": "2026-10-18",
+        "note": "Цена на человека по Google Maps: 20–30 € (по отзывам посетителей, обычно с напитками), проверено вручную 18.10.2026."
+      },
       "address": {
         "value": "Carrer de Còrsega, 343, 08037 Barcelona",
         "status": "verified",
@@ -1145,13 +1286,13 @@
         "checkedAt": "2026-10-18"
       },
       "price": {
-        "min": 26,
-        "max": 48,
+        "min": 30,
+        "max": 80,
         "currency": "EUR",
         "status": "estimate",
-        "source": "https://oniricrestaurant.com/",
+        "source": "Google Maps, данные посетителей",
         "checkedAt": "2026-10-18",
-        "note": "По официальному сайту: дегустационные меню 26 €, 48 € и 80 € на человека. Взяты два первых — 26–48 €, без напитков."
+        "note": "Цена на человека по Google Maps: 30–80 € (по отзывам посетителей, обычно с напитками), проверено вручную 18.10.2026. Раньше: 26–48 € — По официальному сайту: дегустационные меню 26 €, 48 € и 80 € на человека. Взяты два первых — 26–48 €, без напитков."
       },
       "address": {
         "value": "Carrer de la Rabassa, 37, 08024 Barcelona",
@@ -1253,8 +1394,15 @@
           "url": "https://www.barcelonaturisme.com/wv3/sv/enjoy/10/poble-sec-from-bodega-to-bodega.html"
         }
       ],
-      "price": null,
-      "priceNote": "Цены не нашли: меню с ценами нет на официальном сайте (или сайт не годится как источник), страницы на TheFork нет, в гиде Michelin заведения нет. Цену на человека берём из Google Maps при ручной проверке.",
+      "price": {
+        "min": 20,
+        "max": 30,
+        "currency": "EUR",
+        "status": "estimate",
+        "source": "Google Maps, данные посетителей",
+        "checkedAt": "2026-10-18",
+        "note": "Цена на человека по Google Maps: 20–30 € (по отзывам посетителей, обычно с напитками), проверено вручную 18.10.2026."
+      },
       "address": {
         "value": "Carrer del Poeta Cabanyes, 25, 08004 Barcelona",
         "status": "needs_check",
@@ -1292,13 +1440,14 @@
         }
       ],
       "price": {
-        "min": 80,
-        "max": 80,
+        "min": 100,
+        "max": 100,
         "currency": "EUR",
+        "from": true,
         "status": "estimate",
-        "source": "https://www.thefork.es/restaurante/taberna-noroeste-r638751/menu",
+        "source": "Google Maps, данные посетителей",
         "checkedAt": "2026-10-18",
-        "note": "Средняя цена на TheFork, указанная рестораном: 80 € — это дегустационное меню из 10 блюд, без напитков."
+        "note": "Цена на человека по Google Maps: от 100 € (по отзывам посетителей, обычно с напитками), проверено вручную 18.10.2026. Раньше: 80 € — Средняя цена на TheFork, указанная рестораном: 80 € — это дегустационное меню из 10 блюд, без напитков."
       },
       "address": {
         "value": "Carrer de Radas, 67, 08004 Barcelona",
@@ -1387,11 +1536,19 @@
       "reservation": {
         "value": "recommended",
         "status": "verified",
-        "source": "https://www.xemei.es/reservas",
-        "checkedAt": "2026-10-18"
+        "source": "Google Maps — карточка заведения, проверено вручную 18.10.2026",
+        "checkedAt": "2026-10-18",
+        "note": "Ещё и на официальном сайте бронь через систему CoverManager."
       },
-      "price": null,
-      "priceNote": "Цены не нашли: меню с ценами нет на официальном сайте (или сайт не годится как источник), страницы на TheFork нет, в гиде Michelin заведения нет. Цену на человека берём из Google Maps при ручной проверке.",
+      "price": {
+        "min": 30,
+        "max": 50,
+        "currency": "EUR",
+        "status": "estimate",
+        "source": "Google Maps, данные посетителей",
+        "checkedAt": "2026-10-18",
+        "note": "Цена на человека по Google Maps: 30–50 € (по отзывам посетителей, обычно с напитками), проверено вручную 18.10.2026."
+      },
       "address": {
         "value": "Passeig de l'Exposició, 85, 08004 Barcelona",
         "status": "verified",
@@ -1507,8 +1664,15 @@
           "url": "https://www.theinfatuation.com/barcelona/reviews/tiberi-bar"
         }
       ],
-      "price": null,
-      "priceNote": "Цены не нашли: меню с ценами нет на официальном сайте (или сайт не годится как источник), страницы на TheFork нет, в гиде Michelin заведения нет. Цену на человека берём из Google Maps при ручной проверке.",
+      "price": {
+        "min": 30,
+        "max": 40,
+        "currency": "EUR",
+        "status": "estimate",
+        "source": "Google Maps, данные посетителей",
+        "checkedAt": "2026-10-18",
+        "note": "Цена на человека по Google Maps: 30–40 € (по отзывам посетителей, обычно с напитками), проверено вручную 18.10.2026."
+      },
       "address": {
         "value": "Carrer de Vila i Vilà, 67, 08004 Barcelona",
         "status": "needs_check",
@@ -1549,13 +1713,13 @@
         }
       ],
       "price": {
-        "min": 23,
-        "max": 30,
+        "min": 20,
+        "max": 50,
         "currency": "EUR",
         "status": "estimate",
-        "source": "https://elcherestaurant.es/system/page/1/contents/download_es/contents_283_original.pdf",
+        "source": "Google Maps, данные посетителей",
         "checkedAt": "2026-10-18",
-        "note": "По карте elcherestaurant.es: порция паэльи или риса 17–24 € (заказывают минимум две порции), половина тапас-закуски за 6–10 € и хлеб 2 € — около 23–30 € на человека без напитков."
+        "note": "Цена на человека по Google Maps: 20–50 € (по отзывам посетителей, обычно с напитками), проверено вручную 18.10.2026. Раньше: 23–30 € — По карте elcherestaurant.es: порция паэльи или риса 17–24 € (заказывают минимум две порции), половина тапас-закуски за 6–10 € и хлеб 2 € — около 23–30 € на человека без напитков."
       },
       "address": {
         "value": "Carrer de Vila i Vilà, 71, 08004 Barcelona",

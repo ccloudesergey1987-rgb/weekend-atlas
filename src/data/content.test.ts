@@ -279,18 +279,23 @@ describe.each(listCityIds())('данные города %s', (cityId) => {
       for (const place of places) {
         if (place.price) {
           expect(place.price.status, place.id).toBe('estimate')
-          expect(place.price.source, place.id).toMatch(/^https:\/\//)
+          expect(place.price.source, place.id).toMatch(/^(https:\/\/|Google Maps, данные посетителей$)/)
           expect(String(place.price.note ?? ''), place.id).toMatch(/\d/)
+          if (place.price.from) expect(place.price.max, place.id).toBe(place.price.min)
+        } else if (place.type === 'market') {
+          // У рынка чек зависит от покупок — на карточке «Цена зависит от выбора».
+          expect(place.priceNote, place.id).toBeUndefined()
         } else {
           expect(place.priceNote?.trim(), `${place.id}: нет причины, почему нет цены`).toBeTruthy()
         }
       }
     })
 
-    it('пометка о брони взята с официального сайта', () => {
+    it('пометка о брони — с официального сайта или из карточки Google Maps', () => {
       for (const place of places.filter((p) => p.reservation)) {
         expect(['recommended', 'not_accepted'], place.id).toContain(place.reservation!.value)
         expect(place.reservation!.status, place.id).toBe('verified')
+        expect(place.reservation!.source, place.id).toMatch(/^(https:\/\/|Google Maps)/)
       }
     })
 
@@ -343,7 +348,8 @@ describe.each(listCityIds())('данные города %s', (cityId) => {
       }
       for (const place of places.filter((p) => p.websiteWarning)) {
         expect(place.website, place.id).toBeNull()
-        expect(place.reservation, place.id).toBeUndefined()
+        // Пометку о брони с такого сайта не берём — только из Google Maps.
+        if (place.reservation) expect(place.reservation.source, place.id).toMatch(/^Google Maps/)
       }
     })
   })

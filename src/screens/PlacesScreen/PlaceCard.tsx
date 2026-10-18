@@ -105,6 +105,8 @@ export function PlaceCard({ place, highlighted = false }: { place: Place; highli
                     </details>
                   )}
                 </>
+              ) : place.type === 'market' ? (
+                'Цена зависит от выбора'
               ) : (
                 <>
                   Уточняется

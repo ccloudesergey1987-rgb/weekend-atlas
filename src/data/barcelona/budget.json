@@ -8,43 +8,43 @@
       {
         "id": "economy",
         "title": "Экономно",
-        "description": "Обед и ужин тапас в недорогом баре вроде Bar del Pla. Без завтрака, кофе и напитков.",
+        "description": "Кофе с выпечкой в кофейне вроде Syra, обед и ужин в недорогом тапас-баре или таверне — Bar del Pla, Cuines de Santa Caterina, La Pepita.",
         "price": {
-          "min": 40,
-          "max": 52,
+          "min": 41,
+          "max": 70,
           "currency": "EUR",
           "status": "estimate",
-          "source": "https://www.bardelpla.cat/wp-content/uploads/CARTAS/BarCatala.pdf",
+          "source": "Google Maps, данные посетителей",
           "checkedAt": "2026-10-18",
-          "note": "Два приёма пищи по среднему чеку Bar del Pla (20–26 € по меню bardelpla.cat): 2 × 20–26 € = 40–52 €. Завтрак, кофе и напитки не включены: их цен нет ни на официальных сайтах, ни на TheFork, ни в гиде Michelin — они в ручной проверке (docs/manual-check.md). Дешевле Bar del Pla (20–26 €) заведений с подтверждённым чеком пока нет; Cuines de Santa Caterina — 20–29 €."
+          "note": "Завтрак Syra Coffee 1–10 € + обед 20–30 € + ужин 20–30 € (Bar del Pla, Cuines de Santa Caterina, La Pepita, La Pubilla, Quimet & Quimet — у всех 20–30 € по Google Maps) = 41–70 € в день. Цены по Google включают напитки."
         }
       },
       {
         "id": "medium",
         "title": "Средне",
-        "description": "Обед тапас в баре вроде Bar del Pla, ужин в известной таверне вроде Paco Meralgo. Без завтрака, кофе и напитков.",
+        "description": "Завтрак в кондитерской вроде Escribà, обед тапас, ужин в ресторане вроде Xemei.",
         "price": {
-          "min": 45,
-          "max": 61,
+          "min": 60,
+          "max": 100,
           "currency": "EUR",
           "status": "estimate",
-          "source": "https://restaurantpacomeralgo.com/paco-meralgo-carta-esp/",
+          "source": "Google Maps, данные посетителей",
           "checkedAt": "2026-10-18",
-          "note": "Обед в Bar del Pla (20–26 €) и ужин в Paco Meralgo (25–35 €) по средним чекам из официальных меню: 45–61 €. Завтрак, кофе и напитки не включены: их цен нет ни на официальных сайтах, ни на TheFork, ни в гиде Michelin — они в ручной проверке (docs/manual-check.md)."
+          "note": "Завтрак Escribà 10–20 € + обед 20–30 € (тапас-бар) + ужин Xemei 30–50 € = 60–100 € в день, по ценам Google Maps."
         }
       },
       {
         "id": "comfort",
         "title": "Комфортно",
-        "description": "Тапас на обед и дегустационный ужин в ресторане из гида Michelin вроде Xavier Pellicer. Без завтрака, кофе и напитков.",
+        "description": "Завтрак в кондитерской, обед в Paco Meralgo, ужин в ресторане из гида Michelin вроде Berbena.",
         "price": {
-          "min": 115,
-          "max": 141,
+          "min": 90,
+          "max": 190,
           "currency": "EUR",
           "status": "estimate",
-          "source": "https://www.xavierpellicer.com/carta",
+          "source": "Google Maps, данные посетителей",
           "checkedAt": "2026-10-18",
-          "note": "Обед в Bar del Pla (20–26 €) и дегустационный сет в Xavier Pellicer (95–115 € по карте xavierpellicer.com): 115–141 €. Завтрак, кофе и напитки не включены: их цен нет ни на официальных сайтах, ни на TheFork, ни в гиде Michelin — они в ручной проверке (docs/manual-check.md)."
+          "note": "Завтрак Escribà 10–20 € + обед Paco Meralgo 30–70 € + ужин Berbena 50–100 € = 90–190 € в день, по ценам Google Maps. Ужин в Xavier Pellicer или Taberna Noroeste — от 100 €, тогда день выйдет от 140 €."
         }
       }
     ]
