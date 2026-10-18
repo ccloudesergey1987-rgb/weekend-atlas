@@ -15,12 +15,13 @@ describe('ссылка «Сообщить об ошибке»', () => {
     )
   })
 
-  it('веб-форма или чат: тема передаётся параметром', () => {
-    const href = feedbackHref('https://t.me/weekendatlas_bot', 'Каса Мила')!
-    expect(new URL(href).searchParams.get('subject')).toBe('Weekend Atlas: ошибка — Каса Мила')
+  it('чат или веб-форма открываются ровно по указанному адресу', () => {
+    expect(feedbackHref('https://t.me/weekendatlas_help', 'Каса Мила')).toBe('https://t.me/weekendatlas_help')
+    expect(feedbackHref('http://example.org', 'Каса Мила')).toBeNull()
   })
 
-  it('адрес в настройках — письмо или https', () => {
-    if (FEEDBACK_URL !== null) expect(FEEDBACK_URL).toMatch(/^(mailto:|https:\/\/)/)
+  it('в настройках указан чат Telegram, и кнопка ведёт туда', () => {
+    expect(FEEDBACK_URL).toBe('https://t.me/weekendatlas_help')
+    expect(feedbackHref(FEEDBACK_URL, 'главная страница')).toBe('https://t.me/weekendatlas_help')
   })
 })

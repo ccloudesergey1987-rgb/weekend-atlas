@@ -11,11 +11,9 @@ export function feedbackHref(base: string | null, about: string): string | null 
     const sep = base.includes('?') ? '&' : '?'
     return `${base}${sep}subject=${encodeURIComponent(subject)}`
   }
-  // A web form or chat: pass the subject along; pages that do not need it ignore it.
+  // A chat or a web form opens exactly as set: Telegram links take no subject.
   try {
-    const url = new URL(base)
-    url.searchParams.set('subject', subject)
-    return url.href
+    return new URL(base).protocol === 'https:' ? base : null
   } catch {
     return null
   }
