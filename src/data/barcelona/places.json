@@ -22,6 +22,7 @@
         }
       ],
       "price": null,
+      "priceNote": "На официальном сайте нет меню с ценами — средний чек посчитать не по чему.",
       "address": {
         "value": "Carrer de Montcada, 22, 08003 Barcelona",
         "status": "needs_check",
@@ -36,9 +37,10 @@
         "checkedAt": "2026-10-18",
         "note": "Сайт elxampanyet.com содержит рекламу ставок и не называет владельца — как официальный источник не принят."
       },
+      "schedule": null,
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=El+Xampanyet%2C+Carrer+de+Montcada+22%2C+Barcelona",
       "website": null,
-      "priceNote": "На официальном сайте нет меню с ценами — средний чек посчитать не по чему.",
+      "websiteWarning": "Сайт elxampanyet.com показывает рекламу ставок и не называет владельца — ссылку не показываем.",
       "partnerUrl": null
     },
     {
@@ -84,6 +86,50 @@
         "source": "https://www.bardelpla.cat/ca/contact/",
         "checkedAt": "2026-10-18"
       },
+      "schedule": {
+        "value": {
+          "mon": [
+            [
+              "12:00",
+              "23:00"
+            ]
+          ],
+          "tue": [
+            [
+              "12:00",
+              "23:00"
+            ]
+          ],
+          "wed": [
+            [
+              "12:00",
+              "23:00"
+            ]
+          ],
+          "thu": [
+            [
+              "12:00",
+              "23:00"
+            ]
+          ],
+          "fri": [
+            [
+              "12:00",
+              "24:00"
+            ]
+          ],
+          "sat": [
+            [
+              "12:00",
+              "24:00"
+            ]
+          ],
+          "sun": null
+        },
+        "status": "verified",
+        "source": "https://www.bardelpla.cat/ca/contact/",
+        "checkedAt": "2026-10-18"
+      },
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=Bar+del+Pla%2C+Carrer+de+Montcada+2%2C+Barcelona",
       "website": {
         "value": "https://www.bardelpla.cat",
@@ -110,6 +156,7 @@
         }
       ],
       "price": null,
+      "priceNote": "На официальном сайте нет меню с ценами — средний чек посчитать не по чему.",
       "address": {
         "value": "Carrer dels Flassaders, 44, 08003 Barcelona",
         "status": "needs_check",
@@ -124,6 +171,7 @@
         "checkedAt": "2026-10-18",
         "note": "Сайт пекарни hofmannpasteleria.com 18.10.2026 не открылся."
       },
+      "schedule": null,
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=Pastisseria+Hofmann%2C+Carrer+dels+Flassaders+44%2C+Barcelona",
       "website": {
         "value": "https://hofmannpasteleria.com",
@@ -132,7 +180,6 @@
         "checkedAt": "2026-10-18",
         "note": "Сайт пекарни hofmannpasteleria.com 18.10.2026 не открылся."
       },
-      "priceNote": "На официальном сайте нет меню с ценами — средний чек посчитать не по чему.",
       "partnerUrl": null
     },
     {
@@ -152,6 +199,7 @@
         }
       ],
       "price": null,
+      "priceNote": "Рынок: чек зависит от того, что купить; официального меню нет.",
       "address": {
         "value": "Avinguda de Francesc Cambó, 16, 08003 Barcelona",
         "status": "verified",
@@ -165,6 +213,7 @@
         "checkedAt": "2026-10-18",
         "note": "Сайт мэрии даёт закрытие в пн, ср и сб в 14:30, сайт рынка — в 15:30."
       },
+      "schedule": null,
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=Mercat+de+Santa+Caterina%2C+Barcelona",
       "website": {
         "value": "https://mercatsantacaterina.com",
@@ -172,7 +221,109 @@
         "source": "https://mercatsantacaterina.com/contacto/",
         "checkedAt": "2026-10-18"
       },
-      "priceNote": "Рынок: чек зависит от того, что купить; официального меню нет.",
+      "partnerUrl": null
+    },
+    {
+      "id": "barcelona/cuines-santa-caterina",
+      "type": "restaurant",
+      "name": "Cuines de Santa Caterina",
+      "area": "Борн",
+      "description": "Ресторан прямо в рынке Санта-Катерина: тапас, рис, рыба и блюда дня из продуктов с соседних прилавков. Открыт каждый день без перерыва.",
+      "recommendedBy": [
+        {
+          "name": "Time Out Barcelona",
+          "url": "https://www.timeout.com/barcelona/restaurants/cuines-de-santa-caterina"
+        },
+        {
+          "name": "Lonely Planet",
+          "url": "https://www.lonelyplanet.com/spain/barcelona/restaurants/cuines-de-santa-caterina/a/poi-eat/1137157/360761"
+        },
+        {
+          "name": "Turisme de Barcelona",
+          "url": "https://thisisbarcelona.com/es/gastronomia/restaurantes/cuines-de-santa-caterina"
+        },
+        {
+          "name": "The Infatuation",
+          "url": "https://www.theinfatuation.com/barcelona/reviews/cuines-de-santa-caterina"
+        }
+      ],
+      "price": {
+        "min": 20,
+        "max": 29,
+        "currency": "EUR",
+        "status": "estimate",
+        "source": "https://grupotragaluz.com/wp-content/uploads/cartas/cuines-santa-caterina-es-web.pdf",
+        "checkedAt": "2026-10-18",
+        "note": "По карте grupotragaluz.com: половина порции брав (8,80 € за порцию), одно основное блюдо за 14–22,80 € и хлеб 1,80 € — около 20–29 € на человека без напитков."
+      },
+      "address": {
+        "value": "Avinguda de Francesc Cambó, 16, 08003 Barcelona",
+        "status": "verified",
+        "source": "https://grupotragaluz.com/restaurantes/cuines-santa-caterina/",
+        "checkedAt": "2026-10-18"
+      },
+      "openingHours": {
+        "value": "Ежедневно 10:00–00:00.",
+        "status": "verified",
+        "source": "https://grupotragaluz.com/restaurantes/cuines-santa-caterina/",
+        "checkedAt": "2026-10-18"
+      },
+      "schedule": {
+        "value": {
+          "mon": [
+            [
+              "10:00",
+              "24:00"
+            ]
+          ],
+          "tue": [
+            [
+              "10:00",
+              "24:00"
+            ]
+          ],
+          "wed": [
+            [
+              "10:00",
+              "24:00"
+            ]
+          ],
+          "thu": [
+            [
+              "10:00",
+              "24:00"
+            ]
+          ],
+          "fri": [
+            [
+              "10:00",
+              "24:00"
+            ]
+          ],
+          "sat": [
+            [
+              "10:00",
+              "24:00"
+            ]
+          ],
+          "sun": [
+            [
+              "10:00",
+              "24:00"
+            ]
+          ]
+        },
+        "status": "verified",
+        "source": "https://grupotragaluz.com/restaurantes/cuines-santa-caterina/",
+        "checkedAt": "2026-10-18"
+      },
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Cuines+de+Santa+Caterina%2C+Avinguda+de+Francesc+Camb%C3%B3+16%2C+Barcelona",
+      "website": {
+        "value": "https://grupotragaluz.com/restaurantes/cuines-santa-caterina/",
+        "status": "verified",
+        "source": "https://grupotragaluz.com/restaurantes/cuines-santa-caterina/",
+        "checkedAt": "2026-10-18"
+      },
       "partnerUrl": null
     },
     {
@@ -222,6 +373,55 @@
         "source": "https://restaurantpacomeralgo.com/informacion/",
         "checkedAt": "2026-10-18"
       },
+      "schedule": {
+        "value": {
+          "mon": [
+            [
+              "13:00",
+              "24:00"
+            ]
+          ],
+          "tue": [
+            [
+              "13:00",
+              "24:00"
+            ]
+          ],
+          "wed": [
+            [
+              "13:00",
+              "24:00"
+            ]
+          ],
+          "thu": [
+            [
+              "13:00",
+              "24:00"
+            ]
+          ],
+          "fri": [
+            [
+              "13:00",
+              "24:00"
+            ]
+          ],
+          "sat": [
+            [
+              "13:00",
+              "24:00"
+            ]
+          ],
+          "sun": [
+            [
+              "13:00",
+              "24:00"
+            ]
+          ]
+        },
+        "status": "verified",
+        "source": "https://restaurantpacomeralgo.com/informacion/",
+        "checkedAt": "2026-10-18"
+      },
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=Paco+Meralgo%2C+Carrer+de+Muntaner+171%2C+Barcelona",
       "website": {
         "value": "https://restaurantpacomeralgo.com",
@@ -263,11 +463,65 @@
         "checkedAt": "2026-10-18"
       },
       "openingHours": {
-        "value": "Ср–сб: обед 13:00–14:45, ужин 20:00–21:45. Вс вечером, пн и вт закрыто.",
-        "status": "needs_check",
-        "source": "https://www.xavierpellicer.com/contacto",
-        "checkedAt": "2026-10-18",
-        "note": "Неясно с обедом в воскресенье: на странице карты обед — со среды по воскресенье, в часах работы — только ср–сб."
+        "value": "Обед ср–вс 13:00–14:45, ужин ср–сб 20:00–21:45. Пн и вт закрыто.",
+        "status": "verified",
+        "source": "https://widget.thefork.com/es/b03d99e7-1560-434c-888d-c7af4f831052",
+        "checkedAt": "2026-10-18"
+      },
+      "schedule": {
+        "value": {
+          "mon": [],
+          "tue": [],
+          "wed": [
+            [
+              "13:00",
+              "14:45"
+            ],
+            [
+              "20:00",
+              "21:45"
+            ]
+          ],
+          "thu": [
+            [
+              "13:00",
+              "14:45"
+            ],
+            [
+              "20:00",
+              "21:45"
+            ]
+          ],
+          "fri": [
+            [
+              "13:00",
+              "14:45"
+            ],
+            [
+              "20:00",
+              "21:45"
+            ]
+          ],
+          "sat": [
+            [
+              "13:00",
+              "14:45"
+            ],
+            [
+              "20:00",
+              "21:45"
+            ]
+          ],
+          "sun": [
+            [
+              "13:00",
+              "14:45"
+            ]
+          ]
+        },
+        "status": "verified",
+        "source": "https://widget.thefork.com/es/b03d99e7-1560-434c-888d-c7af4f831052",
+        "checkedAt": "2026-10-18"
       },
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=Xavier+Pellicer%2C+Carrer+de+Proven%C3%A7a+310%2C+Barcelona",
       "website": {
@@ -295,26 +549,25 @@
         }
       ],
       "price": null,
+      "priceNote": "На официальном сайте нет меню с ценами — средний чек посчитать не по чему.",
       "address": {
         "value": "Gran Via de les Corts Catalanes, 546, 08011 Barcelona",
-        "status": "verified",
+        "status": "needs_check",
         "source": "https://escriba.es/es/tiendas",
-        "checkedAt": "2026-10-18"
+        "checkedAt": "2026-10-18",
+        "note": "Взято с escriba.es, но в сайт встроен посторонний спам (похоже на взлом) — данным с него не доверяем."
       },
       "openingHours": {
         "value": "Пн закрыто; вт–пт 8:30–15:00 и 17:00–21:00; сб–вс 8:30–21:00.",
-        "status": "verified",
+        "status": "needs_check",
         "source": "https://escriba.es/es/tiendas",
-        "checkedAt": "2026-10-18"
+        "checkedAt": "2026-10-18",
+        "note": "Взято с escriba.es, но в сайт встроен посторонний спам (похоже на взлом) — данным с него не доверяем."
       },
+      "schedule": null,
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=Escrib%C3%A0%2C+Gran+Via+de+les+Corts+Catalanes+546%2C+Barcelona",
-      "website": {
-        "value": "https://escriba.es",
-        "status": "verified",
-        "source": "https://escriba.es/es/tiendas",
-        "checkedAt": "2026-10-18"
-      },
-      "priceNote": "На официальном сайте нет меню с ценами — средний чек посчитать не по чему.",
+      "website": null,
+      "websiteWarning": "В страницы escriba.es встроен посторонний спам (похоже на взлом) — ссылку не показываем.",
       "partnerUrl": null
     },
     {
@@ -334,6 +587,7 @@
         }
       ],
       "price": null,
+      "priceNote": "Рынок: чек зависит от того, что купить; официального меню нет.",
       "address": {
         "value": "Carrer d'Aragó, 311, 08009 Barcelona",
         "status": "verified",
@@ -346,9 +600,52 @@
         "source": "https://www.barcelona.cat/ca/coneixbcn/pics/el-mercat-de-la-concepcio-92086009449",
         "checkedAt": "2026-10-18"
       },
+      "schedule": {
+        "value": {
+          "mon": [
+            [
+              "08:00",
+              "15:00"
+            ]
+          ],
+          "tue": [
+            [
+              "08:00",
+              "20:00"
+            ]
+          ],
+          "wed": [
+            [
+              "08:00",
+              "20:00"
+            ]
+          ],
+          "thu": [
+            [
+              "08:00",
+              "20:00"
+            ]
+          ],
+          "fri": [
+            [
+              "08:00",
+              "20:00"
+            ]
+          ],
+          "sat": [
+            [
+              "08:00",
+              "15:00"
+            ]
+          ],
+          "sun": null
+        },
+        "status": "verified",
+        "source": "https://www.barcelona.cat/ca/coneixbcn/pics/el-mercat-de-la-concepcio-92086009449",
+        "checkedAt": "2026-10-18"
+      },
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=Mercat+de+la+Concepci%C3%B3%2C+Barcelona",
       "website": null,
-      "priceNote": "Рынок: чек зависит от того, что купить; официального меню нет.",
       "partnerUrl": null
     },
     {
@@ -367,7 +664,15 @@
           "url": "https://www.timeout.es/barcelona/es/restaurantes/berbena"
         }
       ],
-      "price": null,
+      "price": {
+        "min": 35,
+        "max": 60,
+        "currency": "EUR",
+        "status": "estimate",
+        "source": "https://guide.michelin.com/us/en/catalunya/barcelona/restaurant/berbena",
+        "checkedAt": "2026-10-18",
+        "note": "Ценовая категория в гиде Michelin — «€€», то есть 35–60 € за обед или ужин по таблице Michelin для еврозоны (guide.michelin.com/en/restaurants-price-ranges-index)."
+      },
       "address": {
         "value": "Carrer de Minerva, 6, 08006 Barcelona",
         "status": "verified",
@@ -380,6 +685,49 @@
         "source": "https://berbenabcn.com/",
         "checkedAt": "2026-10-18"
       },
+      "schedule": {
+        "value": {
+          "mon": [
+            [
+              "19:00",
+              "21:30"
+            ]
+          ],
+          "tue": [
+            [
+              "19:00",
+              "21:30"
+            ]
+          ],
+          "wed": [
+            [
+              "19:00",
+              "21:30"
+            ]
+          ],
+          "thu": [
+            [
+              "19:00",
+              "21:30"
+            ]
+          ],
+          "fri": [
+            [
+              "14:15",
+              "14:15"
+            ],
+            [
+              "19:15",
+              "21:45"
+            ]
+          ],
+          "sat": null,
+          "sun": null
+        },
+        "status": "verified",
+        "source": "https://berbenabcn.com/",
+        "checkedAt": "2026-10-18"
+      },
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=Berbena%2C+Carrer+de+Minerva+6%2C+Barcelona",
       "website": {
         "value": "https://berbenabcn.com",
@@ -387,7 +735,6 @@
         "source": "https://berbenabcn.com/",
         "checkedAt": "2026-10-18"
       },
-      "priceNote": "На официальном сайте нет меню с ценами — средний чек посчитать не по чему.",
       "partnerUrl": null
     },
     {
@@ -410,7 +757,15 @@
           "url": "https://www.elnacional.cat/ca/gourmeteria/opinio-critiques/esmorzars-gloriosos-menu-migdia-mes-atractiu-barcelona-oda-cuina-barri_1135713_102.html"
         }
       ],
-      "price": null,
+      "price": {
+        "min": 50,
+        "max": 50,
+        "currency": "EUR",
+        "status": "estimate",
+        "source": "https://www.thefork.es/restaurante/la-pubilla-de-gracia-r750086",
+        "checkedAt": "2026-10-18",
+        "note": "Средняя цена на TheFork: 50 € (закуска и основное блюдо или основное и десерт, без напитков). Завтраки и меню дня, скорее всего, дешевле, но их цены нигде не подтверждены."
+      },
       "address": {
         "value": "Plaça de la Llibertat, 23, 08012 Barcelona",
         "status": "needs_check",
@@ -425,9 +780,10 @@
         "checkedAt": "2026-10-18",
         "note": "Домен restaurantelapubilla.com 18.10.2026 перенаправлял на посторонний сайт; официального сайта не найдено."
       },
+      "schedule": null,
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=La+Pubilla%2C+Pla%C3%A7a+de+la+Llibertat+23%2C+Barcelona",
       "website": null,
-      "priceNote": "На официальном сайте нет меню с ценами — средний чек посчитать не по чему.",
+      "websiteWarning": "Домен restaurantelapubilla.com перенаправляет на посторонний сайт — ссылку не показываем.",
       "partnerUrl": null
     },
     {
@@ -447,6 +803,7 @@
         }
       ],
       "price": null,
+      "priceNote": "На официальном сайте нет меню с ценами — средний чек посчитать не по чему.",
       "address": {
         "value": "Carrer de Bonavista, 23, 08012 Barcelona",
         "status": "verified",
@@ -459,6 +816,55 @@
         "source": "https://syra.coffee/pages/location",
         "checkedAt": "2026-10-18"
       },
+      "schedule": {
+        "value": {
+          "mon": [
+            [
+              "08:00",
+              "20:00"
+            ]
+          ],
+          "tue": [
+            [
+              "08:00",
+              "20:00"
+            ]
+          ],
+          "wed": [
+            [
+              "08:00",
+              "20:00"
+            ]
+          ],
+          "thu": [
+            [
+              "08:00",
+              "20:00"
+            ]
+          ],
+          "fri": [
+            [
+              "08:00",
+              "20:00"
+            ]
+          ],
+          "sat": [
+            [
+              "08:00",
+              "20:00"
+            ]
+          ],
+          "sun": [
+            [
+              "08:00",
+              "20:00"
+            ]
+          ]
+        },
+        "status": "verified",
+        "source": "https://syra.coffee/pages/location",
+        "checkedAt": "2026-10-18"
+      },
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=Syra+Coffee%2C+Carrer+de+Bonavista+23%2C+Barcelona",
       "website": {
         "value": "https://syra.coffee",
@@ -466,7 +872,6 @@
         "source": "https://syra.coffee/pages/location",
         "checkedAt": "2026-10-18"
       },
-      "priceNote": "На официальном сайте нет меню с ценами — средний чек посчитать не по чему.",
       "partnerUrl": null
     },
     {
@@ -486,6 +891,7 @@
         }
       ],
       "price": null,
+      "priceNote": "Рынок: чек зависит от того, что купить; официального меню нет.",
       "address": {
         "value": "Plaça de la Llibertat, 27, 08012 Barcelona",
         "status": "verified",
@@ -499,9 +905,240 @@
         "checkedAt": "2026-10-18",
         "note": "Страница рынка на сайте мэрии 18.10.2026 была недоступна из нашего региона, а на barcelona.cat указаны только летние часы с ошибкой в датах."
       },
+      "schedule": null,
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=Mercat+de+la+Llibertat%2C+Barcelona",
       "website": null,
-      "priceNote": "Рынок: чек зависит от того, что купить; официального меню нет.",
+      "partnerUrl": null
+    },
+    {
+      "id": "barcelona/la-pepita",
+      "type": "tapas",
+      "name": "La Pepita",
+      "area": "Грасия",
+      "description": "Бар на границе Грасии и Эшампле, известный «пепитас» — открытыми бутербродами по мотивам пепито — и творческими тапас. Кухня работает каждый день.",
+      "recommendedBy": [
+        {
+          "name": "Time Out Barcelona",
+          "url": "https://www.timeout.es/barcelona/es/restaurantes/la-pepita"
+        },
+        {
+          "name": "The Infatuation",
+          "url": "https://www.theinfatuation.com/barcelona/reviews/la-pepita-barcelona"
+        },
+        {
+          "name": "Lonely Planet",
+          "url": "https://www.lonelyplanet.com/spain/barcelona/gracia-and-park-guell/restaurants/la-pepita/a/poi-eat/1634358/1320687"
+        }
+      ],
+      "price": null,
+      "priceNote": "Меню с ценами нет ни на официальном сайте, ни на TheFork; в гиде Michelin заведения нет.",
+      "address": {
+        "value": "Carrer de Còrsega, 343, 08037 Barcelona",
+        "status": "verified",
+        "source": "https://lapepitabcn.com/",
+        "checkedAt": "2026-10-18"
+      },
+      "openingHours": {
+        "value": "Ежедневно 13:00–01:30; кухня 13:00–16:30 и 18:00–00:00.",
+        "status": "verified",
+        "source": "https://lapepitabcn.com/",
+        "checkedAt": "2026-10-18"
+      },
+      "schedule": {
+        "value": {
+          "mon": [
+            [
+              "13:00",
+              "16:30"
+            ],
+            [
+              "18:00",
+              "24:00"
+            ]
+          ],
+          "tue": [
+            [
+              "13:00",
+              "16:30"
+            ],
+            [
+              "18:00",
+              "24:00"
+            ]
+          ],
+          "wed": [
+            [
+              "13:00",
+              "16:30"
+            ],
+            [
+              "18:00",
+              "24:00"
+            ]
+          ],
+          "thu": [
+            [
+              "13:00",
+              "16:30"
+            ],
+            [
+              "18:00",
+              "24:00"
+            ]
+          ],
+          "fri": [
+            [
+              "13:00",
+              "16:30"
+            ],
+            [
+              "18:00",
+              "24:00"
+            ]
+          ],
+          "sat": [
+            [
+              "13:00",
+              "16:30"
+            ],
+            [
+              "18:00",
+              "24:00"
+            ]
+          ],
+          "sun": [
+            [
+              "13:00",
+              "16:30"
+            ],
+            [
+              "18:00",
+              "24:00"
+            ]
+          ]
+        },
+        "status": "verified",
+        "source": "https://lapepitabcn.com/",
+        "checkedAt": "2026-10-18"
+      },
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=La+Pepita%2C+Carrer+de+C%C3%B2rsega+343%2C+Barcelona",
+      "website": {
+        "value": "https://lapepitabcn.com",
+        "status": "verified",
+        "source": "https://lapepitabcn.com/",
+        "checkedAt": "2026-10-18"
+      },
+      "partnerUrl": null
+    },
+    {
+      "id": "barcelona/oniric",
+      "type": "restaurant",
+      "name": "Oníric",
+      "area": "Грасия",
+      "description": "Ресторан шефа Джонатана Искьердо: авторская кухня по доступной цене, три дегустационных меню и короткая карта. Отмечен гидом Michelin (Bib Gourmand).",
+      "recommendedBy": [
+        {
+          "name": "Гид Michelin",
+          "url": "https://guide.michelin.com/us/en/catalunya/barcelona/restaurant/oniric"
+        },
+        {
+          "name": "Time Out Barcelona",
+          "url": "https://www.timeout.es/barcelona/es/restaurantes/oniric"
+        }
+      ],
+      "reservation": {
+        "value": "recommended",
+        "status": "verified",
+        "source": "https://oniricrestaurant.com/",
+        "checkedAt": "2026-10-18"
+      },
+      "price": {
+        "min": 26,
+        "max": 48,
+        "currency": "EUR",
+        "status": "estimate",
+        "source": "https://oniricrestaurant.com/",
+        "checkedAt": "2026-10-18",
+        "note": "По официальному сайту: дегустационные меню 26 €, 48 € и 80 € на человека. Взяты два первых — 26–48 €, без напитков."
+      },
+      "address": {
+        "value": "Carrer de la Rabassa, 37, 08024 Barcelona",
+        "status": "verified",
+        "source": "https://oniricrestaurant.com/",
+        "checkedAt": "2026-10-18"
+      },
+      "openingHours": {
+        "value": "Вт–сб: обед 13:00–15:15, ужин 20:00–22:30. Вс и пн закрыто.",
+        "status": "verified",
+        "source": "https://oniricrestaurant.com/",
+        "checkedAt": "2026-10-18"
+      },
+      "schedule": {
+        "value": {
+          "mon": [],
+          "tue": [
+            [
+              "13:00",
+              "15:15"
+            ],
+            [
+              "20:00",
+              "22:30"
+            ]
+          ],
+          "wed": [
+            [
+              "13:00",
+              "15:15"
+            ],
+            [
+              "20:00",
+              "22:30"
+            ]
+          ],
+          "thu": [
+            [
+              "13:00",
+              "15:15"
+            ],
+            [
+              "20:00",
+              "22:30"
+            ]
+          ],
+          "fri": [
+            [
+              "13:00",
+              "15:15"
+            ],
+            [
+              "20:00",
+              "22:30"
+            ]
+          ],
+          "sat": [
+            [
+              "13:00",
+              "15:15"
+            ],
+            [
+              "20:00",
+              "22:30"
+            ]
+          ],
+          "sun": []
+        },
+        "status": "verified",
+        "source": "https://oniricrestaurant.com/",
+        "checkedAt": "2026-10-18"
+      },
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=On%C3%ADric%2C+Carrer+de+la+Rabassa+37%2C+Barcelona",
+      "website": {
+        "value": "https://oniricrestaurant.com",
+        "status": "verified",
+        "source": "https://oniricrestaurant.com/",
+        "checkedAt": "2026-10-18"
+      },
       "partnerUrl": null
     },
     {
@@ -525,6 +1162,7 @@
         }
       ],
       "price": null,
+      "priceNote": "На официальном сайте нет меню с ценами — средний чек посчитать не по чему.",
       "address": {
         "value": "Carrer del Poeta Cabanyes, 25, 08004 Barcelona",
         "status": "needs_check",
@@ -539,9 +1177,10 @@
         "checkedAt": "2026-10-18",
         "note": "На quimetquimet.com нет сведений о владельце и есть посторонние рекламные ссылки — как официальный источник не принят."
       },
+      "schedule": null,
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=Quimet+%26+Quimet%2C+Carrer+del+Poeta+Cabanyes+25%2C+Barcelona",
       "website": null,
-      "priceNote": "На официальном сайте нет меню с ценами — средний чек посчитать не по чему.",
+      "websiteWarning": "На quimetquimet.com посторонние рекламные ссылки и нет сведений о владельце — ссылку не показываем.",
       "partnerUrl": null
     },
     {
@@ -560,8 +1199,15 @@
           "url": "https://www.timeout.es/barcelona/es/restaurantes/taberna-noroeste"
         }
       ],
-      "price": null,
-      "priceNote": "На сайте есть только дегустационное меню из 10 блюд, но без цены.",
+      "price": {
+        "min": 80,
+        "max": 80,
+        "currency": "EUR",
+        "status": "estimate",
+        "source": "https://www.thefork.es/restaurante/taberna-noroeste-r638751/menu",
+        "checkedAt": "2026-10-18",
+        "note": "Средняя цена на TheFork, указанная рестораном: 80 € — это дегустационное меню из 10 блюд, без напитков."
+      },
       "address": {
         "value": "Carrer de Radas, 67, 08004 Barcelona",
         "status": "verified",
@@ -574,6 +1220,53 @@
         "source": "https://tabernanoroeste.com/index.php/reservas/",
         "checkedAt": "2026-10-18"
       },
+      "schedule": {
+        "value": {
+          "mon": [
+            [
+              "14:00",
+              "16:00"
+            ],
+            [
+              "20:00",
+              "22:00"
+            ]
+          ],
+          "tue": [],
+          "wed": [],
+          "thu": [
+            [
+              "20:00",
+              "24:00"
+            ]
+          ],
+          "fri": [
+            [
+              "20:00",
+              "24:00"
+            ]
+          ],
+          "sat": [
+            [
+              "14:00",
+              "16:00"
+            ],
+            [
+              "20:00",
+              "22:00"
+            ]
+          ],
+          "sun": [
+            [
+              "14:00",
+              "16:00"
+            ]
+          ]
+        },
+        "status": "verified",
+        "source": "https://tabernanoroeste.com/index.php/reservas/",
+        "checkedAt": "2026-10-18"
+      },
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=Taberna+Noroeste%2C+Carrer+de+Radas+67%2C+Barcelona",
       "website": {
         "value": "https://www.tabernanoroeste.com",
@@ -581,6 +1274,166 @@
         "source": "https://www.tabernanoroeste.com/",
         "checkedAt": "2026-10-18"
       },
+      "partnerUrl": null
+    },
+    {
+      "id": "barcelona/xemei",
+      "type": "restaurant",
+      "name": "Xemei",
+      "area": "Побле-сек",
+      "description": "Венецианская кухня братьев-близнецов Коломбо у подножия Монжуика: сардины в саоре, баккала, биголи, осьминог на гриле. Зал маленький — нужна бронь.",
+      "recommendedBy": [
+        {
+          "name": "Time Out Barcelona",
+          "url": "https://www.timeout.es/barcelona/es/restaurantes/xemei"
+        },
+        {
+          "name": "Lonely Planet",
+          "url": "https://www.lonelyplanet.com/spain/barcelona/montjuic-sants-and-el-poble-sec/restaurants/xemei/a/poi-eat/1106290/1320689"
+        }
+      ],
+      "reservation": {
+        "value": "recommended",
+        "status": "verified",
+        "source": "https://www.xemei.es/reservas",
+        "checkedAt": "2026-10-18"
+      },
+      "price": null,
+      "priceNote": "Меню с ценами нет ни на официальном сайте, ни на TheFork; в гиде Michelin ресторана нет.",
+      "address": {
+        "value": "Passeig de l'Exposició, 85, 08004 Barcelona",
+        "status": "verified",
+        "source": "https://www.xemei.es/",
+        "checkedAt": "2026-10-18"
+      },
+      "openingHours": {
+        "value": "Ежедневно. Брони на обед с 13:30 (сб–вс с 13:00) до 15:15, на ужин 20:00–22:30.",
+        "status": "verified",
+        "source": "https://www.xemei.es/reservas",
+        "checkedAt": "2026-10-18"
+      },
+      "schedule": {
+        "value": {
+          "mon": [
+            [
+              "13:30",
+              "15:15"
+            ],
+            [
+              "20:00",
+              "22:30"
+            ]
+          ],
+          "tue": [
+            [
+              "13:30",
+              "15:15"
+            ],
+            [
+              "20:00",
+              "22:30"
+            ]
+          ],
+          "wed": [
+            [
+              "13:30",
+              "15:15"
+            ],
+            [
+              "20:00",
+              "22:30"
+            ]
+          ],
+          "thu": [
+            [
+              "13:30",
+              "15:15"
+            ],
+            [
+              "20:00",
+              "22:30"
+            ]
+          ],
+          "fri": [
+            [
+              "13:30",
+              "15:15"
+            ],
+            [
+              "20:00",
+              "22:30"
+            ]
+          ],
+          "sat": [
+            [
+              "13:00",
+              "15:15"
+            ],
+            [
+              "20:00",
+              "22:30"
+            ]
+          ],
+          "sun": [
+            [
+              "13:00",
+              "15:15"
+            ],
+            [
+              "20:00",
+              "22:30"
+            ]
+          ]
+        },
+        "status": "verified",
+        "source": "https://www.xemei.es/reservas",
+        "checkedAt": "2026-10-18",
+        "note": "Часы — время, на которое официальная система бронирования ресторана (CoverManager) принимает брони; проверено на неделе 19–27 октября 2026."
+      },
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Xemei%2C+Passeig+de+l'Exposici%C3%B3+85%2C+Barcelona",
+      "website": {
+        "value": "https://www.xemei.es",
+        "status": "verified",
+        "source": "https://www.xemei.es/",
+        "checkedAt": "2026-10-18"
+      },
+      "partnerUrl": null
+    },
+    {
+      "id": "barcelona/tiberi-bar",
+      "type": "bar",
+      "name": "Tiberi Bar",
+      "area": "Побле-сек",
+      "description": "Бар натуральных вин с тарелками на компанию — например, своей версией хильды. Бронь только для компаний от шести человек.",
+      "recommendedBy": [
+        {
+          "name": "Time Out Barcelona",
+          "url": "https://www.timeout.es/barcelona/es/bares-y-pubs/tiberi-bar"
+        },
+        {
+          "name": "The Infatuation",
+          "url": "https://www.theinfatuation.com/barcelona/reviews/tiberi-bar"
+        }
+      ],
+      "price": null,
+      "priceNote": "Официального сайта, страницы на TheFork и оценки Michelin нет.",
+      "address": {
+        "value": "Carrer de Vila i Vilà, 67, 08004 Barcelona",
+        "status": "needs_check",
+        "source": "",
+        "checkedAt": "2026-10-18",
+        "note": "Официального сайта не найдено; адрес совпадает у Time Out и The Infatuation."
+      },
+      "openingHours": {
+        "value": "По данным Time Out: ср–пт 19:00–01:00, сб–вс 13:00–01:00; пн и вт закрыто.",
+        "status": "needs_check",
+        "source": "https://www.timeout.es/barcelona/es/bares-y-pubs/tiberi-bar",
+        "checkedAt": "2026-10-18",
+        "note": "Официального сайта с часами не найдено, часы — только из Time Out."
+      },
+      "schedule": null,
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Tiberi+Bar%2C+Carrer+de+Vila+i+Vil%C3%A0+67%2C+Barcelona",
+      "website": null,
       "partnerUrl": null
     }
   ]

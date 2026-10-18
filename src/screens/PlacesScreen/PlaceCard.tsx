@@ -6,6 +6,7 @@ import { ImagePlaceholder } from '../../components/ImagePlaceholder/ImagePlaceho
 import { VerificationBadge } from '../../components/VerificationBadge/VerificationBadge'
 import { formatPrice } from '../../utils/format'
 import { priceLevel, priceLevelName, priceLevelSymbol } from '../../utils/priceLevel'
+import { closedDays, formatDays, unknownDays } from '../../lib/schedule'
 import { placeTypeLabel } from './placeFilters'
 import styles from './PlaceCard.module.css'
 
@@ -13,6 +14,17 @@ import styles from './PlaceCard.module.css'
 function factInfo(fact: Fact<string> | null): { text: string; status: VerificationStatus | null } {
   if (!fact) return { text: 'Уточняется', status: null }
   return { text: fact.value, status: fact.status }
+}
+
+/** «пн, вт», «Открыто каждый день», «вс — не указано», «Уточняется». */
+function closedText(place: Place): string {
+  if (!place.schedule) return 'Уточняется'
+  const closed = closedDays(place.schedule.value)
+  const unknown = unknownDays(place.schedule.value)
+  const parts: string[] = []
+  if (closed.length > 0) parts.push(formatDays(closed))
+  if (unknown.length > 0) parts.push(`${formatDays(unknown)} — на сайте не указано`)
+  return parts.length > 0 ? parts.join('; ') : 'Открыто каждый день'
 }
 
 const reservationText: Record<Reservation, string> = {
@@ -66,6 +78,13 @@ export function PlaceCard({ place, highlighted = false }: { place: Place; highli
         <dl className={styles.facts}>
           <FactRow label="Адрес" fact={place.address} />
           <FactRow label="Часы" fact={place.openingHours} />
+          <div className={styles.fact}>
+            <dt>Закрыто</dt>
+            <dd>
+              {closedText(place)}{' '}
+              {place.schedule && <VerificationBadge status={place.schedule.status} />}
+            </dd>
+          </div>
           <div className={styles.fact}>
             <dt>Средний чек</dt>
             <dd>

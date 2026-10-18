@@ -1,4 +1,6 @@
 import { describe, expect, it } from 'vitest'
+import type { Weekday } from '../types/content'
+import { WEEKDAYS, WEEKDAY_SHORT, servesDuring, toMinutes } from '../lib/schedule'
 import { getCityContent, listCityIds } from './index'
 
 const STATUSES = ['verified', 'needs_check', 'estimate']
@@ -292,10 +294,57 @@ describe.each(listCityIds())('данные города %s', (cityId) => {
       }
     })
 
-    it('есть все типы заведений и уровни цены', () => {
-      expect(new Set(places.map((p) => p.type))).toEqual(new Set(['tapas', 'restaurant', 'cafe', 'market', 'bakery']))
+    it('есть разные типы заведений', () => {
+      const types = new Set(places.map((p) => p.type))
+      for (const t of ['tapas', 'restaurant', 'cafe', 'market', 'bakery']) expect(types, t).toContain(t)
       expect(places.length).toBeGreaterThanOrEqual(12)
-      expect(places.length).toBeLessThanOrEqual(15)
+    })
+
+    it('расписание по дням недели: все 7 дней, время корректно, проверенное — с официальной страницы', () => {
+      for (const place of places.filter((p) => p.schedule)) {
+        const schedule = place.schedule!
+        expect(Object.keys(schedule.value).sort(), place.id).toEqual([...WEEKDAYS].sort())
+        for (const day of WEEKDAYS) {
+          for (const [from, to] of schedule.value[day] ?? []) {
+            expect(toMinutes(from), `${place.id} ${day}`).toBeLessThanOrEqual(toMinutes(to))
+          }
+        }
+        if (schedule.status === 'verified') expect(schedule.source, place.id).toMatch(/^https:\/\//)
+        expect(schedule.status, place.id).not.toBe('estimate')
+      }
+    })
+
+    // Аудитория ездит пт–вс или сб–пн: на каждый обед и ужин маршрута в его
+    // районе должно быть открыто хотя бы одно место, где можно поесть, —
+    // по проверенным часам, а не по догадке.
+    const WEEKEND: Weekday[] = ['fri', 'sat', 'sun', 'mon']
+    const MEAL_TYPES = new Set(['tapas', 'restaurant', 'bar'])
+    for (const meal of points.filter((p) => p.kind === 'meal')) {
+      for (const day of WEEKEND) {
+        it(`${meal.title} (${meal.time}) — в ${WEEKDAY_SHORT[day]} есть где поесть в районе «${meal.area}»`, () => {
+          const open = places.filter(
+            (p) =>
+              p.area === meal.area &&
+              MEAL_TYPES.has(p.type) &&
+              p.schedule?.status === 'verified' &&
+              servesDuring(p.schedule.value, day, meal.time!, 60),
+          )
+          expect(open.map((p) => p.name), `${meal.id}, ${day}`).not.toEqual([])
+        })
+      }
+    }
+
+    it('на сайты с рекламой ставок, спамом или переадресацией ссылок нет', () => {
+      for (const id of ['el-xampanyet', 'quimet-quimet', 'la-pubilla', 'escriba-gran-via']) {
+        const place = places.find((p) => p.id === `${cityId}/${id}`)!
+        expect(place, id).toBeTruthy()
+        expect(place.website, id).toBeNull()
+        expect(place.websiteWarning?.trim(), id).toBeTruthy()
+      }
+      for (const place of places.filter((p) => p.websiteWarning)) {
+        expect(place.website, place.id).toBeNull()
+        expect(place.reservation, place.id).toBeUndefined()
+      }
     })
   })
 

@@ -209,6 +209,19 @@ export interface Recommendation {
 /** What the official site says about booking a table. */
 export type Reservation = 'recommended' | 'not_accepted'
 
+/**
+ * When you can sit down to eat: «13:00»–«15:15». Kitchen or booking hours,
+ * not the doors: a bar open till 2 am with the kitchen closing at midnight
+ * ends at «24:00». Past midnight is written as «24:30», «25:00».
+ */
+export type TimeRange = [from: string, to: string]
+
+/**
+ * Per weekday: `[]` — closed that day; `null` — the official source does
+ * not say. Never filled in by guess.
+ */
+export type WeekSchedule = Record<Weekday, TimeRange[] | null>
+
 export interface Place extends Links {
   /** Permanent ID «<cityId>/<name>», like `RoutePoint.id`. */
   id: string
@@ -223,7 +236,8 @@ export interface Place extends Links {
   reservation?: Fact<Reservation>
   /**
    * Approximate average bill per person; null — «Цена уточняется».
-   * An `estimate` is computed from the official menu, explained in `note`.
+   * Always an `estimate`: from the official menu, the restaurant's average
+   * price on TheFork or the Michelin price category, explained in `note`.
    */
   price: Price | null
   /** Why there is no price, e.g. «На официальном сайте нет меню с ценами». */
@@ -231,7 +245,15 @@ export interface Place extends Links {
   address: Fact<string> | null
   /** Every place must open on the map. */
   mapUrl: string
+  /** Opening hours as text, for people. */
   openingHours: Fact<string> | null
+  /** The same hours by weekday, for «Закрыто: …» and the weekend checks; null — unknown. */
+  schedule: Fact<WeekSchedule> | null
+  /**
+   * Why there is no link to the place's site although it has one, e.g. the
+   * site shows betting ads. Such sites are never linked from the app.
+   */
+  websiteWarning?: string
   photo?: Photo
 }
 

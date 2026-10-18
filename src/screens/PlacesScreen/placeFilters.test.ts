@@ -31,6 +31,7 @@ function place(id: string, type: PlaceType, area: string, price: Price | null): 
     address: null,
     mapUrl: 'https://www.google.com/maps/search/?api=1&query=Barcelona',
     openingHours: null,
+    schedule: null,
     website: null,
   }
 }
