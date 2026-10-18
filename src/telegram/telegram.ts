@@ -40,6 +40,7 @@ interface TelegramWebApp {
   ready(): void
   expand(): void
   openLink(url: string): void
+  openTelegramLink(url: string): void
   isVersionAtLeast(version: string): boolean
   setHeaderColor(color: string): void
   setBackgroundColor(color: string): void
@@ -177,13 +178,35 @@ export function isInTelegram(): boolean {
   return webApp !== null
 }
 
+/** A link to a Telegram chat, bot or channel (t.me / telegram.me). */
+export function isTelegramLink(url: string): boolean {
+  try {
+    const { protocol, hostname } = new URL(url)
+    return protocol === 'https:' && (hostname === 't.me' || hostname === 'telegram.me')
+  } catch {
+    return false
+  }
+}
+
 /**
- * Open an external URL: via Telegram's in-app browser inside Telegram,
- * in a new tab otherwise.
+ * Inside Telegram: t.me links open the chat in Telegram itself (openLink
+ * would send them to a browser), other links — in Telegram's browser.
+ * Exported for tests.
+ */
+export function openLinkIn(app: Pick<TelegramWebApp, 'openLink' | 'openTelegramLink'>, url: string): void {
+  if (isTelegramLink(url)) {
+    app.openTelegramLink(url)
+  } else {
+    app.openLink(url)
+  }
+}
+
+/**
+ * Open an external URL: via Telegram inside Telegram, in a new tab otherwise.
  */
 export function openExternalLink(url: string): void {
   if (webApp) {
-    webApp.openLink(url)
+    openLinkIn(webApp, url)
     return
   }
   window.open(url, '_blank', 'noopener,noreferrer')

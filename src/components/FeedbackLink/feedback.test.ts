@@ -16,12 +16,12 @@ describe('ссылка «Сообщить об ошибке»', () => {
   })
 
   it('чат или веб-форма открываются ровно по указанному адресу', () => {
-    expect(feedbackHref('https://t.me/weekendatlas_help', 'Каса Мила')).toBe('https://t.me/weekendatlas_help')
+    expect(feedbackHref('https://t.me/weekendatlas_help_bot', 'Каса Мила')).toBe('https://t.me/weekendatlas_help_bot')
     expect(feedbackHref('http://example.org', 'Каса Мила')).toBeNull()
   })
 
   it('в настройках указан чат Telegram, и кнопка ведёт туда', () => {
-    expect(FEEDBACK_URL).toBe('https://t.me/weekendatlas_help')
-    expect(feedbackHref(FEEDBACK_URL, 'главная страница')).toBe('https://t.me/weekendatlas_help')
+    expect(FEEDBACK_URL).toBe('https://t.me/weekendatlas_help_bot')
+    expect(feedbackHref(FEEDBACK_URL, 'главная страница')).toBe('https://t.me/weekendatlas_help_bot')
   })
 })
