@@ -22,7 +22,7 @@
         }
       ],
       "price": null,
-      "priceNote": "На официальном сайте нет меню с ценами — средний чек посчитать не по чему.",
+      "priceNote": "Цены не нашли: меню с ценами нет на официальном сайте (или сайт не годится как источник), страницы на TheFork нет, в гиде Michelin заведения нет. Цену на человека берём из Google Maps при ручной проверке.",
       "address": {
         "value": "Carrer de Montcada, 22, 08003 Barcelona",
         "status": "needs_check",
@@ -156,7 +156,7 @@
         }
       ],
       "price": null,
-      "priceNote": "На официальном сайте нет меню с ценами — средний чек посчитать не по чему.",
+      "priceNote": "Цены не нашли: меню с ценами нет на официальном сайте (или сайт не годится как источник), страницы на TheFork нет, в гиде Michelin заведения нет. Цену на человека берём из Google Maps при ручной проверке.",
       "address": {
         "value": "Carrer dels Flassaders, 44, 08003 Barcelona",
         "status": "needs_check",
@@ -199,7 +199,7 @@
         }
       ],
       "price": null,
-      "priceNote": "Рынок: чек зависит от того, что купить; официального меню нет.",
+      "priceNote": "Рынок: чек зависит от покупок; меню нет ни на официальном сайте, ни на TheFork, в гиде Michelin рынка нет. Цену на человека берём из Google Maps при ручной проверке.",
       "address": {
         "value": "Avinguda de Francesc Cambó, 16, 08003 Barcelona",
         "status": "verified",
@@ -549,7 +549,7 @@
         }
       ],
       "price": null,
-      "priceNote": "На официальном сайте нет меню с ценами — средний чек посчитать не по чему.",
+      "priceNote": "Цены не нашли: меню с ценами нет на официальном сайте (или сайт не годится как источник), страницы на TheFork нет, в гиде Michelin заведения нет. Цену на человека берём из Google Maps при ручной проверке.",
       "address": {
         "value": "Gran Via de les Corts Catalanes, 546, 08011 Barcelona",
         "status": "needs_check",
@@ -587,7 +587,7 @@
         }
       ],
       "price": null,
-      "priceNote": "Рынок: чек зависит от того, что купить; официального меню нет.",
+      "priceNote": "Рынок: чек зависит от покупок; меню нет ни на официальном сайте, ни на TheFork, в гиде Michelin рынка нет. Цену на человека берём из Google Maps при ручной проверке.",
       "address": {
         "value": "Carrer d'Aragó, 311, 08009 Barcelona",
         "status": "verified",
@@ -803,7 +803,7 @@
         }
       ],
       "price": null,
-      "priceNote": "На официальном сайте нет меню с ценами — средний чек посчитать не по чему.",
+      "priceNote": "Цены не нашли: меню с ценами нет на официальном сайте (или сайт не годится как источник), страницы на TheFork нет, в гиде Michelin заведения нет. Цену на человека берём из Google Maps при ручной проверке.",
       "address": {
         "value": "Carrer de Bonavista, 23, 08012 Barcelona",
         "status": "verified",
@@ -891,7 +891,7 @@
         }
       ],
       "price": null,
-      "priceNote": "Рынок: чек зависит от того, что купить; официального меню нет.",
+      "priceNote": "Рынок: чек зависит от покупок; меню нет ни на официальном сайте, ни на TheFork, в гиде Michelin рынка нет. Цену на человека берём из Google Maps при ручной проверке.",
       "address": {
         "value": "Plaça de la Llibertat, 27, 08012 Barcelona",
         "status": "verified",
@@ -931,7 +931,7 @@
         }
       ],
       "price": null,
-      "priceNote": "Меню с ценами нет ни на официальном сайте, ни на TheFork; в гиде Michelin заведения нет.",
+      "priceNote": "Цены не нашли: меню с ценами нет на официальном сайте (или сайт не годится как источник), страницы на TheFork нет, в гиде Michelin заведения нет. Цену на человека берём из Google Maps при ручной проверке.",
       "address": {
         "value": "Carrer de Còrsega, 343, 08037 Barcelona",
         "status": "verified",
@@ -1162,7 +1162,7 @@
         }
       ],
       "price": null,
-      "priceNote": "На официальном сайте нет меню с ценами — средний чек посчитать не по чему.",
+      "priceNote": "Цены не нашли: меню с ценами нет на официальном сайте (или сайт не годится как источник), страницы на TheFork нет, в гиде Michelin заведения нет. Цену на человека берём из Google Maps при ручной проверке.",
       "address": {
         "value": "Carrer del Poeta Cabanyes, 25, 08004 Barcelona",
         "status": "needs_check",
@@ -1299,7 +1299,7 @@
         "checkedAt": "2026-10-18"
       },
       "price": null,
-      "priceNote": "Меню с ценами нет ни на официальном сайте, ни на TheFork; в гиде Michelin ресторана нет.",
+      "priceNote": "Цены не нашли: меню с ценами нет на официальном сайте (или сайт не годится как источник), страницы на TheFork нет, в гиде Michelin заведения нет. Цену на человека берём из Google Maps при ручной проверке.",
       "address": {
         "value": "Passeig de l'Exposició, 85, 08004 Barcelona",
         "status": "verified",
@@ -1416,7 +1416,7 @@
         }
       ],
       "price": null,
-      "priceNote": "Официального сайта, страницы на TheFork и оценки Michelin нет.",
+      "priceNote": "Цены не нашли: меню с ценами нет на официальном сайте (или сайт не годится как источник), страницы на TheFork нет, в гиде Michelin заведения нет. Цену на человека берём из Google Maps при ручной проверке.",
       "address": {
         "value": "Carrer de Vila i Vilà, 67, 08004 Barcelona",
         "status": "needs_check",

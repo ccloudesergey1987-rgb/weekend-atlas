@@ -25,7 +25,8 @@ const FIELD_TITLES = {
   transferFromPrevious: 'Переход от предыдущей точки',
   closure: 'Закрытие',
 }
-const PLACE_FIELDS = { address: 'Адрес', openingHours: 'Часы работы', price: 'Средний чек', reservation: 'Бронь', website: 'Сайт' }
+const PLACE_FIELDS = { address: 'Адрес', openingHours: 'Часы работы', schedule: 'Закрыто (по дням)', price: 'Средний чек', reservation: 'Бронь', website: 'Сайт' }
+const DAY_NAMES = { mon: 'пн', tue: 'вт', wed: 'ср', thu: 'чт', fri: 'пт', sat: 'сб', sun: 'вс' }
 const RESERVATION = { recommended: 'лучше забронировать', not_accepted: 'бронь не принимают' }
 const ADMISSION = { paid: 'платный', free: 'бесплатно', unknown: 'неизвестно' }
 const MODES = { walk: 'пешком', metro: 'на метро', bus: 'на автобусе', taxi: 'на такси' }
@@ -38,6 +39,14 @@ function valueText(field, fact) {
   }
   if (field === 'admission') return ADMISSION[fact.value] ?? fact.value
   if (field === 'reservation') return RESERVATION[fact.value] ?? fact.value
+  if (field === 'schedule') {
+    const days = Object.entries(fact.value)
+    const closed = days.filter(([, r]) => r !== null && r.length === 0).map(([d]) => DAY_NAMES[d])
+    const unknown = days.filter(([, r]) => r === null).map(([d]) => DAY_NAMES[d])
+    const parts = [closed.length ? `закрыто: ${closed.join(', ')}` : 'без выходных']
+    if (unknown.length) parts.push(`не указано: ${unknown.join(', ')}`)
+    return parts.join('; ')
+  }
   if (field === 'transferFromPrevious') return `≈ ${fact.minutes} мин ${MODES[fact.mode]}`
   return String(fact.value)
 }
@@ -105,6 +114,12 @@ for (const p of places.places) {
     reason: '',
   })
   for (const [field, title] of Object.entries(PLACE_FIELDS)) add('Еда и места', object, field, p[field], title)
+  if (!p.schedule) {
+    rows.push({ group: 'Еда и места', object, field: 'Закрыто (по дням)', value: 'нет', status: 'needs_check', source: '', checkedAt: '—', reason: p.openingHours?.note ?? 'Часов по дням на официальном сайте нет' })
+  }
+  if (p.websiteWarning) {
+    rows.push({ group: 'Еда и места', object, field: 'Сайт', value: 'не показываем', status: 'needs_check', source: '', checkedAt: '2026-10-18', reason: p.websiteWarning })
+  }
   if (!p.price) {
     rows.push({ group: 'Еда и места', object, field: 'Средний чек', value: 'нет', status: 'needs_check', source: '', checkedAt: '—', reason: p.priceNote ?? 'Цена не указана' })
   }

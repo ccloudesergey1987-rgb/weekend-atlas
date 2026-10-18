@@ -16,7 +16,7 @@
           "status": "estimate",
           "source": "https://www.bardelpla.cat/wp-content/uploads/CARTAS/BarCatala.pdf",
           "checkedAt": "2026-10-18",
-          "note": "Два приёма пищи по среднему чеку Bar del Pla (20–26 € по меню bardelpla.cat): 2 × 20–26 € = 40–52 €. Завтрак, кофе и напитки не включены: на официальных сайтах выбранных мест их цен нет."
+          "note": "Два приёма пищи по среднему чеку Bar del Pla (20–26 € по меню bardelpla.cat): 2 × 20–26 € = 40–52 €. Завтрак, кофе и напитки не включены: их цен нет ни на официальных сайтах, ни на TheFork, ни в гиде Michelin — они в ручной проверке (docs/manual-check.md). Дешевле Bar del Pla (20–26 €) заведений с подтверждённым чеком пока нет; Cuines de Santa Caterina — 20–29 €."
         }
       },
       {
@@ -30,7 +30,7 @@
           "status": "estimate",
           "source": "https://restaurantpacomeralgo.com/paco-meralgo-carta-esp/",
           "checkedAt": "2026-10-18",
-          "note": "Обед в Bar del Pla (20–26 €) и ужин в Paco Meralgo (25–35 €) по средним чекам из официальных меню: 45–61 €. Завтрак, кофе и напитки не включены: на официальных сайтах выбранных мест их цен нет."
+          "note": "Обед в Bar del Pla (20–26 €) и ужин в Paco Meralgo (25–35 €) по средним чекам из официальных меню: 45–61 €. Завтрак, кофе и напитки не включены: их цен нет ни на официальных сайтах, ни на TheFork, ни в гиде Michelin — они в ручной проверке (docs/manual-check.md)."
         }
       },
       {
@@ -44,7 +44,7 @@
           "status": "estimate",
           "source": "https://www.xavierpellicer.com/carta",
           "checkedAt": "2026-10-18",
-          "note": "Обед в Bar del Pla (20–26 €) и дегустационный сет в Xavier Pellicer (95–115 € по карте xavierpellicer.com): 115–141 €. Завтрак, кофе и напитки не включены: на официальных сайтах выбранных мест их цен нет."
+          "note": "Обед в Bar del Pla (20–26 €) и дегустационный сет в Xavier Pellicer (95–115 € по карте xavierpellicer.com): 115–141 €. Завтрак, кофе и напитки не включены: их цен нет ни на официальных сайтах, ни на TheFork, ни в гиде Michelin — они в ручной проверке (docs/manual-check.md)."
         }
       }
     ]

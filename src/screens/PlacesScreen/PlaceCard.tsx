@@ -16,7 +16,7 @@ function factInfo(fact: Fact<string> | null): { text: string; status: Verificati
   return { text: fact.value, status: fact.status }
 }
 
-/** «пн, вт», «Открыто каждый день», «вс — не указано», «Уточняется». */
+/** «пн, вт», «нет — работает каждый день», «вс — на сайте не указано», «Уточняется». */
 function closedText(place: Place): string {
   if (!place.schedule) return 'Уточняется'
   const closed = closedDays(place.schedule.value)
@@ -24,7 +24,7 @@ function closedText(place: Place): string {
   const parts: string[] = []
   if (closed.length > 0) parts.push(formatDays(closed))
   if (unknown.length > 0) parts.push(`${formatDays(unknown)} — на сайте не указано`)
-  return parts.length > 0 ? parts.join('; ') : 'Открыто каждый день'
+  return parts.length > 0 ? parts.join('; ') : 'нет — работает каждый день'
 }
 
 const reservationText: Record<Reservation, string> = {
