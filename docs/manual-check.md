@@ -12,7 +12,7 @@
 
 ---
 
-## 1. Заведения без цены (11) — ~2 минуты на каждое
+## 1. Заведения без цены (12) — ~2 минуты на каждое
 
 Для них цену не нашли ни на официальном сайте, ни на TheFork, ни в гиде Michelin. Цены Syra Coffee, Hofmann и Escribà нужны ещё и для завтрака и кофе в уровнях питания бюджета.
 
@@ -25,6 +25,8 @@
 - **Escribà** (кондитерская, Эшампле) — [Google Maps](https://www.google.com/maps/search/?api=1&query=Escrib%C3%A0%2C+Gran+Via+de+les+Corts+Catalanes+546%2C+Barcelona)
   - [ ] Не закрыто · [ ] Есть отзывы за 3 месяца · Цена на человека: ____
 - **Mercat de la Concepció** (рынок, Эшампле) — [Google Maps](https://www.google.com/maps/search/?api=1&query=Mercat+de+la+Concepci%C3%B3%2C+Barcelona)
+  - [ ] Не закрыто · [ ] Есть отзывы за 3 месяца · Цена на человека: ____
+- **Bar Mut** (тапас, Эшампле) — [Google Maps](https://www.google.com/maps/search/?api=1&query=Bar+Mut%2C+Carrer+de+Pau+Claris+192%2C+Barcelona)
   - [ ] Не закрыто · [ ] Есть отзывы за 3 месяца · Цена на человека: ____
 - **Syra Coffee** (кофейня, Грасия) — [Google Maps](https://www.google.com/maps/search/?api=1&query=Syra+Coffee%2C+Carrer+de+Bonavista+23%2C+Barcelona)
   - [ ] Не закрыто · [ ] Есть отзывы за 3 месяца · Цена на человека: ____
@@ -39,7 +41,7 @@
 - **Tiberi Bar** (бар, Побле-сек) — [Google Maps](https://www.google.com/maps/search/?api=1&query=Tiberi+Bar%2C+Carrer+de+Vila+i+Vil%C3%A0+67%2C+Barcelona)
   - [ ] Не закрыто · [ ] Есть отзывы за 3 месяца · Цена на человека: ____
 
-## 2. Заведения с ценой (8) — ~1 минута на каждое
+## 2. Заведения с ценой (9) — ~1 минута на каждое
 
 Цена у нас уже есть — только проверьте, что место работает.
 
@@ -58,6 +60,8 @@
 - **Oníric** (ресторан, Грасия, у нас ≈ 26–48 €) — [Google Maps](https://www.google.com/maps/search/?api=1&query=On%C3%ADric%2C+Carrer+de+la+Rabassa+37%2C+Barcelona)
   - [ ] Не закрыто · [ ] Есть отзывы за 3 месяца
 - **Taberna Noroeste** (ресторан, Побле-сек, у нас ≈ 80 €) — [Google Maps](https://www.google.com/maps/search/?api=1&query=Taberna+Noroeste%2C+Carrer+de+Radas+67%2C+Barcelona)
+  - [ ] Не закрыто · [ ] Есть отзывы за 3 месяца
+- **Elche** (ресторан, Побле-сек, у нас ≈ 23–30 €) — [Google Maps](https://www.google.com/maps/search/?api=1&query=Restaurant+Elche%2C+Carrer+de+Vila+i+Vil%C3%A0+71%2C+Barcelona)
   - [ ] Не закрыто · [ ] Есть отзывы за 3 месяца
 
 ## 3. Ла Педрера и Каса Батльо — ~10 минут

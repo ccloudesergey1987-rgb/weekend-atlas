@@ -4,7 +4,7 @@
 
 Правило: **verified** — значение прямо найдено на официальной странице, источник — точный адрес этой страницы. **estimate** — оценка редакции там, где официального источника быть не может (время переходов, такси по официальному тарифу); цены, часы и адреса так не помечаются. Всё остальное — **needs_check** с причиной. Часы работы и цены меняются — перед поездкой их стоит перепроверить.
 
-**Итого:** 214 значений: проверено 116, оценка редакции 27, требует проверки 71.
+**Итого:** 224 значений: проверено 124, оценка редакции 28, требует проверки 72.
 
 ## Маршрут
 
@@ -186,6 +186,12 @@
 | Mercat de la Concepció (Эшампле) | Часы работы | Пн и сб 8:00–15:00, вт–пт 8:00–20:00. Воскресенье на сайте не указано. | ✅ verified | <https://www.barcelona.cat/ca/coneixbcn/pics/el-mercat-de-la-concepcio-92086009449> | 2026-10-18 |  |
 | Mercat de la Concepció (Эшампле) | Закрыто (по дням) | без выходных; не указано: вс | ✅ verified | <https://www.barcelona.cat/ca/coneixbcn/pics/el-mercat-de-la-concepcio-92086009449> | 2026-10-18 |  |
 | Mercat de la Concepció (Эшампле) | Средний чек | нет | ⚠️ needs_check |  | — | Рынок: чек зависит от покупок; меню нет ни на официальном сайте, ни на TheFork, в гиде Michelin рынка нет. Цену на человека берём из Google Maps при ручной проверке. |
+| Bar Mut (Эшампле) | Рекомендуют | Time Out Barcelona, The Infatuation, Ara | — источники | <https://www.timeout.es/barcelona/es/bares-y-pubs/bar-mut> <https://www.theinfatuation.com/barcelona/reviews/bar-mut> <https://en.ara.cat/food/was-close-to-opening-vermouth-bar-in-new-york-with-actor-robert-niro-as-partner_128_5511905.html> | — |  |
+| Bar Mut (Эшампле) | Адрес | Carrer de Pau Claris, 192, 08037 Barcelona | ✅ verified | <https://barmut.com/> | 2026-10-18 |  |
+| Bar Mut (Эшампле) | Часы работы | Ежедневно 13:00–24:00. | ✅ verified | <https://barmut.com/> | 2026-10-18 |  |
+| Bar Mut (Эшампле) | Закрыто (по дням) | без выходных | ✅ verified | <https://barmut.com/> | 2026-10-18 |  |
+| Bar Mut (Эшампле) | Сайт | https://barmut.com | ✅ verified | <https://barmut.com/> | 2026-10-18 |  |
+| Bar Mut (Эшампле) | Средний чек | нет | ⚠️ needs_check |  | — | Цены не нашли: меню с ценами на официальном сайте нет, страницы на TheFork больше нет, в гиде Michelin заведения нет. Цену на человека берём из Google Maps при ручной проверке. |
 | Berbena (Грасия) | Рекомендуют | Гид Michelin, Time Out Barcelona | — источники | <https://guide.michelin.com/us/en/catalunya/barcelona/restaurant/berbena> <https://www.timeout.es/barcelona/es/restaurantes/berbena> | — |  |
 | Berbena (Грасия) | Адрес | Carrer de Minerva, 6, 08006 Barcelona | ✅ verified | <https://berbenabcn.com/> | 2026-10-18 |  |
 | Berbena (Грасия) | Часы работы | Ужин пн–пт в две смены (с 19:00 и с 21:30, в пт — с 19:15 и с 21:45), обед только в пятницу в 14:15. Выходные на сайте не указаны. | ✅ verified | <https://berbenabcn.com/> | 2026-10-18 |  |
@@ -246,6 +252,12 @@
 | Tiberi Bar (Побле-сек) | Часы работы | По данным Time Out: ср–пт 19:00–01:00, сб–вс 13:00–01:00; пн и вт закрыто. | ⚠️ needs_check | <https://www.timeout.es/barcelona/es/bares-y-pubs/tiberi-bar> | 2026-10-18 | Официального сайта с часами не найдено, часы — только из Time Out. |
 | Tiberi Bar (Побле-сек) | Закрыто (по дням) | нет | ⚠️ needs_check |  | — | Официального сайта с часами не найдено, часы — только из Time Out. |
 | Tiberi Bar (Побле-сек) | Средний чек | нет | ⚠️ needs_check |  | — | Цены не нашли: меню с ценами нет на официальном сайте (или сайт не годится как источник), страницы на TheFork нет, в гиде Michelin заведения нет. Цену на человека берём из Google Maps при ручной проверке. |
+| Elche (Побле-сек) | Рекомендуют | Time Out Barcelona, Lonely Planet, ElNacional.cat | — источники | <https://www.timeout.com/barcelona/restaurants/elche> <https://www.lonelyplanet.com/spain/barcelona/montjuic-sants-and-el-poble-sec/restaurants/elche/a/poi-eat/375375/1320689> <https://www.elnacional.cat/ca/gourmeteria/llistes/millors-arrossos-barcelona-restaurants-gaudir-plat-estrella_894051_102.html> | — |  |
+| Elche (Побле-сек) | Адрес | Carrer de Vila i Vilà, 71, 08004 Barcelona | ✅ verified | <https://elcherestaurant.es/> | 2026-10-18 |  |
+| Elche (Побле-сек) | Часы работы | Ежедневно 13:00–24:00. | ✅ verified | <https://elcherestaurant.es/> | 2026-10-18 |  |
+| Elche (Побле-сек) | Закрыто (по дням) | без выходных | ✅ verified | <https://elcherestaurant.es/> | 2026-10-18 |  |
+| Elche (Побле-сек) | Средний чек | 23–30 € | ≈ estimate | <https://elcherestaurant.es/system/page/1/contents/download_es/contents_283_original.pdf> | 2026-10-18 | По карте elcherestaurant.es: порция паэльи или риса 17–24 € (заказывают минимум две порции), половина тапас-закуски за 6–10 € и хлеб 2 € — около 23–30 € на человека без напитков. |
+| Elche (Побле-сек) | Сайт | https://elcherestaurant.es | ✅ verified | <https://elcherestaurant.es/> | 2026-10-18 |  |
 
 ## Бюджет: питание (на человека в день)
 

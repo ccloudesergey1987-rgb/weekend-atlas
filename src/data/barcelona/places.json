@@ -649,6 +649,98 @@
       "partnerUrl": null
     },
     {
+      "id": "barcelona/bar-mut",
+      "type": "tapas",
+      "name": "Bar Mut",
+      "area": "Эшампле",
+      "description": "Маленький бар-ресторан у Диагонали: каталонская кухня рынка — морепродукты с планчи, бабушкины крокеты, сезонные блюда — и сильная винная карта.",
+      "recommendedBy": [
+        {
+          "name": "Time Out Barcelona",
+          "url": "https://www.timeout.es/barcelona/es/bares-y-pubs/bar-mut"
+        },
+        {
+          "name": "The Infatuation",
+          "url": "https://www.theinfatuation.com/barcelona/reviews/bar-mut"
+        },
+        {
+          "name": "Ara",
+          "url": "https://en.ara.cat/food/was-close-to-opening-vermouth-bar-in-new-york-with-actor-robert-niro-as-partner_128_5511905.html"
+        }
+      ],
+      "price": null,
+      "priceNote": "Цены не нашли: меню с ценами на официальном сайте нет, страницы на TheFork больше нет, в гиде Michelin заведения нет. Цену на человека берём из Google Maps при ручной проверке.",
+      "address": {
+        "value": "Carrer de Pau Claris, 192, 08037 Barcelona",
+        "status": "verified",
+        "source": "https://barmut.com/",
+        "checkedAt": "2026-10-18"
+      },
+      "openingHours": {
+        "value": "Ежедневно 13:00–24:00.",
+        "status": "verified",
+        "source": "https://barmut.com/",
+        "checkedAt": "2026-10-18"
+      },
+      "schedule": {
+        "value": {
+          "mon": [
+            [
+              "13:00",
+              "24:00"
+            ]
+          ],
+          "tue": [
+            [
+              "13:00",
+              "24:00"
+            ]
+          ],
+          "wed": [
+            [
+              "13:00",
+              "24:00"
+            ]
+          ],
+          "thu": [
+            [
+              "13:00",
+              "24:00"
+            ]
+          ],
+          "fri": [
+            [
+              "13:00",
+              "24:00"
+            ]
+          ],
+          "sat": [
+            [
+              "13:00",
+              "24:00"
+            ]
+          ],
+          "sun": [
+            [
+              "13:00",
+              "24:00"
+            ]
+          ]
+        },
+        "status": "verified",
+        "source": "https://barmut.com/",
+        "checkedAt": "2026-10-18"
+      },
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Bar+Mut%2C+Carrer+de+Pau+Claris+192%2C+Barcelona",
+      "website": {
+        "value": "https://barmut.com",
+        "status": "verified",
+        "source": "https://barmut.com/",
+        "checkedAt": "2026-10-18"
+      },
+      "partnerUrl": null
+    },
+    {
       "id": "barcelona/berbena",
       "type": "restaurant",
       "name": "Berbena",
@@ -1434,6 +1526,105 @@
       "schedule": null,
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=Tiberi+Bar%2C+Carrer+de+Vila+i+Vil%C3%A0+67%2C+Barcelona",
       "website": null,
+      "partnerUrl": null
+    },
+    {
+      "id": "barcelona/elche",
+      "type": "restaurant",
+      "name": "Elche",
+      "area": "Побле-сек",
+      "description": "Семейный ресторан левантийских рисов с 1959 года: паэльи, чёрный рис с каракатицей и артишоками, фидеуа. Открыт каждый день.",
+      "recommendedBy": [
+        {
+          "name": "Time Out Barcelona",
+          "url": "https://www.timeout.com/barcelona/restaurants/elche"
+        },
+        {
+          "name": "Lonely Planet",
+          "url": "https://www.lonelyplanet.com/spain/barcelona/montjuic-sants-and-el-poble-sec/restaurants/elche/a/poi-eat/375375/1320689"
+        },
+        {
+          "name": "ElNacional.cat",
+          "url": "https://www.elnacional.cat/ca/gourmeteria/llistes/millors-arrossos-barcelona-restaurants-gaudir-plat-estrella_894051_102.html"
+        }
+      ],
+      "price": {
+        "min": 23,
+        "max": 30,
+        "currency": "EUR",
+        "status": "estimate",
+        "source": "https://elcherestaurant.es/system/page/1/contents/download_es/contents_283_original.pdf",
+        "checkedAt": "2026-10-18",
+        "note": "По карте elcherestaurant.es: порция паэльи или риса 17–24 € (заказывают минимум две порции), половина тапас-закуски за 6–10 € и хлеб 2 € — около 23–30 € на человека без напитков."
+      },
+      "address": {
+        "value": "Carrer de Vila i Vilà, 71, 08004 Barcelona",
+        "status": "verified",
+        "source": "https://elcherestaurant.es/",
+        "checkedAt": "2026-10-18"
+      },
+      "openingHours": {
+        "value": "Ежедневно 13:00–24:00.",
+        "status": "verified",
+        "source": "https://elcherestaurant.es/",
+        "checkedAt": "2026-10-18"
+      },
+      "schedule": {
+        "value": {
+          "mon": [
+            [
+              "13:00",
+              "24:00"
+            ]
+          ],
+          "tue": [
+            [
+              "13:00",
+              "24:00"
+            ]
+          ],
+          "wed": [
+            [
+              "13:00",
+              "24:00"
+            ]
+          ],
+          "thu": [
+            [
+              "13:00",
+              "24:00"
+            ]
+          ],
+          "fri": [
+            [
+              "13:00",
+              "24:00"
+            ]
+          ],
+          "sat": [
+            [
+              "13:00",
+              "24:00"
+            ]
+          ],
+          "sun": [
+            [
+              "13:00",
+              "24:00"
+            ]
+          ]
+        },
+        "status": "verified",
+        "source": "https://elcherestaurant.es/",
+        "checkedAt": "2026-10-18"
+      },
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=Restaurant+Elche%2C+Carrer+de+Vila+i+Vil%C3%A0+71%2C+Barcelona",
+      "website": {
+        "value": "https://elcherestaurant.es",
+        "status": "verified",
+        "source": "https://elcherestaurant.es/",
+        "checkedAt": "2026-10-18"
+      },
       "partnerUrl": null
     }
   ]
