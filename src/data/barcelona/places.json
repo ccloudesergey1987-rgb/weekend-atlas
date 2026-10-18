@@ -15,10 +15,6 @@
         {
           "name": "Lonely Planet",
           "url": "https://www.lonelyplanet.com/spain/barcelona/la-ribera/nightlife/el-xampanyet/a/poi-dri/1204468/1320668"
-        },
-        {
-          "name": "Turisme de Barcelona",
-          "url": "https://www.barcelonaturisme.com/wv3/en/enjoy/50/on-the-vermouth-trail-discover-some-of-the-best-places-to-have-an-aperitif.html"
         }
       ],
       "price": {
@@ -311,7 +307,7 @@
         },
         {
           "name": "Turisme de Barcelona",
-          "url": "https://barcelonaturisme.com/wv3/en/page/508/santa-caterina-market.html"
+          "url": "https://thisisbarcelona.com/gastronomy/barcelona-markets/mercat-de-santa-caterina"
         }
       ],
       "price": null,
