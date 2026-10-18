@@ -166,3 +166,9 @@
 .inlineLink:hover {
   text-decoration-color: currentColor;
 }
+
+.sourceNote {
+  margin-top: var(--space-2);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}

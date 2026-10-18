@@ -32,19 +32,76 @@
       },
       "address": {
         "value": "Carrer de Montcada, 22, 08003 Barcelona",
-        "status": "needs_check",
-        "source": "",
-        "checkedAt": "2026-10-18",
-        "note": "Сайт elxampanyet.com содержит рекламу ставок и не называет владельца — как официальный источник не принят."
+        "status": "verified",
+        "source": "Карточка Google",
+        "checkedAt": "2026-10-18"
       },
       "openingHours": {
-        "value": "Уточняются",
-        "status": "needs_check",
-        "source": "",
-        "checkedAt": "2026-10-18",
-        "note": "Сайт elxampanyet.com содержит рекламу ставок и не называет владельца — как официальный источник не принят."
+        "value": "Пн 19:00–23:00; вт–пт 12:00–15:30 и 19:00–23:00; сб 12:00–15:30; вс закрыто.",
+        "status": "verified",
+        "source": "Карточка Google",
+        "checkedAt": "2026-10-18"
       },
-      "schedule": null,
+      "schedule": {
+        "value": {
+          "mon": [
+            [
+              "19:00",
+              "23:00"
+            ]
+          ],
+          "tue": [
+            [
+              "12:00",
+              "15:30"
+            ],
+            [
+              "19:00",
+              "23:00"
+            ]
+          ],
+          "wed": [
+            [
+              "12:00",
+              "15:30"
+            ],
+            [
+              "19:00",
+              "23:00"
+            ]
+          ],
+          "thu": [
+            [
+              "12:00",
+              "15:30"
+            ],
+            [
+              "19:00",
+              "23:00"
+            ]
+          ],
+          "fri": [
+            [
+              "12:00",
+              "15:30"
+            ],
+            [
+              "19:00",
+              "23:00"
+            ]
+          ],
+          "sat": [
+            [
+              "12:00",
+              "15:30"
+            ]
+          ],
+          "sun": []
+        },
+        "status": "verified",
+        "source": "Карточка Google",
+        "checkedAt": "2026-10-18"
+      },
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=El+Xampanyet%2C+Carrer+de+Montcada+22%2C+Barcelona",
       "website": null,
       "websiteWarning": "Сайт elxampanyet.com показывает рекламу ставок и не называет владельца — ссылку не показываем.",
@@ -662,19 +719,68 @@
       },
       "address": {
         "value": "Gran Via de les Corts Catalanes, 546, 08011 Barcelona",
-        "status": "needs_check",
-        "source": "https://escriba.es/es/tiendas",
-        "checkedAt": "2026-10-18",
-        "note": "Взято с escriba.es, но в сайт встроен посторонний спам (похоже на взлом) — данным с него не доверяем."
+        "status": "verified",
+        "source": "Карточка Google",
+        "checkedAt": "2026-10-18"
       },
       "openingHours": {
-        "value": "Пн закрыто; вт–пт 8:30–15:00 и 17:00–21:00; сб–вс 8:30–21:00.",
-        "status": "needs_check",
-        "source": "https://escriba.es/es/tiendas",
+        "value": "Ср–пт 8:30–15:00 и 17:00–21:00; сб–вс 8:30–21:00; пн и вт закрыто.",
+        "status": "verified",
+        "source": "Карточка Google",
         "checkedAt": "2026-10-18",
-        "note": "Взято с escriba.es, но в сайт встроен посторонний спам (похоже на взлом) — данным с него не доверяем."
+        "note": "На взломанном сайте escriba.es вторник был рабочим, в карточке Google — выходным; взято по Google."
       },
-      "schedule": null,
+      "schedule": {
+        "value": {
+          "mon": [],
+          "tue": [],
+          "wed": [
+            [
+              "08:30",
+              "15:00"
+            ],
+            [
+              "17:00",
+              "21:00"
+            ]
+          ],
+          "thu": [
+            [
+              "08:30",
+              "15:00"
+            ],
+            [
+              "17:00",
+              "21:00"
+            ]
+          ],
+          "fri": [
+            [
+              "08:30",
+              "15:00"
+            ],
+            [
+              "17:00",
+              "21:00"
+            ]
+          ],
+          "sat": [
+            [
+              "08:30",
+              "21:00"
+            ]
+          ],
+          "sun": [
+            [
+              "08:30",
+              "21:00"
+            ]
+          ]
+        },
+        "status": "verified",
+        "source": "Карточка Google",
+        "checkedAt": "2026-10-18"
+      },
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=Escrib%C3%A0%2C+Gran+Via+de+les+Corts+Catalanes+546%2C+Barcelona",
       "website": null,
       "websiteWarning": "В страницы escriba.es встроен посторонний спам (похоже на взлом) — ссылку не показываем.",
@@ -982,19 +1088,95 @@
       },
       "address": {
         "value": "Plaça de la Llibertat, 23, 08012 Barcelona",
-        "status": "needs_check",
-        "source": "",
-        "checkedAt": "2026-10-18",
-        "note": "Домен restaurantelapubilla.com 18.10.2026 перенаправлял на посторонний сайт; официального сайта не найдено."
+        "status": "verified",
+        "source": "Карточка Google",
+        "checkedAt": "2026-10-18"
       },
       "openingHours": {
-        "value": "Уточняются",
-        "status": "needs_check",
-        "source": "",
-        "checkedAt": "2026-10-18",
-        "note": "Домен restaurantelapubilla.com 18.10.2026 перенаправлял на посторонний сайт; официального сайта не найдено."
+        "value": "Вт–сб: завтрак 9:00–12:00, обед 13:00–16:00, ужин 20:00–23:00; вс и пн закрыто.",
+        "status": "verified",
+        "source": "Карточка Google",
+        "checkedAt": "2026-10-18"
       },
-      "schedule": null,
+      "schedule": {
+        "value": {
+          "mon": [],
+          "tue": [
+            [
+              "09:00",
+              "12:00"
+            ],
+            [
+              "13:00",
+              "16:00"
+            ],
+            [
+              "20:00",
+              "23:00"
+            ]
+          ],
+          "wed": [
+            [
+              "09:00",
+              "12:00"
+            ],
+            [
+              "13:00",
+              "16:00"
+            ],
+            [
+              "20:00",
+              "23:00"
+            ]
+          ],
+          "thu": [
+            [
+              "09:00",
+              "12:00"
+            ],
+            [
+              "13:00",
+              "16:00"
+            ],
+            [
+              "20:00",
+              "23:00"
+            ]
+          ],
+          "fri": [
+            [
+              "09:00",
+              "12:00"
+            ],
+            [
+              "13:00",
+              "16:00"
+            ],
+            [
+              "20:00",
+              "23:00"
+            ]
+          ],
+          "sat": [
+            [
+              "09:00",
+              "12:00"
+            ],
+            [
+              "13:00",
+              "16:00"
+            ],
+            [
+              "20:00",
+              "23:00"
+            ]
+          ],
+          "sun": []
+        },
+        "status": "verified",
+        "source": "Карточка Google",
+        "checkedAt": "2026-10-18"
+      },
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=La+Pubilla%2C+Pla%C3%A7a+de+la+Llibertat+23%2C+Barcelona",
       "website": null,
       "websiteWarning": "Домен restaurantelapubilla.com перенаправляет на посторонний сайт — ссылку не показываем.",
@@ -1125,13 +1307,55 @@
         "checkedAt": "2026-10-18"
       },
       "openingHours": {
-        "value": "Обычно пн–пт 8:00–20:30, сб 8:00–15:00, вс закрыто. Проверьте перед визитом.",
-        "status": "needs_check",
-        "source": "https://www.barcelona.cat/en/what-to-do-in-bcn/summer/municipal-markets/mercat-llibertat-92086009773",
-        "checkedAt": "2026-10-18",
-        "note": "Страница рынка на сайте мэрии 18.10.2026 была недоступна из нашего региона, а на barcelona.cat указаны только летние часы с ошибкой в датах."
+        "value": "Пн–пт 8:00–20:30, сб 8:00–15:00, вс закрыто.",
+        "status": "verified",
+        "source": "Карточка Google",
+        "checkedAt": "2026-10-18"
       },
-      "schedule": null,
+      "schedule": {
+        "value": {
+          "mon": [
+            [
+              "08:00",
+              "20:30"
+            ]
+          ],
+          "tue": [
+            [
+              "08:00",
+              "20:30"
+            ]
+          ],
+          "wed": [
+            [
+              "08:00",
+              "20:30"
+            ]
+          ],
+          "thu": [
+            [
+              "08:00",
+              "20:30"
+            ]
+          ],
+          "fri": [
+            [
+              "08:00",
+              "20:30"
+            ]
+          ],
+          "sat": [
+            [
+              "08:00",
+              "15:00"
+            ]
+          ],
+          "sun": []
+        },
+        "status": "verified",
+        "source": "Карточка Google",
+        "checkedAt": "2026-10-18"
+      },
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=Mercat+de+la+Llibertat%2C+Barcelona",
       "website": null,
       "partnerUrl": null
@@ -1405,19 +1629,75 @@
       },
       "address": {
         "value": "Carrer del Poeta Cabanyes, 25, 08004 Barcelona",
-        "status": "needs_check",
-        "source": "https://www.quimetquimet.com",
-        "checkedAt": "2026-10-18",
-        "note": "На quimetquimet.com нет сведений о владельце и есть посторонние рекламные ссылки — как официальный источник не принят."
+        "status": "verified",
+        "source": "Карточка Google",
+        "checkedAt": "2026-10-18"
       },
       "openingHours": {
-        "value": "Уточняются",
-        "status": "needs_check",
-        "source": "https://www.quimetquimet.com",
-        "checkedAt": "2026-10-18",
-        "note": "На quimetquimet.com нет сведений о владельце и есть посторонние рекламные ссылки — как официальный источник не принят."
+        "value": "Пн–пт 12:00–16:00 и 18:00–22:30; сб и вс закрыто.",
+        "status": "verified",
+        "source": "Карточка Google",
+        "checkedAt": "2026-10-18"
       },
-      "schedule": null,
+      "schedule": {
+        "value": {
+          "mon": [
+            [
+              "12:00",
+              "16:00"
+            ],
+            [
+              "18:00",
+              "22:30"
+            ]
+          ],
+          "tue": [
+            [
+              "12:00",
+              "16:00"
+            ],
+            [
+              "18:00",
+              "22:30"
+            ]
+          ],
+          "wed": [
+            [
+              "12:00",
+              "16:00"
+            ],
+            [
+              "18:00",
+              "22:30"
+            ]
+          ],
+          "thu": [
+            [
+              "12:00",
+              "16:00"
+            ],
+            [
+              "18:00",
+              "22:30"
+            ]
+          ],
+          "fri": [
+            [
+              "12:00",
+              "16:00"
+            ],
+            [
+              "18:00",
+              "22:30"
+            ]
+          ],
+          "sat": [],
+          "sun": []
+        },
+        "status": "verified",
+        "source": "Карточка Google",
+        "checkedAt": "2026-10-18"
+      },
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=Quimet+%26+Quimet%2C+Carrer+del+Poeta+Cabanyes+25%2C+Barcelona",
       "website": null,
       "websiteWarning": "На quimetquimet.com посторонние рекламные ссылки и нет сведений о владельце — ссылку не показываем.",
@@ -1675,19 +1955,56 @@
       },
       "address": {
         "value": "Carrer de Vila i Vilà, 67, 08004 Barcelona",
-        "status": "needs_check",
-        "source": "",
-        "checkedAt": "2026-10-18",
-        "note": "Официального сайта не найдено; адрес совпадает у Time Out и The Infatuation."
+        "status": "verified",
+        "source": "Карточка Google",
+        "checkedAt": "2026-10-18"
       },
       "openingHours": {
-        "value": "По данным Time Out: ср–пт 19:00–01:00, сб–вс 13:00–01:00; пн и вт закрыто.",
-        "status": "needs_check",
-        "source": "https://www.timeout.es/barcelona/es/bares-y-pubs/tiberi-bar",
+        "value": "Ср 19:00–24:00; чт–пт 19:00–01:00; сб 13:00–01:00; вс 13:00–24:00; пн и вт закрыто.",
+        "status": "verified",
+        "source": "Карточка Google",
         "checkedAt": "2026-10-18",
-        "note": "Официального сайта с часами не найдено, часы — только из Time Out."
+        "note": "Своя система бронирования бара (myrestoo) в воскресенье 18.10.2026 принимала брони на обед 13:00–18:00 и ужин 19:00–22:00."
       },
-      "schedule": null,
+      "schedule": {
+        "value": {
+          "mon": [],
+          "tue": [],
+          "wed": [
+            [
+              "19:00",
+              "24:00"
+            ]
+          ],
+          "thu": [
+            [
+              "19:00",
+              "25:00"
+            ]
+          ],
+          "fri": [
+            [
+              "19:00",
+              "25:00"
+            ]
+          ],
+          "sat": [
+            [
+              "13:00",
+              "25:00"
+            ]
+          ],
+          "sun": [
+            [
+              "13:00",
+              "24:00"
+            ]
+          ]
+        },
+        "status": "verified",
+        "source": "Карточка Google",
+        "checkedAt": "2026-10-18"
+      },
       "mapUrl": "https://www.google.com/maps/search/?api=1&query=Tiberi+Bar%2C+Carrer+de+Vila+i+Vil%C3%A0+67%2C+Barcelona",
       "website": null,
       "partnerUrl": null

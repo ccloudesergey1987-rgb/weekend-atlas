@@ -147,7 +147,7 @@ export function SightCard({ point, highlighted = false }: { point: RoutePoint; h
           </ExternalLink>
           {showTickets && point.tickets && (
             <ExternalLink href={point.tickets.value} className={styles.buttonPrimary}>
-              Купить билеты
+              {point.ticketsLabel ?? 'Купить билеты'}
             </ExternalLink>
           )}
         </div>

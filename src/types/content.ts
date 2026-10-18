@@ -13,8 +13,17 @@
  * tariff, an average bill computed from the official menu and the food
  * levels built from those bills). Entry prices, opening hours and
  * addresses are never `estimate`.
+ * `not_applicable` — there is nothing to check: the «address» of a lunch or a
+ * walk is a neighbourhood name, entry to a street or a square is free.
  */
-export type VerificationStatus = 'verified' | 'needs_check' | 'estimate'
+export type VerificationStatus = 'verified' | 'needs_check' | 'estimate' | 'not_applicable'
+
+/**
+ * Source of facts taken from the place's Google Maps card. Allowed only when
+ * the place has no official site or the site is unreliable; shown as
+ * «По данным Google, октябрь 2026» instead of a warning label.
+ */
+export const GOOGLE_CARD_SOURCE = 'Карточка Google'
 
 /** Where a fact came from and when it was last checked. */
 export interface Provenance {
@@ -163,6 +172,8 @@ export interface RoutePoint extends Links {
   tickets: Fact<string> | null
   /** Why there is no ticket link, e.g. «Билеты продаются на входе». */
   ticketsNote?: string
+  /** Text of the tickets button when it leads to an information page, not a shop. */
+  ticketsLabel?: string
   /** Whether tickets must be booked in advance, in plain words. */
   booking?: Fact<string> | null
   /** Days when the point is closed or open only part of the day, from verified hours. */

@@ -1,4 +1,4 @@
-import type { Fact, Place, Reservation, VerificationStatus } from '../../types/content'
+import { GOOGLE_CARD_SOURCE, type Fact, type Place, type Reservation, type VerificationStatus } from '../../types/content'
 import { ExternalLink } from '../../components/ExternalLink/ExternalLink'
 import { FavoriteButton } from '../../components/FavoriteButton/FavoriteButton'
 import { cardElementId } from '../../lib/focusCard'
@@ -46,6 +46,8 @@ function FactRow({ label, fact }: { label: string; fact: Fact<string> | null }) 
 
 export function PlaceCard({ place, highlighted = false }: { place: Place; highlighted?: boolean }) {
   const level = priceLevel(place.price)
+  // Facts from the Google card get one quiet line instead of warning labels.
+  const fromGoogle = [place.address, place.openingHours, place.schedule].some((f) => f?.source === GOOGLE_CARD_SOURCE)
 
   return (
     <article id={cardElementId(place.id)} className={highlighted ? `${styles.card} ${styles.highlighted}` : styles.card}>
@@ -116,6 +118,8 @@ export function PlaceCard({ place, highlighted = false }: { place: Place; highli
             </dd>
           </div>
         </dl>
+
+        {fromGoogle && <p className={styles.sourceNote}>Адрес и часы — по данным Google, октябрь 2026</p>}
 
         {place.recommendedBy.length > 0 && (
           <p className={styles.recommended}>

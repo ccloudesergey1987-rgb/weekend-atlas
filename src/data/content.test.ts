@@ -1,9 +1,9 @@
 import { describe, expect, it } from 'vitest'
-import type { Weekday } from '../types/content'
+import { GOOGLE_CARD_SOURCE, type Weekday } from '../types/content'
 import { WEEKDAYS, WEEKDAY_SHORT, servesDuring, toMinutes } from '../lib/schedule'
 import { getCityContent, listCityIds } from './index'
 
-const STATUSES = ['verified', 'needs_check', 'estimate']
+const STATUSES = ['verified', 'needs_check', 'estimate', 'not_applicable']
 const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/
 /** «barcelona/sagrada-familia»: city prefix, then a name without the day number. */
 const STABLE_ID = /^[a-z0-9-]+\/[a-z0-9-]+$/
@@ -100,12 +100,44 @@ describe.each(listCityIds())('данные города %s', (cityId) => {
     }
   })
 
+  it('«не применимо» — только для «адреса»-района и свободного входа у обедов и прогулок', () => {
+    for (const p of points) {
+      for (const [field, fact] of Object.entries(p) as [string, unknown][]) {
+        const item = fact as { status?: string } | null
+        if (item?.status !== 'not_applicable') continue
+        expect(p.kind, `${p.id}.${field}`).not.toBe('sight')
+        expect(['address', 'admission'], `${p.id}.${field}`).toContain(field)
+      }
+    }
+    for (const { path, item } of findProvenance({ places: content.places, budget: content.budget })) {
+      expect(item.status, path).not.toBe('not_applicable')
+    }
+  })
+
+  it('«Карточка Google» — только у заведений без надёжного официального сайта', () => {
+    for (const place of content.places.places) {
+      const fromGoogle = findProvenance(place).filter(({ item }) => item.source === GOOGLE_CARD_SOURCE)
+      if (fromGoogle.length === 0) continue
+      expect(place.website, `${place.id}: есть официальный сайт — карточка Google не нужна`).toBeNull()
+      for (const { item } of fromGoogle) expect(String(item.checkedAt), place.id).toMatch(ISO_DATE)
+    }
+    for (const { path, item } of findProvenance(content.route)) {
+      expect(item.source, path).not.toBe(GOOGLE_CARD_SOURCE)
+    }
+  })
+
+  it('в трансфере нет поезда R2 Nord — только Аэробус, метро, такси и «не нужен»', () => {
+    expect(content.budget.transfer.options.map((o) => o.id).sort()).toEqual(['aerobus', 'aerobus-return', 'metro-l9', 'none', 'taxi'])
+  })
+
   it('«оценка редакции» — только для переходов, такси по тарифу, чека по меню и уровней питания, и с пояснением', () => {
     const allowed = new Set<unknown>([
       ...points.map((p) => p.transferFromPrevious),
       ...content.budget.transfer.options.filter((o) => o.pricing === 'per_vehicle').map((o) => o.price),
       ...content.places.places.map((p) => p.price),
       ...content.budget.food.options.map((o) => o.price),
+      // Вход в общественный парк или на площадь — не билет, его можно оценить.
+      ...points.filter((p) => p.kind === 'free').map((p) => p.admission),
     ])
     for (const { path, item } of findProvenance(content)) {
       if (item.status !== 'estimate') continue
@@ -314,7 +346,7 @@ describe.each(listCityIds())('данные города %s', (cityId) => {
             expect(toMinutes(from), `${place.id} ${day}`).toBeLessThanOrEqual(toMinutes(to))
           }
         }
-        if (schedule.status === 'verified') expect(schedule.source, place.id).toMatch(/^https:\/\//)
+        if (schedule.status === 'verified') expect(schedule.source, place.id).toMatch(/^(https:\/\/|Карточка Google$)/)
         expect(schedule.status, place.id).not.toBe('estimate')
       }
     })

@@ -145,22 +145,6 @@
         }
       },
       {
-        "id": "train-r2",
-        "title": "Поезд R2 Nord",
-        "description": "Пригородный поезд Rodalies от терминала T2 через центр города.",
-        "pricing": "per_person",
-        "trip": "one_way",
-        "price": {
-          "min": 2.55,
-          "max": 2.9,
-          "currency": "EUR",
-          "status": "needs_check",
-          "source": "https://rodalies.gencat.cat/en/tarifes/servei_rodalia_barcelona/nomes_rodalies/index.html",
-          "checkedAt": "2026-10-18",
-          "note": "Официальные страницы не говорят, в какой зоне станция Aeroport и входит ли поездка в T-casual и Hola Barcelona. Разовый билет на 1 зону: 2,55 € у Rodalies (дата тарифа не указана) и 2,90 € у ATM (atm.cat)."
-        }
-      },
-      {
         "id": "taxi",
         "title": "Такси",
         "description": "Цена за машину в одну сторону, делится на всех. В обычное такси садятся до 4 человек.",

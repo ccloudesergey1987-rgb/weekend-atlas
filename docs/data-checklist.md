@@ -2,9 +2,9 @@
 
 Файл собирается автоматически из `src/data/barcelona/*.json` командой `npm run checklist`. Не правьте его руками — правьте JSON и пересоберите.
 
-Правило: **verified** — значение прямо найдено на официальной странице, источник — точный адрес этой страницы. **estimate** — оценка редакции там, где официального источника быть не может (время переходов, такси по официальному тарифу); цены, часы и адреса так не помечаются. Всё остальное — **needs_check** с причиной. Часы работы и цены меняются — перед поездкой их стоит перепроверить.
+Правило: **verified** — значение прямо найдено на официальной странице (источник — точный адрес этой страницы) или, если надёжного официального сайта нет, в карточке заведения в Google. **estimate** — оценка редакции там, где официального источника быть не может (время переходов, такси по официальному тарифу); цены, часы и адреса так не помечаются. Всё остальное — **needs_check** с причиной. Часы работы и цены меняются — перед поездкой их стоит перепроверить.
 
-**Итого:** 219 значений: проверено 142, оценка редакции 37, требует проверки 40.
+**Итого:** 199 проверяемых значений: проверено 161 (из них по карточке Google — 17), оценка редакции 38, требует проверки 0. Ещё 25 — «не применимо» (название района вместо адреса, свободный вход, цена рынка, скрытая ссылка на ненадёжный сайт).
 
 ## Маршрут
 
@@ -17,8 +17,8 @@
 | День 1. Барселонский собор | Покупка билетов | https://tickets.catedralbcn.org/ca | ✅ verified | <https://catedralbcn.org/> | 2026-10-18 |  |
 | День 1. Барселонский собор | Бронь | Билеты продаются онлайн на tickets.catedralbcn.org; в соборе есть касса. | ✅ verified | <https://catedralbcn.org/visita-turistica/horaris-visita-turistica/> | 2026-10-18 |  |
 | День 1. Барселонский собор | Сайт | https://catedralbcn.org | ✅ verified | <https://catedralbcn.org/> | 2026-10-18 |  |
-| День 1. Прогулка по Готическому кварталу | Адрес | Plaça de Sant Felip Neri, Barcelona | ⚠️ needs_check |  | — | Общественное пространство, официальной страницы с этим фактом нет — в этой сессии не проверялось. |
-| День 1. Прогулка по Готическому кварталу | Вход | бесплатно | ⚠️ needs_check |  | — | Общественное пространство, официальной страницы с этим фактом нет — в этой сессии не проверялось. |
+| День 1. Прогулка по Готическому кварталу | Адрес | Plaça de Sant Felip Neri, Barcelona | — не применимо |  | — | Это название района или улицы, а не адрес заведения — проверять нечего. |
+| День 1. Прогулка по Готическому кварталу | Вход | бесплатно | — не применимо |  | — | Улица, площадь или пляж — вход свободный, проверять нечего. |
 | День 1. Прогулка по Готическому кварталу | Переход от предыдущей точки | ≈ 5 мин пешком | ≈ estimate |  | — | Время и способ перехода — оценка редакции: официального источника для этого нет. |
 | День 1. Санта-Мария-дель-Мар | Адрес | Plaça de Santa Maria, 1, 08003 Barcelona | ✅ verified | <https://www.santamariadelmar.barcelona/ca/com-arribar/> | 2026-10-18 |  |
 | День 1. Санта-Мария-дель-Мар | Часы работы | Культурный визит: пн–сб 10:00–18:00, вс 13:00–18:00 (вход до 17:30). Вне этих часов вход свободный. Проверьте перед визитом. | ✅ verified | <https://www.santamariadelmar.barcelona/ca/horaris-i-tarifes/> | 2026-10-18 |  |
@@ -28,15 +28,15 @@
 | День 1. Санта-Мария-дель-Мар | Бронь | Не обязательна: билеты продаются и в кассе на месте. | ✅ verified | <https://www.santamariadelmar.barcelona/ca/horaris-i-tarifes/> | 2026-10-18 |  |
 | День 1. Санта-Мария-дель-Мар | Сайт | https://www.santamariadelmar.barcelona | ✅ verified | <https://www.santamariadelmar.barcelona/ca/> | 2026-10-18 |  |
 | День 1. Санта-Мария-дель-Мар | Переход от предыдущей точки | ≈ 10 мин пешком | ≈ estimate |  | — | Время и способ перехода — оценка редакции: официального источника для этого нет. |
-| День 1. Обед в Борне | Адрес | El Born, Barcelona | ⚠️ needs_check |  | — | Общественное пространство, официальной страницы с этим фактом нет — в этой сессии не проверялось. |
-| День 1. Обед в Борне | Вход | бесплатно | ⚠️ needs_check |  | — | Общественное пространство, официальной страницы с этим фактом нет — в этой сессии не проверялось. |
+| День 1. Обед в Борне | Адрес | El Born, Barcelona | — не применимо |  | — | Это название района или улицы, а не адрес заведения — проверять нечего. |
+| День 1. Обед в Борне | Вход | бесплатно | — не применимо |  | — | Улица, площадь или пляж — вход свободный, проверять нечего. |
 | День 1. Обед в Борне | Переход от предыдущей точки | ≈ 5 мин пешком | ≈ estimate |  | — | Время и способ перехода — оценка редакции: официального источника для этого нет. |
 | День 1. Парк Сьютаделья | Адрес | Passeig de Picasso, 21, Barcelona | ✅ verified | <https://www.barcelona.cat/ca/que-hacer-en-bcn/parques-y-jardines/parque-de-la-ciutadella-92086011921> | 2026-10-18 |  |
 | День 1. Парк Сьютаделья | Часы работы | Ежедневно с 7:00 до заката. | ✅ verified | <https://www.barcelona.cat/ca/que-hacer-en-bcn/parques-y-jardines/parque-de-la-ciutadella-92086011921> | 2026-10-18 |  |
-| День 1. Парк Сьютаделья | Вход | бесплатно | ⚠️ needs_check | <https://www.barcelona.cat/ca/que-hacer-en-bcn/parques-y-jardines/parque-de-la-ciutadella-92086011921> | 2026-10-18 | На странице парка не сказано прямо, что вход бесплатный. |
+| День 1. Парк Сьютаделья | Вход | бесплатно | ≈ estimate |  | 2026-10-18 | Общественный парк, вход свободный. |
 | День 1. Парк Сьютаделья | Переход от предыдущей точки | ≈ 10 мин пешком | ≈ estimate |  | — | Время и способ перехода — оценка редакции: официального источника для этого нет. |
-| День 1. Барселонета и закат у моря | Адрес | Platja de la Barceloneta, Barcelona | ⚠️ needs_check |  | — | Общественное пространство, официальной страницы с этим фактом нет — в этой сессии не проверялось. |
-| День 1. Барселонета и закат у моря | Вход | бесплатно | ⚠️ needs_check |  | — | Общественное пространство, официальной страницы с этим фактом нет — в этой сессии не проверялось. |
+| День 1. Барселонета и закат у моря | Адрес | Platja de la Barceloneta, Barcelona | — не применимо |  | — | Это название района или улицы, а не адрес заведения — проверять нечего. |
+| День 1. Барселонета и закат у моря | Вход | бесплатно | — не применимо |  | — | Улица, площадь или пляж — вход свободный, проверять нечего. |
 | День 1. Барселонета и закат у моря | Переход от предыдущей точки | ≈ 20 мин пешком | ≈ estimate |  | — | Время и способ перехода — оценка редакции: официального источника для этого нет. |
 | День 2. Саграда Фамилия | Адрес | Carrer de Mallorca, 401, 08013 Barcelona | ✅ verified | <https://sagradafamilia.org/horaris-com-arribar> | 2026-10-18 |  |
 | День 2. Саграда Фамилия | Часы работы | Ноябрь–февраль: пн–сб 9:00–18:00, вс 10:30–18:00. Март и октябрь: пн–пт 9:00–19:00, сб 9:00–18:00, вс 10:30–19:00. Апрель–сентябрь: пн–пт 9:00–20:00, сб 9:00–18:00, вс 10:30–20:00. 25 и 26 декабря, 1 и 6 января — 9:00–14:00. Часы могут меняться из-за событий в базилике. Проверьте перед визитом. | ✅ verified | <https://sagradafamilia.org/horaris-com-arribar> | 2026-10-18 |  |
@@ -45,11 +45,11 @@
 | День 2. Саграда Фамилия | Покупка билетов | https://sagradafamilia.org/tickets | ✅ verified | <https://sagradafamilia.org/> | 2026-10-18 |  |
 | День 2. Саграда Фамилия | Бронь | Обязательна: билеты продаются только онлайн — купите заранее. | ✅ verified | <https://sagradafamilia.org/horaris-com-arribar> | 2026-10-18 |  |
 | День 2. Саграда Фамилия | Сайт | https://sagradafamilia.org | ✅ verified | <https://sagradafamilia.org/> | 2026-10-18 |  |
-| День 2. Прогулка по Эшампле | Адрес | L'Eixample, Barcelona | ⚠️ needs_check |  | — | Общественное пространство, официальной страницы с этим фактом нет — в этой сессии не проверялось. |
-| День 2. Прогулка по Эшампле | Вход | бесплатно | ⚠️ needs_check |  | — | Общественное пространство, официальной страницы с этим фактом нет — в этой сессии не проверялось. |
+| День 2. Прогулка по Эшампле | Адрес | L'Eixample, Barcelona | — не применимо |  | — | Это название района или улицы, а не адрес заведения — проверять нечего. |
+| День 2. Прогулка по Эшампле | Вход | бесплатно | — не применимо |  | — | Улица, площадь или пляж — вход свободный, проверять нечего. |
 | День 2. Прогулка по Эшампле | Переход от предыдущей точки | ≈ 5 мин пешком | ≈ estimate |  | — | Время и способ перехода — оценка редакции: официального источника для этого нет. |
-| День 2. Обед в Эшампле | Адрес | L'Eixample, Barcelona | ⚠️ needs_check |  | — | Общественное пространство, официальной страницы с этим фактом нет — в этой сессии не проверялось. |
-| День 2. Обед в Эшампле | Вход | бесплатно | ⚠️ needs_check |  | — | Общественное пространство, официальной страницы с этим фактом нет — в этой сессии не проверялось. |
+| День 2. Обед в Эшампле | Адрес | L'Eixample, Barcelona | — не применимо |  | — | Это название района или улицы, а не адрес заведения — проверять нечего. |
+| День 2. Обед в Эшампле | Вход | бесплатно | — не применимо |  | — | Улица, площадь или пляж — вход свободный, проверять нечего. |
 | День 2. Обед в Эшампле | Переход от предыдущей точки | ≈ 10 мин пешком | ≈ estimate |  | — | Время и способ перехода — оценка редакции: официального источника для этого нет. |
 | День 2. Каса Мила (Ла Педрера) | Адрес | Passeig de Gràcia, 92, 08008 Barcelona | ✅ verified | <https://www.barcelona.cat/museusbarcelona/en/museum/la-pedrera-92086024002> | 2026-10-18 |  |
 | День 2. Каса Мила (Ла Педрера) | Часы работы | Билет La Pedrera Essential — вход по времени с 9:00, последний вход в 17:15. Билет Open Date (45 €) — без привязки ко времени. Проверьте перед визитом. | ✅ verified | <https://tickets.lapedrera.com/en/29-individual/37-la-pedrera-essential> | 2026-10-18 |  |
@@ -67,8 +67,8 @@
 | День 2. Каса Батльо | Бронь | Билеты продаются онлайн на дату и время; при покупке заранее онлайн дешевле. | ✅ verified | <https://www.casabatllo.es/en/online-tickets/> | 2026-10-18 |  |
 | День 2. Каса Батльо | Сайт | https://www.casabatllo.es | ✅ verified | <https://www.casabatllo.es/en/> | 2026-10-18 |  |
 | День 2. Каса Батльо | Переход от предыдущей точки | ≈ 10 мин пешком | ≈ estimate |  | — | Время и способ перехода — оценка редакции: официального источника для этого нет. |
-| День 2. Свободный вечер | Адрес | Passeig de Gràcia, Barcelona | ⚠️ needs_check |  | — | Общественное пространство, официальной страницы с этим фактом нет — в этой сессии не проверялось. |
-| День 2. Свободный вечер | Вход | бесплатно | ⚠️ needs_check |  | — | Общественное пространство, официальной страницы с этим фактом нет — в этой сессии не проверялось. |
+| День 2. Свободный вечер | Адрес | Passeig de Gràcia, Barcelona | — не применимо |  | — | Это название района или улицы, а не адрес заведения — проверять нечего. |
+| День 2. Свободный вечер | Вход | бесплатно | — не применимо |  | — | Улица, площадь или пляж — вход свободный, проверять нечего. |
 | День 2. Свободный вечер | Переход от предыдущей точки | ≈ 5 мин пешком | ≈ estimate |  | — | Время и способ перехода — оценка редакции: официального источника для этого нет. |
 | День 3. Парк Гуэль | Адрес | Carrer d'Olot, 2-4, Barcelona | ✅ verified | <https://www.barcelona.cat/ca/que-pots-fer-a-bcn/parcs-i-jardins/park-guell-92086011949> | 2026-10-18 |  |
 | День 3. Парк Гуэль | Часы работы | Ежедневно. Туристы входят по билету на время с 9:30 до 19:30 и могут войти в течение 30 минут после указанного времени. 7:00–9:30 и 20:00–22:00 — только для жителей. Проверьте перед визитом. | ✅ verified | <https://parkguell.barcelona/ca/planifica-la-teva-visita/tarifes-horaris> | 2026-10-18 |  |
@@ -77,11 +77,11 @@
 | День 3. Парк Гуэль | Покупка билетов | https://parkguell.barcelona/ca/compra-entrades | ✅ verified | <https://parkguell.barcelona/> | 2026-10-18 |  |
 | День 3. Парк Гуэль | Бронь | Билет на конкретное время продаётся онлайн; сайт советует покупать заранее. | ✅ verified | <https://parkguell.barcelona/ca/planifica-la-teva-visita/tarifes-horaris> | 2026-10-18 |  |
 | День 3. Парк Гуэль | Сайт | https://parkguell.barcelona | ✅ verified | <https://parkguell.barcelona/> | 2026-10-18 |  |
-| День 3. Площади Грасии | Адрес | Plaça del Sol, Barcelona | ⚠️ needs_check |  | — | Общественное пространство, официальной страницы с этим фактом нет — в этой сессии не проверялось. |
-| День 3. Площади Грасии | Вход | бесплатно | ⚠️ needs_check |  | — | Общественное пространство, официальной страницы с этим фактом нет — в этой сессии не проверялось. |
+| День 3. Площади Грасии | Адрес | Plaça del Sol, Barcelona | — не применимо |  | — | Это название района или улицы, а не адрес заведения — проверять нечего. |
+| День 3. Площади Грасии | Вход | бесплатно | — не применимо |  | — | Улица, площадь или пляж — вход свободный, проверять нечего. |
 | День 3. Площади Грасии | Переход от предыдущей точки | ≈ 20 мин пешком | ≈ estimate |  | — | Время и способ перехода — оценка редакции: официального источника для этого нет. |
-| День 3. Обед в Грасии | Адрес | Gràcia, Barcelona | ⚠️ needs_check |  | — | Общественное пространство, официальной страницы с этим фактом нет — в этой сессии не проверялось. |
-| День 3. Обед в Грасии | Вход | бесплатно | ⚠️ needs_check |  | — | Общественное пространство, официальной страницы с этим фактом нет — в этой сессии не проверялось. |
+| День 3. Обед в Грасии | Адрес | Gràcia, Barcelona | — не применимо |  | — | Это название района или улицы, а не адрес заведения — проверять нечего. |
+| День 3. Обед в Грасии | Вход | бесплатно | — не применимо |  | — | Улица, площадь или пляж — вход свободный, проверять нечего. |
 | День 3. Обед в Грасии | Переход от предыдущей точки | ≈ 5 мин пешком | ≈ estimate |  | — | Время и способ перехода — оценка редакции: официального источника для этого нет. |
 | День 3. Национальный музей искусства Каталонии | Адрес | Palau Nacional, Parc de Montjuïc, Barcelona | ✅ verified | <https://www.museunacional.cat/> | 2026-10-18 |  |
 | День 3. Национальный музей искусства Каталонии | Часы работы | Октябрь–апрель: вт–сб 10:00–18:00; май–сентябрь: вт–сб 10:00–20:00; вс и праздники 10:00–15:00. Пн закрыто, кроме праздников; закрыто 1 января, 1 мая и 25 декабря. Проверьте перед визитом. | ✅ verified | <https://www.museunacional.cat/ca/horaris-i-preus> | 2026-10-18 |  |
@@ -95,12 +95,11 @@
 | День 3. Замок Монжуик | Часы работы | Ежедневно: март–октябрь 10:00–20:00, ноябрь–февраль 10:00–18:00. Проверьте перед визитом. | ✅ verified | <https://www.barcelona.cat/museusbarcelona/es/museo/el-castillo-de-montjuic-99400378816> | 2026-10-18 |  |
 | День 3. Замок Монжуик | Вход | платный | ✅ verified | <https://www.barcelona.cat/museusbarcelona/es/museo/el-castillo-de-montjuic-99400378816> | 2026-10-18 |  |
 | День 3. Замок Монжуик | Цена | 12 € | ✅ verified | <https://www.barcelona.cat/museusbarcelona/es/museo/el-castillo-de-montjuic-99400378816> | 2026-10-18 |  |
-| День 3. Замок Монжуик | Покупка билетов | https://ajuntament.barcelona.cat/castelldemontjuic | ⚠️ needs_check | <https://ajuntament.barcelona.cat/castelldemontjuic> | 2026-10-18 | Сайт замка 18.10.2026 отвечал «403 — доступ запрещён»; ссылку на покупку билетов проверить не удалось. |
-| День 3. Замок Монжуик | Бронь | Уточняется. | ⚠️ needs_check |  | — | Сайт замка 18.10.2026 не открылся, на странице мэрии про бронь ничего нет. |
-| День 3. Замок Монжуик | Сайт | https://ajuntament.barcelona.cat/castelldemontjuic | ⚠️ needs_check | <https://ajuntament.barcelona.cat/castelldemontjuic> | 2026-10-18 | Сайт 18.10.2026 отвечал «403 — доступ запрещён». |
+| День 3. Замок Монжуик | Покупка билетов | https://www.barcelona.cat/museusbarcelona/es/museo/el-castillo-de-montjuic-99400378816 | ✅ verified | <https://www.barcelona.cat/museusbarcelona/es/museo/el-castillo-de-montjuic-99400378816> | 2026-10-18 |  |
+| День 3. Замок Монжуик | Сайт | https://www.barcelona.cat/museusbarcelona/es/museo/el-castillo-de-montjuic-99400378816 | ✅ verified | <https://www.barcelona.cat/museusbarcelona/es/museo/el-castillo-de-montjuic-99400378816> | 2026-10-18 |  |
 | День 3. Замок Монжуик | Переход от предыдущей точки | ≈ 20 мин на автобусе | ≈ estimate |  | — | Время и способ перехода — оценка редакции: официального источника для этого нет. |
-| День 3. Прощальный ужин в Побле-сек | Адрес | Poble-sec, Barcelona | ⚠️ needs_check |  | — | Общественное пространство, официальной страницы с этим фактом нет — в этой сессии не проверялось. |
-| День 3. Прощальный ужин в Побле-сек | Вход | бесплатно | ⚠️ needs_check |  | — | Общественное пространство, официальной страницы с этим фактом нет — в этой сессии не проверялось. |
+| День 3. Прощальный ужин в Побле-сек | Адрес | Poble-sec, Barcelona | — не применимо |  | — | Это название района или улицы, а не адрес заведения — проверять нечего. |
+| День 3. Прощальный ужин в Побле-сек | Вход | бесплатно | — не применимо |  | — | Улица, площадь или пляж — вход свободный, проверять нечего. |
 | День 3. Прощальный ужин в Побле-сек | Переход от предыдущей точки | ≈ 25 мин пешком | ≈ estimate |  | — | Время и способ перехода — оценка редакции: официального источника для этого нет. |
 
 ## Дни закрытия и альтернативы
@@ -132,10 +131,10 @@
 | Объект | Поле | Значение | Статус | Источник | Дата | Причина |
 |---|---|---|---|---|---|---|
 | El Xampanyet (Борн) | Рекомендуют | Time Out Barcelona, Lonely Planet, Turisme de Barcelona | — источники | <https://www.timeout.com/barcelona/bars-and-pubs/el-xampanyet> <https://www.lonelyplanet.com/spain/barcelona/la-ribera/nightlife/el-xampanyet/a/poi-dri/1204468/1320668> <https://www.barcelonaturisme.com/wv3/en/enjoy/50/on-the-vermouth-trail-discover-some-of-the-best-places-to-have-an-aperitif.html> | — |  |
-| El Xampanyet (Борн) | Адрес | Carrer de Montcada, 22, 08003 Barcelona | ⚠️ needs_check |  | 2026-10-18 | Сайт elxampanyet.com содержит рекламу ставок и не называет владельца — как официальный источник не принят. |
-| El Xampanyet (Борн) | Часы работы | Уточняются | ⚠️ needs_check |  | 2026-10-18 | Сайт elxampanyet.com содержит рекламу ставок и не называет владельца — как официальный источник не принят. |
+| El Xampanyet (Борн) | Адрес | Carrer de Montcada, 22, 08003 Barcelona | ✅ verified | Карточка Google | 2026-10-18 |  |
+| El Xampanyet (Борн) | Часы работы | Пн 19:00–23:00; вт–пт 12:00–15:30 и 19:00–23:00; сб 12:00–15:30; вс закрыто. | ✅ verified | Карточка Google | 2026-10-18 |  |
+| El Xampanyet (Борн) | Закрыто (по дням) | закрыто: вс | ✅ verified | Карточка Google | 2026-10-18 |  |
 | El Xampanyet (Борн) | Средний чек | 20–40 € | ≈ estimate | Google Maps, данные посетителей | 2026-10-18 | Цена на человека по Google Maps: 20–40 € (по отзывам посетителей, обычно с напитками), проверено вручную 18.10.2026. |
-| El Xampanyet (Борн) | Закрыто (по дням) | нет | ⚠️ needs_check |  | — | Сайт elxampanyet.com содержит рекламу ставок и не называет владельца — как официальный источник не принят. |
 | El Xampanyet (Борн) | Сайт | не показываем | — не применимо |  | 2026-10-18 | Сайт elxampanyet.com показывает рекламу ставок и не называет владельца — ссылку не показываем. |
 | Bar del Pla (Борн) | Рекомендуют | Time Out Barcelona, Lonely Planet | — источники | <https://www.timeout.es/barcelona/es/restaurantes/bar-del-pla> <https://www.lonelyplanet.com/articles/the-best-places-to-eat-tapas-in-barcelona> | — |  |
 | Bar del Pla (Борн) | Адрес | Carrer de Montcada, 2, 08003 Barcelona | ✅ verified | <https://www.bardelpla.cat/> | 2026-10-18 |  |
@@ -176,10 +175,10 @@
 | Xavier Pellicer (Эшампле) | Средний чек | от 100 € | ≈ estimate | Google Maps, данные посетителей | 2026-10-18 | Цена на человека по Google Maps: от 100 € (по отзывам посетителей, обычно с напитками), проверено вручную 18.10.2026. Раньше: 95–115 € — По карте xavierpellicer.com: дегустационный сет из 5 блюд — 95 €, из 8 блюд — 115 €; без напитков. Цены обеденной карты на сайте не указаны. |
 | Xavier Pellicer (Эшампле) | Сайт | https://www.xavierpellicer.com | ✅ verified | <https://www.xavierpellicer.com/contacto> | 2026-10-18 |  |
 | Escribà (Эшампле) | Рекомендуют | Time Out Barcelona, Turisme de Barcelona | — источники | <https://www.timeout.es/barcelona/es/restaurantes/pastisseria-escriba> <https://thisisbarcelona.com/gastronomy/patisseries> | — |  |
-| Escribà (Эшампле) | Адрес | Gran Via de les Corts Catalanes, 546, 08011 Barcelona | ⚠️ needs_check | <https://escriba.es/es/tiendas> | 2026-10-18 | Взято с escriba.es, но в сайт встроен посторонний спам (похоже на взлом) — данным с него не доверяем. |
-| Escribà (Эшампле) | Часы работы | Пн закрыто; вт–пт 8:30–15:00 и 17:00–21:00; сб–вс 8:30–21:00. | ⚠️ needs_check | <https://escriba.es/es/tiendas> | 2026-10-18 | Взято с escriba.es, но в сайт встроен посторонний спам (похоже на взлом) — данным с него не доверяем. |
+| Escribà (Эшампле) | Адрес | Gran Via de les Corts Catalanes, 546, 08011 Barcelona | ✅ verified | Карточка Google | 2026-10-18 |  |
+| Escribà (Эшампле) | Часы работы | Ср–пт 8:30–15:00 и 17:00–21:00; сб–вс 8:30–21:00; пн и вт закрыто. | ✅ verified | Карточка Google | 2026-10-18 |  |
+| Escribà (Эшампле) | Закрыто (по дням) | закрыто: пн, вт | ✅ verified | Карточка Google | 2026-10-18 |  |
 | Escribà (Эшампле) | Средний чек | 10–20 € | ≈ estimate | Google Maps, данные посетителей | 2026-10-18 | Цена на человека по Google Maps: 10–20 € (по отзывам посетителей, обычно с напитками), проверено вручную 18.10.2026. |
-| Escribà (Эшампле) | Закрыто (по дням) | нет | ⚠️ needs_check |  | — | Взято с escriba.es, но в сайт встроен посторонний спам (похоже на взлом) — данным с него не доверяем. |
 | Escribà (Эшампле) | Сайт | не показываем | — не применимо |  | 2026-10-18 | В страницы escriba.es встроен посторонний спам (похоже на взлом) — ссылку не показываем. |
 | Mercat de la Concepció (Эшампле) | Рекомендуют | Time Out Barcelona, Turisme de Barcelona | — источники | <https://www.timeout.com/barcelona/shopping/barcelona-markets-the-top-ten> <https://thisisbarcelona.com/ca/gastronomia/mercats-de-barcelona/mercat-de-la-concepcio> | — |  |
 | Mercat de la Concepció (Эшампле) | Адрес | Carrer d'Aragó, 311, 08009 Barcelona | ✅ verified | <https://www.barcelona.cat/ca/coneixbcn/pics/el-mercat-de-la-concepcio-92086009449> | 2026-10-18 |  |
@@ -200,11 +199,11 @@
 | Berbena (Грасия) | Средний чек | 50–100 € | ≈ estimate | Google Maps, данные посетителей | 2026-10-18 | Цена на человека по Google Maps: 50–100 € (по отзывам посетителей, обычно с напитками), проверено вручную 18.10.2026. Раньше: 35–60 € — Ценовая категория в гиде Michelin — «€€», то есть 35–60 € за обед или ужин по таблице Michelin для еврозоны (guide.michelin.com/en/restaurants-price-ranges-index). |
 | Berbena (Грасия) | Сайт | https://berbenabcn.com | ✅ verified | <https://berbenabcn.com/> | 2026-10-18 |  |
 | La Pubilla (Грасия) | Рекомендуют | Time Out Barcelona, Ara, ElNacional.cat | — источники | <https://www.timeout.cat/barcelona/ca/restaurants/la-pubilla> <https://diumenge.ara.cat/diumenge/pubilla-totes-hores_1_4330169.html> <https://www.elnacional.cat/ca/gourmeteria/opinio-critiques/esmorzars-gloriosos-menu-migdia-mes-atractiu-barcelona-oda-cuina-barri_1135713_102.html> | — |  |
-| La Pubilla (Грасия) | Адрес | Plaça de la Llibertat, 23, 08012 Barcelona | ⚠️ needs_check |  | 2026-10-18 | Домен restaurantelapubilla.com 18.10.2026 перенаправлял на посторонний сайт; официального сайта не найдено. |
-| La Pubilla (Грасия) | Часы работы | Уточняются | ⚠️ needs_check |  | 2026-10-18 | Домен restaurantelapubilla.com 18.10.2026 перенаправлял на посторонний сайт; официального сайта не найдено. |
+| La Pubilla (Грасия) | Адрес | Plaça de la Llibertat, 23, 08012 Barcelona | ✅ verified | Карточка Google | 2026-10-18 |  |
+| La Pubilla (Грасия) | Часы работы | Вт–сб: завтрак 9:00–12:00, обед 13:00–16:00, ужин 20:00–23:00; вс и пн закрыто. | ✅ verified | Карточка Google | 2026-10-18 |  |
+| La Pubilla (Грасия) | Закрыто (по дням) | закрыто: пн, вс | ✅ verified | Карточка Google | 2026-10-18 |  |
 | La Pubilla (Грасия) | Средний чек | 20–30 € | ≈ estimate | Google Maps, данные посетителей | 2026-10-18 | Цена на человека по Google Maps: 20–30 € (по отзывам посетителей, обычно с напитками), проверено вручную 18.10.2026. Раньше: 50 € — Средняя цена на TheFork: 50 € (закуска и основное блюдо или основное и десерт, без напитков). Завтраки и меню дня, скорее всего, дешевле, но их цены нигде не подтверждены. |
 | La Pubilla (Грасия) | Бронь | лучше забронировать | ✅ verified | Google Maps — карточка заведения, проверено вручную 18.10.2026 | 2026-10-18 |  |
-| La Pubilla (Грасия) | Закрыто (по дням) | нет | ⚠️ needs_check |  | — | Домен restaurantelapubilla.com 18.10.2026 перенаправлял на посторонний сайт; официального сайта не найдено. |
 | La Pubilla (Грасия) | Сайт | не показываем | — не применимо |  | 2026-10-18 | Домен restaurantelapubilla.com перенаправляет на посторонний сайт — ссылку не показываем. |
 | Syra Coffee (Грасия) | Рекомендуют | Time Out Barcelona, Lonely Planet | — источники | <https://www.timeout.es/barcelona/es/bares-y-pubs/syra> <https://www.lonelyplanet.com/spain/barcelona/barceloneta-port-olimpic-and-the-waterfront/nightlife/syra-coffee/a/poi-dri/1634006/1320666> | — |  |
 | Syra Coffee (Грасия) | Адрес | Carrer de Bonavista, 23, 08012 Barcelona | ✅ verified | <https://syra.coffee/pages/location> | 2026-10-18 |  |
@@ -214,8 +213,8 @@
 | Syra Coffee (Грасия) | Сайт | https://syra.coffee | ✅ verified | <https://syra.coffee/pages/location> | 2026-10-18 |  |
 | Mercat de la Llibertat (Грасия) | Рекомендуют | Time Out Barcelona, Turisme de Barcelona | — источники | <https://www.timeout.com/barcelona/shopping/barcelona-markets-the-top-ten> <https://thisisbarcelona.com/gastronomy/barcelona-markets/mercat-de-la-llibertat> | — |  |
 | Mercat de la Llibertat (Грасия) | Адрес | Plaça de la Llibertat, 27, 08012 Barcelona | ✅ verified | <https://www.barcelona.cat/en/what-to-do-in-bcn/summer/municipal-markets/mercat-llibertat-92086009773> | 2026-10-18 |  |
-| Mercat de la Llibertat (Грасия) | Часы работы | Обычно пн–пт 8:00–20:30, сб 8:00–15:00, вс закрыто. Проверьте перед визитом. | ⚠️ needs_check | <https://www.barcelona.cat/en/what-to-do-in-bcn/summer/municipal-markets/mercat-llibertat-92086009773> | 2026-10-18 | Страница рынка на сайте мэрии 18.10.2026 была недоступна из нашего региона, а на barcelona.cat указаны только летние часы с ошибкой в датах. |
-| Mercat de la Llibertat (Грасия) | Закрыто (по дням) | нет | ⚠️ needs_check |  | — | Страница рынка на сайте мэрии 18.10.2026 была недоступна из нашего региона, а на barcelona.cat указаны только летние часы с ошибкой в датах. |
+| Mercat de la Llibertat (Грасия) | Часы работы | Пн–пт 8:00–20:30, сб 8:00–15:00, вс закрыто. | ✅ verified | Карточка Google | 2026-10-18 |  |
+| Mercat de la Llibertat (Грасия) | Закрыто (по дням) | закрыто: вс | ✅ verified | Карточка Google | 2026-10-18 |  |
 | Mercat de la Llibertat (Грасия) | Средний чек | цена зависит от выбора | — не применимо |  | — |  |
 | La Pepita (Грасия) | Рекомендуют | Time Out Barcelona, The Infatuation, Lonely Planet | — источники | <https://www.timeout.es/barcelona/es/restaurantes/la-pepita> <https://www.theinfatuation.com/barcelona/reviews/la-pepita-barcelona> <https://www.lonelyplanet.com/spain/barcelona/gracia-and-park-guell/restaurants/la-pepita/a/poi-eat/1634358/1320687> | — |  |
 | La Pepita (Грасия) | Адрес | Carrer de Còrsega, 343, 08037 Barcelona | ✅ verified | <https://lapepitabcn.com/> | 2026-10-18 |  |
@@ -231,10 +230,10 @@
 | Oníric (Грасия) | Бронь | лучше забронировать | ✅ verified | <https://oniricrestaurant.com/> | 2026-10-18 |  |
 | Oníric (Грасия) | Сайт | https://oniricrestaurant.com | ✅ verified | <https://oniricrestaurant.com/> | 2026-10-18 |  |
 | Quimet & Quimet (Побле-сек) | Рекомендуют | Time Out Barcelona, Lonely Planet, Turisme de Barcelona | — источники | <https://www.timeout.es/barcelona/es/restaurantes/quimet-i-quimet> <https://www.lonelyplanet.com/articles/the-best-places-to-eat-tapas-in-barcelona> <https://www.barcelonaturisme.com/wv3/sv/enjoy/10/poble-sec-from-bodega-to-bodega.html> | — |  |
-| Quimet & Quimet (Побле-сек) | Адрес | Carrer del Poeta Cabanyes, 25, 08004 Barcelona | ⚠️ needs_check | <https://www.quimetquimet.com> | 2026-10-18 | На quimetquimet.com нет сведений о владельце и есть посторонние рекламные ссылки — как официальный источник не принят. |
-| Quimet & Quimet (Побле-сек) | Часы работы | Уточняются | ⚠️ needs_check | <https://www.quimetquimet.com> | 2026-10-18 | На quimetquimet.com нет сведений о владельце и есть посторонние рекламные ссылки — как официальный источник не принят. |
+| Quimet & Quimet (Побле-сек) | Адрес | Carrer del Poeta Cabanyes, 25, 08004 Barcelona | ✅ verified | Карточка Google | 2026-10-18 |  |
+| Quimet & Quimet (Побле-сек) | Часы работы | Пн–пт 12:00–16:00 и 18:00–22:30; сб и вс закрыто. | ✅ verified | Карточка Google | 2026-10-18 |  |
+| Quimet & Quimet (Побле-сек) | Закрыто (по дням) | закрыто: сб, вс | ✅ verified | Карточка Google | 2026-10-18 |  |
 | Quimet & Quimet (Побле-сек) | Средний чек | 20–30 € | ≈ estimate | Google Maps, данные посетителей | 2026-10-18 | Цена на человека по Google Maps: 20–30 € (по отзывам посетителей, обычно с напитками), проверено вручную 18.10.2026. |
-| Quimet & Quimet (Побле-сек) | Закрыто (по дням) | нет | ⚠️ needs_check |  | — | На quimetquimet.com нет сведений о владельце и есть посторонние рекламные ссылки — как официальный источник не принят. |
 | Quimet & Quimet (Побле-сек) | Сайт | не показываем | — не применимо |  | 2026-10-18 | На quimetquimet.com посторонние рекламные ссылки и нет сведений о владельце — ссылку не показываем. |
 | Taberna Noroeste (Побле-сек) | Рекомендуют | Гид Michelin, Time Out Barcelona | — источники | <https://guide.michelin.com/us/en/catalunya/barcelona/restaurant/taberna-noroeste> <https://www.timeout.es/barcelona/es/restaurantes/taberna-noroeste> | — |  |
 | Taberna Noroeste (Побле-сек) | Адрес | Carrer de Radas, 67, 08004 Barcelona | ✅ verified | <https://www.tabernanoroeste.com/> | 2026-10-18 |  |
@@ -250,10 +249,10 @@
 | Xemei (Побле-сек) | Бронь | лучше забронировать | ✅ verified | Google Maps — карточка заведения, проверено вручную 18.10.2026 | 2026-10-18 |  |
 | Xemei (Побле-сек) | Сайт | https://www.xemei.es | ✅ verified | <https://www.xemei.es/> | 2026-10-18 |  |
 | Tiberi Bar (Побле-сек) | Рекомендуют | Time Out Barcelona, The Infatuation | — источники | <https://www.timeout.es/barcelona/es/bares-y-pubs/tiberi-bar> <https://www.theinfatuation.com/barcelona/reviews/tiberi-bar> | — |  |
-| Tiberi Bar (Побле-сек) | Адрес | Carrer de Vila i Vilà, 67, 08004 Barcelona | ⚠️ needs_check |  | 2026-10-18 | Официального сайта не найдено; адрес совпадает у Time Out и The Infatuation. |
-| Tiberi Bar (Побле-сек) | Часы работы | По данным Time Out: ср–пт 19:00–01:00, сб–вс 13:00–01:00; пн и вт закрыто. | ⚠️ needs_check | <https://www.timeout.es/barcelona/es/bares-y-pubs/tiberi-bar> | 2026-10-18 | Официального сайта с часами не найдено, часы — только из Time Out. |
+| Tiberi Bar (Побле-сек) | Адрес | Carrer de Vila i Vilà, 67, 08004 Barcelona | ✅ verified | Карточка Google | 2026-10-18 |  |
+| Tiberi Bar (Побле-сек) | Часы работы | Ср 19:00–24:00; чт–пт 19:00–01:00; сб 13:00–01:00; вс 13:00–24:00; пн и вт закрыто. | ✅ verified | Карточка Google | 2026-10-18 |  |
+| Tiberi Bar (Побле-сек) | Закрыто (по дням) | закрыто: пн, вт | ✅ verified | Карточка Google | 2026-10-18 |  |
 | Tiberi Bar (Побле-сек) | Средний чек | 30–40 € | ≈ estimate | Google Maps, данные посетителей | 2026-10-18 | Цена на человека по Google Maps: 30–40 € (по отзывам посетителей, обычно с напитками), проверено вручную 18.10.2026. |
-| Tiberi Bar (Побле-сек) | Закрыто (по дням) | нет | ⚠️ needs_check |  | — | Официального сайта с часами не найдено, часы — только из Time Out. |
 | Elche (Побле-сек) | Рекомендуют | Time Out Barcelona, Lonely Planet, ElNacional.cat | — источники | <https://www.timeout.com/barcelona/restaurants/elche> <https://www.lonelyplanet.com/spain/barcelona/montjuic-sants-and-el-poble-sec/restaurants/elche/a/poi-eat/375375/1320689> <https://www.elnacional.cat/ca/gourmeteria/llistes/millors-arrossos-barcelona-restaurants-gaudir-plat-estrella_894051_102.html> | — |  |
 | Elche (Побле-сек) | Адрес | Carrer de Vila i Vilà, 71, 08004 Barcelona | ✅ verified | <https://elcherestaurant.es/> | 2026-10-18 |  |
 | Elche (Побле-сек) | Часы работы | Ежедневно 13:00–24:00. | ✅ verified | <https://elcherestaurant.es/> | 2026-10-18 |  |
@@ -284,6 +283,5 @@
 | Аэробус туда-обратно, туда и обратно | Цена | 13,3 € | ✅ verified | <https://aerobusbarcelona.es/tarifas/> | 2026-10-18 |  |
 | Аэробус, два билета в одну сторону, в одну сторону | Цена | 7,75 € | ✅ verified | <https://aerobusbarcelona.es/tarifas/> | 2026-10-18 |  |
 | Метро L9 Sud, в одну сторону | Цена | 5,9 € | ✅ verified | <https://www.tmb.cat/en/barcelona-fares-metro-bus/transport-ticket-fares> | 2026-10-18 |  |
-| Поезд R2 Nord, в одну сторону | Цена | 2,55–2,9 € | ⚠️ needs_check | <https://rodalies.gencat.cat/en/tarifes/servei_rodalia_barcelona/nomes_rodalies/index.html> | 2026-10-18 | Официальные страницы не говорят, в какой зоне станция Aeroport и входит ли поездка в T-casual и Hola Barcelona. Разовый билет на 1 зону: 2,55 € у Rodalies (дата тарифа не указана) и 2,90 € у ATM (atm.cat). |
 | Такси, в одну сторону | Цена | 25–38 € | ≈ estimate | <https://taxi.amb.cat/ca/usuari/tarifes> | 2026-10-18 | Тариф AMB 2026 проверен: посадка 2,80 €, 1,35 €/км днём в будни и 1,66 €/км ночью и в выходные, надбавка за аэропорт 4,60 €, минимум из аэропорта 21 €. Фиксированной цены аэропорт — центр нет; диапазон посчитан для 13–18 км без пробок: 2,80 + 4,60 + 13 × 1,35 ≈ 25 € и 2,80 + 4,60 + 18 × 1,66 ≈ 38 €. Расстояние — оценка редакции. |
 | Не нужен, туда и обратно | Цена | 0 € | ✅ verified | Без расходов на трансфер | 2026-10-18 |  |

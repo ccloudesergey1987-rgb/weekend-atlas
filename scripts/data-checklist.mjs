@@ -140,17 +140,19 @@ for (const [group, options] of budgetGroups) {
 }
 
 const verified = rows.filter((r) => r.status === 'verified').length
-const STATUS = { verified: '✅ verified', needs_check: '⚠️ needs_check', estimate: '≈ estimate', advice: '— совет редакции', sources: '— источники', na: '— не применимо' }
+const STATUS = { verified: '✅ verified', needs_check: '⚠️ needs_check', estimate: '≈ estimate', advice: '— совет редакции', sources: '— источники', na: '— не применимо', not_applicable: '— не применимо' }
 const estimates = rows.filter((r) => r.status === 'estimate').length
-const facts = rows.filter((r) => !['advice', 'sources', 'na'].includes(r.status))
+const notApplicable = rows.filter((r) => r.status === 'not_applicable' || r.status === 'na').length
+const facts = rows.filter((r) => !['advice', 'sources', 'na', 'not_applicable'].includes(r.status))
+const needsCheck = facts.filter((r) => r.status === 'needs_check').length
 
 let md = `# Чек-лист данных: ${city.name}
 
 Файл собирается автоматически из \`src/data/${cityId}/*.json\` командой \`npm run checklist\`. Не правьте его руками — правьте JSON и пересоберите.
 
-Правило: **verified** — значение прямо найдено на официальной странице, источник — точный адрес этой страницы. **estimate** — оценка редакции там, где официального источника быть не может (время переходов, такси по официальному тарифу); цены, часы и адреса так не помечаются. Всё остальное — **needs_check** с причиной. Часы работы и цены меняются — перед поездкой их стоит перепроверить.
+Правило: **verified** — значение прямо найдено на официальной странице (источник — точный адрес этой страницы) или, если надёжного официального сайта нет, в карточке заведения в Google. **estimate** — оценка редакции там, где официального источника быть не может (время переходов, такси по официальному тарифу); цены, часы и адреса так не помечаются. Всё остальное — **needs_check** с причиной. Часы работы и цены меняются — перед поездкой их стоит перепроверить.
 
-**Итого:** ${facts.length} значений: проверено ${verified}, оценка редакции ${estimates}, требует проверки ${facts.length - verified - estimates}.
+**Итого:** ${facts.length} проверяемых значений: проверено ${verified} (из них по карточке Google — ${rows.filter((r) => r.source === 'Карточка Google').length}), оценка редакции ${estimates}, требует проверки ${needsCheck}. Ещё ${notApplicable} — «не применимо» (название района вместо адреса, свободный вход, цена рынка, скрытая ссылка на ненадёжный сайт).
 `
 for (const group of [...new Set(rows.map((r) => r.group))]) {
   const list = rows.filter((r) => r.group === group)
@@ -163,4 +165,4 @@ for (const group of [...new Set(rows.map((r) => r.group))]) {
 const out = join(root, 'docs/data-checklist.md')
 mkdirSync(dirname(out), { recursive: true })
 writeFileSync(out, md)
-console.log(`docs/data-checklist.md: ${facts.length} values, ${verified} verified, ${estimates} estimate`)
+console.log(`docs/data-checklist.md: ${facts.length} values, ${verified} verified, ${estimates} estimate, ${needsCheck} needs_check, ${notApplicable} not applicable`)

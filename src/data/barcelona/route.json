@@ -125,19 +125,19 @@
           "durationMin": 75,
           "address": {
             "value": "Plaça de Sant Felip Neri, Barcelona",
-            "status": "needs_check",
+            "status": "not_applicable",
             "source": "",
             "checkedAt": null,
-            "note": "Общественное пространство, официальной страницы с этим фактом нет — в этой сессии не проверялось."
+            "note": "Это название района или улицы, а не адрес заведения — проверять нечего."
           },
           "mapUrl": "https://www.google.com/maps/search/?api=1&query=Pla%C3%A7a+de+Sant+Felip+Neri+Barcelona",
           "openingHours": null,
           "admission": {
             "value": "free",
-            "status": "needs_check",
+            "status": "not_applicable",
             "source": "",
             "checkedAt": null,
-            "note": "Общественное пространство, официальной страницы с этим фактом нет — в этой сессии не проверялось."
+            "note": "Улица, площадь или пляж — вход свободный, проверять нечего."
           },
           "price": null,
           "tickets": null,
@@ -262,19 +262,19 @@
           "durationMin": 90,
           "address": {
             "value": "El Born, Barcelona",
-            "status": "needs_check",
+            "status": "not_applicable",
             "source": "",
             "checkedAt": null,
-            "note": "Общественное пространство, официальной страницы с этим фактом нет — в этой сессии не проверялось."
+            "note": "Это название района или улицы, а не адрес заведения — проверять нечего."
           },
           "mapUrl": "https://www.google.com/maps/search/?api=1&query=El+Born+Barcelona",
           "openingHours": null,
           "admission": {
             "value": "free",
-            "status": "needs_check",
+            "status": "not_applicable",
             "source": "",
             "checkedAt": null,
-            "note": "Общественное пространство, официальной страницы с этим фактом нет — в этой сессии не проверялось."
+            "note": "Улица, площадь или пляж — вход свободный, проверять нечего."
           },
           "price": null,
           "tickets": null,
@@ -312,10 +312,10 @@
           },
           "admission": {
             "value": "free",
-            "status": "needs_check",
-            "source": "https://www.barcelona.cat/ca/que-hacer-en-bcn/parques-y-jardines/parque-de-la-ciutadella-92086011921",
+            "status": "estimate",
+            "source": "",
             "checkedAt": "2026-10-18",
-            "note": "На странице парка не сказано прямо, что вход бесплатный."
+            "note": "Общественный парк, вход свободный."
           },
           "price": null,
           "tickets": null,
@@ -340,19 +340,19 @@
           "durationMin": 150,
           "address": {
             "value": "Platja de la Barceloneta, Barcelona",
-            "status": "needs_check",
+            "status": "not_applicable",
             "source": "",
             "checkedAt": null,
-            "note": "Общественное пространство, официальной страницы с этим фактом нет — в этой сессии не проверялось."
+            "note": "Это название района или улицы, а не адрес заведения — проверять нечего."
           },
           "mapUrl": "https://www.google.com/maps/search/?api=1&query=Platja+de+la+Barceloneta",
           "openingHours": null,
           "admission": {
             "value": "free",
-            "status": "needs_check",
+            "status": "not_applicable",
             "source": "",
             "checkedAt": null,
-            "note": "Общественное пространство, официальной страницы с этим фактом нет — в этой сессии не проверялось."
+            "note": "Улица, площадь или пляж — вход свободный, проверять нечего."
           },
           "price": null,
           "tickets": null,
@@ -487,19 +487,19 @@
           "durationMin": 60,
           "address": {
             "value": "L'Eixample, Barcelona",
-            "status": "needs_check",
+            "status": "not_applicable",
             "source": "",
             "checkedAt": null,
-            "note": "Общественное пространство, официальной страницы с этим фактом нет — в этой сессии не проверялось."
+            "note": "Это название района или улицы, а не адрес заведения — проверять нечего."
           },
           "mapUrl": "https://www.google.com/maps/search/?api=1&query=Eixample+Barcelona",
           "openingHours": null,
           "admission": {
             "value": "free",
-            "status": "needs_check",
+            "status": "not_applicable",
             "source": "",
             "checkedAt": null,
-            "note": "Общественное пространство, официальной страницы с этим фактом нет — в этой сессии не проверялось."
+            "note": "Улица, площадь или пляж — вход свободный, проверять нечего."
           },
           "price": null,
           "tickets": null,
@@ -524,19 +524,19 @@
           "durationMin": 90,
           "address": {
             "value": "L'Eixample, Barcelona",
-            "status": "needs_check",
+            "status": "not_applicable",
             "source": "",
             "checkedAt": null,
-            "note": "Общественное пространство, официальной страницы с этим фактом нет — в этой сессии не проверялось."
+            "note": "Это название района или улицы, а не адрес заведения — проверять нечего."
           },
           "mapUrl": "https://www.google.com/maps/search/?api=1&query=Eixample+Barcelona",
           "openingHours": null,
           "admission": {
             "value": "free",
-            "status": "needs_check",
+            "status": "not_applicable",
             "source": "",
             "checkedAt": null,
-            "note": "Общественное пространство, официальной страницы с этим фактом нет — в этой сессии не проверялось."
+            "note": "Улица, площадь или пляж — вход свободный, проверять нечего."
           },
           "price": null,
           "tickets": null,
@@ -740,19 +740,19 @@
           "durationMin": 180,
           "address": {
             "value": "Passeig de Gràcia, Barcelona",
-            "status": "needs_check",
+            "status": "not_applicable",
             "source": "",
             "checkedAt": null,
-            "note": "Общественное пространство, официальной страницы с этим фактом нет — в этой сессии не проверялось."
+            "note": "Это название района или улицы, а не адрес заведения — проверять нечего."
           },
           "mapUrl": "https://www.google.com/maps/search/?api=1&query=Passeig+de+Gr%C3%A0cia+Barcelona",
           "openingHours": null,
           "admission": {
             "value": "free",
-            "status": "needs_check",
+            "status": "not_applicable",
             "source": "",
             "checkedAt": null,
-            "note": "Общественное пространство, официальной страницы с этим фактом нет — в этой сессии не проверялось."
+            "note": "Улица, площадь или пляж — вход свободный, проверять нечего."
           },
           "price": null,
           "tickets": null,
@@ -870,19 +870,19 @@
           "durationMin": 50,
           "address": {
             "value": "Plaça del Sol, Barcelona",
-            "status": "needs_check",
+            "status": "not_applicable",
             "source": "",
             "checkedAt": null,
-            "note": "Общественное пространство, официальной страницы с этим фактом нет — в этой сессии не проверялось."
+            "note": "Это название района или улицы, а не адрес заведения — проверять нечего."
           },
           "mapUrl": "https://www.google.com/maps/search/?api=1&query=Pla%C3%A7a+del+Sol+Barcelona",
           "openingHours": null,
           "admission": {
             "value": "free",
-            "status": "needs_check",
+            "status": "not_applicable",
             "source": "",
             "checkedAt": null,
-            "note": "Общественное пространство, официальной страницы с этим фактом нет — в этой сессии не проверялось."
+            "note": "Улица, площадь или пляж — вход свободный, проверять нечего."
           },
           "price": null,
           "tickets": null,
@@ -907,19 +907,19 @@
           "durationMin": 90,
           "address": {
             "value": "Gràcia, Barcelona",
-            "status": "needs_check",
+            "status": "not_applicable",
             "source": "",
             "checkedAt": null,
-            "note": "Общественное пространство, официальной страницы с этим фактом нет — в этой сессии не проверялось."
+            "note": "Это название района или улицы, а не адрес заведения — проверять нечего."
           },
           "mapUrl": "https://www.google.com/maps/search/?api=1&query=Gr%C3%A0cia+Barcelona",
           "openingHours": null,
           "admission": {
             "value": "free",
-            "status": "needs_check",
+            "status": "not_applicable",
             "source": "",
             "checkedAt": null,
-            "note": "Общественное пространство, официальной страницы с этим фактом нет — в этой сессии не проверялось."
+            "note": "Улица, площадь или пляж — вход свободный, проверять нечего."
           },
           "price": null,
           "tickets": null,
@@ -1190,25 +1190,17 @@
             "checkedAt": "2026-10-18"
           },
           "tickets": {
-            "value": "https://ajuntament.barcelona.cat/castelldemontjuic",
-            "status": "needs_check",
-            "source": "https://ajuntament.barcelona.cat/castelldemontjuic",
+            "value": "https://www.barcelona.cat/museusbarcelona/es/museo/el-castillo-de-montjuic-99400378816",
+            "status": "verified",
+            "source": "https://www.barcelona.cat/museusbarcelona/es/museo/el-castillo-de-montjuic-99400378816",
             "checkedAt": "2026-10-18",
-            "note": "Сайт замка 18.10.2026 отвечал «403 — доступ запрещён»; ссылку на покупку билетов проверить не удалось."
-          },
-          "booking": {
-            "value": "Уточняется.",
-            "status": "needs_check",
-            "source": "",
-            "checkedAt": null,
-            "note": "Сайт замка 18.10.2026 не открылся, на странице мэрии про бронь ничего нет."
+            "note": "Страница мэрии с ценами и часами; сайт самого замка из нашего региона не открывается."
           },
           "website": {
-            "value": "https://ajuntament.barcelona.cat/castelldemontjuic",
-            "status": "needs_check",
-            "source": "https://ajuntament.barcelona.cat/castelldemontjuic",
-            "checkedAt": "2026-10-18",
-            "note": "Сайт 18.10.2026 отвечал «403 — доступ запрещён»."
+            "value": "https://www.barcelona.cat/museusbarcelona/es/museo/el-castillo-de-montjuic-99400378816",
+            "status": "verified",
+            "source": "https://www.barcelona.cat/museusbarcelona/es/museo/el-castillo-de-montjuic-99400378816",
+            "checkedAt": "2026-10-18"
           },
           "partnerUrl": null,
           "transferFromPrevious": {
@@ -1241,7 +1233,8 @@
               "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castell_de_Montjuic_-_Fossat_entrada_-_Barcelona_(Catalonia).jpg",
               "changes": "Кадрировано до 16:9, уменьшено и сжато в WebP"
             }
-          }
+          },
+          "ticketsLabel": "Информация о билетах"
         },
         {
           "id": "barcelona/farewell-dinner",
@@ -1253,19 +1246,19 @@
           "durationMin": 120,
           "address": {
             "value": "Poble-sec, Barcelona",
-            "status": "needs_check",
+            "status": "not_applicable",
             "source": "",
             "checkedAt": null,
-            "note": "Общественное пространство, официальной страницы с этим фактом нет — в этой сессии не проверялось."
+            "note": "Это название района или улицы, а не адрес заведения — проверять нечего."
           },
           "mapUrl": "https://www.google.com/maps/search/?api=1&query=Poble-sec+Barcelona",
           "openingHours": null,
           "admission": {
             "value": "free",
-            "status": "needs_check",
+            "status": "not_applicable",
             "source": "",
             "checkedAt": null,
-            "note": "Общественное пространство, официальной страницы с этим фактом нет — в этой сессии не проверялось."
+            "note": "Улица, площадь или пляж — вход свободный, проверять нечего."
           },
           "price": null,
           "tickets": null,
