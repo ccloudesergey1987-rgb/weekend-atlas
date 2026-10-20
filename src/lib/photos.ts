@@ -8,7 +8,7 @@ import type { Photo, PhotoCredit, PhotoFile } from '../types/content'
 /** Licenses we accept for photos; the tests check every photo against this list. */
 export const ALLOWED_PHOTO_LICENSE = /^(Public domain|CC0|CC BY \d\.\d|CC BY-SA \d\.\d)$/
 
-/** A file path from JSON → URL that respects Vite's base (if the site ever moves into a subfolder). */
+/** A file path from JSON → URL that works on GitHub Pages too (site under /weekend-atlas/). */
 export function photoUrl(src: string): string {
   return `${import.meta.env.BASE_URL}${src}`
 }
