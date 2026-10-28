@@ -31,6 +31,16 @@ export const OTHER_CITY_GUIDES: { city: string; note: string; url: string }[] = 
     url: 'https://telegra.ph/Parizh-za-3-dnya--besplatnyj-gid-Weekend-Atlas-10-28',
   },
   {
+    city: 'Стамбул',
+    note: 'Айя-София, Босфор на пароме, Балат и уличная еда',
+    url: 'https://telegra.ph/Stambul-za-3-dnya--besplatnyj-gid-Weekend-Atlas-10-28',
+  },
+  {
+    city: 'Прага',
+    note: 'Карлов мост, Пражский Град, пивные и цены в кронах',
+    url: 'https://telegra.ph/Praga-za-3-dnya--besplatnyj-gid-Weekend-Atlas-10-28',
+  },
+  {
     city: 'Лиссабон',
     note: 'Алфама, Белен, Синтра и лучшие смотровые',
     url: 'https://telegra.ph/Lissabon-za-3-dnya--besplatnyj-gid-Weekend-Atlas-10-28',

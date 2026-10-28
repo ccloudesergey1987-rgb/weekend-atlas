@@ -40,7 +40,7 @@ export function HomeScreen() {
           className={styles.jump}
           onClick={() => document.getElementById('other-cities')?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
         >
-          Рим, Париж, Лиссабон ↓
+          Другие города ↓
         </button>
       </header>
 
