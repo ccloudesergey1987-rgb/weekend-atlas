@@ -2,7 +2,8 @@ import { Link } from 'react-router'
 import { ImagePlaceholder } from '../../components/ImagePlaceholder/ImagePlaceholder'
 import { getCityContent } from '../../data'
 import { pluralize } from '../../utils/format'
-import { DATA_CHECKED_LABEL } from '../../config/site'
+import { DATA_CHECKED_LABEL, OTHER_CITY_GUIDES, TELEGRAM_CHANNEL_URL } from '../../config/site'
+import { ExternalLink } from '../../components/ExternalLink/ExternalLink'
 import { FeedbackLink } from '../../components/FeedbackLink/FeedbackLink'
 import styles from './HomeScreen.module.css'
 
@@ -34,6 +35,13 @@ export function HomeScreen() {
     <div className={styles.home}>
       <header className={styles.top}>
         <span className={styles.brand}>Weekend Atlas</span>
+        <button
+          type="button"
+          className={styles.jump}
+          onClick={() => document.getElementById('other-cities')?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
+        >
+          Рим, Париж, Лиссабон ↓
+        </button>
       </header>
 
       <ImagePlaceholder photo={city.cover} className={styles.cover} priority sizes="(min-width: 720px) 640px, 100vw" />
@@ -67,6 +75,34 @@ export function HomeScreen() {
           ))}
         </ol>
       </nav>
+
+      <section className={styles.others} aria-labelledby="other-cities">
+        <h2 id="other-cities" className={styles.othersTitle}>
+          Другие города
+        </h2>
+        <p className={styles.othersLead}>Бесплатные гиды на 3 дня: маршрут, цены и где поесть.</p>
+        <ul className={styles.sectionList}>
+          {OTHER_CITY_GUIDES.map((g) => (
+            <li key={g.url}>
+              <ExternalLink href={g.url} className={styles.section}>
+                <span className={styles.sectionNumber} aria-hidden="true">
+                  ↗
+                </span>
+                <span className={styles.sectionBody}>
+                  <span className={styles.sectionTitle}>{g.city}</span>
+                  <span className={styles.sectionText}>{g.note}</span>
+                </span>
+                <span className={styles.sectionArrow} aria-hidden="true">
+                  →
+                </span>
+              </ExternalLink>
+            </li>
+          ))}
+        </ul>
+        <ExternalLink href={TELEGRAM_CHANNEL_URL} className={styles.channel}>
+          Новые города — в нашем Telegram
+        </ExternalLink>
+      </section>
 
       <footer className={styles.footer}>
         <p className={styles.footerNote}>Данные проверены: {DATA_CHECKED_LABEL}</p>
