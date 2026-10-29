@@ -120,17 +120,18 @@ function PlaceEntry({ place }: { place: Place }) {
         : 'Цена уточняется'
   return (
     <article className={styles.place}>
-      <p className={styles.placeType}>{placeTypeLabel(place.type)}</p>
+      <p className={styles.placeType}>
+        {placeTypeLabel(place.type)} · {price}
+        {place.reservation?.value === 'recommended' && ' · лучше забронировать'}
+      </p>
       <h3 className={styles.placeName}>{place.name}</h3>
-      <p className={styles.text}>{place.description}</p>
+      <p className={styles.placeText}>{place.description}</p>
       <dl className={styles.facts}>
         <FactRow label="Адрес" fact={place.address} />
         <FactRow label="Часы" fact={place.openingHours} />
-        <Row label="Чек">{price}</Row>
-        {place.reservation?.value === 'recommended' && <Row label="Бронь">Лучше забронировать</Row>}
       </dl>
       <p className={styles.links}>
-        <a href={place.mapUrl}>Открыть на карте</a>
+        <a href={place.mapUrl}>Карта</a>
         {place.website && (
           <>
             {' · '}

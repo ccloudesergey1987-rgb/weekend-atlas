@@ -153,7 +153,7 @@
 
 /* Route */
 .point {
-  padding: 3.5mm 0;
+  padding: 2.8mm 0;
   border-top: 0.5pt solid var(--color-line);
 }
 
@@ -199,8 +199,8 @@
 .pointPhoto {
   display: block;
   width: 100%;
-  height: 34mm;
-  margin-top: 2.5mm;
+  height: 30mm;
+  margin-top: 2mm;
   object-fit: cover;
   border-radius: 2mm;
 }
@@ -215,10 +215,11 @@
 
 .row {
   display: grid;
-  grid-template-columns: 17mm 1fr;
+  grid-template-columns: 15mm 1fr;
   gap: 2mm;
-  padding: 0.6mm 0;
-  font-size: 8.5pt;
+  padding: 0.4mm 0;
+  font-size: 8.2pt;
+  line-height: 1.38;
 }
 
 .row dt {
@@ -265,7 +266,7 @@
 }
 
 .areaTitle {
-  margin: 6mm 0 1mm;
+  margin: 4mm 0 0.5mm;
   font-size: 7.5pt;
   font-weight: 600;
   letter-spacing: 0.14em;
@@ -275,7 +276,7 @@
 }
 
 .place {
-  padding: 3mm 0;
+  padding: 2mm 0;
   border-top: 0.5pt solid var(--color-line);
   break-inside: avoid;
 }
@@ -287,10 +288,30 @@
 }
 
 .placeName {
-  margin: 0.5mm 0 0;
+  margin: 0.3mm 0 0;
   font-family: var(--font-serif);
-  font-size: 12pt;
+  font-size: 11.5pt;
   font-weight: 500;
+}
+
+.placeText {
+  margin: 1mm 0 0;
+  font-size: 8.5pt;
+  line-height: 1.38;
+}
+
+.place .facts {
+  margin-top: 1mm;
+}
+
+.place .row {
+  padding: 0.2mm 0;
+  font-size: 7.8pt;
+}
+
+.place .links {
+  margin-top: 1mm;
+  font-size: 7.3pt;
 }
 
 /* Budget */
