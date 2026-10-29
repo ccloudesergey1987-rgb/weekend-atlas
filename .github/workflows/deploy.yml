@@ -26,6 +26,9 @@ jobs:
       - run: npm ci
       - run: npm test
       - run: npm run build
+      # PDF version of the guide: prints print.html from the fresh build into dist/guides/
+      - run: npx playwright-core install --with-deps chromium
+      - run: npm run pdf
       - uses: actions/configure-pages@v6
       - uses: actions/upload-pages-artifact@v5
         with:

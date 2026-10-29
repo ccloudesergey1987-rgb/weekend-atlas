@@ -48,6 +48,8 @@ interface TelegramWebApp {
   BackButton: TelegramBackButton
   /** Since Bot API 6.9. Older apps have the object, but its calls only log errors. */
   CloudStorage?: TelegramCloudStorageApi
+  /** Since Bot API 8.0: Telegram's own «save file» dialog. */
+  downloadFile?(params: { url: string; file_name: string }): void
 }
 
 /** Promise-based Telegram CloudStorage: the user's data, synced across their devices. */
@@ -210,6 +212,31 @@ export function openExternalLink(url: string): void {
     return
   }
   window.open(url, '_blank', 'noopener,noreferrer')
+}
+
+/**
+ * Downloads a file inside Telegram, where a plain link with `download` does
+ * not save anything. Uses Telegram's own download dialog (Bot API 8.0+),
+ * on older Telegram opens the file in the browser. Returns false outside
+ * Telegram: the browser handles the link itself.
+ */
+export function downloadInTelegram(url: string, fileName: string): boolean {
+  if (!webApp) return false
+  downloadFileIn(webApp, url, fileName)
+  return true
+}
+
+/** The decision itself, separate so tests can pass a fake Telegram. */
+export function downloadFileIn(
+  app: Pick<TelegramWebApp, 'isVersionAtLeast' | 'downloadFile' | 'openLink' | 'openTelegramLink'>,
+  url: string,
+  fileName: string,
+): void {
+  if (app.downloadFile && app.isVersionAtLeast('8.0')) {
+    app.downloadFile({ url, file_name: fileName })
+    return
+  }
+  openLinkIn(app, url)
 }
 
 /**

@@ -99,6 +99,32 @@
   opacity: 0.88;
 }
 
+.pdf {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  margin-top: var(--space-3);
+  padding: 0 var(--space-6);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-pill);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.pdf:hover {
+  border-color: var(--color-text);
+}
+
+@media (min-width: 640px) {
+  .pdf {
+    display: inline-flex;
+    margin-left: var(--space-3);
+  }
+}
+
 @media (min-width: 640px) {
   .cta {
     display: inline-flex;

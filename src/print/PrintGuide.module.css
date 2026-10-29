@@ -1,0 +1,334 @@
+/* PDF layout: A5 pages, light theme only. Sizes in pt read the same on screen and on paper. */
+
+@page {
+  size: A5;
+  margin: 14mm 13mm 16mm;
+}
+
+@page :first {
+  margin: 0;
+}
+
+:global(html),
+:global(body) {
+  margin: 0;
+  /* White, not the app's cream: Chromium leaves page margins white, cream would show as frames. */
+  background: #fff;
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.doc {
+  font-size: 9.5pt;
+  line-height: 1.45;
+}
+
+.doc a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.page {
+  break-before: page;
+}
+
+.page:first-child {
+  break-before: auto;
+}
+
+/* Cover */
+.cover {
+  position: relative;
+  height: 210mm;
+  overflow: hidden;
+}
+
+.coverPhoto {
+  display: block;
+  width: 100%;
+  height: 118mm;
+  object-fit: cover;
+}
+
+.coverText {
+  padding: 10mm 13mm 0;
+}
+
+.brand {
+  margin: 0;
+  font-size: 7.5pt;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.coverTitle {
+  margin: 4mm 0 0;
+  font-family: var(--font-serif);
+  font-size: 30pt;
+  font-weight: 500;
+  line-height: 1.05;
+}
+
+.coverLead {
+  margin: 4mm 0 0;
+  font-size: 10pt;
+  color: var(--color-text-muted);
+}
+
+.coverMeta {
+  margin: 5mm 0 0;
+  font-size: 7.5pt;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+/* Headings */
+.eyebrow {
+  margin: 0;
+  font-size: 7pt;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.h2 {
+  margin: 2mm 0 0;
+  font-family: var(--font-serif);
+  font-size: 20pt;
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+.h3 {
+  margin: 6mm 0 2mm;
+  font-family: var(--font-serif);
+  font-size: 12pt;
+  font-weight: 500;
+  break-after: avoid;
+}
+
+.lead {
+  margin: 3mm 0 4mm;
+  font-size: 10pt;
+  color: var(--color-text-muted);
+}
+
+.text {
+  margin: 2mm 0 0;
+}
+
+.small {
+  margin: 2mm 0 0;
+  font-size: 8pt;
+  color: var(--color-text-muted);
+}
+
+/* Contents and legend */
+.toc {
+  margin: 4mm 0 0;
+  padding-left: 5mm;
+}
+
+.toc li {
+  margin: 1.2mm 0;
+}
+
+.legend {
+  margin-top: 5mm;
+  padding: 3mm 4mm;
+  border: 0.5pt solid var(--color-line);
+  border-radius: 3mm;
+  font-size: 8.5pt;
+}
+
+.legend p {
+  margin: 1.2mm 0;
+}
+
+/* Route */
+.point {
+  padding: 3.5mm 0;
+  border-top: 0.5pt solid var(--color-line);
+}
+
+/* Title, photo and description stay together; the facts below may move to the next page. */
+.pointTop {
+  break-inside: avoid;
+}
+
+.transfer {
+  margin: 0 0 2mm;
+  font-size: 7.5pt;
+  color: var(--color-text-muted);
+}
+
+.pointHead {
+  display: flex;
+  gap: 3mm;
+  align-items: baseline;
+}
+
+.time {
+  flex: none;
+  width: 11mm;
+  font-family: var(--font-serif);
+  font-size: 10pt;
+  color: var(--color-accent);
+}
+
+.pointTitle {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: 13pt;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.localName {
+  margin: 0.5mm 0 0;
+  font-size: 7.5pt;
+  color: var(--color-text-muted);
+}
+
+.pointPhoto {
+  display: block;
+  width: 100%;
+  height: 34mm;
+  margin-top: 2.5mm;
+  object-fit: cover;
+  border-radius: 2mm;
+}
+
+.facts {
+  margin: 2mm 0 0;
+}
+
+.warning {
+  break-inside: avoid;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 17mm 1fr;
+  gap: 2mm;
+  padding: 0.6mm 0;
+  font-size: 8.5pt;
+}
+
+.row dt {
+  color: var(--color-text-muted);
+}
+
+.row dd {
+  margin: 0;
+}
+
+.warning {
+  margin: 2mm 0 0;
+  padding: 2mm 3mm;
+  border-radius: 2mm;
+  font-size: 8.5pt;
+  color: var(--color-warning-text);
+  background: var(--color-warning-bg);
+}
+
+.tip {
+  margin: 2mm 0 0;
+  font-size: 8.5pt;
+}
+
+.links {
+  margin: 2mm 0 0;
+  font-size: 8pt;
+  color: var(--color-text-muted);
+}
+
+.badge {
+  display: inline-block;
+  padding: 0 1.5mm;
+  border-radius: 1mm;
+  font-size: 7pt;
+  font-weight: 600;
+  color: var(--color-warning-text);
+  background: var(--color-warning-bg);
+}
+
+/* Places */
+.area {
+  break-inside: auto;
+}
+
+.areaTitle {
+  margin: 6mm 0 1mm;
+  font-size: 7.5pt;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  break-after: avoid;
+}
+
+.place {
+  padding: 3mm 0;
+  border-top: 0.5pt solid var(--color-line);
+  break-inside: avoid;
+}
+
+.placeType {
+  margin: 0;
+  font-size: 7pt;
+  color: var(--color-text-muted);
+}
+
+.placeName {
+  margin: 0.5mm 0 0;
+  font-family: var(--font-serif);
+  font-size: 12pt;
+  font-weight: 500;
+}
+
+/* Budget */
+.totals {
+  display: grid;
+  gap: 2.5mm;
+}
+
+.total {
+  padding: 3mm 4mm;
+  border-radius: 3mm;
+  background: var(--color-bg);
+  break-inside: avoid;
+}
+
+.totalLabel {
+  margin: 0;
+  font-size: 7.5pt;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.totalValue {
+  margin: 1mm 0 0;
+  font-family: var(--font-serif);
+  font-size: 17pt;
+}
+
+/* Back page */
+.back .h2 {
+  margin-top: 3mm;
+}
+
+.credits {
+  margin: 0;
+  padding-left: 4mm;
+  font-size: 7.5pt;
+  color: var(--color-text-muted);
+}

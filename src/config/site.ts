@@ -46,3 +46,9 @@ export const OTHER_CITY_GUIDES: { city: string; note: string; url: string }[] = 
     url: 'https://telegra.ph/Lissabon-za-3-dnya--besplatnyj-gid-Weekend-Atlas-10-28',
   },
 ]
+
+/**
+ * PDF version of the guide, built by `npm run pdf` after every deploy
+ * (scripts/build-pdf.mjs writes it to the same path). From the site root.
+ */
+export const PDF_GUIDE_PATH = 'guides/weekend-atlas-barcelona-72.pdf'

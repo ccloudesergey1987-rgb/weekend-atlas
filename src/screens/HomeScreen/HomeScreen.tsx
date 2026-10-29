@@ -2,10 +2,14 @@ import { Link } from 'react-router'
 import { ImagePlaceholder } from '../../components/ImagePlaceholder/ImagePlaceholder'
 import { getCityContent } from '../../data'
 import { pluralize } from '../../utils/format'
-import { DATA_CHECKED_LABEL, OTHER_CITY_GUIDES, TELEGRAM_CHANNEL_URL } from '../../config/site'
+import { DATA_CHECKED_LABEL, OTHER_CITY_GUIDES, PDF_GUIDE_PATH, TELEGRAM_CHANNEL_URL } from '../../config/site'
+import { downloadInTelegram } from '../../telegram/telegram'
 import { ExternalLink } from '../../components/ExternalLink/ExternalLink'
 import { FeedbackLink } from '../../components/FeedbackLink/FeedbackLink'
 import styles from './HomeScreen.module.css'
+
+const pdfUrl = `${import.meta.env.BASE_URL}${PDF_GUIDE_PATH}`
+const pdfName = PDF_GUIDE_PATH.split('/').pop() ?? 'weekend-atlas.pdf'
 
 export function HomeScreen() {
   const { city, route } = getCityContent()
@@ -55,6 +59,16 @@ export function HomeScreen() {
         <Link to="/route" className={styles.cta}>
           Начать путешествие
         </Link>
+        <a
+          href={pdfUrl}
+          download={pdfName}
+          className={styles.pdf}
+          onClick={(event) => {
+            if (downloadInTelegram(new URL(pdfUrl, window.location.href).href, pdfName)) event.preventDefault()
+          }}
+        >
+          Скачать PDF — работает без интернета
+        </a>
       </section>
 
       <nav className={styles.sections} aria-label="Разделы путеводителя">
