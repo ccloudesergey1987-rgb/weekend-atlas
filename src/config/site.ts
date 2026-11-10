@@ -41,6 +41,26 @@ export const OTHER_CITY_GUIDES: { city: string; note: string; url: string }[] = 
     url: 'https://telegra.ph/Praga-za-3-dnya--besplatnyj-gid-Weekend-Atlas-10-28',
   },
   {
+    city: 'Амстердам',
+    note: 'Каналы, Йордан, Рейксмюсеум и бесплатный паром',
+    url: 'https://telegra.ph/Amsterdam-za-3-dnya--besplatnyj-gid-Weekend-Atlas-11-10',
+  },
+  {
+    city: 'Тбилиси',
+    note: 'Серные бани, канатка к Нарикале, хинкали и вино',
+    url: 'https://telegra.ph/Tbilisi-za-3-dnya--besplatnyj-gid-Weekend-Atlas-11-10',
+  },
+  {
+    city: 'Белград',
+    note: 'Калемегдан, Земун и бесплатный транспорт',
+    url: 'https://telegra.ph/Belgrad-za-3-dnya--besplatnyj-gid-Weekend-Atlas-11-10',
+  },
+  {
+    city: 'Будапешт',
+    note: 'Парламент, купальни Сечени и руин-бары',
+    url: 'https://telegra.ph/Budapesht-za-3-dnya--besplatnyj-gid-Weekend-Atlas-11-10',
+  },
+  {
     city: 'Лиссабон',
     note: 'Алфама, Белен, Синтра и лучшие смотровые',
     url: 'https://telegra.ph/Lissabon-za-3-dnya--besplatnyj-gid-Weekend-Atlas-10-28',
