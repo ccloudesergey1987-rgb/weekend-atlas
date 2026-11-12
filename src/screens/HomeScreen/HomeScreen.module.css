@@ -40,10 +40,6 @@
   cursor: pointer;
 }
 
-#other-cities {
-  scroll-margin-top: var(--space-5);
-}
-
 .brand {
   font-size: var(--text-xs);
   font-weight: 600;
@@ -290,6 +286,11 @@
 }
 
 .othersTitle {
+  /*
+   * Air above the heading when «Другие города ↓» scrolls to it. On the class, not on
+   * #other-cities: CSS Modules renames ids too, so an id selector here never matched.
+   */
+  scroll-margin-top: var(--space-5);
   font-family: var(--font-serif);
   font-size: var(--text-2xl);
   font-weight: 500;
@@ -361,5 +362,27 @@
 
   .cta {
     margin-top: var(--space-3);
+  }
+}
+
+/*
+ * Wide but low windows (tablet in landscape, 1366×768 / 1280×720 laptops): the 16:10 cover
+ * would push «Начать путешествие» below the first screen. The cover keeps its full width and
+ * takes 36 % of the height, as on low phones (cropped, not narrowed); the brand line and the
+ * text get the same tighter steps as on phones. Taller windows (900 px and more) are not affected.
+ */
+@media (min-width: 640px) and (max-height: 800px) {
+  .top {
+    padding-top: calc(var(--safe-top) + var(--space-2));
+    padding-bottom: var(--space-2);
+  }
+
+  .cover {
+    aspect-ratio: auto;
+    height: 36svh;
+  }
+
+  .intro {
+    padding-top: var(--space-5);
   }
 }
