@@ -12,6 +12,18 @@
   padding: calc(var(--safe-top) + var(--space-4)) var(--gutter) var(--space-4);
 }
 
+/*
+ * Phone: «Другие города ↓» is a 44 px tap area that already carries its own air,
+ * so the line needs less padding around it (keeps the first screen as tall as before
+ * the button appeared).
+ */
+@media (max-width: 639px) {
+  .top {
+    padding-top: calc(var(--safe-top) + var(--space-2));
+    padding-bottom: var(--space-2);
+  }
+}
+
 .jump {
   display: inline-flex;
   align-items: center;
@@ -52,6 +64,24 @@
 
 .cover img {
   object-position: 50% 62%;
+}
+
+/*
+ * Low phone screens (small phones, Telegram's half-height window): a slightly
+ * smaller cover and a little less air above the text and the button, so
+ * «Начать путешествие» still fits. Tall phones keep the 40 % cover.
+ */
+@media (max-width: 639px) and (max-height: 760px) {
+  .cover {
+    height: clamp(200px, 36svh, 125vw);
+  }
+  /* The tighter spacing for .intro and .cta is at the end of the file (after their base rules). */
+}
+
+@media (max-width: 639px) and (max-height: 680px) {
+  .cover {
+    height: clamp(200px, 34svh, 125vw);
+  }
 }
 
 @media (min-width: 640px) {
@@ -292,4 +322,44 @@
 
 .channel:active {
   transform: scale(var(--press-scale));
+}
+
+/* Low phone screens: a little less air above the text and the button (see .cover above). */
+@media (max-width: 639px) and (max-height: 760px) {
+  .intro {
+    padding-top: var(--space-4);
+  }
+
+  .cta {
+    margin-top: var(--space-4);
+  }
+}
+
+/*
+ * Very low phone screens (≤ 680 px, e.g. 320×640): the cover stays at 34 %; instead the
+ * steps between the lines get one notch tighter (16 → 12, 12 → 8 px) and the description
+ * a slightly denser line (1.45), so «Начать путешествие» fits on the first screen.
+ * The brand line keeps no bottom padding: the 44 px «Другие города ↓» gives enough air.
+ */
+@media (max-width: 639px) and (max-height: 680px) {
+  .top {
+    padding-bottom: 0;
+  }
+
+  .intro {
+    padding-top: var(--space-3);
+  }
+
+  .title,
+  .description {
+    margin-top: var(--space-2);
+  }
+
+  .description {
+    line-height: 1.45;
+  }
+
+  .cta {
+    margin-top: var(--space-3);
+  }
 }

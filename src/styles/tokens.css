@@ -52,6 +52,8 @@
 
   --gutter: clamp(1.25rem, 5vw, 2.5rem);
   --content-width: 42rem;
+  /* Wide browser windows (≥ 1024 px, not Telegram): screens with a card grid. */
+  --content-width-wide: 64rem;
 
   /* Shape and motion */
   --radius-sm: 6px;

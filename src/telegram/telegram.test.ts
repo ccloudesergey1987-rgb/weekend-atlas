@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from 'vitest'
 import { FEEDBACK_URL } from '../config/site'
-import { downloadFileIn, downloadInTelegram, isInTelegram, isTelegramLink, openLinkIn } from './telegram'
+import { disableVerticalSwipesIn, downloadFileIn, downloadInTelegram, isInTelegram, isTelegramLink, openLinkIn } from './telegram'
 
 function fakeApp() {
   return { openLink: vi.fn(), openTelegramLink: vi.fn() }
@@ -61,5 +61,35 @@ describe('скачивание PDF', () => {
 
   it('вне Telegram ничего не делает — скачивает сам браузер', () => {
     expect(downloadInTelegram(url, 'guide.pdf')).toBe(false)
+  })
+})
+
+describe('свайп вниз в Telegram', () => {
+  const versionFrom = (min: string) => (v: string) => Number(min) >= Number(v)
+
+  it('отключается, если Telegram поддерживает disableVerticalSwipes (7.7+)', () => {
+    const app = { isVersionAtLeast: versionFrom('8.0'), disableVerticalSwipes: vi.fn() }
+    expect(disableVerticalSwipesIn(app)).toBe(true)
+    expect(app.disableVerticalSwipes).toHaveBeenCalledOnce()
+  })
+
+  it('в старой версии Telegram не вызывается', () => {
+    const app = { isVersionAtLeast: versionFrom('7.0'), disableVerticalSwipes: vi.fn() }
+    expect(disableVerticalSwipesIn(app)).toBe(false)
+    expect(app.disableVerticalSwipes).not.toHaveBeenCalled()
+  })
+
+  it('без метода в скрипте ничего не ломается', () => {
+    expect(disableVerticalSwipesIn({ isVersionAtLeast: () => true })).toBe(false)
+  })
+
+  it('ошибка внутри Telegram не роняет приложение', () => {
+    const app = {
+      isVersionAtLeast: () => true,
+      disableVerticalSwipes: () => {
+        throw new Error('WebAppMethodUnsupported')
+      },
+    }
+    expect(disableVerticalSwipesIn(app)).toBe(false)
   })
 })

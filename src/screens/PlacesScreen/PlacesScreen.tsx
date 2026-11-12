@@ -50,7 +50,8 @@ export function PlacesScreen() {
   }
 
   return (
-    <section className={styles.screen}>
+    // data-layout="wide": in a wide browser window the layout gives this screen a wider column (AppLayout.module.css).
+    <section className={styles.screen} data-layout="wide">
       <h1 className={styles.title}>Еда и места</h1>
       <p className={styles.lead}>Где пообедать, выпить кофе или вермут рядом с маршрутом.</p>
 

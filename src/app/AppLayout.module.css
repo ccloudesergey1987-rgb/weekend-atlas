@@ -25,3 +25,16 @@
   margin: 0 auto;
   padding: 0 var(--gutter);
 }
+
+/*
+ * A screen marked data-layout="wide" (cards in two columns) gets a wider column in a
+ * wide browser window; the brand line widens with it so the left edges stay aligned.
+ * Not inside Telegram (html[data-telegram]): there the app always keeps one column.
+ * Browsers without :has() simply keep the regular column.
+ */
+@media (min-width: 1024px) {
+  :global(html:not([data-telegram])) .layout:has([data-layout='wide']) .header,
+  :global(html:not([data-telegram])) .layout:has([data-layout='wide']) .main {
+    max-width: var(--content-width-wide);
+  }
+}

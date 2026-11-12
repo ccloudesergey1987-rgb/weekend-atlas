@@ -46,6 +46,8 @@ interface TelegramWebApp {
   setBackgroundColor(color: string): void
   onEvent(event: 'themeChanged', cb: () => void): void
   BackButton: TelegramBackButton
+  /** Since Bot API 7.7. Missing in older versions of the script. */
+  disableVerticalSwipes?: () => void
   /** Since Bot API 6.9. Older apps have the object, but its calls only log errors. */
   CloudStorage?: TelegramCloudStorageApi
   /** Since Bot API 8.0: Telegram's own «save file» dialog. */
@@ -133,14 +135,42 @@ function onBackClick(): void {
   backHandler?.()
 }
 
+/**
+ * A swipe down on a long list should scroll it, not fold the Mini App away.
+ * Only where Telegram supports it (Bot API 7.7+); never throws.
+ * Returns whether swipes were disabled. Exported for tests.
+ */
+export function disableVerticalSwipesIn(app: Pick<TelegramWebApp, 'isVersionAtLeast' | 'disableVerticalSwipes'>): boolean {
+  if (typeof app.disableVerticalSwipes !== 'function' || !app.isVersionAtLeast('7.7')) return false
+  try {
+    app.disableVerticalSwipes()
+    return true
+  } catch {
+    return false
+  }
+}
+
+/** Marks the page as opened from Telegram: CSS keeps the one-column layout there. */
+function markTelegram(on: boolean): void {
+  if (on) {
+    document.documentElement.dataset.telegram = ''
+  } else {
+    delete document.documentElement.dataset.telegram
+  }
+}
+
 function onScriptLoaded(): void {
   const candidate = window.Telegram?.WebApp
   // The script also defines WebApp in a regular browser; platform tells them apart.
-  if (!candidate || candidate.platform === 'unknown') return
+  if (!candidate || candidate.platform === 'unknown') {
+    markTelegram(false)
+    return
+  }
 
   webApp = candidate
   webApp.ready()
   webApp.expand()
+  disableVerticalSwipesIn(webApp)
   applyTheme()
   webApp.onEvent('themeChanged', applyTheme)
   if (webApp.isVersionAtLeast('6.1')) webApp.BackButton.onClick(onBackClick)
@@ -155,6 +185,9 @@ export function initTelegram(): void {
   if (!hashParams && !hasStoredLaunchParams()) return // regular browser
 
   if (hashParams) moveLaunchParamsOutOfHash(hashParams)
+  // Set before the first render (the script may load slowly or not at all),
+  // so a wide Telegram window never flashes the two-column browser layout.
+  markTelegram(true)
 
   ready = new Promise<boolean>((resolve) => {
     const timer = window.setTimeout(() => resolve(false), SCRIPT_TIMEOUT_MS)

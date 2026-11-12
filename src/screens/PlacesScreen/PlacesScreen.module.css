@@ -135,6 +135,17 @@
   list-style: none;
 }
 
+/* Wide browser window: two columns; cards in a row share the row height. Telegram: one column. */
+@media (min-width: 1024px) {
+  :global(html:not([data-telegram])) .list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  :global(html:not([data-telegram])) .list > li {
+    display: grid;
+  }
+}
+
 /* Empty state */
 
 .empty {
