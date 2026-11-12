@@ -71,7 +71,8 @@ export function PlaceCard({ place, highlighted = false }: { place: Place; highli
                 </>
               )}
             </p>
-            <h3 className={styles.title}>{place.name}</h3>
+            {/* h2: the card sits right under the screen's h1 (no section heading in between). */}
+            <h2 className={styles.title}>{place.name}</h2>
           </div>
           <FavoriteButton id={place.id} title={place.name} />
         </div>
@@ -80,16 +81,7 @@ export function PlaceCard({ place, highlighted = false }: { place: Place; highli
         {place.reservation && <p className={styles.reservation}>{reservationText[place.reservation.value]}</p>}
 
         <dl className={styles.facts}>
-          <FactRow label="Адрес" fact={place.address} />
-          <FactRow label="Часы" fact={place.openingHours} />
-          <div className={styles.fact}>
-            <dt>Закрыто</dt>
-            <dd>
-              {closedText(place)}{' '}
-              {place.schedule && <VerificationBadge status={place.schedule.status} />}
-            </dd>
-          </div>
-          <div className={styles.fact}>
+          <div className={`${styles.fact} ${styles.factKey}`}>
             <dt>Средний чек</dt>
             <dd>
               {place.price ? (
@@ -119,23 +111,16 @@ export function PlaceCard({ place, highlighted = false }: { place: Place; highli
               )}
             </dd>
           </div>
+          <FactRow label="Часы" fact={place.openingHours} />
+          <div className={styles.fact}>
+            <dt>Закрыто</dt>
+            <dd>
+              {closedText(place)}{' '}
+              {place.schedule && <VerificationBadge status={place.schedule.status} />}
+            </dd>
+          </div>
+          <FactRow label="Адрес" fact={place.address} />
         </dl>
-
-        {fromGoogle && <p className={styles.sourceNote}>Адрес и часы — по данным Google, октябрь 2026</p>}
-
-        {place.recommendedBy.length > 0 && (
-          <p className={styles.recommended}>
-            Рекомендуют:{' '}
-            {place.recommendedBy.map((r, i) => (
-              <span key={r.url}>
-                {i > 0 && ', '}
-                <ExternalLink href={r.url} className={styles.inlineLink}>
-                  {r.name}
-                </ExternalLink>
-              </span>
-            ))}
-          </p>
-        )}
 
         <div className={styles.actions}>
           <ExternalLink href={place.mapUrl} className={styles.button}>
@@ -147,6 +132,26 @@ export function PlaceCard({ place, highlighted = false }: { place: Place; highli
             </ExternalLink>
           )}
         </div>
+
+        {/* Sources: who recommends it and where the facts come from — one quiet footnote. */}
+        {(place.recommendedBy.length > 0 || fromGoogle) && (
+          <div className={styles.sources}>
+            {place.recommendedBy.length > 0 && (
+              <p className={styles.recommended}>
+                Рекомендуют:{' '}
+                {place.recommendedBy.map((r, i) => (
+                  <span key={r.url}>
+                    {i > 0 && ', '}
+                    <ExternalLink href={r.url} className={styles.inlineLink}>
+                      {r.name}
+                    </ExternalLink>
+                  </span>
+                ))}
+              </p>
+            )}
+            {fromGoogle && <p className={styles.sourceNote}>Адрес и часы — по данным Google, октябрь 2026</p>}
+          </div>
+        )}
       </div>
     </article>
   )

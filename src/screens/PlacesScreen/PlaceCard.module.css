@@ -95,6 +95,16 @@
   overflow-wrap: break-word;
 }
 
+/* The average bill decides most choices: first row, a little heavier. */
+.factKey dd {
+  font-weight: 600;
+}
+
+.factKey dd .estimate,
+.factKey dd .muted {
+  font-weight: 400;
+}
+
 .actions {
   display: flex;
   flex-wrap: wrap;
@@ -110,24 +120,44 @@
   min-height: 44px;
   padding: 0 var(--space-4);
   white-space: nowrap;
-  border: 1px solid var(--color-line);
+  border: 1px solid var(--color-line-control);
   border-radius: var(--radius-pill);
   font-size: var(--text-sm);
   font-weight: 600;
   text-align: center;
   text-decoration: none;
   color: var(--color-text);
-  transition: border-color var(--duration-fast);
+  transition: border-color var(--duration-fast), transform var(--duration-fast);
 }
 
 .button:hover {
-  border-color: var(--color-text-muted);
+  border-color: var(--color-text);
 }
 
+.button:active {
+  transform: scale(var(--press-scale));
+}
+
+/* «Лучше забронировать»: a short accent line with a dot, read before the facts. */
 .reservation {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
   margin-top: var(--space-3);
   font-size: var(--text-sm);
   font-weight: 600;
+  color: var(--color-accent);
+}
+
+/* The dot sits on the first line, also when the text wraps. */
+.reservation::before {
+  content: '';
+  flex: none;
+  width: 6px;
+  height: 6px;
+  margin-top: 0.6em;
+  border-radius: 50%;
+  background: currentColor;
 }
 
 .muted {
@@ -145,6 +175,9 @@
   min-height: 44px;
   cursor: pointer;
   font-size: var(--text-xs);
+  text-decoration: underline dotted;
+  text-decoration-color: var(--color-line-control);
+  text-underline-offset: 3px;
 }
 
 .estimate p {
@@ -152,10 +185,20 @@
   line-height: var(--leading-normal);
 }
 
-.recommended {
-  margin-top: var(--space-3);
-  font-size: var(--text-sm);
+/* Sources: one quiet footnote under the buttons. */
+.sources {
+  display: grid;
+  gap: var(--space-1);
+  margin-top: var(--space-4);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--color-line);
+  font-size: var(--text-xs);
+  line-height: var(--leading-normal);
   color: var(--color-text-muted);
+}
+
+.recommended {
+  font-size: var(--text-xs);
 }
 
 .inlineLink {
@@ -171,7 +214,5 @@
 }
 
 .sourceNote {
-  margin-top: var(--space-2);
   font-size: var(--text-xs);
-  color: var(--color-text-muted);
 }

@@ -185,8 +185,13 @@
   text-decoration: none;
   color: var(--color-accent-contrast);
   background: var(--color-text);
+  transition: opacity var(--duration-fast), transform var(--duration-fast);
 }
 
 .emptyButton:hover {
   opacity: 0.88;
+}
+
+.emptyButton:active {
+  transform: scale(var(--press-scale));
 }

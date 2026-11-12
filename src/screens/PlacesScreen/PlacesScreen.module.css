@@ -66,7 +66,7 @@
   min-width: 44px;
   min-height: 44px;
   padding: 0 var(--space-4);
-  border: 1px solid var(--color-line);
+  border: 1px solid var(--color-line-control);
   border-radius: var(--radius-pill);
   font: inherit;
   font-size: var(--text-sm);
@@ -75,11 +75,15 @@
   color: var(--color-text);
   background: var(--color-surface);
   cursor: pointer;
-  transition: border-color var(--duration-fast), background var(--duration-fast), color var(--duration-fast);
+  transition: border-color var(--duration-fast), background var(--duration-fast), color var(--duration-fast), transform var(--duration-fast);
 }
 
 .chip:hover {
-  border-color: var(--color-text-muted);
+  border-color: var(--color-text);
+}
+
+.chip:active {
+  transform: scale(var(--press-scale));
 }
 
 .chipActive,
@@ -164,8 +168,14 @@
   color: var(--color-accent-contrast);
   background: var(--color-text);
   cursor: pointer;
+  transition: opacity var(--duration-fast), transform var(--duration-fast);
 }
 
 .resetButton:hover {
   opacity: 0.88;
+}
+
+.resetButton:active,
+.areaRemove:active {
+  transform: scale(var(--press-scale));
 }

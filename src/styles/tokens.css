@@ -11,6 +11,8 @@
   --color-text: #1b1916;
   --color-text-muted: #6e665b;
   --color-line: rgba(27, 25, 22, 0.12);
+  /* Borders of controls (chips, outline buttons, fields): 3:1 against the page, WCAG 1.4.11. */
+  --color-line-control: rgba(27, 25, 22, 0.48);
   --color-accent: #a8432a;
   --color-accent-contrast: #fffdf9;
   --color-warning-bg: #f6e7c8;
@@ -56,6 +58,8 @@
   --radius-md: 12px;
   --radius-pill: 999px;
   --duration-fast: 150ms;
+  /* A quiet press: controls sink a little under the finger. */
+  --press-scale: 0.97;
 
   /* Layout */
   --nav-height: 64px;
@@ -73,6 +77,7 @@
     --color-text: #f2ece2;
     --color-text-muted: #a69d90;
     --color-line: rgba(242, 236, 226, 0.14);
+    --color-line-control: rgba(242, 236, 226, 0.38);
     --color-accent: #e0896b;
     --color-accent-contrast: #141210;
     --color-warning-bg: #3a2e17;
@@ -92,6 +97,7 @@
   --color-text: #f2ece2;
   --color-text-muted: #a69d90;
   --color-line: rgba(242, 236, 226, 0.14);
+  --color-line-control: rgba(242, 236, 226, 0.38);
   --color-accent: #e0896b;
   --color-accent-contrast: #141210;
   --color-warning-bg: #3a2e17;

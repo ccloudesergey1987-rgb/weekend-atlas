@@ -39,14 +39,26 @@
   text-transform: uppercase;
 }
 
+/*
+ * Phone: the cover takes about two fifths of the screen height (svh: the visible
+ * height, also inside Telegram), so the title and «Начать путешествие» stay on the
+ * first screen. Never shorter than 240 px or taller than a 4:5 portrait.
+ * The crop leans a little below centre: the city, not the empty sky.
+ */
 .cover {
-  aspect-ratio: 4 / 5;
-  max-height: 62dvh;
+  aspect-ratio: auto;
+  height: clamp(240px, 40svh, 125vw);
+}
+
+.cover img {
+  object-position: 50% 62%;
 }
 
 @media (min-width: 640px) {
   .cover {
     aspect-ratio: 16 / 10;
+    height: auto;
+    max-height: 52svh;
     margin: 0 var(--gutter);
     width: auto;
     border-radius: var(--radius-md);
@@ -54,7 +66,13 @@
 }
 
 .intro {
-  padding: var(--space-6) var(--gutter) 0;
+  padding: var(--space-5) var(--gutter) 0;
+}
+
+@media (min-width: 640px) {
+  .intro {
+    padding-top: var(--space-6);
+  }
 }
 
 .eyebrow {
@@ -73,10 +91,17 @@
 }
 
 .description {
-  margin-top: var(--space-4);
-  font-size: var(--text-lg);
+  margin-top: var(--space-3);
+  font-size: var(--text-base);
   line-height: var(--leading-normal);
   color: var(--color-text-muted);
+}
+
+@media (min-width: 640px) {
+  .description {
+    margin-top: var(--space-4);
+    font-size: var(--text-lg);
+  }
 }
 
 .cta {
@@ -84,7 +109,7 @@
   align-items: center;
   justify-content: center;
   min-height: 52px;
-  margin-top: var(--space-6);
+  margin-top: var(--space-5);
   padding: 0 var(--space-6);
   border-radius: var(--radius-pill);
   font-size: var(--text-base);
@@ -92,13 +117,18 @@
   color: var(--color-accent-contrast);
   background: var(--color-text);
   text-decoration: none;
-  transition: opacity var(--duration-fast);
+  transition: opacity var(--duration-fast), transform var(--duration-fast);
 }
 
 .cta:hover {
   opacity: 0.88;
 }
 
+.cta:active {
+  transform: scale(var(--press-scale));
+}
+
+/* Outline button, like the other outline buttons: a 3:1 control border and the same press. */
 .pdf {
   display: flex;
   align-items: center;
@@ -106,16 +136,21 @@
   min-height: 48px;
   margin-top: var(--space-3);
   padding: 0 var(--space-6);
-  border: 1px solid var(--color-line);
+  border: 1px solid var(--color-line-control);
   border-radius: var(--radius-pill);
   font-size: var(--text-sm);
   font-weight: 600;
   color: var(--color-text);
   text-decoration: none;
+  transition: border-color var(--duration-fast), transform var(--duration-fast);
 }
 
 .pdf:hover {
   border-color: var(--color-text);
+}
+
+.pdf:active {
+  transform: scale(var(--press-scale));
 }
 
 @media (min-width: 640px) {
@@ -151,6 +186,11 @@
   padding: var(--space-5) 0;
   border-bottom: 1px solid var(--color-line);
   text-decoration: none;
+  transition: background var(--duration-fast);
+}
+
+.section:active {
+  background: color-mix(in srgb, var(--color-text) 4%, transparent);
 }
 
 .sectionNumber {
@@ -237,14 +277,19 @@
   justify-content: center;
   min-height: 48px;
   margin-top: var(--space-5);
-  border: 1px solid var(--color-line);
+  border: 1px solid var(--color-line-control);
   border-radius: var(--radius-pill);
   font-size: var(--text-sm);
   font-weight: 600;
   color: var(--color-text);
   text-decoration: none;
+  transition: border-color var(--duration-fast), transform var(--duration-fast);
 }
 
 .channel:hover {
   border-color: var(--color-text);
+}
+
+.channel:active {
+  transform: scale(var(--press-scale));
 }

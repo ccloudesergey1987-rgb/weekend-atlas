@@ -75,7 +75,7 @@
   width: 48px;
   height: 48px;
   padding: 0;
-  border: 1px solid var(--color-line);
+  border: 1px solid var(--color-line-control);
   border-radius: 50%;
   font: inherit;
   font-size: 1.5rem;
@@ -84,11 +84,15 @@
   background: var(--color-bg);
   cursor: pointer;
   touch-action: manipulation;
-  transition: border-color var(--duration-fast), opacity var(--duration-fast);
+  transition: border-color var(--duration-fast), opacity var(--duration-fast), transform var(--duration-fast);
 }
 
 .stepButton:hover:not(:disabled) {
-  border-color: var(--color-text-muted);
+  border-color: var(--color-text);
+}
+
+.stepButton:active:not(:disabled) {
+  transform: scale(0.94);
 }
 
 .stepButton:disabled {
@@ -263,7 +267,7 @@
   display: flex;
   align-items: center;
   margin-top: var(--space-2);
-  border: 1px solid var(--color-line);
+  border: 1px solid var(--color-line-control);
   border-radius: var(--radius-md);
   background: var(--color-surface);
   transition: border-color var(--duration-fast);
@@ -404,6 +408,11 @@
   color: inherit;
   background: none;
   cursor: pointer;
+  transition: background var(--duration-fast), transform var(--duration-fast);
+}
+
+.resetButton:active:not(:disabled) {
+  transform: scale(var(--press-scale));
 }
 
 .resetButton:hover:not(:disabled) {
